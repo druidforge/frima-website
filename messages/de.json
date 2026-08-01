@@ -1,0 +1,343 @@
+{
+  "common": {
+    "brand": "OKTOPOD",
+    "skipToContent": "Zum Inhalt springen",
+    "menu": "Menü",
+    "close": "Schließen",
+    "language": "Sprache",
+    "backToTop": "Nach oben",
+    "readMore": "Mehr erfahren",
+    "from": "Ab",
+    "weeks": "{count, plural, one {# Woche} other {# Wochen}}",
+    "loading": "Lädt"
+  },
+  "nav": {
+    "home": "Start",
+    "services": "Leistungen",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "startProject": "Projekt starten"
+  },
+  "meta": {
+    "home": {
+      "title": "Digitalstudio in Split, Kroatien",
+      "description": "Oktopod ist ein Digitalstudio in Split, Kroatien. Wir bauen Webseiten, Web- und Mobile-Anwendungen, digitale Hochzeitseinladungen, Visitenkarten und Flyer."
+    },
+    "services": {
+      "title": "Leistungen",
+      "description": "Sechs Arbeitsbereiche: Webseiten, Web-Anwendungen, mobile Anwendungen, digitale Hochzeitseinladungen, Visitenkarten- und Flyer-Design."
+    },
+    "about": {
+      "title": "Über uns",
+      "description": "Ein kleines Studio in Split. Sechs Arbeitsbereiche, ein Team, ein klarer Ablauf."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Erzählen Sie uns, was Sie bauen. Wir antworten innerhalb eines Werktags."
+    },
+    "privacy": {
+      "title": "Datenschutzerklärung",
+      "description": "Wie wir Ihre personenbezogenen Daten nach DSGVO erheben, nutzen und schützen."
+    },
+    "cookies": {
+      "title": "Cookie-Richtlinie",
+      "description": "Welche Cookies wir einsetzen, wozu sie dienen und wie Sie sie steuern."
+    }
+  },
+  "home": {
+    "heroEyebrow": "Digitalstudio — Split, Kroatien",
+    "heroTitle": "Jeder Arm denkt für sich",
+    "heroLead": "Ein Oktopus trägt zwei Drittel seiner Neuronen in den Armen. Jeder Arm löst sein eigenes Problem, und das Tier bewegt sich trotzdem als eines. So arbeiten wir: sechs Handwerke, ein Team.",
+    "heroPrimary": "Projekt starten",
+    "heroSecondary": "Leistungen ansehen",
+    "heroScroll": "Scrollen",
+    "thesisTitle": "Sechs Arme, ein Organismus",
+    "thesisBody": "Wir reichen Ihr Projekt nicht durch eine Kette weiter. Dieselben Leute, die die Oberfläche zeichnen, schreiben auch den Code dahinter. So gehen Entscheidungen zwischen den Phasen nicht verloren.",
+    "servicesTitle": "Was wir machen",
+    "servicesLead": "Jeder Arm deckt einen Bereich ab. Die meisten Projekte brauchen zwei oder drei davon.",
+    "servicesCta": "Alle Leistungen",
+    "processTitle": "Wie wir arbeiten",
+    "processLead": "Vier Schritte. Die Reihenfolge ist echt — jeder Schritt baut auf dem vorigen auf.",
+    "process": {
+      "step1Title": "Gespräch",
+      "step1Body": "Eine Stunde darüber, was Sie bauen und für wen. Kein Angebot, bevor wir das Problem verstanden haben.",
+      "step2Title": "Plan",
+      "step2Body": "Struktur, Inhalt und Umfang auf Papier. Preis und Termin werden hier vereinbart.",
+      "step3Title": "Umsetzung",
+      "step3Body": "Design und Code laufen parallel. Sie sehen den Fortschritt jede Woche auf einer Live-Version.",
+      "step4Title": "Übergabe",
+      "step4Body": "Launch, Messung und Einschulung. Dokumentation und alle Zugänge bleiben bei Ihnen."
+    },
+    "statsTitle": "Zahlen",
+    "stats": {
+      "projects": "Gelieferte Projekte",
+      "years": "Jahre im Geschäft",
+      "clients": "Kunden, die wiederkommen",
+      "response": "Antwortzeit im Schnitt"
+    },
+    "responseValue": "< 1 Tag",
+    "ctaTitle": "Sie haben ein Projekt im Kopf?",
+    "ctaBody": "Schicken Sie ein paar Sätze zu dem, was Sie brauchen. Wir antworten innerhalb eines Werktags, und zwar konkret.",
+    "ctaButton": "Kontakt aufnehmen"
+  },
+  "services": {
+    "indexTitle": "Leistungen",
+    "indexLead": "Sechs Arbeitsbereiche. Die Preise sind Startwerte und hängen vom Umfang ab — die echte Zahl kommt nach dem Gespräch.",
+    "fromLabel": "Ab",
+    "timelineLabel": "Dauer",
+    "weeksSuffix": "Wo.",
+    "includedTitle": "Was enthalten ist",
+    "processTitle": "So läuft es ab",
+    "otherTitle": "Weitere Leistungen",
+    "ctaTitle": "Interesse an dieser Leistung?",
+    "ctaBody": "Ein paar Details genügen, und Sie bekommen ein echtes Angebot statt einer Standardpreisliste.",
+    "items": {
+      "websites": {
+        "name": "Webseiten-Erstellung",
+        "short": "Schnelle, lesbare Seiten, die Suchmaschinen verstehen.",
+        "description": "Webseiten für Unternehmen, Handwerksbetriebe und Restaurants. Wir übernehmen Struktur, Text, Design und Code. Die Seite lädt schnell, funktioniert am Handy und ist ab dem Launch-Tag für Suchmaschinen bereit.",
+        "included": [
+          "Seitenstruktur und SEO-Plan",
+          "Design passend zu Ihrer Branche",
+          "Redaktionssystem zum selbst Pflegen",
+          "Mehrsprachigkeit, wenn Sie sie brauchen",
+          "Zugriffsmessung und Basis-Analytics",
+          "Einschulung und Dokumentation"
+        ]
+      },
+      "webApps": {
+        "name": "Web-Anwendungen",
+        "short": "Werkzeuge, die arbeiten, nicht nur Inhalte zeigen.",
+        "description": "Buchungssysteme, interne Werkzeuge, Kundenportale, Dashboards. Wir bauen auf Next.js und PostgreSQL, mit echten Benutzerkonten, Rollen und Änderungsprotokoll.",
+        "included": [
+          "Analyse von Abläufen und Daten",
+          "Login, Rollen und Berechtigungen",
+          "Datenbank und API",
+          "Anbindung an bestehende Systeme",
+          "Automatische Tests der kritischen Abläufe",
+          "Deployment und Monitoring im Betrieb"
+        ]
+      },
+      "mobileApps": {
+        "name": "Mobile Anwendungen",
+        "short": "Eine Codebasis für iOS und Android.",
+        "description": "Apps in React Native, veröffentlicht im App Store und bei Google Play. Offline-Betrieb, Push-Nachrichten und In-App-Zahlungen bauen wir ein, wenn das Produkt sie braucht.",
+        "included": [
+          "Oberflächendesign für beide Plattformen",
+          "Offline-Betrieb und Synchronisierung",
+          "Push-Nachrichten",
+          "Einreichung bei App Store und Google Play",
+          "Analytics und Fehlerberichte",
+          "Betreuung bei Plattform-Updates"
+        ]
+      },
+      "weddingInvites": {
+        "name": "Digitale Hochzeitseinladungen",
+        "short": "Eine Einladung, die auf einem Link lebt — mit Zusage.",
+        "description": "Eine persönliche Seite für Ihre Hochzeit: Ihre Geschichte, der Tagesablauf, eine Karte, Zu- und Absagen sowie eine Wunschliste. Gäste öffnen einen Link, Sie sehen jederzeit, wer kommt.",
+        "included": [
+          "Design nach Ihrem Thema und Ihren Farben",
+          "Zusagen mit laufender Gästeliste",
+          "Tagesablauf und Karte zum Veranstaltungsort",
+          "Fotogalerie",
+          "Eigene Domain auf Wunsch",
+          "Zwei Sprachen"
+        ]
+      },
+      "businessCards": {
+        "name": "Visitenkarten-Design",
+        "short": "Eine Karte, die die Schublade überlebt.",
+        "description": "Kartendesign mit Druckdaten. Wir arbeiten an Typografie, Papier und Veredelung — Prägung, Folie, gefärbte Kante. Sie erhalten Dateien, die jede Druckerei verarbeiten kann.",
+        "included": [
+          "Zwei eigenständige Design-Richtungen",
+          "Druckfertige Daten (PDF/X, CMYK)",
+          "Empfehlung zu Papier und Veredelung",
+          "Digitale Version für die E-Mail-Signatur",
+          "Zwei Korrekturrunden",
+          "Quelldateien gehören Ihnen"
+        ]
+      },
+      "flyers": {
+        "name": "Flyer-Design",
+        "short": "Eine Botschaft, klar gesetzt.",
+        "description": "Flyer, Plakate und Broschüren für Veranstaltungen, Angebote und Eröffnungen. Wir setzen die Hierarchie so, dass die Hauptbotschaft aus drei Metern lesbar ist und die Details aus der Nähe.",
+        "included": [
+          "Konzept und Text, wenn nötig",
+          "Jedes Format von A6 bis A3",
+          "Daten für Druck und Web",
+          "Version für soziale Netzwerke",
+          "Zwei Korrekturrunden",
+          "Quelldateien gehören Ihnen"
+        ]
+      }
+    }
+  },
+  "about": {
+    "title": "Ein kleines Studio in Split",
+    "lead": "Seit 2019 im Geschäft. Klein genug, dass Sie direkt mit uns reden, erfahren genug, um zu wissen, wo Projekte hängen bleiben.",
+    "storyTitle": "Warum ein Oktopus",
+    "storyBody": "Ein Oktopus hat rund fünfhundert Millionen Neuronen, und zwei Drittel davon sitzen in den Armen statt im Kopf. Ein Arm erkennt eine Muschel und öffnet sie ohne Befehl von oben. Das haben wir als Arbeitsweise übernommen: Wer an einem Teil des Projekts arbeitet, entscheidet darüber — statt auf Freigaben über drei Ebenen zu warten.",
+    "valuesTitle": "Wie wir arbeiten",
+    "values": {
+      "directTitle": "Keine Zwischenebene",
+      "directBody": "Sie sprechen mit den Leuten, die an Ihrem Projekt arbeiten. Kein Manager, der Nachrichten weitergibt.",
+      "ownTitle": "Ihres bleibt Ihres",
+      "ownBody": "Code, Design und Domain laufen ab Tag eins auf Ihren Namen. Nichts ist an uns gebunden.",
+      "plainTitle": "Keine Rechnung für Unklarheiten",
+      "plainBody": "Umfang und Preis stehen vor dem Start fest. Ändert sich der Umfang, sagen wir es, bevor wir bauen."
+    },
+    "locationTitle": "Wo wir sind",
+    "locationBody": "Split, Kroatien. Wir arbeiten mit Kunden in Kroatien, Deutschland und Österreich — Treffen vor Ort in Split, alles Weitere online.",
+    "ctaTitle": "Lieber ein Gespräch als ein Formular?",
+    "ctaBody": "Rufen Sie an oder schreiben Sie. Wir antworten am selben oder am nächsten Werktag."
+  },
+  "contact": {
+    "title": "Erzählen Sie uns, was Sie bauen",
+    "lead": "Ein paar Sätze reichen für den Anfang. Wir antworten innerhalb eines Werktags.",
+    "formTitle": "Anfrage senden",
+    "name": "Vor- und Nachname",
+    "namePlaceholder": "Anna Bauer",
+    "email": "E-Mail",
+    "emailPlaceholder": "anna@firma.de",
+    "company": "Firma",
+    "companyOptional": "optional",
+    "companyPlaceholder": "Firmen- oder Betriebsname",
+    "service": "Worum geht es",
+    "servicePlaceholder": "Leistung wählen",
+    "serviceOther": "Etwas anderes",
+    "budget": "Ungefähres Budget",
+    "budgetPlaceholder": "Bereich wählen",
+    "budgetUndecided": "Noch offen",
+    "message": "Zum Projekt",
+    "messagePlaceholder": "Was Sie bauen, für wen, und bis wann Sie es brauchen.",
+    "consent": "Ich habe die <link>Datenschutzerklärung</link> gelesen und bin einverstanden, dass meine Daten zur Beantwortung dieser Anfrage verwendet werden.",
+    "submit": "Anfrage senden",
+    "submitting": "Wird gesendet…",
+    "successTitle": "Anfrage gesendet",
+    "successBody": "Wir antworten innerhalb eines Werktags an {email}.",
+    "successAgain": "Weitere Anfrage senden",
+    "errorTitle": "Anfrage nicht gesendet",
+    "errorGeneric": "Auf unserer Seite ist etwas schiefgelaufen. Versuchen Sie es erneut oder schreiben Sie direkt an {email}.",
+    "errorRateLimit": "Das sind viele Anfragen. Versuchen Sie es in ein paar Minuten erneut.",
+    "required": "Pflichtfeld",
+    "validation": {
+      "nameShort": "Bitte Namen eintragen, mindestens zwei Zeichen.",
+      "nameLong": "Dieser Name ist zu lang.",
+      "emailInvalid": "Prüfen Sie die E-Mail — das @ oder die Domain fehlt.",
+      "messageShort": "Schreiben Sie zumindest ein paar Worte zum Projekt.",
+      "messageLong": "Die Nachricht ist zu lang. Bitte auf 2000 Zeichen kürzen.",
+      "consentRequired": "Ohne Ihre Einwilligung können wir nicht antworten.",
+      "serviceInvalid": "Bitte eine der angebotenen Leistungen wählen."
+    },
+    "directTitle": "Direkt",
+    "emailLabel": "E-Mail",
+    "phoneLabel": "Telefon",
+    "addressLabel": "Adresse",
+    "hoursLabel": "Zeiten",
+    "hoursValue": "Mo–Fr, 9–17 MEZ",
+    "budgets": {
+      "under1k": "bis 1.000 €",
+      "1kTo5k": "1.000 – 5.000 €",
+      "5kTo15k": "5.000 – 15.000 €",
+      "over15k": "über 15.000 €"
+    }
+  },
+  "footer": {
+    "tagline": "Digitalstudio in Split. Sechs Handwerke, ein Team.",
+    "servicesTitle": "Leistungen",
+    "studioTitle": "Studio",
+    "legalTitle": "Rechtliches",
+    "contactTitle": "Kontakt",
+    "privacy": "Datenschutzerklärung",
+    "cookies": "Cookie-Richtlinie",
+    "cookieSettings": "Cookie-Einstellungen",
+    "rights": "Alle Rechte vorbehalten.",
+    "oib": "USt-IdNr.",
+    "madeIn": "Gemacht in Split"
+  },
+  "cookies": {
+    "bannerTitle": "Cookies",
+    "bannerBody": "Notwendige Cookies halten die Seite am Laufen. Für Analytics brauchen wir Ihre Einwilligung. Sie können sie jederzeit widerrufen.",
+    "acceptAll": "Alle annehmen",
+    "rejectAll": "Nur notwendige",
+    "manage": "Einstellungen",
+    "prefTitle": "Cookie-Einstellungen",
+    "prefDescription": "Wählen Sie, welche Kategorien Sie erlauben. Notwendige Cookies lassen sich nicht abschalten, ohne sie funktioniert die Seite nicht.",
+    "prefSave": "Auswahl speichern",
+    "prefAcceptAll": "Alle annehmen",
+    "prefRejectAll": "Alle außer notwendigen ablehnen",
+    "prefClose": "Schließen",
+    "necessaryTitle": "Notwendige Cookies",
+    "necessaryBody": "Sie merken sich Ihre Sprache und Ihre Cookie-Auswahl und schützen das Kontaktformular vor Missbrauch. Ohne sie funktioniert die Seite nicht richtig.",
+    "analyticsTitle": "Analytics",
+    "analyticsBody": "Sie zählen Besuche und zeigen, welche Seiten gelesen werden. Die Daten sind aggregiert und dienen nicht dazu, einzelne Personen zu erkennen.",
+    "marketingTitle": "Marketing",
+    "marketingBody": "Sie messen Werbeerfolg und ermöglichen passendere Anzeigen auf anderen Seiten. Derzeit setzen wir keine ein.",
+    "tableName": "Name",
+    "tableDomain": "Domain",
+    "tableExpiration": "Dauer",
+    "tableDescription": "Beschreibung",
+    "session": "Sitzung",
+    "ccCookie": "Merkt sich, welche Cookie-Kategorien Sie erlaubt haben.",
+    "localeCookie": "Merkt sich die von Ihnen gewählte Sprache.",
+    "analyticsId": "Unterscheidet Besucher in der aggregierten Statistik, ohne Name und E-Mail.",
+    "analyticsSession": "Fasst Seitenaufrufe innerhalb eines Besuchs zusammen."
+  },
+  "legal": {
+    "lastUpdated": "Zuletzt geändert",
+    "tocTitle": "Inhalt",
+    "privacy": {
+      "title": "Datenschutzerklärung",
+      "intro": "Diese Erklärung beschreibt, welche personenbezogenen Daten {legalName} erhebt, warum sie erhoben werden und welche Rechte Ihnen nach der Datenschutz-Grundverordnung (DSGVO) zustehen.",
+      "s1Title": "Verantwortlicher",
+      "s1Body": "Verantwortlich ist {legalName}, {street}, {postalCode} {city}, Kroatien, USt-IdNr. {oib}. Bei Fragen zum Datenschutz schreiben Sie an {email}.",
+      "s2Title": "Welche Daten wir erheben",
+      "s2Body": "Wir erheben nur, was Sie über das Kontaktformular senden: Name, E-Mail-Adresse, optional Firmenname, gewählte Leistung, ungefähres Budget und Ihre Nachricht. Zusätzlich erfassen wir technische Daten, die für die Sicherheit nötig sind — Ihre IP-Adresse und den Sendezeitpunkt.",
+      "s3Title": "Warum wir sie verarbeiten",
+      "s3Body": "Formulardaten verarbeiten wir, um Ihre Anfrage zu beantworten und ein Angebot zu erstellen. Rechtsgrundlage ist Ihre Einwilligung sowie die Durchführung vorvertraglicher Maßnahmen auf Ihre Anfrage. Technische Daten verarbeiten wir aufgrund unseres berechtigten Interesses am Schutz der Seite vor Missbrauch.",
+      "s4Title": "Wie lange wir sie speichern",
+      "s4Body": "Anfragen ohne Auftrag löschen wir nach 12 Monaten. Kundendaten bewahren wir für die Dauer des Vertrags und weitere 11 Jahre für Rechnungen auf, wie es das kroatische Steuerrecht verlangt. Sicherheitsprotokolle löschen wir nach 30 Tagen.",
+      "s5Title": "An wen wir sie weitergeben",
+      "s5Body": "Wir verkaufen Ihre Daten nicht und geben sie nicht für fremde Zwecke weiter. Wir setzen Auftragsverarbeiter für Hosting und E-Mail-Versand ein, die Daten ausschließlich nach unseren Weisungen und innerhalb des Europäischen Wirtschaftsraums verarbeiten — oder auf Basis von Standardvertragsklauseln, falls eine Übermittlung darüber hinaus nötig ist.",
+      "s6Title": "Ihre Rechte",
+      "s6Body": "Sie haben das Recht auf Auskunft, Berichtigung unrichtiger Daten, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Ihre Einwilligung können Sie jederzeit widerrufen, ohne dass die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung berührt wird. Anfragen richten Sie an {email}; wir antworten innerhalb von 30 Tagen.",
+      "s7Title": "Beschwerde bei der Aufsichtsbehörde",
+      "s7Body": "Wenn Sie der Ansicht sind, dass wir Ihre Daten unrechtmäßig verarbeiten, können Sie sich bei der kroatischen Datenschutzbehörde (AZOP), Selska cesta 136, 10000 Zagreb, azop.hr, beschweren.",
+      "s8Title": "Cookies",
+      "s8Body": "Diese Seite verwendet Cookies. Einzelheiten und die Einwilligungsverwaltung finden Sie in der Cookie-Richtlinie.",
+      "s9Title": "Änderungen dieser Erklärung",
+      "s9Body": "Wir aktualisieren diese Erklärung, wenn sich die Verarbeitung ändert. Das Datum der letzten Änderung steht oben auf der Seite."
+    },
+    "cookiePolicy": {
+      "title": "Cookie-Richtlinie",
+      "intro": "Cookies sind kleine Dateien, die eine Seite in Ihrem Browser ablegt. Hier steht, welche wir einsetzen, wozu sie dienen und wie Sie Ihre Auswahl ändern.",
+      "s1Title": "Ihre Auswahl",
+      "s1Body": "Beim ersten Besuch wählen Sie, welche Kategorien Sie erlauben. Sie ändern das jederzeit über die Schaltfläche unten oder den Link „Cookie-Einstellungen“ im Fußbereich.",
+      "s2Title": "Kategorien",
+      "s2Body": "Notwendige Cookies sind immer aktiv, weil die Seite ohne sie nicht funktioniert. Analytics und Marketing schalten Sie selbst frei.",
+      "s3Title": "Cookies, die wir einsetzen",
+      "s3Body": "Diese Liste wird aktualisiert, sobald wir ein Werkzeug hinzufügen oder entfernen.",
+      "s4Title": "Steuerung über den Browser",
+      "s4Body": "Sie können Cookies auch in den Browsereinstellungen löschen und blockieren. Wenn Sie alle Cookies blockieren, funktionieren Teile der Seite nicht mehr richtig — etwa das Merken Ihrer Sprache.",
+      "openSettings": "Cookie-Einstellungen öffnen"
+    }
+  },
+  "notFound": {
+    "eyebrow": "404 — nicht hier",
+    "title": "Diese Seite hat sich in Tinte gehüllt",
+    "body": "Oktopusse sind berüchtigte Ausbrecher — sie passen durch eine Lücke von der Größe ihres eigenen Auges. Unserer ist offenbar durch die Adresszeile entkommen. Der Link ist vermutlich veraltet, oder die Adresse enthält einen Tippfehler.",
+    "home": "Zurück zur Startseite",
+    "services": "Leistungen ansehen",
+    "contact": "Kontakt aufnehmen",
+    "hint": "Wenn Sie ein Link auf unserer eigenen Seite hierher geschickt hat, sagen Sie uns Bescheid — wir reparieren das."
+  },
+  "error": {
+    "eyebrow": "500 — unser Fehler",
+    "title": "Acht Arme, und trotzdem etwas fallen gelassen",
+    "body": "Das liegt an uns, nicht an Ihnen, und es ist bereits protokolliert. Ein Neuladen der Seite genügt meistens.",
+    "retry": "Erneut versuchen",
+    "home": "Zurück zur Startseite",
+    "hint": "Wenn es weiter auftritt, schicken Sie uns den Code unten an {email} und wir sehen nach.",
+    "reference": "Fehlercode"
+  }
+}

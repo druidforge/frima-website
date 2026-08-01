@@ -1,0 +1,343 @@
+{
+  "common": {
+    "brand": "OKTOPOD",
+    "skipToContent": "Prijeđi na sadržaj",
+    "menu": "Izbornik",
+    "close": "Zatvori",
+    "language": "Jezik",
+    "backToTop": "Natrag na vrh",
+    "readMore": "Saznaj više",
+    "from": "Od",
+    "weeks": "{count, plural, one {# tjedan} few {# tjedna} other {# tjedana}}",
+    "loading": "Učitavanje"
+  },
+  "nav": {
+    "home": "Početna",
+    "services": "Usluge",
+    "about": "O nama",
+    "contact": "Kontakt",
+    "startProject": "Pokreni projekt"
+  },
+  "meta": {
+    "home": {
+      "title": "Digitalni studio u Splitu",
+      "description": "Oktopod je digitalni studio iz Splita. Radimo web stranice, web i mobilne aplikacije, digitalne pozivnice, vizitke i letke."
+    },
+    "services": {
+      "title": "Usluge",
+      "description": "Šest područja rada: web stranice, web aplikacije, mobilne aplikacije, digitalne pozivnice za vjenčanje, dizajn vizitki i dizajn letaka."
+    },
+    "about": {
+      "title": "O nama",
+      "description": "Mali studio u Splitu. Šest područja rada, jedan tim, jasan proces."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Recite nam što gradite. Javljamo se u roku od jednog radnog dana."
+    },
+    "privacy": {
+      "title": "Politika privatnosti",
+      "description": "Kako prikupljamo, koristimo i štitimo vaše osobne podatke u skladu s GDPR-om."
+    },
+    "cookies": {
+      "title": "Politika kolačića",
+      "description": "Koje kolačiće koristimo, zašto ih koristimo i kako njima upravljate."
+    }
+  },
+  "home": {
+    "heroEyebrow": "Digitalni studio — Split, Hrvatska",
+    "heroTitle": "Svaka ruka misli za sebe",
+    "heroLead": "Hobotnica drži dvije trećine neurona u rukama. Svaka ruka rješava svoj problem, a životinja se kreće kao jedno. Tako radimo i mi: šest zanata, jedan tim.",
+    "heroPrimary": "Pokreni projekt",
+    "heroSecondary": "Pogledaj usluge",
+    "heroScroll": "Listaj",
+    "thesisTitle": "Šest ruku, jedan organizam",
+    "thesisBody": "Ne prosljeđujemo posao dalje. Isti ljudi koji crtaju sučelje pišu i kod koji ga pokreće, pa se odluke ne gube između faza.",
+    "servicesTitle": "Što radimo",
+    "servicesLead": "Svaka ruka pokriva jedno područje. Većina projekata koristi dvije ili tri.",
+    "servicesCta": "Sve usluge",
+    "processTitle": "Kako radimo",
+    "processLead": "Četiri koraka. Redoslijed je stvaran — svaki korak ovisi o prethodnom.",
+    "process": {
+      "step1Title": "Razgovor",
+      "step1Body": "Sat vremena o tome što gradite i za koga. Bez ponude prije nego shvatimo problem.",
+      "step2Title": "Nacrt",
+      "step2Body": "Struktura, sadržaj i opseg na papiru. Ovdje se dogovara cijena i rok.",
+      "step3Title": "Izrada",
+      "step3Body": "Dizajn i kod idu paralelno. Vidite napredak na živoj verziji svakog tjedna.",
+      "step4Title": "Predaja",
+      "step4Body": "Objava, mjerenje i obuka. Ostavljamo dokumentaciju i pristup svemu."
+    },
+    "statsTitle": "Brojke",
+    "stats": {
+      "projects": "Isporučenih projekata",
+      "years": "Godina rada",
+      "clients": "Klijenata koji se vraćaju",
+      "response": "Prosječan odgovor"
+    },
+    "responseValue": "< 1 dan",
+    "ctaTitle": "Imate projekt na umu?",
+    "ctaBody": "Pošaljite nekoliko rečenica o tome što vam treba. Odgovaramo u roku od jednog radnog dana, i to konkretno.",
+    "ctaButton": "Javite nam se"
+  },
+  "services": {
+    "indexTitle": "Usluge",
+    "indexLead": "Šest područja rada. Cijene su početne i ovise o opsegu — točan iznos dolazi nakon razgovora.",
+    "fromLabel": "Od",
+    "timelineLabel": "Trajanje",
+    "weeksSuffix": "tj.",
+    "includedTitle": "Što je uključeno",
+    "processTitle": "Kako to izgleda",
+    "otherTitle": "Ostale usluge",
+    "ctaTitle": "Zanima vas ova usluga?",
+    "ctaBody": "Recite nam nekoliko detalja i dobit ćete konkretnu ponudu, ne generički cjenik.",
+    "items": {
+      "websites": {
+        "name": "Izrada web stranica",
+        "short": "Brze, čitljive stranice koje Google razumije.",
+        "description": "Predstavljačke stranice za tvrtke, obrte i restorane. Radimo strukturu, tekst, dizajn i kod. Stranica se učitava brzo, dobro izgleda na mobitelu i spremna je za pretraživače na dan objave.",
+        "included": [
+          "Struktura stranica i SEO plan",
+          "Dizajn prilagođen vašoj djelatnosti",
+          "Sustav za samostalno uređivanje sadržaja",
+          "Višejezičnost ako vam treba",
+          "Mjerenje posjeta i osnovna analitika",
+          "Obuka i dokumentacija"
+        ]
+      },
+      "webApps": {
+        "name": "Web aplikacije",
+        "short": "Alati koji rade posao, ne samo prikazuju sadržaj.",
+        "description": "Rezervacijski sustavi, interni alati, portali za klijente, nadzorne ploče. Gradimo na Next.js-u i PostgreSQL-u, s pravim korisničkim računima, ulogama i revizijskim tragom.",
+        "included": [
+          "Analiza tijeka rada i podataka",
+          "Prijava, uloge i dozvole",
+          "Baza podataka i API",
+          "Integracije s postojećim sustavima",
+          "Automatsko testiranje ključnih tokova",
+          "Postavljanje i nadzor u produkciji"
+        ]
+      },
+      "mobileApps": {
+        "name": "Mobilne aplikacije",
+        "short": "Jedna baza koda za iOS i Android.",
+        "description": "Aplikacije u React Nativeu, objavljene na App Storeu i Google Playu. Radimo i offline rad, push obavijesti i plaćanja unutar aplikacije kad su potrebni.",
+        "included": [
+          "Dizajn sučelja za obje platforme",
+          "Rad bez interneta i sinkronizacija",
+          "Push obavijesti",
+          "Objava na App Store i Google Play",
+          "Analitika i praćenje grešaka",
+          "Podrška kod ažuriranja platformi"
+        ]
+      },
+      "weddingInvites": {
+        "name": "Digitalne pozivnice za vjenčanje",
+        "short": "Pozivnica koja živi na linku, s potvrdom dolaska.",
+        "description": "Osobna stranica za vaše vjenčanje: priča, raspored dana, karta, potvrda dolaska i popis želja. Gosti otvaraju link, vi u svakom trenutku vidite tko dolazi.",
+        "included": [
+          "Dizajn prema vašoj temi i bojama",
+          "Potvrda dolaska s popisom gostiju",
+          "Raspored dana i karta lokacije",
+          "Galerija fotografija",
+          "Vlastita domena po želji",
+          "Hrvatski i još jedan jezik"
+        ]
+      },
+      "businessCards": {
+        "name": "Dizajn vizitki",
+        "short": "Vizitka koja preživi ladicu.",
+        "description": "Dizajn vizitke s pripremom za tisak. Radimo tipografiju, papir i doradu — reljef, folija, obrezani rub. Dajemo datoteke spremne za bilo koju tiskaru.",
+        "included": [
+          "Dva različita smjera dizajna",
+          "Priprema za tisak (PDF/X, CMYK)",
+          "Preporuka papira i dorade",
+          "Digitalna verzija za potpis u e-pošti",
+          "Dva kruga izmjena",
+          "Izvorne datoteke u vlasništvu"
+        ]
+      },
+      "flyers": {
+        "name": "Dizajn letaka",
+        "short": "Jedna poruka, jasno postavljena.",
+        "description": "Letci, plakati i brošure za događaje, ponude i otvorenja. Postavljamo hijerarhiju tako da se glavna poruka pročita s tri metra, a detalji izbliza.",
+        "included": [
+          "Koncept i tekst ako treba",
+          "Format po izboru (A6 do A3)",
+          "Priprema za tisak i za web",
+          "Verzija za društvene mreže",
+          "Dva kruga izmjena",
+          "Izvorne datoteke u vlasništvu"
+        ]
+      }
+    }
+  },
+  "about": {
+    "title": "Mali studio u Splitu",
+    "lead": "Radimo od 2019. Dovoljno mali da s nama razgovarate izravno, dovoljno iskusni da znamo gdje projekti zapinju.",
+    "storyTitle": "Zašto hobotnica",
+    "storyBody": "Hobotnica ima oko petsto milijuna neurona, a dvije trećine ih nije u glavi nego u rukama. Ruka sama prepozna školjku i otvori je bez naredbe odozgo. Uzeli smo to za način rada: onaj tko radi na dijelu projekta odlučuje o njemu, a ne čeka odobrenje kroz tri razine.",
+    "valuesTitle": "Kako radimo",
+    "values": {
+      "directTitle": "Bez posrednika",
+      "directBody": "Razgovarate s ljudima koji rade na vašem projektu. Nema voditelja koji prenosi poruke.",
+      "ownTitle": "Vaše je vaše",
+      "ownBody": "Kod, dizajn i domena su u vašem vlasništvu od prvog dana. Nema zaključavanja kod nas.",
+      "plainTitle": "Bez naplaćivanja nejasnoća",
+      "plainBody": "Opseg i cijena se dogovore prije početka. Ako se opseg mijenja, javimo prije nego što radimo."
+    },
+    "locationTitle": "Gdje smo",
+    "locationBody": "Split, Hrvatska. Radimo s klijentima u Hrvatskoj, Njemačkoj i Austriji — sastanci uživo u Splitu, ostalo online.",
+    "ctaTitle": "Radije razgovor nego formular?",
+    "ctaBody": "Nazovite ili pišite. Odgovaramo isti ili sljedeći radni dan."
+  },
+  "contact": {
+    "title": "Recite nam što gradite",
+    "lead": "Nekoliko rečenica je dovoljno za početak. Javljamo se u roku od jednog radnog dana.",
+    "formTitle": "Pošaljite upit",
+    "name": "Ime i prezime",
+    "namePlaceholder": "Ana Anić",
+    "email": "E-pošta",
+    "emailPlaceholder": "ana@tvrtka.hr",
+    "company": "Tvrtka",
+    "companyOptional": "nije obavezno",
+    "companyPlaceholder": "Naziv tvrtke ili obrta",
+    "service": "Što vas zanima",
+    "servicePlaceholder": "Odaberite uslugu",
+    "serviceOther": "Nešto drugo",
+    "budget": "Okvirni budžet",
+    "budgetPlaceholder": "Odaberite raspon",
+    "budgetUndecided": "Još ne znam",
+    "message": "O projektu",
+    "messagePlaceholder": "Što gradite, za koga i do kada vam treba.",
+    "consent": "Pročitao/la sam <link>politiku privatnosti</link> i pristajem da se moji podaci koriste za odgovor na ovaj upit.",
+    "submit": "Pošalji upit",
+    "submitting": "Šaljem…",
+    "successTitle": "Upit je poslan",
+    "successBody": "Javljamo se na {email} u roku od jednog radnog dana.",
+    "successAgain": "Pošalji još jedan upit",
+    "errorTitle": "Upit nije poslan",
+    "errorGeneric": "Nešto je pošlo po zlu na našoj strani. Pokušajte ponovno ili pišite izravno na {email}.",
+    "errorRateLimit": "Poslali ste previše upita. Pokušajte ponovno za nekoliko minuta.",
+    "required": "obavezno",
+    "validation": {
+      "nameShort": "Upišite ime, barem dva znaka.",
+      "nameLong": "Ime je predugo.",
+      "emailInvalid": "Provjerite e-poštu — nedostaje @ ili domena.",
+      "messageShort": "Napišite barem nekoliko riječi o projektu.",
+      "messageLong": "Poruka je preduga. Skratite na 2000 znakova.",
+      "consentRequired": "Trebamo vaš pristanak da bismo odgovorili na upit.",
+      "serviceInvalid": "Odaberite jednu od ponuđenih usluga."
+    },
+    "directTitle": "Izravno",
+    "emailLabel": "E-pošta",
+    "phoneLabel": "Telefon",
+    "addressLabel": "Adresa",
+    "hoursLabel": "Radno vrijeme",
+    "hoursValue": "Pon–Pet, 9–17",
+    "budgets": {
+      "under1k": "do 1.000 €",
+      "1kTo5k": "1.000 – 5.000 €",
+      "5kTo15k": "5.000 – 15.000 €",
+      "over15k": "preko 15.000 €"
+    }
+  },
+  "footer": {
+    "tagline": "Digitalni studio u Splitu. Šest zanata, jedan tim.",
+    "servicesTitle": "Usluge",
+    "studioTitle": "Studio",
+    "legalTitle": "Pravno",
+    "contactTitle": "Kontakt",
+    "privacy": "Politika privatnosti",
+    "cookies": "Politika kolačića",
+    "cookieSettings": "Postavke kolačića",
+    "rights": "Sva prava pridržana.",
+    "oib": "OIB",
+    "madeIn": "Rađeno u Splitu"
+  },
+  "cookies": {
+    "bannerTitle": "Kolačići",
+    "bannerBody": "Nužni kolačići drže stranicu u funkciji. Za analitiku trebamo vaš pristanak. Možete ga povući u svakom trenutku.",
+    "acceptAll": "Prihvati sve",
+    "rejectAll": "Samo nužni",
+    "manage": "Postavke",
+    "prefTitle": "Postavke kolačića",
+    "prefDescription": "Odaberite koje kategorije dopuštate. Nužni kolačići se ne mogu isključiti jer bez njih stranica ne radi.",
+    "prefSave": "Spremi izbor",
+    "prefAcceptAll": "Prihvati sve",
+    "prefRejectAll": "Odbij sve osim nužnih",
+    "prefClose": "Zatvori",
+    "necessaryTitle": "Nužni kolačići",
+    "necessaryBody": "Pamte odabrani jezik i vaš izbor kolačića, te štite obrazac od zloupotrebe. Bez njih stranica ne radi ispravno.",
+    "analyticsTitle": "Analitika",
+    "analyticsBody": "Broje posjete i pokazuju koje stranice ljudi čitaju. Podaci su skupni i ne koriste se za prepoznavanje pojedinca.",
+    "marketingTitle": "Marketing",
+    "marketingBody": "Mjere uspješnost oglasa i omogućuju prikaz relevantnijih oglasa na drugim stranicama. Trenutno ih ne koristimo.",
+    "tableName": "Naziv",
+    "tableDomain": "Domena",
+    "tableExpiration": "Trajanje",
+    "tableDescription": "Opis",
+    "session": "Sesija",
+    "ccCookie": "Pamti koje ste kategorije kolačića dopustili.",
+    "localeCookie": "Pamti jezik koji ste odabrali.",
+    "analyticsId": "Razlikuje posjetitelje u skupnoj statistici, bez imena i e-adrese.",
+    "analyticsSession": "Grupira preglede stranica unutar jednog posjeta."
+  },
+  "legal": {
+    "lastUpdated": "Zadnja izmjena",
+    "tocTitle": "Sadržaj",
+    "privacy": {
+      "title": "Politika privatnosti",
+      "intro": "Ova politika objašnjava koje osobne podatke prikuplja {legalName}, zašto ih prikuplja i koja prava imate prema Općoj uredbi o zaštiti podataka (GDPR).",
+      "s1Title": "Voditelj obrade",
+      "s1Body": "Voditelj obrade je {legalName}, {street}, {postalCode} {city}, Hrvatska, OIB {oib}. Za sva pitanja o zaštiti podataka pišite na {email}.",
+      "s2Title": "Koje podatke prikupljamo",
+      "s2Body": "Prikupljamo samo podatke koje nam sami pošaljete putem obrasca za kontakt: ime i prezime, e-adresu, opcionalno naziv tvrtke, odabranu uslugu, okvirni budžet i tekst poruke. Uz to bilježimo tehničke podatke nužne za sigurnost — IP adresu i vrijeme slanja obrasca.",
+      "s3Title": "Zašto ih obrađujemo",
+      "s3Body": "Podatke iz obrasca obrađujemo kako bismo odgovorili na vaš upit i pripremili ponudu. Pravna osnova je vaš pristanak, odnosno poduzimanje radnji na vaš zahtjev prije sklapanja ugovora. Tehničke podatke obrađujemo na temelju legitimnog interesa zaštite stranice od zloupotrebe.",
+      "s4Title": "Koliko dugo ih čuvamo",
+      "s4Body": "Upite koji ne završe suradnjom brišemo nakon 12 mjeseci. Podatke klijenata čuvamo koliko traje ugovorni odnos i dodatnih 11 godina za račune, koliko nalažu hrvatski porezni propisi. Sigurnosne zapise brišemo nakon 30 dana.",
+      "s5Title": "S kim ih dijelimo",
+      "s5Body": "Podatke ne prodajemo i ne ustupamo trećima za njihove svrhe. Koristimo izvršitelje obrade za smještaj stranice i slanje e-pošte, koji podatke obrađuju isključivo po našim uputama i unutar Europskog gospodarskog prostora, ili uz standardne ugovorne klauzule ako je prijenos izvan njega nužan.",
+      "s6Title": "Vaša prava",
+      "s6Body": "Imate pravo na pristup svojim podacima, ispravak netočnih podataka, brisanje, ograničenje obrade, prenosivost i prigovor na obradu. Pristanak možete povući u svakom trenutku, bez utjecaja na zakonitost obrade prije povlačenja. Zahtjev šaljete na {email} i odgovaramo u roku od 30 dana.",
+      "s7Title": "Pritužba nadzornom tijelu",
+      "s7Body": "Ako smatrate da obrađujemo vaše podatke protivno propisima, možete podnijeti pritužbu Agenciji za zaštitu osobnih podataka (AZOP), Selska cesta 136, 10000 Zagreb, azop.hr.",
+      "s8Title": "Kolačići",
+      "s8Body": "Stranica koristi kolačiće. Detalje i način upravljanja pristankom pronađite u politici kolačića.",
+      "s9Title": "Izmjene politike",
+      "s9Body": "Politiku mijenjamo kad se promijeni način obrade. Datum zadnje izmjene naveden je na vrhu stranice."
+    },
+    "cookiePolicy": {
+      "title": "Politika kolačića",
+      "intro": "Kolačići su male datoteke koje stranica sprema u vaš preglednik. Ovdje piše koje koristimo, čemu služe i kako mijenjate svoj izbor.",
+      "s1Title": "Vaš izbor",
+      "s1Body": "Pri prvom posjetu birate koje kategorije dopuštate. Izbor mijenjate u svakom trenutku putem gumba ispod ili poveznice „Postavke kolačića” u podnožju stranice.",
+      "s2Title": "Kategorije",
+      "s2Body": "Nužni kolačići uvijek su uključeni jer bez njih stranica ne radi. Analitiku i marketing uključujete sami.",
+      "s3Title": "Kolačići koje koristimo",
+      "s3Body": "Popis se ažurira kad dodamo ili uklonimo alat.",
+      "s4Title": "Upravljanje putem preglednika",
+      "s4Body": "Kolačiće možete brisati i blokirati i u postavkama preglednika. Ako blokirate sve kolačiće, dio stranice neće raditi ispravno — primjerice pamćenje odabranog jezika.",
+      "openSettings": "Otvori postavke kolačića"
+    }
+  },
+  "notFound": {
+    "eyebrow": "404 — nema je",
+    "title": "Ova stranica je ispustila tintu i nestala",
+    "body": "Hobotnice su poznati bjegunci: znaju se izvući kroz otvor veličine vlastitog oka. Naša je očito pobjegla kroz adresnu traku. Poveznica je vjerojatno zastarjela ili u adresi ima tipfeler.",
+    "home": "Natrag na početnu",
+    "services": "Pogledaj usluge",
+    "contact": "Javite nam se",
+    "hint": "Ako ste ovdje završili s poveznice na našoj stranici, recite nam — popravit ćemo."
+  },
+  "error": {
+    "eyebrow": "500 — naša greška",
+    "title": "Osam ruku, i opet nam je nešto ispalo",
+    "body": "Ovo je do nas, ne do vas, i već je zabilježeno. Osvježite stranicu — u većini slučajeva to je dovoljno.",
+    "retry": "Pokušaj ponovno",
+    "home": "Natrag na početnu",
+    "hint": "Ako se ponavlja, pošaljite nam kod ispod na {email} i pogledat ćemo što se dogodilo.",
+    "reference": "Kod greške"
+  }
+}

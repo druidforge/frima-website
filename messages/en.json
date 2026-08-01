@@ -1,0 +1,343 @@
+{
+  "common": {
+    "brand": "OKTOPOD",
+    "skipToContent": "Skip to content",
+    "menu": "Menu",
+    "close": "Close",
+    "language": "Language",
+    "backToTop": "Back to top",
+    "readMore": "Read more",
+    "from": "From",
+    "weeks": "{count, plural, one {# week} other {# weeks}}",
+    "loading": "Loading"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "startProject": "Start a project"
+  },
+  "meta": {
+    "home": {
+      "title": "Digital studio in Split, Croatia",
+      "description": "Oktopod is a digital studio in Split, Croatia. We build websites, web and mobile apps, digital wedding invitations, business cards and flyers."
+    },
+    "services": {
+      "title": "Services",
+      "description": "Six lines of work: websites, web applications, mobile applications, digital wedding invitations, business card design and flyer design."
+    },
+    "about": {
+      "title": "About",
+      "description": "A small studio in Split. Six lines of work, one team, a clear process."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Tell us what you are building. We reply within one working day."
+    },
+    "privacy": {
+      "title": "Privacy policy",
+      "description": "How we collect, use and protect your personal data under the GDPR."
+    },
+    "cookies": {
+      "title": "Cookie policy",
+      "description": "Which cookies we use, why we use them and how you control them."
+    }
+  },
+  "home": {
+    "heroEyebrow": "Digital studio — Split, Croatia",
+    "heroTitle": "Every arm thinks for itself",
+    "heroLead": "An octopus keeps two thirds of its neurons in its arms. Each arm solves its own problem, and the animal still moves as one. We work the same way: six crafts, one team.",
+    "heroPrimary": "Start a project",
+    "heroSecondary": "See services",
+    "heroScroll": "Scroll",
+    "thesisTitle": "Six arms, one organism",
+    "thesisBody": "We do not hand your project down a chain. The people who draw the interface also write the code that runs it, so decisions survive the gap between stages.",
+    "servicesTitle": "What we do",
+    "servicesLead": "Each arm covers one area. Most projects use two or three of them.",
+    "servicesCta": "All services",
+    "processTitle": "How we work",
+    "processLead": "Four steps. The order is real — each one depends on the one before it.",
+    "process": {
+      "step1Title": "Talk",
+      "step1Body": "An hour on what you are building and who it is for. No quote before we understand the problem.",
+      "step2Title": "Plan",
+      "step2Body": "Structure, content and scope on paper. Price and deadline get agreed here.",
+      "step3Title": "Build",
+      "step3Body": "Design and code run in parallel. You see progress on a live version every week.",
+      "step4Title": "Hand over",
+      "step4Body": "Launch, measurement and training. You keep the documentation and access to everything."
+    },
+    "statsTitle": "Numbers",
+    "stats": {
+      "projects": "Projects delivered",
+      "years": "Years working",
+      "clients": "Clients who come back",
+      "response": "Average reply"
+    },
+    "responseValue": "< 1 day",
+    "ctaTitle": "Have a project in mind?",
+    "ctaBody": "Send a few sentences about what you need. We reply within one working day, with something concrete.",
+    "ctaButton": "Get in touch"
+  },
+  "services": {
+    "indexTitle": "Services",
+    "indexLead": "Six lines of work. Prices are starting points and depend on scope — the real number comes after we talk.",
+    "fromLabel": "From",
+    "timelineLabel": "Timeline",
+    "weeksSuffix": "wks",
+    "includedTitle": "What is included",
+    "processTitle": "How it goes",
+    "otherTitle": "Other services",
+    "ctaTitle": "Interested in this service?",
+    "ctaBody": "Give us a few details and you get a real quote, not a generic price list.",
+    "items": {
+      "websites": {
+        "name": "Website design",
+        "short": "Fast, readable sites that search engines understand.",
+        "description": "Marketing sites for companies, trades and restaurants. We handle structure, copy, design and code. The site loads fast, works properly on a phone, and is ready for search engines on launch day.",
+        "included": [
+          "Page structure and SEO plan",
+          "Design shaped around your trade",
+          "A content system you can edit yourself",
+          "Multiple languages if you need them",
+          "Traffic measurement and basic analytics",
+          "Training and documentation"
+        ]
+      },
+      "webApps": {
+        "name": "Web applications",
+        "short": "Tools that do work, not just display content.",
+        "description": "Booking systems, internal tools, client portals, dashboards. We build on Next.js and PostgreSQL, with real accounts, roles and an audit trail.",
+        "included": [
+          "Workflow and data analysis",
+          "Login, roles and permissions",
+          "Database and API",
+          "Integrations with systems you already run",
+          "Automated tests on the critical paths",
+          "Deployment and production monitoring"
+        ]
+      },
+      "mobileApps": {
+        "name": "Mobile applications",
+        "short": "One codebase for iOS and Android.",
+        "description": "Apps in React Native, published to the App Store and Google Play. We add offline use, push notifications and in-app payments when the product calls for them.",
+        "included": [
+          "Interface design for both platforms",
+          "Offline use and syncing",
+          "Push notifications",
+          "App Store and Google Play submission",
+          "Analytics and crash reporting",
+          "Support through platform updates"
+        ]
+      },
+      "weddingInvites": {
+        "name": "Digital wedding invitations",
+        "short": "An invitation that lives on a link, with RSVP built in.",
+        "description": "A personal page for your wedding: your story, the schedule, a map, RSVP and a gift list. Guests open a link, and you see who is coming at any moment.",
+        "included": [
+          "Design built around your theme and colours",
+          "RSVP with a live guest list",
+          "Day schedule and venue map",
+          "Photo gallery",
+          "Your own domain if you want one",
+          "Two languages"
+        ]
+      },
+      "businessCards": {
+        "name": "Business card design",
+        "short": "A card that survives the drawer.",
+        "description": "Card design with print-ready artwork. We work the typography, the stock and the finish — emboss, foil, painted edge. You get files any printer can use.",
+        "included": [
+          "Two distinct design directions",
+          "Print-ready artwork (PDF/X, CMYK)",
+          "Paper stock and finish recommendation",
+          "A digital version for your email signature",
+          "Two rounds of revisions",
+          "Source files, yours to keep"
+        ]
+      },
+      "flyers": {
+        "name": "Flyer design",
+        "short": "One message, clearly placed.",
+        "description": "Flyers, posters and brochures for events, offers and openings. We set the hierarchy so the main message reads from three metres away and the detail reads up close.",
+        "included": [
+          "Concept and copy if you need it",
+          "Any format from A6 to A3",
+          "Artwork for print and for web",
+          "A social media version",
+          "Two rounds of revisions",
+          "Source files, yours to keep"
+        ]
+      }
+    }
+  },
+  "about": {
+    "title": "A small studio in Split",
+    "lead": "Working since 2019. Small enough that you talk to us directly, experienced enough to know where projects get stuck.",
+    "storyTitle": "Why an octopus",
+    "storyBody": "An octopus has around five hundred million neurons, and two thirds of them sit in its arms rather than its head. An arm recognises a shell and opens it without an order from above. We took that as a way of working: whoever builds a part of the project decides on it, instead of waiting for approval through three levels.",
+    "valuesTitle": "How we work",
+    "values": {
+      "directTitle": "No middle layer",
+      "directBody": "You talk to the people working on your project. There is no manager relaying messages.",
+      "ownTitle": "What is yours stays yours",
+      "ownBody": "Code, design and domain are in your name from day one. Nothing is locked to us.",
+      "plainTitle": "No billing for vagueness",
+      "plainBody": "Scope and price are agreed before we start. If the scope changes, we tell you before we build."
+    },
+    "locationTitle": "Where we are",
+    "locationBody": "Split, Croatia. We work with clients in Croatia, Germany and Austria — meetings in person in Split, everything else online.",
+    "ctaTitle": "Prefer a conversation over a form?",
+    "ctaBody": "Call or write. We reply the same or the next working day."
+  },
+  "contact": {
+    "title": "Tell us what you are building",
+    "lead": "A few sentences is enough to start. We reply within one working day.",
+    "formTitle": "Send an enquiry",
+    "name": "Full name",
+    "namePlaceholder": "Ana Anić",
+    "email": "Email",
+    "emailPlaceholder": "ana@company.com",
+    "company": "Company",
+    "companyOptional": "optional",
+    "companyPlaceholder": "Company or trade name",
+    "service": "What you need",
+    "servicePlaceholder": "Choose a service",
+    "serviceOther": "Something else",
+    "budget": "Rough budget",
+    "budgetPlaceholder": "Choose a range",
+    "budgetUndecided": "Not sure yet",
+    "message": "About the project",
+    "messagePlaceholder": "What you are building, who it is for, and when you need it.",
+    "consent": "I have read the <link>privacy policy</link> and agree that my data may be used to answer this enquiry.",
+    "submit": "Send enquiry",
+    "submitting": "Sending…",
+    "successTitle": "Enquiry sent",
+    "successBody": "We will reply to {email} within one working day.",
+    "successAgain": "Send another enquiry",
+    "errorTitle": "Enquiry not sent",
+    "errorGeneric": "Something broke on our side. Try again, or write directly to {email}.",
+    "errorRateLimit": "That is a lot of enquiries. Try again in a few minutes.",
+    "required": "required",
+    "validation": {
+      "nameShort": "Enter your name, at least two characters.",
+      "nameLong": "That name is too long.",
+      "emailInvalid": "Check the email — the @ or the domain is missing.",
+      "messageShort": "Write at least a few words about the project.",
+      "messageLong": "That message is too long. Trim it to 2000 characters.",
+      "consentRequired": "We need your consent before we can reply.",
+      "serviceInvalid": "Pick one of the listed services."
+    },
+    "directTitle": "Direct",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "addressLabel": "Address",
+    "hoursLabel": "Hours",
+    "hoursValue": "Mon–Fri, 9–17 CET",
+    "budgets": {
+      "under1k": "under €1,000",
+      "1kTo5k": "€1,000 – €5,000",
+      "5kTo15k": "€5,000 – €15,000",
+      "over15k": "over €15,000"
+    }
+  },
+  "footer": {
+    "tagline": "Digital studio in Split. Six crafts, one team.",
+    "servicesTitle": "Services",
+    "studioTitle": "Studio",
+    "legalTitle": "Legal",
+    "contactTitle": "Contact",
+    "privacy": "Privacy policy",
+    "cookies": "Cookie policy",
+    "cookieSettings": "Cookie settings",
+    "rights": "All rights reserved.",
+    "oib": "VAT ID",
+    "madeIn": "Made in Split"
+  },
+  "cookies": {
+    "bannerTitle": "Cookies",
+    "bannerBody": "Necessary cookies keep the site working. Analytics need your consent. You can withdraw it at any time.",
+    "acceptAll": "Accept all",
+    "rejectAll": "Necessary only",
+    "manage": "Settings",
+    "prefTitle": "Cookie settings",
+    "prefDescription": "Choose which categories you allow. Necessary cookies cannot be switched off, because the site does not work without them.",
+    "prefSave": "Save choice",
+    "prefAcceptAll": "Accept all",
+    "prefRejectAll": "Reject all but necessary",
+    "prefClose": "Close",
+    "necessaryTitle": "Necessary cookies",
+    "necessaryBody": "They remember your language and your cookie choice, and protect the contact form from abuse. The site does not work correctly without them.",
+    "analyticsTitle": "Analytics",
+    "analyticsBody": "They count visits and show which pages people read. The data is aggregated and is not used to identify individuals.",
+    "marketingTitle": "Marketing",
+    "marketingBody": "They measure advertising performance and allow more relevant ads on other sites. We do not use any at the moment.",
+    "tableName": "Name",
+    "tableDomain": "Domain",
+    "tableExpiration": "Duration",
+    "tableDescription": "Description",
+    "session": "Session",
+    "ccCookie": "Remembers which cookie categories you allowed.",
+    "localeCookie": "Remembers the language you selected.",
+    "analyticsId": "Distinguishes visitors in aggregate statistics, without name or email.",
+    "analyticsSession": "Groups page views within a single visit."
+  },
+  "legal": {
+    "lastUpdated": "Last updated",
+    "tocTitle": "Contents",
+    "privacy": {
+      "title": "Privacy policy",
+      "intro": "This policy explains which personal data {legalName} collects, why it collects it, and what rights you have under the General Data Protection Regulation (GDPR).",
+      "s1Title": "Data controller",
+      "s1Body": "The controller is {legalName}, {street}, {postalCode} {city}, Croatia, VAT ID {oib}. For any data protection question write to {email}.",
+      "s2Title": "What we collect",
+      "s2Body": "We collect only what you send through the contact form: your name, email address, optionally a company name, the service you selected, a rough budget and your message. We also record technical data needed for security — your IP address and the time the form was submitted.",
+      "s3Title": "Why we process it",
+      "s3Body": "We process form data to answer your enquiry and prepare a quote. The legal basis is your consent, and taking steps at your request before entering a contract. Technical data is processed on the basis of our legitimate interest in protecting the site from abuse.",
+      "s4Title": "How long we keep it",
+      "s4Body": "Enquiries that do not lead to work are deleted after 12 months. Client data is kept for the duration of the contract and a further 11 years for invoices, as required by Croatian tax law. Security logs are deleted after 30 days.",
+      "s5Title": "Who we share it with",
+      "s5Body": "We do not sell your data or pass it to third parties for their own purposes. We use processors for hosting and email delivery, who process data only on our instructions and within the European Economic Area, or under standard contractual clauses where a transfer outside it is necessary.",
+      "s6Title": "Your rights",
+      "s6Body": "You have the right to access your data, correct inaccurate data, have it deleted, restrict processing, receive it in a portable format, and object to processing. You can withdraw consent at any time, without affecting the lawfulness of processing before withdrawal. Send requests to {email} and we respond within 30 days.",
+      "s7Title": "Complaint to the supervisory authority",
+      "s7Body": "If you believe we process your data unlawfully, you can complain to the Croatian Personal Data Protection Agency (AZOP), Selska cesta 136, 10000 Zagreb, azop.hr.",
+      "s8Title": "Cookies",
+      "s8Body": "This site uses cookies. Details and consent controls are in the cookie policy.",
+      "s9Title": "Changes to this policy",
+      "s9Body": "We update this policy when the way we process data changes. The date of the last change is shown at the top of the page."
+    },
+    "cookiePolicy": {
+      "title": "Cookie policy",
+      "intro": "Cookies are small files a site stores in your browser. This page lists which ones we use, what they do, and how you change your choice.",
+      "s1Title": "Your choice",
+      "s1Body": "On your first visit you choose which categories to allow. You can change that at any time using the button below or the “Cookie settings” link in the footer.",
+      "s2Title": "Categories",
+      "s2Body": "Necessary cookies are always on, because the site does not work without them. Analytics and marketing are yours to switch on.",
+      "s3Title": "Cookies we use",
+      "s3Body": "This list is updated whenever we add or remove a tool.",
+      "s4Title": "Managing cookies in your browser",
+      "s4Body": "You can also delete and block cookies in your browser settings. If you block all cookies, parts of the site will stop working correctly — remembering your language, for instance.",
+      "openSettings": "Open cookie settings"
+    }
+  },
+  "notFound": {
+    "eyebrow": "404 — not here",
+    "title": "This page inked and vanished",
+    "body": "Octopuses are famous escape artists — they can squeeze through a gap the size of their own eye. Ours appears to have got out through the address bar. The link is probably out of date, or the address has a typo in it.",
+    "home": "Back to home",
+    "services": "See services",
+    "contact": "Get in touch",
+    "hint": "If a link on our own site sent you here, tell us and we will fix it."
+  },
+  "error": {
+    "eyebrow": "500 — our fault",
+    "title": "Eight arms, and we still dropped something",
+    "body": "This one is on us, not on you, and it has already been logged. Refreshing the page usually sorts it.",
+    "retry": "Try again",
+    "home": "Back to home",
+    "hint": "If it keeps happening, send us the code below at {email} and we will look into it.",
+    "reference": "Error code"
+  }
+}

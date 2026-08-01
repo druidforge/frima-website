@@ -1,0 +1,123 @@
+import Image from "next/image";
+import Link from "next/link";
+import {
+  Bricolage_Grotesque,
+  Instrument_Sans,
+  JetBrains_Mono,
+} from "next/font/google";
+
+import "./globals.css";
+
+const bricolage = Bricolage_Grotesque({
+  variable: "--font-bricolage",
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
+  axes: ["opsz", "wdth"],
+});
+
+const instrument = Instrument_Sans({
+  variable: "--font-instrument",
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
+});
+
+const jetbrains = JetBrains_Mono({
+  variable: "--font-jetbrains",
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
+  weight: ["400", "500"],
+});
+
+/**
+ * 404 for requests that never resolved to a locale at all.
+ *
+ * This renders its own document: it sits outside `app/[locale]`, so there is no
+ * layout, no chrome and - the part that shapes the design - no translations,
+ * because no language was ever established. Guessing one would be worse than
+ * admitting it, so rather than choosing for the visitor the page offers all
+ * three doorways and says the same thing in each.
+ *
+ * Everything here is static: no canvas, no client JS. Someone who has already
+ * hit a dead end should not wait on a bundle to be told so.
+ */
+const doors = [
+  {
+    locale: "hr",
+    language: "Hrvatski",
+    line: "Ova stranica je ispustila tintu i nestala.",
+    action: "Na početnu",
+  },
+  {
+    locale: "en",
+    language: "English",
+    line: "This page inked and vanished.",
+    action: "Go home",
+  },
+  {
+    locale: "de",
+    language: "Deutsch",
+    line: "Diese Seite hat sich in Tinte gehüllt.",
+    action: "Zur Startseite",
+  },
+] as const;
+
+export default function RootNotFound() {
+  return (
+    <html
+      lang="hr"
+      className={`${bricolage.variable} ${instrument.variable} ${jetbrains.variable}`}
+    >
+      <body className="flex min-h-dvh flex-col items-center justify-center bg-background px-6 py-16 text-foreground">
+        <main className="w-full max-w-2xl">
+          <Image
+            src="/octopus_silhouette_gradient.svg"
+            alt=""
+            width={64}
+            height={64}
+            priority
+            unoptimized
+          />
+
+          <p className="eyebrow mt-8">404</p>
+          <h1 className="mt-4 font-display text-[clamp(2rem,7vw,3.25rem)] font-bold tracking-[-0.04em]">
+            Page not found
+          </h1>
+          <p className="mt-4 max-w-[46ch] text-ink-soft">
+            Octopuses can squeeze through a gap the size of their own eye. This
+            one got out through the address bar.
+          </p>
+
+          <ul className="mt-10 grid gap-px overflow-clip rounded-md border border-border bg-border">
+            {doors.map((door) => (
+              <li key={door.locale}>
+                <Link
+                  href={`/${door.locale}`}
+                  hrefLang={door.locale}
+                  className="group flex items-center justify-between gap-6 bg-background p-5 transition-colors duration-(--dur-base) ease-out-quint hover:bg-paper"
+                >
+                  <span>
+                    <span className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-ink-faint">
+                      {door.language}
+                    </span>
+                    <span className="mt-1.5 block text-sm text-ink-soft">
+                      {door.line}
+                    </span>
+                  </span>
+                  <span className="flex shrink-0 items-center gap-2 text-sm font-medium">
+                    {door.action}
+                    <span
+                      aria-hidden="true"
+                      className="inline-block transition-transform duration-(--dur-base) ease-out-quint group-hover:translate-x-1"
+                    >
+                      →
+                    </span>
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </main>
+      </body>
+    </html>
+  );
+}

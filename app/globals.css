@@ -1,26 +1,490 @@
 @import "tailwindcss";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
+
+/* ---------------------------------------------------------------------------
+   OKTOPOD design tokens
+
+   Palette is drawn from two real sources: the studio's octopus mark (cyan ->
+   violet) and the material Split is actually built from (Brac limestone).
+   `ink` is never neutral black - it carries a violet undertone, like octopus
+   ink. The gradient is the single accessory: it appears in the chromatophore
+   canvas, the mark, and focus rings. Nowhere else.
+--------------------------------------------------------------------------- */
 
 @theme inline {
+  /* Brand */
+  --color-ink: #16131d;
+  --color-ink-soft: #3b3547;
+  --color-ink-faint: #6d6579;
+  --color-stone: #e9e7e1;
+  --color-stone-deep: #d6d3ca;
+  --color-paper: #f5f4f0;
+  --color-abyss: #2b1b4d;
+  --color-abyss-deep: #1a1030;
+  --color-cyan: #07ebee;
+  --color-violet: #954cfb;
+
+  /* Fluid type scale, 1.25 ratio at the small end opening to 1.333 */
+  --text-eyebrow: 0.75rem;
+  --text-step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --text-step-1: clamp(1.2rem, 1.1rem + 0.5vw, 1.5rem);
+  --text-step-2: clamp(1.45rem, 1.25rem + 1vw, 2.1rem);
+  --text-step-3: clamp(1.85rem, 1.4rem + 2.2vw, 3rem);
+  --text-step-4: clamp(2.3rem, 1.5rem + 4vw, 4.5rem);
+  --text-step-5: clamp(2.9rem, 1.4rem + 7vw, 7.5rem);
+
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+  --font-heading: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+
+  /* ---------------------------------------------------------------------
+     Motion vocabulary.
+
+     Four durations and three curves, used everywhere. A shared vocabulary is
+     what separates "the site moves as one thing" from "every component was
+     animated by a different person". Nothing should invent its own timing.
+
+       swift  - state flips the finger is already on (colour, opacity)
+       base   - the default for hover choreography
+       slow   - travel across distance (drawers, reveals)
+       glacial- ambient, atmospheric, canvas-adjacent
+
+     `out` decelerates (things arriving), `inOut` is symmetric (things moving
+     between two states), `spring` overshoots slightly for anything that should
+     feel physical.
+  --------------------------------------------------------------------- */
+  --dur-swift: 160ms;
+  --dur-base: 280ms;
+  --dur-slow: 480ms;
+  --dur-glacial: 800ms;
+
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* shadcn semantic tokens, remapped onto the brand so its components inherit
+     the identity instead of shipping neutral grey. */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --background: #f5f4f0;
+  --foreground: #16131d;
+  --card: #ffffff;
+  --card-foreground: #16131d;
+  --popover: #ffffff;
+  --popover-foreground: #16131d;
+  --primary: #16131d;
+  --primary-foreground: #f5f4f0;
+  --secondary: #e9e7e1;
+  --secondary-foreground: #16131d;
+  --muted: #e9e7e1;
+  --muted-foreground: #6d6579;
+  --accent: #e9e7e1;
+  --accent-foreground: #16131d;
+  --destructive: #b4243c;
+  --border: #d6d3ca;
+  --input: #d6d3ca;
+  --ring: #954cfb;
+  --radius: 0.25rem;
+}
+
+/* Inverted sections are a composition device, not a user preference. Anything
+   inside `.on-abyss` flips to the deep-violet ground. */
+.on-abyss {
+  --background: #2b1b4d;
+  --foreground: #f5f4f0;
+  --card: #35225e;
+  --card-foreground: #f5f4f0;
+  --popover: #35225e;
+  --popover-foreground: #f5f4f0;
+  --primary: #f5f4f0;
+  --primary-foreground: #16131d;
+  --secondary: #3b2668;
+  --secondary-foreground: #f5f4f0;
+  --muted: #3b2668;
+  --muted-foreground: #b6a9d4;
+  --accent: #3b2668;
+  --accent-foreground: #f5f4f0;
+  --border: color-mix(in oklab, #f5f4f0 18%, transparent);
+  --input: color-mix(in oklab, #f5f4f0 24%, transparent);
+  --ring: #07ebee;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    font-family: var(--font-sans);
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-size: var(--text-step-0);
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Tailwind v4's Preflight dropped the `cursor: pointer` default on buttons,
+     so `<button>` falls back to the UA arrow while `<a href>` keeps the hand.
+     That is why half the controls on the site felt clickable and half did not.
+
+     Restored here rather than per component, so anything added later is
+     covered by default instead of relying on someone remembering a class.
+     Third-party UI benefits too - the cookie modal's buttons and category
+     toggles are plain <button> and <input> elements. */
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  summary,
+  label[for],
+  select,
+  input:where(
+      [type="button"],
+      [type="reset"],
+      [type="submit"],
+      [type="checkbox"],
+      [type="radio"],
+      [type="range"],
+      [type="color"],
+      [type="file"]
+    ):not(:disabled) {
+    cursor: pointer;
+  }
+
+  /* A wrapping label is just as clickable as one tied by `for`. */
+  label:has(input:not([disabled])) {
+    cursor: pointer;
+  }
+
+  /* Unavailable, not merely unstyled - say so rather than showing an arrow. */
+  button:disabled,
+  select:disabled,
+  input:disabled,
+  [aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+
+  /* The gradient earns its keep here: focus is the one place every user sees
+     the brand mechanic, and it needs to be unmissable. */
+  :focus-visible {
+    outline: 2px solid transparent;
+    outline-offset: 3px;
+    border-radius: 2px;
+    box-shadow:
+      0 0 0 2px var(--background),
+      0 0 0 4px var(--color-cyan),
+      0 0 0 6px var(--color-violet);
+  }
+
+  ::selection {
+    background-color: #954cfb;
+    color: #f5f4f0;
+  }
+
+}
+
+/* Scroll lock for the mobile navigation drawer. Unlayered so a height or
+   overflow utility on <html> cannot outrank it: in Tailwind v4 the utilities
+   layer beats base regardless of selector specificity. */
+.scroll-locked {
+  overflow: hidden;
+}
+
+@layer components {
+  .shell {
+    width: 100%;
+    max-width: 88rem;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 5vw, 4.5rem);
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-eyebrow);
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+  }
+
+  /* Reserved for the wordmark and the single hero accent. */
+  .ink-gradient {
+    background-image: linear-gradient(100deg, #07ebee 0%, #954cfb 78%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .rule {
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(
+      to right,
+      var(--border) 0%,
+      var(--border) 70%,
+      transparent 100%
+    );
+  }
+
+  /* --- Interaction vocabulary -------------------------------------------
+     Every hover on the site is built from these four behaviours. Reusing them
+     is what keeps a lot of motion from reading as noise: the visitor learns
+     one grammar and then recognises it everywhere.
+  ---------------------------------------------------------------------- */
+
+  /* Underline wipes in from the left, out to the right - so hovering on and
+     off is a single continuous gesture rather than a symmetric fade. */
+  .link-sweep {
+    position: relative;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 0% 1px;
+    transition: background-size var(--dur-base) var(--ease-out-quint);
+  }
+  .link-sweep:hover,
+  .link-sweep:focus-visible {
+    background-size: 100% 1px;
+  }
+  @media (hover: hover) {
+    .link-sweep:not(:hover) {
+      background-position: 100% 100%;
+    }
+  }
+
+  /* Label rides up and out while its clone rides in. Used in the header, where
+     the nav needs to feel mechanical rather than soft. */
+  .link-swap {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+  }
+  .link-swap > span {
+    display: block;
+    transition: transform var(--dur-slow) var(--ease-out-quint);
+  }
+  .link-swap > span:last-child {
+    position: absolute;
+    inset: 0;
+    transform: translateY(105%);
+  }
+  .link-swap:hover > span:first-child,
+  a:focus-visible .link-swap > span:first-child {
+    transform: translateY(-105%);
+  }
+  .link-swap:hover > span:last-child,
+  a:focus-visible .link-swap > span:last-child {
+    transform: translateY(0);
+  }
+
+  /* Cards rise a little and firm up their border. The shadow is warm-tinted
+     from `ink`, never neutral grey.
+
+     Anything that moves itself on :hover can oscillate. Point at the bottom few
+     pixels of a card, it lifts out from under the cursor, loses :hover, drops
+     back, is under the cursor again - and flickers up and down for as long as
+     the pointer sits in that band.
+
+     The fix is to test hover on a box that never moves. `transform` does not
+     affect layout, so the wrapping <li> keeps its original geometry while the
+     card slides inside it: the pointer stays within the <li> throughout, and
+     the lift holds steady.
+
+     `.card-lift:hover` is kept only as a fallback for any future use outside a
+     list item; the `li` rule is what makes the current cards stable. Scoping to
+     `li` rather than a bare `:hover >` matters - on a grid container that would
+     lift every card at once. */
+  .card-lift {
+    transition:
+      transform var(--dur-base) var(--ease-out-quint),
+      border-color var(--dur-base) var(--ease-out-quint),
+      box-shadow var(--dur-base) var(--ease-out-quint);
+  }
+  li:hover > .card-lift,
+  .card-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px -24px rgb(22 19 29 / 0.45);
+  }
+  li:active > .card-lift,
+  .card-lift:active {
+    transform: translateY(-1px);
+    transition-duration: var(--dur-swift);
+  }
+
+  /* Arrows travel along their own diagonal on hover. */
+  .arrow-travel {
+    transition: transform var(--dur-base) var(--ease-out-quint);
+  }
+  .group:hover .arrow-travel {
+    transform: translate(2px, -2px);
+  }
+
+  /* Primary action. The lift is small on purpose - a button that jumps reads
+     as a toy. */
+  .btn-ink {
+    position: relative;
+    transition:
+      transform var(--dur-base) var(--ease-out-quint),
+      background-color var(--dur-base) var(--ease-out-quint),
+      box-shadow var(--dur-base) var(--ease-out-quint);
+  }
+
+  /* Same oscillation risk as the cards, solved the other way round: buttons are
+     never overflow-clipped, so an invisible strip below the button extends its
+     hit area by slightly more than the lift. Once raised, that strip covers the
+     ground the button just left, so the pointer never falls out of :hover. */
+  .btn-ink::after {
+    content: "";
+    position: absolute;
+    inset: 0 0 -3px 0;
+  }
+
+  .btn-ink:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px -14px rgb(22 19 29 / 0.6);
+  }
+  .btn-ink:active {
+    transform: translateY(0);
+    transition-duration: var(--dur-swift);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Cookie consent, themed onto the brand rather than left on plugin defaults.
+   Accept and reject share one visual weight on purpose - a nudge toward
+   "accept all" is the thing regulators actually pursue. */
+#cc-main {
+  --cc-font-family: var(--font-sans);
+  --cc-bg: #f5f4f0;
+  --cc-primary-color: #16131d;
+  --cc-secondary-color: #6d6579;
+  --cc-btn-primary-bg: #16131d;
+  --cc-btn-primary-color: #f5f4f0;
+  --cc-btn-primary-border-color: #16131d;
+  --cc-btn-primary-hover-bg: #3b3547;
+  --cc-btn-primary-hover-border-color: #3b3547;
+  --cc-btn-primary-hover-color: #f5f4f0;
+  --cc-btn-secondary-bg: transparent;
+  --cc-btn-secondary-color: #16131d;
+  --cc-btn-secondary-border-color: #16131d;
+  --cc-btn-secondary-hover-bg: #e9e7e1;
+  --cc-btn-secondary-hover-border-color: #16131d;
+  --cc-btn-secondary-hover-color: #16131d;
+  --cc-btn-border-radius: 0.25rem;
+  --cc-modal-border-radius: 0.375rem;
+  --cc-link-color: #7434e0;
+  --cc-separator-border-color: #d6d3ca;
+  --cc-cookie-category-block-bg: #e9e7e1;
+  --cc-cookie-category-block-border: #d6d3ca;
+  --cc-cookie-category-block-hover-bg: #ded9d0;
+  --cc-cookie-category-block-hover-border: #c6c2b8;
+  --cc-cookie-category-expanded-block-bg: #f5f4f0;
+  --cc-toggle-on-bg: #7434e0;
+  --cc-toggle-off-bg: #a49daf;
+  --cc-toggle-on-knob-bg: #f5f4f0;
+  --cc-toggle-off-knob-bg: #f5f4f0;
+  --cc-toggle-enabled-icon-color: #f5f4f0;
+  --cc-toggle-disabled-icon-color: #f5f4f0;
+  --cc-footer-bg: #e9e7e1;
+  --cc-footer-color: #6d6579;
+  --cc-footer-border-color: #d6d3ca;
+  --cc-overlay-bg: rgb(22 19 29 / 0.6);
+  --cc-pm-toggle-border-radius: 999px;
 }
+
+#cc-main .cm__title,
+#cc-main .pm__title {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* The plugin toggles each category with `display: none` -> `display: flex`,
+   which no browser can transition. An earlier revision here forced the panel to
+   `display: grid` and animated `grid-template-rows` from 0fr to 1fr instead.
+   That fought a second, unconditional `display: flex` rule the plugin applies
+   to the same element, and the panel ended up permanently open and empty.
+
+   Reverted to the plugin's own show/hide. The expansion is instant, which is
+   how this component ships; the theming and the button and arrow transitions
+   below are ours and still apply. */
+
+#cc-main .pm__section-arrow svg {
+  transition: transform var(--dur-base) var(--ease-out-quint);
+}
+
+#cc-main .pm__btn,
+#cc-main .cm__btn {
+  transition:
+    background-color var(--dur-base) var(--ease-out-quint),
+    border-color var(--dur-base) var(--ease-out-quint),
+    color var(--dur-base) var(--ease-out-quint),
+    transform var(--dur-base) var(--ease-out-quint);
+}
+
+#cc-main .pm__btn:hover,
+#cc-main .cm__btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Animations are unconditional by design.
+
+   Earlier revisions branched on `prefers-reduced-motion` and later added a
+   visitor toggle. Maintaining two paths meant every animated component had a
+   second, far less exercised code path - which is where the bugs lived: two
+   DOM trees for one heading, stale closures in the canvas, viewport observers
+   resetting on remount. One path is the reason those cannot recur.
+
+   The motion here is deliberately small in amplitude: short fades, a few pixels
+   of travel, no autoplaying full-screen movement beyond the ambient canvas. */
+
