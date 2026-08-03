@@ -1,6 +1,6 @@
 {
   "common": {
-    "brand": "OKTOPOD",
+    "brand": "DRUID FORGE",
     "skipToContent": "Zum Inhalt springen",
     "menu": "Menü",
     "close": "Schließen",
@@ -21,7 +21,7 @@
   "meta": {
     "home": {
       "title": "Digitalstudio in Split, Kroatien",
-      "description": "Oktopod ist ein Digitalstudio in Split, Kroatien. Wir bauen Webseiten, Web- und Mobile-Anwendungen, digitale Hochzeitseinladungen, Visitenkarten und Flyer."
+      "description": "Druid Forge ist ein Digitalstudio in Split, Kroatien. Wir bauen Webseiten, Web- und Mobile-Anwendungen, digitale Hochzeitseinladungen, Visitenkarten und Flyer."
     },
     "services": {
       "title": "Leistungen",
@@ -46,15 +46,15 @@
   },
   "home": {
     "heroEyebrow": "Digitalstudio — Split, Kroatien",
-    "heroTitle": "Jeder Arm denkt für sich",
-    "heroLead": "Ein Oktopus trägt zwei Drittel seiner Neuronen in den Armen. Jeder Arm löst sein eigenes Problem, und das Tier bewegt sich trotzdem als eines. So arbeiten wir: sechs Handwerke, ein Team.",
+    "heroTitle": "Hier wird alles geschmiedet",
+    "heroLead": "Eine Schmiede formt jedes Stück mit Hitze und Hammer; eine Fabrik stanzt sie identisch aus. Wir arbeiten auf die erste Art: sechs Handwerke unter einem Dach in Split, und nichts aus dem Regal.",
     "heroPrimary": "Projekt starten",
     "heroSecondary": "Leistungen ansehen",
     "heroScroll": "Scrollen",
-    "thesisTitle": "Sechs Arme, ein Organismus",
+    "thesisTitle": "Sechs Handwerke, eine Schmiede",
     "thesisBody": "Wir reichen Ihr Projekt nicht durch eine Kette weiter. Dieselben Leute, die die Oberfläche zeichnen, schreiben auch den Code dahinter. So gehen Entscheidungen zwischen den Phasen nicht verloren.",
     "servicesTitle": "Was wir machen",
-    "servicesLead": "Jeder Arm deckt einen Bereich ab. Die meisten Projekte brauchen zwei oder drei davon.",
+    "servicesLead": "Jedes Handwerk deckt einen Bereich ab. Die meisten Projekte brauchen zwei oder drei davon.",
     "servicesCta": "Alle Leistungen",
     "processTitle": "Wie wir arbeiten",
     "processLead": "Vier Schritte. Die Reihenfolge ist echt — jeder Schritt baut auf dem vorigen auf.",
@@ -175,8 +175,8 @@
   "about": {
     "title": "Ein kleines Studio in Split",
     "lead": "Seit 2019 im Geschäft. Klein genug, dass Sie direkt mit uns reden, erfahren genug, um zu wissen, wo Projekte hängen bleiben.",
-    "storyTitle": "Warum ein Oktopus",
-    "storyBody": "Ein Oktopus hat rund fünfhundert Millionen Neuronen, und zwei Drittel davon sitzen in den Armen statt im Kopf. Ein Arm erkennt eine Muschel und öffnet sie ohne Befehl von oben. Das haben wir als Arbeitsweise übernommen: Wer an einem Teil des Projekts arbeitet, entscheidet darüber — statt auf Freigaben über drei Ebenen zu warten.",
+    "storyTitle": "Warum eine Schmiede",
+    "storyBody": "Das Wissen eines Druiden steht in keinem Buch. Es entsteht daraus, jahrelang mit demselben lebendigen Material zu arbeiten, bis man weiß, wie es sich verhält, bevor es sich bewegt. Die Schmiede ist die andere Hälfte des Namens: hinein geht rohes Metall, heraus kommt ein Werkzeug für eine bestimmte Hand und kein Teil aus dem Regal. Beides beschreibt unsere Arbeitsweise - wer das Material kennt, entscheidet darüber, statt auf Freigaben über drei Ebenen zu warten.",
     "valuesTitle": "Wie wir arbeiten",
     "values": {
       "directTitle": "Keine Zwischenebene",
@@ -243,7 +243,7 @@
     }
   },
   "footer": {
-    "tagline": "Digitalstudio in Split. Sechs Handwerke, ein Team.",
+    "tagline": "Digitalstudio in Split. Sechs Handwerke, eine Schmiede.",
     "servicesTitle": "Leistungen",
     "studioTitle": "Studio",
     "legalTitle": "Rechtliches",
@@ -324,8 +324,8 @@
   },
   "notFound": {
     "eyebrow": "404 — nicht hier",
-    "title": "Diese Seite hat sich in Tinte gehüllt",
-    "body": "Oktopusse sind berüchtigte Ausbrecher — sie passen durch eine Lücke von der Größe ihres eigenen Auges. Unserer ist offenbar durch die Adresszeile entkommen. Der Link ist vermutlich veraltet, oder die Adresse enthält einen Tippfehler.",
+    "title": "Diese Seite ging zurück ins Feuer",
+    "body": "Metall, das seine Form nicht hält, kommt zurück in die Schmiede und wird neu bearbeitet. Der Link ist vermutlich veraltet, oder die Adresse enthält einen Tippfehler.",
     "home": "Zurück zur Startseite",
     "services": "Leistungen ansehen",
     "contact": "Kontakt aufnehmen",
@@ -333,7 +333,7 @@
   },
   "error": {
     "eyebrow": "500 — unser Fehler",
-    "title": "Acht Arme, und trotzdem etwas fallen gelassen",
+    "title": "Der Hammer ist abgerutscht",
     "body": "Das liegt an uns, nicht an Ihnen, und es ist bereits protokolliert. Ein Neuladen der Seite genügt meistens.",
     "retry": "Erneut versuchen",
     "home": "Zurück zur Startseite",

@@ -67,17 +67,21 @@ function AboutHeader() {
   );
 }
 
-/** The story section is where the octopus stops being decoration and becomes
-    the actual argument for how the studio is organised. */
+/** The story section is where the name stops being decoration and becomes the
+    actual argument for how the studio is organised. */
 function AboutStory() {
   const t = useTranslations("about");
 
   return (
     <section className="on-abyss relative overflow-clip py-28 md:py-36">
+      {/* Mirrored to the left here, since this section's prose runs down the
+          right-hand column. */}
       <ChromatophoreField
         seed={71}
         hue={[18, -6]}
-        spacing={22}
+        markX={0.28}
+        markScale={0.52}
+        spacing={17}
         intensity={0.75}
         silhouette
       />

@@ -9,17 +9,24 @@ import { site } from "@/lib/site";
 /**
  * 404 inside a locale.
  *
- * The octopus is the joke and the apology at once: it is a genuine escape
- * artist, so a missing page is in character rather than a failure notice. The
- * silhouette resolves out of the field here as it does on the homepage, which
- * also quietly signals "you are still on the right site".
+ * The forge carries the joke and the apology at once: metal that will not hold
+ * its shape simply goes back in the fire, so a missing page reads as part of the
+ * craft rather than as a failure notice. The mark resolves out of the field here
+ * as it does on the homepage, which also quietly signals "still the right site".
  */
 export default function LocaleNotFound() {
   const t = useTranslations("notFound");
 
   return (
     <section className="relative flex min-h-[100svh] flex-col overflow-clip pt-[4.5rem]">
-      <ChromatophoreField seed={404} spacing={20} intensity={0.9} silhouette />
+      <ChromatophoreField
+        seed={404}
+        silhouette
+        markX={0.7}
+        markScale={0.5}
+        spacing={17}
+        intensity={0.9}
+      />
       <div
         aria-hidden="true"
         className="absolute inset-0 bg-[radial-gradient(ellipse_70%_65%_at_28%_45%,var(--color-paper)_18%,transparent_78%)]"

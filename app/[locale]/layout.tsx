@@ -59,8 +59,8 @@ export async function generateMetadata({
   return {
     metadataBase: new URL(siteUrl),
     title: {
-      default: `OKTOPOD — ${t("title")}`,
-      template: "%s — OKTOPOD",
+      default: `Druid Forge — ${t("title")}`,
+      template: "%s — Druid Forge",
     },
     description: t("description"),
     alternates: buildAlternates("/", locale),

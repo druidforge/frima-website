@@ -4,13 +4,14 @@
 @custom-variant dark (&:is(.dark *));
 
 /* ---------------------------------------------------------------------------
-   OKTOPOD design tokens
+   Druid Forge design tokens
 
-   Palette is drawn from two real sources: the studio's octopus mark (cyan ->
+   Palette is drawn from two real sources: the Druid Forge mark (cyan ->
    violet) and the material Split is actually built from (Brac limestone).
-   `ink` is never neutral black - it carries a violet undertone, like octopus
-   ink. The gradient is the single accessory: it appears in the chromatophore
-   canvas, the mark, and focus rings. Nowhere else.
+   `ink` is never neutral black - it carries a violet undertone, so it reads as
+   forge-dark rather than as a printer default. The gradient is the single
+   accessory: it appears in the particle canvas, the mark, and focus rings.
+   Nowhere else.
 --------------------------------------------------------------------------- */
 
 @theme inline {

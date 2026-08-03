@@ -44,19 +44,19 @@ const doors = [
   {
     locale: "hr",
     language: "Hrvatski",
-    line: "Ova stranica je ispustila tintu i nestala.",
+    line: "Ova stranica se vratila u vatru.",
     action: "Na početnu",
   },
   {
     locale: "en",
     language: "English",
-    line: "This page inked and vanished.",
+    line: "This page went back in the fire.",
     action: "Go home",
   },
   {
     locale: "de",
     language: "Deutsch",
-    line: "Diese Seite hat sich in Tinte gehüllt.",
+    line: "Diese Seite ging zurück ins Feuer.",
     action: "Zur Startseite",
   },
 ] as const;
@@ -70,7 +70,7 @@ export default function RootNotFound() {
       <body className="flex min-h-dvh flex-col items-center justify-center bg-background px-6 py-16 text-foreground">
         <main className="w-full max-w-2xl">
           <Image
-            src="/octopus_silhouette_gradient.svg"
+            src="/druid-forge.svg"
             alt=""
             width={64}
             height={64}
@@ -83,8 +83,8 @@ export default function RootNotFound() {
             Page not found
           </h1>
           <p className="mt-4 max-w-[46ch] text-ink-soft">
-            Octopuses can squeeze through a gap the size of their own eye. This
-            one got out through the address bar.
+            Metal that will not hold its shape goes back to the forge and gets
+            worked again. This link did not hold.
           </p>
 
           <ul className="mt-10 grid gap-px overflow-clip rounded-md border border-border bg-border">

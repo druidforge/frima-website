@@ -10,6 +10,7 @@ import { FormSelect, type SelectOption } from "@/components/form-select";
 import { Link } from "@/i18n/navigation";
 import { budgetKeys, type ContactState } from "@/lib/contact-schema";
 import { services } from "@/lib/services";
+import { site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const initial: ContactState = { status: "idle" };
@@ -107,7 +108,7 @@ export function ContactForm() {
             <div>
               <strong className="font-medium">{t("errorTitle")}</strong>
               <p className="mt-1 text-ink-soft">
-                {t(state.formError, { email: "hello@oktopod.studio" })}
+                {t(state.formError, { email: site.email })}
               </p>
             </div>
           </motion.div>

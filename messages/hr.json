@@ -1,6 +1,6 @@
 {
   "common": {
-    "brand": "OKTOPOD",
+    "brand": "DRUID FORGE",
     "skipToContent": "Prijeđi na sadržaj",
     "menu": "Izbornik",
     "close": "Zatvori",
@@ -21,7 +21,7 @@
   "meta": {
     "home": {
       "title": "Digitalni studio u Splitu",
-      "description": "Oktopod je digitalni studio iz Splita. Radimo web stranice, web i mobilne aplikacije, digitalne pozivnice, vizitke i letke."
+      "description": "Druid Forge je digitalni studio iz Splita. Radimo web stranice, web i mobilne aplikacije, digitalne pozivnice, vizitke i letke."
     },
     "services": {
       "title": "Usluge",
@@ -46,15 +46,15 @@
   },
   "home": {
     "heroEyebrow": "Digitalni studio — Split, Hrvatska",
-    "heroTitle": "Svaka ruka misli za sebe",
-    "heroLead": "Hobotnica drži dvije trećine neurona u rukama. Svaka ruka rješava svoj problem, a životinja se kreće kao jedno. Tako radimo i mi: šest zanata, jedan tim.",
+    "heroTitle": "Ovdje se sve kuje",
+    "heroLead": "Kovačnica svaki komad oblikuje vatrom i čekićem; tvornica ih štanca identične. Mi radimo na prvi način: šest zanata pod istim krovom u Splitu, i ništa s police.",
     "heroPrimary": "Pokreni projekt",
     "heroSecondary": "Pogledaj usluge",
     "heroScroll": "Listaj",
-    "thesisTitle": "Šest ruku, jedan organizam",
+    "thesisTitle": "Šest zanata, jedna kovačnica",
     "thesisBody": "Ne prosljeđujemo posao dalje. Isti ljudi koji crtaju sučelje pišu i kod koji ga pokreće, pa se odluke ne gube između faza.",
     "servicesTitle": "Što radimo",
-    "servicesLead": "Svaka ruka pokriva jedno područje. Većina projekata koristi dvije ili tri.",
+    "servicesLead": "Svaki zanat pokriva jedno područje. Većina projekata koristi dva ili tri.",
     "servicesCta": "Sve usluge",
     "processTitle": "Kako radimo",
     "processLead": "Četiri koraka. Redoslijed je stvaran — svaki korak ovisi o prethodnom.",
@@ -175,8 +175,8 @@
   "about": {
     "title": "Mali studio u Splitu",
     "lead": "Radimo od 2019. Dovoljno mali da s nama razgovarate izravno, dovoljno iskusni da znamo gdje projekti zapinju.",
-    "storyTitle": "Zašto hobotnica",
-    "storyBody": "Hobotnica ima oko petsto milijuna neurona, a dvije trećine ih nije u glavi nego u rukama. Ruka sama prepozna školjku i otvori je bez naredbe odozgo. Uzeli smo to za način rada: onaj tko radi na dijelu projekta odlučuje o njemu, a ne čeka odobrenje kroz tri razine.",
+    "storyTitle": "Zašto kovačnica",
+    "storyBody": "Druidovo znanje ne dolazi iz knjige. Nastaje godinama rada s istim živim materijalom, dok ne naučiš kako se ponaša prije nego se pomakne. Kovačnica je druga polovica imena: unutra ide sirovi metal, a van izlazi alat za jednu određenu ruku, a ne dio s police. Oboje opisuje kako radimo - onaj tko poznaje materijal odlučuje o njemu, umjesto da čeka odobrenje kroz tri razine.",
     "valuesTitle": "Kako radimo",
     "values": {
       "directTitle": "Bez posrednika",
@@ -243,7 +243,7 @@
     }
   },
   "footer": {
-    "tagline": "Digitalni studio u Splitu. Šest zanata, jedan tim.",
+    "tagline": "Digitalni studio u Splitu. Šest zanata, jedna kovačnica.",
     "servicesTitle": "Usluge",
     "studioTitle": "Studio",
     "legalTitle": "Pravno",
@@ -324,8 +324,8 @@
   },
   "notFound": {
     "eyebrow": "404 — nema je",
-    "title": "Ova stranica je ispustila tintu i nestala",
-    "body": "Hobotnice su poznati bjegunci: znaju se izvući kroz otvor veličine vlastitog oka. Naša je očito pobjegla kroz adresnu traku. Poveznica je vjerojatno zastarjela ili u adresi ima tipfeler.",
+    "title": "Ova stranica se vratila u vatru",
+    "body": "Metal koji ne drži oblik vraća se u kovačnicu i ponovno se obrađuje. Poveznica je vjerojatno zastarjela ili u adresi ima tipfeler.",
     "home": "Natrag na početnu",
     "services": "Pogledaj usluge",
     "contact": "Javite nam se",
@@ -333,7 +333,7 @@
   },
   "error": {
     "eyebrow": "500 — naša greška",
-    "title": "Osam ruku, i opet nam je nešto ispalo",
+    "title": "Promašili smo čekićem",
     "body": "Ovo je do nas, ne do vas, i već je zabilježeno. Osvježite stranicu — u većini slučajeva to je dovoljno.",
     "retry": "Pokušaj ponovno",
     "home": "Natrag na početnu",

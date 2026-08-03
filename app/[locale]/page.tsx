@@ -25,9 +25,9 @@ export async function generateMetadata({
       href: "/",
       locale,
     }),
-    // The homepage owns the brand-first title rather than the "%s — OKTOPOD"
+    // The homepage owns the brand-first title rather than the "%s — Druid Forge"
     // template every other page uses.
-    title: `OKTOPOD — ${t("title")}`,
+    title: `Druid Forge — ${t("title")}`,
   };
 }
 

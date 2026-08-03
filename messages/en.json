@@ -1,6 +1,6 @@
 {
   "common": {
-    "brand": "OKTOPOD",
+    "brand": "DRUID FORGE",
     "skipToContent": "Skip to content",
     "menu": "Menu",
     "close": "Close",
@@ -21,7 +21,7 @@
   "meta": {
     "home": {
       "title": "Digital studio in Split, Croatia",
-      "description": "Oktopod is a digital studio in Split, Croatia. We build websites, web and mobile apps, digital wedding invitations, business cards and flyers."
+      "description": "Druid Forge is a digital studio in Split, Croatia. We build websites, web and mobile apps, digital wedding invitations, business cards and flyers."
     },
     "services": {
       "title": "Services",
@@ -46,15 +46,15 @@
   },
   "home": {
     "heroEyebrow": "Digital studio — Split, Croatia",
-    "heroTitle": "Every arm thinks for itself",
-    "heroLead": "An octopus keeps two thirds of its neurons in its arms. Each arm solves its own problem, and the animal still moves as one. We work the same way: six crafts, one team.",
+    "heroTitle": "Everything here is forged",
+    "heroLead": "A forge works each piece under heat and hammer; a factory stamps them out identical. We work the first way: six crafts under one roof in Split, and nothing pulled off a shelf.",
     "heroPrimary": "Start a project",
     "heroSecondary": "See services",
     "heroScroll": "Scroll",
-    "thesisTitle": "Six arms, one organism",
+    "thesisTitle": "Six crafts, one forge",
     "thesisBody": "We do not hand your project down a chain. The people who draw the interface also write the code that runs it, so decisions survive the gap between stages.",
     "servicesTitle": "What we do",
-    "servicesLead": "Each arm covers one area. Most projects use two or three of them.",
+    "servicesLead": "Each craft covers one area. Most projects use two or three of them.",
     "servicesCta": "All services",
     "processTitle": "How we work",
     "processLead": "Four steps. The order is real — each one depends on the one before it.",
@@ -175,8 +175,8 @@
   "about": {
     "title": "A small studio in Split",
     "lead": "Working since 2019. Small enough that you talk to us directly, experienced enough to know where projects get stuck.",
-    "storyTitle": "Why an octopus",
-    "storyBody": "An octopus has around five hundred million neurons, and two thirds of them sit in its arms rather than its head. An arm recognises a shell and opens it without an order from above. We took that as a way of working: whoever builds a part of the project decides on it, instead of waiting for approval through three levels.",
+    "storyTitle": "Why a forge",
+    "storyBody": "A druid's knowledge is not read out of a book. It comes from working the same living material for years, until you know how it behaves before it moves. A forge is the other half of the name: raw metal goes in, and what comes out is a tool for one particular hand rather than a part off a shelf. Both describe how we work - whoever knows the material decides about it, instead of waiting for approval through three levels.",
     "valuesTitle": "How we work",
     "values": {
       "directTitle": "No middle layer",
@@ -243,7 +243,7 @@
     }
   },
   "footer": {
-    "tagline": "Digital studio in Split. Six crafts, one team.",
+    "tagline": "Digital studio in Split. Six crafts, one forge.",
     "servicesTitle": "Services",
     "studioTitle": "Studio",
     "legalTitle": "Legal",
@@ -324,8 +324,8 @@
   },
   "notFound": {
     "eyebrow": "404 — not here",
-    "title": "This page inked and vanished",
-    "body": "Octopuses are famous escape artists — they can squeeze through a gap the size of their own eye. Ours appears to have got out through the address bar. The link is probably out of date, or the address has a typo in it.",
+    "title": "This page went back in the fire",
+    "body": "Metal that will not hold its shape goes back to the forge and gets worked again. This link is probably out of date, or the address has a typo in it.",
     "home": "Back to home",
     "services": "See services",
     "contact": "Get in touch",
@@ -333,7 +333,7 @@
   },
   "error": {
     "eyebrow": "500 — our fault",
-    "title": "Eight arms, and we still dropped something",
+    "title": "The hammer slipped",
     "body": "This one is on us, not on you, and it has already been logged. Refreshing the page usually sorts it.",
     "retry": "Try again",
     "home": "Back to home",

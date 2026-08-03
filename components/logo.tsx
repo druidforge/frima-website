@@ -7,6 +7,17 @@ import { cn } from "@/lib/utils";
  * parent's `group` class - no client JS, so the logo stays a server component.
  * The mark tilts and the wordmark opens its tracking, as if the animal shifted.
  */
+/**
+ * Two sources on purpose.
+ *
+ * The SVG is a vector recreation of the mark - exact at the sizes it is
+ * actually used at (header, footer, favicon) and a fraction of the weight. The
+ * PNG is the original artwork, so anywhere the mark is shown large enough for
+ * the recreation's simplifications to matter, that renders instead. `size`
+ * decides, rather than each caller having to remember which is which.
+ */
+const RASTER_FROM = 64;
+
 export function Logo({
   className,
   size = 30,
@@ -18,17 +29,21 @@ export function Logo({
   withWordmark?: boolean;
   animated?: boolean;
 }) {
+  const large = size >= RASTER_FROM;
+
   return (
     <span className={cn("inline-flex items-center gap-2.5", className)}>
       {/* rotate and scale are transforms, so the mark can move without ever
           taking part in layout. */}
       <Image
-        src="/octopus_silhouette_gradient.svg"
+        src={large ? "/brand/druid-forge-768.png" : "/druid-forge.svg"}
         alt=""
         width={size}
         height={size}
         priority
-        unoptimized
+        // The vector is already minimal, so optimising it adds a request and
+        // saves nothing. The raster does benefit.
+        unoptimized={!large}
         className={cn(
           "shrink-0",
           animated &&
@@ -44,7 +59,7 @@ const BASE = "font-display text-[1.05rem] font-bold uppercase leading-none";
 
 function Wordmark({ animated }: { animated: boolean }) {
   if (!animated) {
-    return <span className={cn(BASE, "tracking-[0.2em]")}>Oktopod</span>;
+    return <span className={cn(BASE, "tracking-[0.2em]")}>Druid Forge</span>;
   }
 
   /**
@@ -68,10 +83,10 @@ function Wordmark({ animated }: { animated: boolean }) {
         aria-hidden="true"
         className="invisible col-start-1 row-start-1 tracking-[0.26em]"
       >
-        Oktopod
+        Druid Forge
       </span>
       <span className="col-start-1 row-start-1 tracking-[0.2em] transition-[letter-spacing] duration-(--dur-slow) ease-out-quint group-hover:tracking-[0.26em]">
-        Oktopod
+        Druid Forge
       </span>
     </span>
   );

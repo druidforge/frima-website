@@ -2,9 +2,9 @@ import { ImageResponse } from "next/og";
 import { getTranslations } from "next-intl/server";
 
 import { locales, type Locale } from "@/i18n/routing";
-import { octopusDataUri, ogSize } from "@/lib/og";
+import { markDataUri, ogSize } from "@/lib/og";
 
-export const alt = "OKTOPOD — digital studio, Split";
+export const alt = "Druid Forge — digital studio, Split";
 export const size = ogSize;
 export const contentType = "image/png";
 
@@ -42,7 +42,7 @@ export default async function OpengraphImage({
             something larger rather than a centred logo lockup. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={octopusDataUri}
+        src={markDataUri}
         width={620}
         height={620}
         style={{
@@ -73,7 +73,7 @@ export default async function OpengraphImage({
             display: "flex",
           }}
         >
-          OKTOPOD
+          DRUID FORGE
         </div>
       </div>
 

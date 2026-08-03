@@ -31,10 +31,16 @@ export function Hero() {
       ref={ref}
       className="relative flex min-h-[100svh] flex-col overflow-clip pt-[4.5rem]"
     >
+      {/* Sits right of centre: the copy occupies the left of the hero, and the
+          radial wash below already keeps that side clear. Tighter spacing than
+          the ambient fields because this one has to render a recognisable
+          shape, not just texture. */}
       <ChromatophoreField
         seed={17}
         silhouette
-        spacing={20}
+        markX={0.7}
+        markScale={0.5}
+        spacing={16}
         intensity={0.95}
         className="opacity-[0.85]"
       />

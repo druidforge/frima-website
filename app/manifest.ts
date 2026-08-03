@@ -16,7 +16,7 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#16131d",
     icons: [
       {
-        src: "/octopus_silhouette_gradient.svg",
+        src: "/druid-forge.svg",
         sizes: "any",
         type: "image/svg+xml",
         purpose: "any",

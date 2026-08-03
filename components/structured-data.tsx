@@ -33,7 +33,7 @@ export async function StructuredData({ locale }: { locale: Locale }) {
       foundingDate: site.founded,
       vatID: site.oib,
       image: `${siteUrl}/opengraph-image`,
-      logo: `${siteUrl}/octopus_silhouette_gradient.svg`,
+      logo: `${siteUrl}/druid-forge.svg`,
       priceRange: "€€",
       address: {
         "@type": "PostalAddress",

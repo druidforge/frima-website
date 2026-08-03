@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-import { octopusDataUri } from "@/lib/og";
+import { markDataUri } from "@/lib/og";
 
 export const size = { width: 180, height: 180 };
 export const contentType = "image/png";
@@ -20,7 +20,7 @@ export default function AppleIcon() {
     >
       {/* Satori renders plain <img> only; next/image does not exist here. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={octopusDataUri} width={136} height={136} alt="" />
+      <img src={markDataUri} width={136} height={136} alt="" />
     </div>,
     size,
   );

@@ -63,7 +63,7 @@ export async function generateMetadata({
       title,
       description,
       url: languages[locale],
-      siteName: "OKTOPOD",
+      siteName: "Druid Forge",
     },
   };
 }

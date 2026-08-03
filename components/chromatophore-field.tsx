@@ -7,16 +7,17 @@ import { cn, mulberry32 } from "@/lib/utils";
 /**
  * The signature element.
  *
- * Octopus skin is covered in chromatophores - pigment sacs ringed by muscle.
- * When the muscles pull, the sac flattens and the colour shows; when they
- * release, it shrinks to a dot. Waves of that expansion travel across the
- * animal. This renders that mechanic literally: a jittered field of cells,
- * driven by travelling sine fronts, coloured along the studio's cyan -> violet
- * ramp.
+ * A jittered field of cells driven by travelling sine fronts, coloured along
+ * the studio's cyan -> violet ramp. Each cell swells and shrinks as the fronts
+ * pass, so the surface reads as something heated rather than as a particle
+ * effect - embers over a forge, not snow.
  *
- * With `silhouette`, cells that fall inside the octopus mark hold a permanent
- * expansion bias, so the animal resolves out of the noise and disperses again
- * as the section scrolls away.
+ * The component keeps its original name: the mechanic is borrowed from
+ * chromatophores, the pigment sacs that let cephalopod skin ripple colour.
+ *
+ * With `silhouette`, cells that fall inside the mark hold a permanent expansion
+ * bias, so it resolves out of the noise and disperses again as the section
+ * scrolls away.
  *
  * Performance notes:
  * - Cells are bucketed by colour so a whole bucket draws in one path fill.
@@ -34,8 +35,13 @@ type Props = {
   spacing?: number;
   /** Overall opacity ceiling of the field. */
   intensity?: number;
-  /** Resolve the octopus mark out of the field. */
+  /** Resolve the brand mark out of the field. */
   silhouette?: boolean;
+  /** Mark size as a fraction of the container's shorter side. */
+  markScale?: number;
+  /** Mark centre, 0..1 across the container. */
+  markX?: number;
+  markY?: number;
   /** Follow the pointer with a local bloom. */
   interactive?: boolean;
   className?: string;
@@ -63,6 +69,9 @@ export function ChromatophoreField({
   spacing = 22,
   intensity = 1,
   silhouette = false,
+  markScale = 0.82,
+  markX = 0.5,
+  markY = 0.5,
   interactive = true,
   className,
 }: Props) {
@@ -101,7 +110,49 @@ export function ChromatophoreField({
 
     const ramp = buildRamp(hue);
 
-    function buildCells(maskData: Uint8ClampedArray | null, maskW: number) {
+    /**
+     * Where the mark sits, in canvas pixels.
+     *
+     * The mask is a square raster, and it used to be stretched across the full
+     * container - fine for a blob, but it flattened the anvil into an unreadable
+     * smear on a wide hero. Fitting it to a square box instead keeps the
+     * artwork's proportions whatever shape the section is.
+     */
+    function markBox() {
+      if (!mask) return null;
+      const { x0, y0, x1, y1 } = mask.box;
+      // The anvil is roughly 1.8:1, so a square box would stretch it.
+      const aspect = (x1 - x0) / (y1 - y0);
+      let h = height * markScale;
+      let w = h * aspect;
+      const maxW = width * 0.94;
+      if (w > maxW) {
+        w = maxW;
+        h = w / aspect;
+      }
+      return { w, h, left: width * markX - w / 2, top: height * markY - h / 2 };
+    }
+
+    /** Alpha of the mark at a canvas point, 0..1, sharpened at the edge. */
+    function sampleMark(x: number, y: number) {
+      if (!mask) return 0;
+      const box = markBox();
+      if (!box) return 0;
+      const u = (x - box.left) / box.w;
+      const v = (y - box.top) / box.h;
+      if (u < 0 || u >= 1 || v < 0 || v >= 1) return 0;
+
+      // Remap into the artwork's own bounds, skipping the file's padding.
+      const { x0, y0, x1, y1 } = mask.box;
+      const mx = Math.floor((x0 + u * (x1 - x0)) * mask.size);
+      const my = Math.floor((y0 + v * (y1 - y0)) * mask.size);
+      const alpha = mask.data[(my * mask.size + mx) * 4 + 3] / 255;
+      // The anvil has thin circuit traces; squaring the falloff keeps their
+      // edges crisp instead of smearing them into the surrounding field.
+      return alpha * alpha;
+    }
+
+    function buildCells() {
       const rand = mulberry32(seed);
       const next: Cell[] = [];
       const stepY = spacing * 0.866; // hex packing keeps gaps even
@@ -117,14 +168,7 @@ export function ChromatophoreField({
           const y = row * stepY + jy;
           if (x < -spacing || x > width + spacing) continue;
 
-          let mask = 0;
-          if (maskData) {
-            const mx = Math.floor((x / width) * maskW);
-            const my = Math.floor((y / height) * maskW);
-            if (mx >= 0 && mx < maskW && my >= 0 && my < maskW) {
-              mask = maskData[(my * maskW + mx) * 4 + 3] / 255;
-            }
-          }
+          const cellMask = sampleMark(x, y);
 
           const angle = rand() * Math.PI * 2;
           next.push({
@@ -133,7 +177,7 @@ export function ChromatophoreField({
             phase: rand() * Math.PI * 2,
             scale: 0.55 + rand() * 0.75,
             ramp: rand(),
-            mask,
+            mask: cellMask,
             driftX: Math.cos(angle),
             driftY: Math.sin(angle),
           });
@@ -142,16 +186,20 @@ export function ChromatophoreField({
       cells = next;
     }
 
-    /** Rasterise the octopus mark once and read its alpha channel. */
-    function loadMask(): Promise<{
+    /** Rasterise the mark once and read its alpha channel. */
+    type Mask = {
       data: Uint8ClampedArray;
       size: number;
-    } | null> {
+      /** Bounds of the drawn artwork inside the square buffer, 0..1. */
+      box: { x0: number; y0: number; x1: number; y1: number };
+    };
+
+    function loadMask(): Promise<Mask | null> {
       if (!silhouette) return Promise.resolve(null);
       return new Promise((resolve) => {
         const img = new Image();
         img.onload = () => {
-          const size = 220;
+          const size = 384;
           const off = document.createElement("canvas");
           off.width = size;
           off.height = size;
@@ -160,17 +208,50 @@ export function ChromatophoreField({
           // Contain the square mark inside the square sample buffer.
           octx.drawImage(img, 0, 0, size, size);
           try {
-            resolve({ data: octx.getImageData(0, 0, size, size).data, size });
+            const data = octx.getImageData(0, 0, size, size).data;
+
+            /**
+             * The artwork carries a wide transparent margin inside its own
+             * viewBox - the anvil fills barely a third of the square. Fitting
+             * the raw buffer therefore drew it small and squashed. Measuring
+             * where the ink actually is lets the mark be placed by its own
+             * bounds instead of the file's padding.
+             */
+            let x0 = size;
+            let y0 = size;
+            let x1 = 0;
+            let y1 = 0;
+            for (let i = 0; i < size * size; i++) {
+              if (data[i * 4 + 3] < 24) continue;
+              const x = i % size;
+              const y = (i / size) | 0;
+              if (x < x0) x0 = x;
+              if (x > x1) x1 = x;
+              if (y < y0) y0 = y;
+              if (y > y1) y1 = y;
+            }
+            if (x1 <= x0 || y1 <= y0) return resolve(null);
+
+            resolve({
+              data,
+              size,
+              box: {
+                x0: x0 / size,
+                y0: y0 / size,
+                x1: (x1 + 1) / size,
+                y1: (y1 + 1) / size,
+              },
+            });
           } catch {
             resolve(null);
           }
         };
         img.onerror = () => resolve(null);
-        img.src = "/octopus_silhouette_gradient.svg";
+        img.src = "/druid-forge.svg";
       });
     }
 
-    let mask: { data: Uint8ClampedArray; size: number } | null = null;
+    let mask: Mask | null = null;
 
     /**
      * Silhouette coverage at a point in canvas space, 0..1.
@@ -180,11 +261,7 @@ export function ChromatophoreField({
      * an approximated hit box.
      */
     function maskAt(x: number, y: number) {
-      if (!mask) return 0;
-      const mx = Math.floor((x / width) * mask.size);
-      const my = Math.floor((y / height) * mask.size);
-      if (mx < 0 || mx >= mask.size || my < 0 || my >= mask.size) return 0;
-      return mask.data[(my * mask.size + mx) * 4 + 3] / 255;
+      return sampleMark(x, y);
     }
 
     function resize() {
@@ -197,7 +274,7 @@ export function ChromatophoreField({
       canvas!.style.width = `${width}px`;
       canvas!.style.height = `${height}px`;
       ctx!.setTransform(dpr, 0, 0, dpr, 0, 0);
-      buildCells(mask?.data ?? null, mask?.size ?? 0);
+      buildCells();
     }
 
     function frame(now: number) {
@@ -214,7 +291,7 @@ export function ChromatophoreField({
 
       // The bloom belongs to the animal, not the section. Off the silhouette
       // the pointer does nothing at all, so the effect is something you find
-      // by touching the octopus rather than a cursor trail across the hero.
+      // by touching the mark rather than a cursor trail across the hero.
       // `onSilhouette` eases rather than switching, so crossing the outline
       // fades the response in instead of popping it.
       const overMark = silhouette ? maskAt(pointer.x, pointer.y) : 1;
@@ -240,7 +317,7 @@ export function ChromatophoreField({
 
         // Silhouette cells stay expanded; the surrounding field stays quiet.
         if (silhouette) {
-          energy = energy * (0.28 + c.mask * 0.35) + c.mask * 0.62;
+          energy = energy * (0.16 + c.mask * 0.34) + c.mask * 0.9;
         }
 
         // Gated twice over: the pointer has to be on the mark, and the cell
@@ -362,7 +439,17 @@ export function ChromatophoreField({
       window.removeEventListener("pointermove", onPointerMove);
       window.removeEventListener("pointerleave", onPointerLeave);
     };
-  }, [seed, hue, spacing, intensity, silhouette, interactive]);
+  }, [
+    seed,
+    hue,
+    spacing,
+    intensity,
+    silhouette,
+    markScale,
+    markX,
+    markY,
+    interactive,
+  ]);
 
   return (
     <div

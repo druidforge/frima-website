@@ -71,7 +71,7 @@ export function buildMetadata({
       title,
       description,
       url: alternates.canonical,
-      siteName: "OKTOPOD",
+      siteName: "Druid Forge",
       locale: ogLocale[locale],
       alternateLocale: locales
         .filter((l) => l !== locale)

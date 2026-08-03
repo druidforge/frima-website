@@ -16,13 +16,13 @@ export const cookieTable: Record<"necessary" | "analytics", CookieRow[]> = {
   necessary: [
     {
       name: "cc_cookie",
-      domain: "oktopod.studio",
+      domain: "druidforge.hr",
       duration: "6m",
       descriptionKey: "ccCookie",
     },
     {
       name: "NEXT_LOCALE",
-      domain: "oktopod.studio",
+      domain: "druidforge.hr",
       duration: "12m",
       descriptionKey: "localeCookie",
     },
@@ -30,13 +30,13 @@ export const cookieTable: Record<"necessary" | "analytics", CookieRow[]> = {
   analytics: [
     {
       name: "_pk_id",
-      domain: "oktopod.studio",
+      domain: "druidforge.hr",
       duration: "13m",
       descriptionKey: "analyticsId",
     },
     {
       name: "_pk_ses",
-      domain: "oktopod.studio",
+      domain: "druidforge.hr",
       duration: "session",
       descriptionKey: "analyticsSession",
     },

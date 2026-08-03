@@ -103,7 +103,7 @@ export function SiteHeader() {
             // drawer too - otherwise it stays open over the page it just left.
             onClick={() => setOpen(false)}
             className="group -m-2 rounded-sm p-2 text-foreground"
-            aria-label="OKTOPOD"
+            aria-label="Druid Forge"
           >
             <Logo animated />
           </Link>

@@ -99,7 +99,7 @@ export async function submitContact(
     // stays exactly as it is.
     //
     //   await resend.emails.send({
-    //     from: "web@oktopod.studio",
+    //     from: "web@druidforge.hr",
     //     to: site.email,
     //     replyTo: parsed.data.email,
     //     subject: `Upit: ${parsed.data.name}`,
