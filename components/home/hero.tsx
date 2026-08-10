@@ -60,10 +60,13 @@ export function Hero() {
         {/* The size is capped by viewport *height* as well as width. On a wide
             but short screen a purely `vw`-based headline is what pushed the
             rest of the hero off the fold. */}
+        {/* Always the first thing on the page - no reason to ask an observer
+            whether it is on screen. */}
         <RevealWords
           text={t("heroTitle")}
           as="h1"
           delay={0.1}
+          immediate
           className="mt-5 max-w-[15ch] font-display text-[clamp(2.5rem,min(7vw,10.5svh),6.5rem)] font-bold leading-[0.88] tracking-[-0.045em]"
         />
 

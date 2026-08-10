@@ -14,6 +14,7 @@ import { notFound } from "next/navigation";
 
 import { CookieConsentLoader } from "@/components/cookie-consent-loader";
 import { Footer } from "@/components/footer";
+import { RoutePrefetcher } from "@/components/route-prefetcher";
 import { SiteHeader } from "@/components/site-header";
 import { StructuredData } from "@/components/structured-data";
 import { locales, routing, type Locale } from "@/i18n/routing";
@@ -142,6 +143,9 @@ export default async function LocaleLayout({
           </main>
           <Footer />
           <CookieConsentLoader />
+          {/* Lives in the layout so the queue survives navigation: it is worked
+              through once per visit, not restarted on every page. */}
+          <RoutePrefetcher />
         </NextIntlClientProvider>
       </body>
     </html>

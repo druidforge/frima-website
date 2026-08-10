@@ -32,7 +32,7 @@ export function Process() {
      * page in the site downloaded it even though this section is the only
      * ScrollTrigger on the site and only exists on the homepage.
      */
-    void (async () => {
+    const load = async () => {
       const [{ gsap }, { ScrollTrigger }] = await Promise.all([
         import("gsap"),
         import("gsap/ScrollTrigger"),
@@ -77,18 +77,53 @@ export function Process() {
        * anything that changes the page height afterwards - fonts swapping in,
        * the canvases sizing themselves - leaves those numbers stale and the
        * timeline fires at the wrong scroll position. Re-measure on resize.
+       *
+       * Coalesced to one refresh per frame. `refresh()` re-measures every
+       * trigger on the page and forces layout to do it, and the events that
+       * trigger it arrive in bursts - nine canvases sizing themselves, a font
+       * landing, an image decoding - so an unguarded call per notification
+       * meant several full re-measures inside a single frame.
        */
-      const observer = new ResizeObserver(() => ScrollTrigger.refresh());
+      let pending = 0;
+      const observer = new ResizeObserver(() => {
+        if (pending) return;
+        pending = requestAnimationFrame(() => {
+          pending = 0;
+          ScrollTrigger.refresh();
+        });
+      });
       observer.observe(document.body);
 
       revert = () => {
+        if (pending) cancelAnimationFrame(pending);
         observer.disconnect();
         ctx.revert();
       };
-    })();
+    };
+
+    /**
+     * Held back until the section is on its way into view.
+     *
+     * GSAP plus ScrollTrigger is the largest dependency the site has, and this
+     * is the only place either is used. Loading it on mount meant every visit
+     * to the homepage spent bandwidth and parse time on a section most of them
+     * would reach seconds later, if at all - while the hero above was still
+     * settling. The margin is generous so the timeline is always armed before
+     * the section can actually be reached.
+     */
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        observer.disconnect();
+        void load();
+      },
+      { rootMargin: "600px 0px" },
+    );
+    observer.observe(el);
 
     return () => {
       cancelled = true;
+      observer.disconnect();
       revert?.();
     };
   }, []);

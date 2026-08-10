@@ -146,10 +146,21 @@
     border-color: var(--border);
   }
 
+  /* No `scroll-behavior: smooth` here, deliberately.
+
+     It reads as a nicety, but the document scroller is also what the router
+     drives: every client navigation ends in a scroll to the top, and declaring
+     it smooth makes that scroll *animate*. Leaving a page from halfway down
+     meant watching the viewport travel all the way up before the new page
+     settled - a delay proportional to how far you had scrolled, on every
+     single link. Back/forward restoration paid it too.
+
+     The one place smoothness was actually wanted is the legal contents list,
+     which now scrolls its own anchors through `scrollIntoView`. That keeps the
+     effect where it was designed to be and off the navigation path. */
   html {
     font-family: var(--font-sans);
     -webkit-text-size-adjust: 100%;
-    scroll-behavior: smooth;
   }
 
   body {

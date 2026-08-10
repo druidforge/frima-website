@@ -37,13 +37,19 @@ export function PageHeader({
       />
       <div className="shell relative z-10">
         <p className="eyebrow">{eyebrow}</p>
+        {/* This header is the top of its page by construction, so both of these
+            are always in the viewport on arrival. `immediate` skips the
+            observer round trip that would otherwise delay them by a frame or
+            two on every navigation - the one place on an inner page where that
+            delay is unmissable. */}
         <RevealWords
           text={title}
           as="h1"
+          immediate
           className="mt-5 max-w-[16ch] font-display text-(length:--text-step-4) font-bold tracking-[-0.04em]"
         />
         {lead ? (
-          <Reveal delay={0.12}>
+          <Reveal delay={0.12} immediate>
             <p className="mt-7 max-w-[58ch] text-(length:--text-step-1) leading-[1.55] text-ink-soft">
               {lead}
             </p>

@@ -99,6 +99,35 @@ export function LegalToc({
             <li key={section.id} className="relative">
               <a
                 href={`#${section.id}`}
+                /**
+                 * Smoothness used to come from `scroll-behavior: smooth` on
+                 * <html>. That is the same scroller the router drives on every
+                 * navigation, so it was animating every route change too. It is
+                 * gone; this list scrolls itself instead.
+                 *
+                 * `scrollIntoView` honours `scroll-margin-top`, so the section's
+                 * `scroll-mt-28` still lands it on the reading line - the same
+                 * offset the scrollspy above measures against.
+                 */
+                onClick={(event) => {
+                  if (
+                    event.defaultPrevented ||
+                    event.metaKey ||
+                    event.ctrlKey ||
+                    event.shiftKey ||
+                    event.altKey ||
+                    event.button !== 0
+                  ) {
+                    return;
+                  }
+                  const target = document.getElementById(section.id);
+                  if (!target) return;
+                  event.preventDefault();
+                  target.scrollIntoView({ behavior: "smooth", block: "start" });
+                  // Keeps the hash shareable and the entry in history, exactly
+                  // as the plain anchor did.
+                  history.pushState(null, "", `#${section.id}`);
+                }}
                 aria-current={isActive ? "true" : undefined}
                 className={cn(
                   "flex gap-3 rounded-sm py-1.5 pl-3 text-sm transition-colors duration-(--dur-base)",

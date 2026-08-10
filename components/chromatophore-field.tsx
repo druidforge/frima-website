@@ -22,10 +22,26 @@ import { cn, mulberry32 } from "@/lib/utils";
  * Performance notes:
  * - Cells are bucketed by colour so a whole bucket draws in one path fill.
  *   Roughly 4000 cells cost ~28 fill calls per frame instead of 4000.
- * - The loop stops when the canvas leaves the viewport or the tab is hidden.
+ * - Nothing is built until the canvas is near the viewport, and the loop stops
+ *   again when it leaves or the tab is hidden. See `init` below - this matters
+ *   far more than it sounds, because the home page mounts nine of these.
+ * - The silhouette raster is shared process-wide rather than rebuilt per
+ *   instance. See `loadMask`.
  */
 
 const BUCKETS = 28;
+
+/**
+ * Ceiling on cells per field.
+ *
+ * Cost per frame is linear in cell count, and cell count is quadratic in
+ * viewport size - the hero at `spacing: 16` wants ~5900 cells on a laptop but
+ * ~16900 on a 1440p display, which is where the frame budget went. Past this
+ * count the spacing is widened until the field fits, so a large monitor gets a
+ * slightly sparser field instead of a slower one. Sized so ordinary laptop and
+ * desktop viewports never hit it and nothing about the current look changes.
+ */
+const MAX_CELLS = 9000;
 
 type Props = {
   seed?: number;
@@ -44,6 +60,15 @@ type Props = {
   markY?: number;
   /** Follow the pointer with a local bloom. */
   interactive?: boolean;
+  /**
+   * Whether this field should animate at all.
+   *
+   * For fields that are visually hidden until some parent state - the service
+   * stack's cards keep theirs at `opacity-0` until hover - being in the
+   * viewport is not the same as being seen. Passing `false` keeps the loop
+   * stopped so six invisible canvases are not driving six invisible animations.
+   */
+  active?: boolean;
   className?: string;
 };
 
@@ -63,6 +88,104 @@ type Cell = {
   driftY: number;
 };
 
+/** Rasterised mark. Immutable once built, which is what makes it shareable. */
+type Mask = {
+  data: Uint8ClampedArray;
+  size: number;
+  /** Bounds of the drawn artwork inside the square buffer, 0..1. */
+  box: { x0: number; y0: number; x1: number; y1: number };
+};
+
+/**
+ * The mark, rasterised once for the whole page.
+ *
+ * Every silhouette field used to do this itself, on every mount: decode the
+ * SVG, draw it to a 384x384 buffer, pull 590KB back out with `getImageData`,
+ * then walk all 147456 pixels to find the artwork's true bounds. That is
+ * several milliseconds of main thread, and it was paid again by every instance
+ * and again after every client navigation - right at the moment the new page
+ * was trying to paint.
+ *
+ * The result depends on nothing but the file, so it is computed once and the
+ * promise is kept. Later callers await the same raster. It is only ever read.
+ */
+let maskRequest: Promise<Mask | null> | null = null;
+
+function loadMask(): Promise<Mask | null> {
+  maskRequest ??= new Promise<Mask | null>((resolve) => {
+    const img = new Image();
+    img.onload = () => {
+      const size = 384;
+      const off = document.createElement("canvas");
+      off.width = size;
+      off.height = size;
+      const octx = off.getContext("2d", { willReadFrequently: true });
+      if (!octx) return resolve(null);
+      // Contain the square mark inside the square sample buffer.
+      octx.drawImage(img, 0, 0, size, size);
+      try {
+        const data = octx.getImageData(0, 0, size, size).data;
+
+        /**
+         * The artwork carries a wide transparent margin inside its own
+         * viewBox - the anvil fills barely a third of the square. Fitting
+         * the raw buffer therefore drew it small and squashed. Measuring
+         * where the ink actually is lets the mark be placed by its own
+         * bounds instead of the file's padding.
+         */
+        let x0 = size;
+        let y0 = size;
+        let x1 = 0;
+        let y1 = 0;
+        for (let i = 0; i < size * size; i++) {
+          if (data[i * 4 + 3] < 24) continue;
+          const x = i % size;
+          const y = (i / size) | 0;
+          if (x < x0) x0 = x;
+          if (x > x1) x1 = x;
+          if (y < y0) y0 = y;
+          if (y > y1) y1 = y;
+        }
+        if (x1 <= x0 || y1 <= y0) return resolve(null);
+
+        resolve({
+          data,
+          size,
+          box: {
+            x0: x0 / size,
+            y0: y0 / size,
+            x1: (x1 + 1) / size,
+            y1: (y1 + 1) / size,
+          },
+        });
+      } catch {
+        resolve(null);
+      }
+    };
+    img.onerror = () => resolve(null);
+    img.src = "/druid-forge.svg";
+  });
+
+  return maskRequest;
+}
+
+/**
+ * Run `fn` when the browser is not busy, with a firm deadline.
+ *
+ * Field setup - rasterising, laying out thousands of cells, sizing the canvas -
+ * is decorative work competing with a navigation that is trying to paint. Idle
+ * time is exactly the right budget for it, and the timeout keeps it from being
+ * postponed indefinitely on a busy page.
+ */
+function scheduleIdle(fn: () => void): () => void {
+  if (typeof requestIdleCallback === "function") {
+    const id = requestIdleCallback(fn, { timeout: 400 });
+    return () => cancelIdleCallback(id);
+  }
+  const id = setTimeout(fn, 1);
+  return () => clearTimeout(id);
+}
+
 export function ChromatophoreField({
   seed = 17,
   hue = [0, 0],
@@ -73,10 +196,19 @@ export function ChromatophoreField({
   markX = 0.5,
   markY = 0.5,
   interactive = true,
+  active = true,
   className,
 }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const wrapRef = useRef<HTMLDivElement>(null);
+  /** Lets the `active` prop reach a running loop without rebuilding it. */
+  const controlRef = useRef<((next: boolean) => void) | null>(null);
+
+  // `hue` is a tuple, and callers write it inline (`hue={[-14, 16]}`), so it is
+  // a new array on every render of every parent. Listing it here as-is meant
+  // any unrelated re-render tore the whole field down and rebuilt it - canvas,
+  // raster and all. The two numbers are what the effect actually depends on.
+  const [hueFrom, hueTo] = hue;
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -92,6 +224,15 @@ export function ChromatophoreField({
     let raf = 0;
     let running = false;
     let start = performance.now();
+    let mask: Mask | null = null;
+    /** Set once the canvas has been sized and its cells laid out. */
+    let ready = false;
+    /** Is the canvas near the viewport, per the observer below. */
+    let onScreen = false;
+    /** The `active` prop, as last seen by this loop. */
+    let wanted = active;
+    let cancelled = false;
+    let cancelIdle: (() => void) | null = null;
 
     // Pointer bloom, eased toward the real cursor so it never snaps.
     // `onMark` is the eased 0..1 answer to "is the pointer on the silhouette",
@@ -108,7 +249,7 @@ export function ChromatophoreField({
     // 0 while the section is centred, rising to 1 as it leaves the viewport.
     let disperse = 0;
 
-    const ramp = buildRamp(hue);
+    const ramp = buildRamp([hueFrom, hueTo]);
 
     /**
      * Where the mark sits, in canvas pixels.
@@ -152,21 +293,42 @@ export function ChromatophoreField({
       return alpha * alpha;
     }
 
+    /**
+     * The spacing `buildCells` actually used, which drives cell radii and the
+     * disperse spread. Distinct from the `spacing` prop because a large
+     * viewport can widen it - see `fittedSpacing`. Reading the prop here
+     * instead would draw cells sized for a density the field is not using.
+     */
+    let cellSpacing = spacing;
+
+    /** Widen the spacing until the field fits inside `MAX_CELLS`. See above. */
+    function fittedSpacing() {
+      let step = spacing;
+      for (let guard = 0; guard < 24; guard++) {
+        const rows = Math.ceil(height / (step * 0.866)) + 1;
+        const cols = Math.ceil(width / step) + 1;
+        if (rows * cols <= MAX_CELLS) break;
+        step *= 1.1;
+      }
+      return step;
+    }
+
     function buildCells() {
       const rand = mulberry32(seed);
       const next: Cell[] = [];
-      const stepY = spacing * 0.866; // hex packing keeps gaps even
+      const step = fittedSpacing();
+      const stepY = step * 0.866; // hex packing keeps gaps even
       const rows = Math.ceil(height / stepY) + 1;
-      const cols = Math.ceil(width / spacing) + 1;
+      const cols = Math.ceil(width / step) + 1;
 
       for (let row = 0; row < rows; row++) {
         for (let col = 0; col < cols; col++) {
-          const offset = row % 2 === 0 ? 0 : spacing / 2;
-          const jx = (rand() - 0.5) * spacing * 0.45;
-          const jy = (rand() - 0.5) * spacing * 0.45;
-          const x = col * spacing + offset + jx;
+          const offset = row % 2 === 0 ? 0 : step / 2;
+          const jx = (rand() - 0.5) * step * 0.45;
+          const jy = (rand() - 0.5) * step * 0.45;
+          const x = col * step + offset + jx;
           const y = row * stepY + jy;
-          if (x < -spacing || x > width + spacing) continue;
+          if (x < -step || x > width + step) continue;
 
           const cellMask = sampleMark(x, y);
 
@@ -184,74 +346,8 @@ export function ChromatophoreField({
         }
       }
       cells = next;
+      cellSpacing = step;
     }
-
-    /** Rasterise the mark once and read its alpha channel. */
-    type Mask = {
-      data: Uint8ClampedArray;
-      size: number;
-      /** Bounds of the drawn artwork inside the square buffer, 0..1. */
-      box: { x0: number; y0: number; x1: number; y1: number };
-    };
-
-    function loadMask(): Promise<Mask | null> {
-      if (!silhouette) return Promise.resolve(null);
-      return new Promise((resolve) => {
-        const img = new Image();
-        img.onload = () => {
-          const size = 384;
-          const off = document.createElement("canvas");
-          off.width = size;
-          off.height = size;
-          const octx = off.getContext("2d", { willReadFrequently: true });
-          if (!octx) return resolve(null);
-          // Contain the square mark inside the square sample buffer.
-          octx.drawImage(img, 0, 0, size, size);
-          try {
-            const data = octx.getImageData(0, 0, size, size).data;
-
-            /**
-             * The artwork carries a wide transparent margin inside its own
-             * viewBox - the anvil fills barely a third of the square. Fitting
-             * the raw buffer therefore drew it small and squashed. Measuring
-             * where the ink actually is lets the mark be placed by its own
-             * bounds instead of the file's padding.
-             */
-            let x0 = size;
-            let y0 = size;
-            let x1 = 0;
-            let y1 = 0;
-            for (let i = 0; i < size * size; i++) {
-              if (data[i * 4 + 3] < 24) continue;
-              const x = i % size;
-              const y = (i / size) | 0;
-              if (x < x0) x0 = x;
-              if (x > x1) x1 = x;
-              if (y < y0) y0 = y;
-              if (y > y1) y1 = y;
-            }
-            if (x1 <= x0 || y1 <= y0) return resolve(null);
-
-            resolve({
-              data,
-              size,
-              box: {
-                x0: x0 / size,
-                y0: y0 / size,
-                x1: (x1 + 1) / size,
-                y1: (y1 + 1) / size,
-              },
-            });
-          } catch {
-            resolve(null);
-          }
-        };
-        img.onerror = () => resolve(null);
-        img.src = "/druid-forge.svg";
-      });
-    }
-
-    let mask: Mask | null = null;
 
     /**
      * Silhouette coverage at a point in canvas space, 0..1.
@@ -266,9 +362,20 @@ export function ChromatophoreField({
 
     function resize() {
       const rect = wrap!.getBoundingClientRect();
-      width = Math.max(1, Math.round(rect.width));
-      height = Math.max(1, Math.round(rect.height));
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const nextWidth = Math.max(1, Math.round(rect.width));
+      const nextHeight = Math.max(1, Math.round(rect.height));
+      // A ResizeObserver fires once on observe, and again for changes that do
+      // not alter the box we care about. Rebuilding thousands of cells for an
+      // unchanged size is pure waste.
+      if (ready && nextWidth === width && nextHeight === height) return;
+
+      width = nextWidth;
+      height = nextHeight;
+      // Ambient fields are soft blobs with no edges to preserve, so capping
+      // their backing store below the display density costs nothing visible and
+      // saves a large share of the fill area on retina screens. The silhouette
+      // has an outline to hold, so it keeps the full ratio.
+      const dpr = Math.min(window.devicePixelRatio || 1, silhouette ? 2 : 1.5);
       canvas!.width = Math.round(width * dpr);
       canvas!.height = Math.round(height * dpr);
       canvas!.style.width = `${width}px`;
@@ -300,10 +407,13 @@ export function ChromatophoreField({
       ctx!.clearRect(0, 0, width, height);
 
       // One path per colour bucket keeps state changes off the hot loop.
-      const paths: Path2D[] = Array.from(
-        { length: BUCKETS },
-        () => new Path2D(),
-      );
+      //
+      // Allocated on demand rather than up front: a quiet field leaves most of
+      // the ramp empty, and eagerly building all 28 meant 28 objects per frame
+      // per canvas thrown away again immediately - on the home page, north of
+      // fifteen thousand short-lived allocations a second, and the GC pauses
+      // that come with them.
+      const paths: Array<Path2D | undefined> = new Array(BUCKETS);
       let drew = false;
 
       for (let i = 0; i < cells.length; i++) {
@@ -337,11 +447,11 @@ export function ChromatophoreField({
         }
 
         // Disperse: cells shrink and drift apart as the section leaves.
-        const spread = disperse * spacing * 1.6;
+        const spread = disperse * cellSpacing * 1.6;
         const radius =
           Math.max(0, energy) *
           c.scale *
-          (spacing * 0.3) *
+          (cellSpacing * 0.3) *
           (1 - disperse * 0.75);
         if (radius < 0.25) continue;
 
@@ -354,20 +464,23 @@ export function ChromatophoreField({
         );
         const px = c.x + c.driftX * spread;
         const py = c.y + c.driftY * spread;
-        paths[bucket].moveTo(px + radius, py);
-        paths[bucket].arc(px, py, radius, 0, Math.PI * 2);
+        const path = (paths[bucket] ??= new Path2D());
+        path.moveTo(px + radius, py);
+        path.arc(px, py, radius, 0, Math.PI * 2);
         drew = true;
       }
 
       if (drew) {
         const fade = intensity * (1 - disperse * 0.55);
         for (let b = 0; b < BUCKETS; b++) {
+          const path = paths[b];
+          if (!path) continue;
           ctx!.fillStyle = ramp[b];
           ctx!.globalAlpha = Math.max(
             0,
             fade * (0.18 + (b / (BUCKETS - 1)) * 0.62),
           );
-          ctx!.fill(paths[b]);
+          ctx!.fill(path);
         }
         ctx!.globalAlpha = 1;
       }
@@ -378,7 +491,7 @@ export function ChromatophoreField({
     }
 
     function play() {
-      if (running) return;
+      if (running || !ready || !onScreen || !wanted || document.hidden) return;
       running = true;
       start = performance.now() - 1200; // skip the dead first second
       raf = requestAnimationFrame(frame);
@@ -387,6 +500,33 @@ export function ChromatophoreField({
     function pause() {
       running = false;
       cancelAnimationFrame(raf);
+    }
+
+    /**
+     * First-touch setup, deferred until the field is actually near the screen.
+     *
+     * Previously every field on the page sized itself and laid out its cells at
+     * mount, whether or not it would ever be seen - and did it again on the
+     * next navigation. The home page mounts nine, so that was nine canvases and
+     * ~20000 cells of setup competing with the paint the visitor was waiting
+     * for. Now the observer decides: a field that never scrolls into view never
+     * costs anything at all.
+     */
+    function init() {
+      if (ready || cancelIdle) return;
+      cancelIdle = scheduleIdle(() => {
+        cancelIdle = null;
+        if (cancelled || ready) return;
+
+        void loadMask().then((m) => {
+          if (cancelled || ready) return;
+          mask = m;
+          resize();
+          ready = true;
+          resizeObserver.observe(wrap!);
+          play();
+        });
+      });
     }
 
     function onPointerMove(e: PointerEvent) {
@@ -403,7 +543,12 @@ export function ChromatophoreField({
     }
 
     const observer = new IntersectionObserver(
-      ([entry]) => (entry.isIntersecting ? play() : pause()),
+      ([entry]) => {
+        onScreen = entry.isIntersecting;
+        if (!onScreen) return pause();
+        if (wanted) init();
+        play();
+      },
       { rootMargin: "120px" },
     );
 
@@ -411,27 +556,29 @@ export function ChromatophoreField({
 
     function onVisibility() {
       if (document.hidden) pause();
-      else observer.observe(wrap!);
+      else play();
     }
 
-    let cancelled = false;
-    loadMask().then((m) => {
-      if (cancelled) return;
-      mask = m;
-      resize();
-      resizeObserver.observe(wrap!);
-      observer.observe(wrap!);
-      document.addEventListener("visibilitychange", onVisibility);
-      if (interactive) {
-        window.addEventListener("pointermove", onPointerMove, {
-          passive: true,
-        });
-        window.addEventListener("pointerleave", onPointerLeave);
-      }
-    });
+    // Lets the `active` prop start and stop the loop without tearing the field
+    // down and rebuilding it on every hover.
+    controlRef.current = (next: boolean) => {
+      wanted = next;
+      if (!next) return pause();
+      if (onScreen) init();
+      play();
+    };
+
+    observer.observe(wrap);
+    document.addEventListener("visibilitychange", onVisibility);
+    if (interactive) {
+      window.addEventListener("pointermove", onPointerMove, { passive: true });
+      window.addEventListener("pointerleave", onPointerLeave);
+    }
 
     return () => {
       cancelled = true;
+      controlRef.current = null;
+      cancelIdle?.();
       pause();
       observer.disconnect();
       resizeObserver.disconnect();
@@ -439,9 +586,14 @@ export function ChromatophoreField({
       window.removeEventListener("pointermove", onPointerMove);
       window.removeEventListener("pointerleave", onPointerLeave);
     };
+    // `active` is deliberately absent: it is delivered through `controlRef` by
+    // the effect below, so toggling it starts and stops the loop instead of
+    // rebuilding the field.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     seed,
-    hue,
+    hueFrom,
+    hueTo,
     spacing,
     intensity,
     silhouette,
@@ -450,6 +602,10 @@ export function ChromatophoreField({
     markY,
     interactive,
   ]);
+
+  useEffect(() => {
+    controlRef.current?.(active);
+  }, [active]);
 
   return (
     <div
