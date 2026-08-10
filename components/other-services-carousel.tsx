@@ -37,7 +37,7 @@ export function OtherServicesCarousel({
       <ul
         ref={trackRef}
         className={cn(
-          "flex snap-x snap-mandatory gap-4 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
+          "flex snap-x snap-mandatory overscroll-x-contain gap-4 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
           "sm:grid sm:snap-none sm:grid-cols-2 sm:overflow-visible sm:pb-0 lg:grid-cols-3",
         )}
       >
@@ -48,7 +48,9 @@ export function OtherServicesCarousel({
             <li
               key={`${other.id}-${index}`}
               aria-hidden={clone || undefined}
-              className="w-[78%] shrink-0 snap-center sm:w-auto sm:shrink"
+              // `snap-always` holds a hard swipe to one card - see the note on
+              // the showcase track, which shares this hook.
+              className="w-[78%] shrink-0 snap-center snap-always sm:w-auto sm:shrink"
             >
               <Link
                 href={{

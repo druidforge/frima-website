@@ -78,8 +78,10 @@ export function ServicesShowcase({ locale }: { locale: Locale }) {
         style={{ "--cols": columns } as React.CSSProperties}
         className={cn(
           // Mobile: a snap track. The scrollbar is hidden because the peeking
-          // next card already signals that this scrolls.
-          "flex snap-x snap-mandatory gap-3 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
+          // next card already signals that this scrolls. `overscroll-x-contain`
+          // keeps a fling that runs out of track from chaining onwards - to the
+          // page, or to the browser's back gesture.
+          "flex snap-x snap-mandatory overscroll-x-contain gap-3 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
           // Desktop: back to the expanding grid.
           "md:grid md:h-[34rem] md:snap-none md:grid-flow-col md:overflow-visible md:pb-0",
           "md:[grid-template-columns:var(--cols)]",
@@ -96,7 +98,13 @@ export function ServicesShowcase({ locale }: { locale: Locale }) {
             <li
               key={`${service.id}-${index}`}
               aria-hidden={clone || undefined}
-              className="w-[82%] shrink-0 snap-center sm:w-[62%] md:w-auto md:min-h-0 md:min-w-0 md:shrink"
+              /**
+               * `snap-always` caps a fling at one card. Without it a hard swipe
+               * coasts over several snap points at once, which reads as a
+               * runaway on a six-card list and can outrun the loop's buffer
+               * before the wrap has anything still enough to correct.
+               */
+              className="w-[82%] shrink-0 snap-center snap-always sm:w-[62%] md:w-auto md:min-h-0 md:min-w-0 md:shrink"
             >
               <Link
                 href={{
