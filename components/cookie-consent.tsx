@@ -56,7 +56,6 @@ export function CookieConsent() {
             cookies: [{ name: /^_pk_/ }],
           },
         },
-        marketing: { enabled: false },
       },
       language: {
         default: locale,
@@ -90,11 +89,6 @@ export function CookieConsent() {
                   description: t("analyticsBody"),
                   linkedCategory: "analytics",
                   cookieTable: { headers, body: rows("analytics") },
-                },
-                {
-                  title: t("marketingTitle"),
-                  description: t("marketingBody"),
-                  linkedCategory: "marketing",
                 },
                 {
                   description: `<a href="${cookieHref}">${t("prefTitle")}</a>`,

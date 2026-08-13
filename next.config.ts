@@ -6,6 +6,13 @@ const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   /**
+   * Lets the dev server be reached from another device on the LAN - a phone
+   * or a second machine hitting this Mac's local IP - without the HMR socket
+   * getting blocked as cross-origin. Production is unaffected: this only
+   * gates `next dev`.
+   */
+  allowedDevOrigins: ["192.168.1.236"],
+  /**
    * Lets a verification build write somewhere other than `.next`.
    *
    * `next dev` keeps its chunk graph in `.next/dev`, and an already-open tab

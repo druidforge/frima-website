@@ -69,10 +69,6 @@ export default async function CookiePolicyPage({
               <dt className="font-medium text-ink">{tc("analyticsTitle")}</dt>
               <dd className="mt-1">{tc("analyticsBody")}</dd>
             </div>
-            <div>
-              <dt className="font-medium text-ink">{tc("marketingTitle")}</dt>
-              <dd className="mt-1">{tc("marketingBody")}</dd>
-            </div>
           </dl>
         </>
       ),

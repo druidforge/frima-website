@@ -3,9 +3,9 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { MapPin } from "lucide-react";
 
-import { ChromatophoreField } from "@/components/chromatophore-field";
 import { CtaBand } from "@/components/cta-band";
 import { Stagger, StaggerItem } from "@/components/interactions";
+import { LogoDraw } from "@/components/logo-draw";
 import { Parallax, Reveal, RevealWords } from "@/components/motion-primitives";
 import { PageHeader } from "@/components/page-header";
 import { locales, type Locale } from "@/i18n/routing";
@@ -74,20 +74,12 @@ function AboutStory() {
 
   return (
     <section className="on-abyss relative overflow-clip py-28 md:py-36">
-      {/* Mirrored to the left here, since this section's prose runs down the
-          right-hand column. */}
-      <ChromatophoreField
-        seed={71}
-        hue={[18, -6]}
-        markX={0.28}
-        markScale={0.52}
-        spacing={17}
-        intensity={0.75}
-        silhouette
-      />
       <div className="shell relative z-10 grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
         <div>
           <p className="eyebrow">{t("storyTitle")}</p>
+          {/* Same spot the silhouette used to resolve in, but the mark
+              itself now - drawn once on arrival, not found by hovering. */}
+          <LogoDraw className="mt-10" />
         </div>
         <Parallax distance={26}>
           <RevealWords
