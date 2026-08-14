@@ -36,6 +36,22 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // The drawer and its toggle are `md:hidden` - crossing into desktop just
+  // hides them, it doesn't touch `open`. Left alone, resizing (or rotating a
+  // tablet, or the devtools device-toolbar) from mobile to desktop while the
+  // drawer was open leaves `open` stuck `true` with nothing left on screen to
+  // close it, which keeps `scroll-locked` applied and the whole page
+  // unscrollable. `md` here has to match the breakpoint the JSX below uses
+  // for the same toggle/drawer, not just any desktop-sized guess.
+  useEffect(() => {
+    const query = window.matchMedia("(min-width: 768px)");
+    const onChange = (event: MediaQueryListEvent) => {
+      if (event.matches) setOpen(false);
+    };
+    query.addEventListener("change", onChange);
+    return () => query.removeEventListener("change", onChange);
+  }, []);
+
   useEffect(() => {
     document.documentElement.classList.toggle("scroll-locked", open);
 
