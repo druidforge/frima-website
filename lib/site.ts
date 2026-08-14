@@ -1,12 +1,22 @@
 /**
  * Single source of truth for business facts that appear in metadata, JSON-LD,
- * the footer, and the legal pages. `email` and `phone` are real; the rest are
- * still mock data pending real input.
+ * the footer, and the legal pages. Everything below is real, sourced from the
+ * obrt's own register extract (sudreg.pravosudje.hr) - `legalName` deliberately
+ * omits the owner and address, which the register extract also lists, since
+ * both already have their own fields here; repeating them inline in every
+ * sentence that interpolates `legalName` would just duplicate itself.
  */
 export const site = {
   name: "Druid Forge",
-  legalName: "Druid Forge j.d.o.o.",
-  oib: "12345678901", // mock Croatian tax number
+  legalName: "Druid Forge, obrt za proizvodnju, usluge i umjetničko stvaralaštvo",
+  owner: "Jurica Milić",
+  oib: "89043488267",
+  registration: {
+    /** Matični broj obrta - the craft register's own identifier. */
+    mbo: "99349841",
+    craftLicenseNumber: "17010019269",
+    authority: "Upravni odjel za gospodarstvo, EU fondove i poljoprivredu Split",
+  },
   email: "druidforgeinfo@gmail.com",
   phone: "+385 95 524 8865",
   address: {

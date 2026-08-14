@@ -42,6 +42,10 @@
     "cookies": {
       "title": "Cookie policy",
       "description": "Which cookies we use, why we use them and how you control them."
+    },
+    "impressum": {
+      "title": "Legal notice",
+      "description": "Operator, registration and contact details for Druid Forge, required by Croatian and German law."
     }
   },
   "home": {
@@ -256,6 +260,7 @@
     "studioTitle": "Studio",
     "legalTitle": "Legal",
     "contactTitle": "Contact",
+    "impressum": "Legal notice",
     "privacy": "Privacy policy",
     "cookies": "Cookie policy",
     "cookieSettings": "Cookie settings",
@@ -313,6 +318,20 @@
       "s8Body": "This site uses cookies. Details and consent controls are in the cookie policy.",
       "s9Title": "Changes to this policy",
       "s9Body": "We update this policy when the way we process data changes. The date of the last change is shown at the top of the page."
+    },
+    "impressum": {
+      "title": "Legal notice",
+      "intro": "Information required by Croatian and German law for anyone providing a commercial website - who runs this site, how to reach them, and where they are registered.",
+      "s1Title": "Operator",
+      "s1Body": "This site is operated by {legalName}, owned by {owner}, {street}, {postalCode} {city}, Croatia.",
+      "s2Title": "Contact",
+      "s2Body": "Email: {email}. Phone: {phone}.",
+      "s3Title": "Registration",
+      "s3Body": "Registered as a craft business (obrt) with the {authority}. Craft register number (MBO) {mbo}, trade licence number {craftLicenseNumber}, tax number (OIB) {oib}.",
+      "s4Title": "Responsible for content",
+      "s4Body": "{owner}, at the address above.",
+      "s5Title": "Dispute resolution",
+      "s5Body": "The European Commission provides a platform for online dispute resolution at ec.europa.eu/consumers/odr. We are not obliged to, and do not, participate in dispute resolution proceedings before a consumer arbitration board."
     },
     "cookiePolicy": {
       "title": "Cookie policy",

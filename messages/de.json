@@ -42,6 +42,10 @@
     "cookies": {
       "title": "Cookie-Richtlinie",
       "description": "Welche Cookies wir einsetzen, wozu sie dienen und wie Sie sie steuern."
+    },
+    "impressum": {
+      "title": "Impressum",
+      "description": "Angaben zum Betreiber, zur Registrierung und Kontaktdaten von Druid Forge gemäß kroatischem und deutschem Recht."
     }
   },
   "home": {
@@ -256,6 +260,7 @@
     "studioTitle": "Studio",
     "legalTitle": "Rechtliches",
     "contactTitle": "Kontakt",
+    "impressum": "Impressum",
     "privacy": "Datenschutzerklärung",
     "cookies": "Cookie-Richtlinie",
     "cookieSettings": "Cookie-Einstellungen",
@@ -313,6 +318,20 @@
       "s8Body": "Diese Seite verwendet Cookies. Einzelheiten und die Einwilligungsverwaltung finden Sie in der Cookie-Richtlinie.",
       "s9Title": "Änderungen dieser Erklärung",
       "s9Body": "Wir aktualisieren diese Erklärung, wenn sich die Verarbeitung ändert. Das Datum der letzten Änderung steht oben auf der Seite."
+    },
+    "impressum": {
+      "title": "Impressum",
+      "intro": "Angaben, die das kroatische und deutsche Recht von jedem verlangen, der eine kommerzielle Website betreibt - wer hinter dieser Seite steht, wie Sie uns erreichen und wo wir registriert sind.",
+      "s1Title": "Betreiber",
+      "s1Body": "Diese Website wird betrieben von {legalName}, Inhaber {owner}, {street}, {postalCode} {city}, Kroatien.",
+      "s2Title": "Kontakt",
+      "s2Body": "E-Mail: {email}. Telefon: {phone}.",
+      "s3Title": "Registereintrag",
+      "s3Body": "Eingetragen als Handwerksbetrieb (obrt) bei {authority}. Handwerksregisternummer (MBO) {mbo}, Gewerbeschein-Nr. {craftLicenseNumber}, Steuernummer (OIB) {oib}.",
+      "s4Title": "Verantwortlich für den Inhalt",
+      "s4Body": "{owner}, unter der oben genannten Anschrift.",
+      "s5Title": "Streitschlichtung",
+      "s5Body": "Die Europäische Kommission stellt eine Plattform für die außergerichtliche Online-Streitbeilegung bereit: ec.europa.eu/consumers/odr. Wir sind nicht verpflichtet und nicht bereit, an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen."
     },
     "cookiePolicy": {
       "title": "Cookie-Richtlinie",

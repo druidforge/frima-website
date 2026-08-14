@@ -74,12 +74,23 @@ export async function Footer() {
 
         <div className="mt-16 flex flex-col gap-5 border-t border-border pt-8 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {new Date().getFullYear()} {site.legalName}. {t("rights")}{" "}
+            {/* `legalName` is the full registered activity description -
+                correct for the Impressum and the Privacy Policy's data
+                controller clause, unreadable as a copyright line. This is
+                the same entity named more tersely. */}
+            © {new Date().getFullYear()} {site.name}, obrt, vl. {site.owner}.{" "}
+            {t("rights")}{" "}
             <span className="whitespace-nowrap">
               {t("oib")} {site.oib}
             </span>
           </p>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <Link
+              href="/impressum"
+              className="link-sweep transition-colors duration-(--dur-base) hover:text-foreground"
+            >
+              {t("impressum")}
+            </Link>
             <Link
               href="/privacy"
               className="link-sweep transition-colors duration-(--dur-base) hover:text-foreground"

@@ -42,6 +42,10 @@
     "cookies": {
       "title": "Politika kolačića",
       "description": "Koje kolačiće koristimo, zašto ih koristimo i kako njima upravljate."
+    },
+    "impressum": {
+      "title": "Impresum",
+      "description": "Podaci o nositelju obrta, registraciji i kontaktu za Druid Forge, sukladno hrvatskom i njemačkom pravu."
     }
   },
   "home": {
@@ -256,6 +260,7 @@
     "studioTitle": "Studio",
     "legalTitle": "Pravno",
     "contactTitle": "Kontakt",
+    "impressum": "Impresum",
     "privacy": "Politika privatnosti",
     "cookies": "Politika kolačića",
     "cookieSettings": "Postavke kolačića",
@@ -313,6 +318,20 @@
       "s8Body": "Stranica koristi kolačiće. Detalje i način upravljanja pristankom pronađite u politici kolačića.",
       "s9Title": "Izmjene politike",
       "s9Body": "Politiku mijenjamo kad se promijeni način obrade. Datum zadnje izmjene naveden je na vrhu stranice."
+    },
+    "impressum": {
+      "title": "Impresum",
+      "intro": "Podaci koje hrvatsko i njemačko pravo traže od svakog tko vodi komercijalnu internetsku stranicu - tko stoji iza ove stranice, kako ga se može kontaktirati i gdje je registriran.",
+      "s1Title": "Nositelj obrta",
+      "s1Body": "Ovu stranicu vodi {legalName}, vl. {owner}, {street}, {postalCode} {city}, Hrvatska.",
+      "s2Title": "Kontakt",
+      "s2Body": "E-pošta: {email}. Telefon: {phone}.",
+      "s3Title": "Registracija",
+      "s3Body": "Registrirano kao obrt pri tijelu {authority}. Matični broj obrta (MBO) {mbo}, broj obrtnice {craftLicenseNumber}, OIB {oib}.",
+      "s4Title": "Odgovorna osoba za sadržaj",
+      "s4Body": "{owner}, na gore navedenoj adresi.",
+      "s5Title": "Rješavanje sporova",
+      "s5Body": "Europska komisija nudi platformu za online rješavanje sporova na ec.europa.eu/consumers/odr. Nismo obvezni niti sudjelujemo u postupcima rješavanja sporova pred tijelom za izvansudsko rješavanje potrošačkih sporova."
     },
     "cookiePolicy": {
       "title": "Politika kolačića",
