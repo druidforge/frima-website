@@ -51,8 +51,6 @@
     "heroPrimary": "Start a project",
     "heroSecondary": "See services",
     "heroScroll": "Scroll",
-    "thesisTitle": "Six crafts, one forge",
-    "thesisBody": "We do not hand your project down a chain. The people who draw the interface also write the code that runs it, so decisions survive the gap between stages.",
     "servicesTitle": "What we do",
     "servicesLead": "Each craft covers one area. Most projects use two or three of them.",
     "servicesCta": "All services",
@@ -68,14 +66,10 @@
       "step4Title": "Hand over",
       "step4Body": "Launch, measurement and training. You keep the documentation and access to everything."
     },
-    "statsTitle": "Numbers",
-    "stats": {
-      "projects": "Projects delivered",
-      "years": "Years working",
-      "clients": "Clients who come back",
-      "response": "Average reply"
-    },
-    "responseValue": "< 1 day",
+    "galleryEyebrow": "Our projects",
+    "galleryTitle": "Six crafts, one gallery",
+    "galleryCardLabel": "Project",
+    "galleryHint": "Scroll to explore",
     "ctaTitle": "Have a project in mind?",
     "ctaBody": "Send a few sentences about what you need. We reply within one working day, with something concrete.",
     "ctaButton": "Get in touch"

@@ -51,8 +51,6 @@
     "heroPrimary": "Projekt starten",
     "heroSecondary": "Leistungen ansehen",
     "heroScroll": "Scrollen",
-    "thesisTitle": "Sechs Handwerke, eine Schmiede",
-    "thesisBody": "Wir reichen Ihr Projekt nicht durch eine Kette weiter. Dieselben Leute, die die Oberfläche zeichnen, schreiben auch den Code dahinter. So gehen Entscheidungen zwischen den Phasen nicht verloren.",
     "servicesTitle": "Was wir machen",
     "servicesLead": "Jedes Handwerk deckt einen Bereich ab. Die meisten Projekte brauchen zwei oder drei davon.",
     "servicesCta": "Alle Leistungen",
@@ -68,14 +66,10 @@
       "step4Title": "Übergabe",
       "step4Body": "Launch, Messung und Einschulung. Dokumentation und alle Zugänge bleiben bei Ihnen."
     },
-    "statsTitle": "Zahlen",
-    "stats": {
-      "projects": "Gelieferte Projekte",
-      "years": "Jahre im Geschäft",
-      "clients": "Kunden, die wiederkommen",
-      "response": "Antwortzeit im Schnitt"
-    },
-    "responseValue": "< 1 Tag",
+    "galleryEyebrow": "Unsere Projekte",
+    "galleryTitle": "Sechs Handwerke, eine Galerie",
+    "galleryCardLabel": "Projekt",
+    "galleryHint": "Scrollen zum Entdecken",
     "ctaTitle": "Sie haben ein Projekt im Kopf?",
     "ctaBody": "Schicken Sie ein paar Sätze zu dem, was Sie brauchen. Wir antworten innerhalb eines Werktags, und zwar konkret.",
     "ctaButton": "Kontakt aufnehmen"

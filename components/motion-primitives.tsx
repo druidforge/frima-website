@@ -7,7 +7,6 @@ import {
   useScroll,
   useSpring,
   useTransform,
-  type MotionValue,
   type UseInViewOptions,
 } from "motion/react";
 
@@ -335,46 +334,4 @@ export function Parallax({
       <motion.div style={{ y }}>{children}</motion.div>
     </div>
   );
-}
-
-/** Counts up to `value` the first time it enters the viewport. */
-export function CountUp({
-  value,
-  suffix = "",
-  className,
-}: {
-  value: number;
-  suffix?: string;
-  className?: string;
-}) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const shown = useRevealed(ref, "-20% 0px");
-
-  return (
-    <span ref={ref} className={className}>
-      <motion.span
-        initial={{ opacity: 0 }}
-        animate={shown ? { opacity: 1 } : undefined}
-        transition={{ duration: 0.3 }}
-      >
-        {shown ? <Ticker to={value} /> : 0}
-        {suffix}
-      </motion.span>
-    </span>
-  );
-}
-
-function Ticker({ to }: { to: number }) {
-  const progress = useSpring(0, { stiffness: 60, damping: 20 });
-  const rounded = useTransform(progress, (v) => Math.round(v));
-
-  // Starting the spring is a side effect, so it belongs in an effect rather
-  // than the render body. Called inline it re-fired on every render of this
-  // subtree, and under StrictMode's double render it started the animation
-  // twice before the first frame.
-  useEffect(() => {
-    progress.set(to);
-  }, [progress, to]);
-
-  return <motion.span>{rounded as unknown as MotionValue<number>}</motion.span>;
 }

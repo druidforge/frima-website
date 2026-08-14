@@ -5,8 +5,8 @@ import { useTranslations } from "next-intl";
 import { CtaBand } from "@/components/cta-band";
 import { Hero } from "@/components/home/hero";
 import { Process } from "@/components/home/process";
+import { ProjectGallery } from "@/components/home/project-gallery";
 import { ServicesStack } from "@/components/home/services-stack";
-import { Stats } from "@/components/home/stats";
 import type { Locale } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/metadata";
 
@@ -43,7 +43,7 @@ export default async function HomePage({
     <>
       <Hero />
       <ServicesStack />
-      <Stats />
+      <ProjectGallery />
       <Process />
       <HomeCta />
     </>

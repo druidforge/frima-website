@@ -51,8 +51,6 @@
     "heroPrimary": "Pokreni projekt",
     "heroSecondary": "Pogledaj usluge",
     "heroScroll": "Listaj",
-    "thesisTitle": "Šest zanata, jedna kovačnica",
-    "thesisBody": "Ne prosljeđujemo posao dalje. Isti ljudi koji crtaju sučelje pišu i kod koji ga pokreće, pa se odluke ne gube između faza.",
     "servicesTitle": "Što radimo",
     "servicesLead": "Svaki zanat pokriva jedno područje. Većina projekata koristi dva ili tri.",
     "servicesCta": "Sve usluge",
@@ -68,14 +66,10 @@
       "step4Title": "Predaja",
       "step4Body": "Objava, mjerenje i obuka. Ostavljamo dokumentaciju i pristup svemu."
     },
-    "statsTitle": "Brojke",
-    "stats": {
-      "projects": "Isporučenih projekata",
-      "years": "Godina rada",
-      "clients": "Klijenata koji se vraćaju",
-      "response": "Prosječan odgovor"
-    },
-    "responseValue": "< 1 dan",
+    "galleryEyebrow": "Naši projekti",
+    "galleryTitle": "Šest zanata, jedna galerija",
+    "galleryCardLabel": "Projekt",
+    "galleryHint": "Pomaknite se za pregled",
     "ctaTitle": "Imate projekt na umu?",
     "ctaBody": "Pošaljite nekoliko rečenica o tome što vam treba. Odgovaramo u roku od jednog radnog dana, i to konkretno.",
     "ctaButton": "Javite nam se"
