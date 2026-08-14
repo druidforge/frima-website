@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { MapPin } from "lucide-react";
 
 import { CtaBand } from "@/components/cta-band";
-import { Stagger, StaggerItem } from "@/components/interactions";
+import { ScrollStagger, ScrollStaggerItem } from "@/components/interactions";
 import { LogoDraw } from "@/components/logo-draw";
 import { Parallax, Reveal, RevealWords } from "@/components/motion-primitives";
 import { PageHeader } from "@/components/page-header";
@@ -149,15 +149,16 @@ function AboutValues() {
     <section className="py-28 md:py-36">
       <div className="shell">
         <p className="eyebrow">{t("valuesTitle")}</p>
-        <Stagger
+        <ScrollStagger
           as="ul"
-          step={0.08}
           className="mt-12 grid gap-px overflow-clip rounded-md border border-border bg-border md:grid-cols-3"
         >
-          {values.map((value) => (
-            <StaggerItem
+          {values.map((value, index) => (
+            <ScrollStaggerItem
               key={value}
               as="li"
+              index={index}
+              total={values.length}
               className="group relative bg-background p-8 transition-colors duration-(--dur-slow) hover:bg-paper md:p-9"
             >
               {/* Top hairline draws in per cell, so hovering the grid reads as
@@ -170,9 +171,9 @@ function AboutValues() {
                 {t(`values.${value}Title`)}
               </h3>
               <p className="mt-3.5 text-ink-soft">{t(`values.${value}Body`)}</p>
-            </StaggerItem>
+            </ScrollStaggerItem>
           ))}
-        </Stagger>
+        </ScrollStagger>
       </div>
     </section>
   );

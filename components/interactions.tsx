@@ -1,12 +1,14 @@
 "use client";
 
-import { useRef, type ReactNode } from "react";
+import { createContext, useContext, useRef, type ReactNode } from "react";
 import {
   motion,
   useInView,
   useMotionValue,
   useScroll,
   useSpring,
+  useTransform,
+  type MotionValue,
 } from "motion/react";
 
 import { cn } from "@/lib/utils";
@@ -156,6 +158,101 @@ export function StaggerItem({
         },
       }}
     >
+      {children}
+    </MotionTag>
+  );
+}
+
+/**
+ * `Stagger`/`StaggerItem` above reveal on a clock once the group crosses
+ * into view - the whole sequence plays out over a fixed ~0.6s regardless of
+ * how fast the user scrolled past it, which reads as "all at once" to
+ * anyone who scrolled normally rather than pausing right on the trigger.
+ * `ScrollStagger`/`ScrollStaggerItem` reveal on scroll position instead:
+ * each item's opacity/y is a `useTransform` of the group's own
+ * `scrollYProgress`, so the reveal is scrubbed by the scroll itself - slow
+ * scroll plays it slowly, fast scroll plays it fast, no scroll leaves it
+ * mid-reveal exactly where the user stopped.
+ *
+ * The shared progress value has to live in context rather than be
+ * recomputed per item: `useScroll` needs one `target` ref for the whole
+ * tracked range, and every item just claims a slice of that one range
+ * rather than tracking the viewport itself.
+ */
+const ScrollStaggerContext = createContext<MotionValue<number> | null>(null);
+
+export function ScrollStagger({
+  children,
+  className,
+  as = "div",
+}: {
+  children: ReactNode;
+  className?: string;
+  as?: keyof typeof CONTAINERS;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  // Progress runs from 0, when the group's top edge is still 80% down the
+  // viewport (just entering from below), to 1, once it has travelled up to
+  // 20% down - the natural scroll distance of a section arriving and
+  // settling into the upper part of the screen, rather than its entire time
+  // onscreen (the default "start end"/"end start" pairing), which would
+  // still be mid-reveal long after the section is centred and being read.
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start 80%", "start 20%"],
+  });
+  // Smoothed, not raw: without this each item's transform jitters with
+  // every scroll-wheel tick. Same spring `ScrollProgress` above uses on the
+  // read-progress bar, for the same reason.
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 220,
+    damping: 30,
+    restDelta: 0.001,
+  });
+  const MotionTag = CONTAINERS[as];
+
+  return (
+    <ScrollStaggerContext.Provider value={smoothProgress}>
+      <MotionTag ref={ref as never} className={className}>
+        {children}
+      </MotionTag>
+    </ScrollStaggerContext.Provider>
+  );
+}
+
+export function ScrollStaggerItem({
+  children,
+  className,
+  index,
+  total,
+  y = 24,
+  as = "div",
+}: {
+  children: ReactNode;
+  className?: string;
+  index: number;
+  total: number;
+  y?: number;
+  as?: keyof typeof ITEMS;
+}) {
+  const progress = useContext(ScrollStaggerContext);
+  if (!progress) {
+    throw new Error("ScrollStaggerItem must be rendered inside ScrollStagger");
+  }
+
+  // The tracked range splits into `total` equal slices, each item claiming
+  // one - so column 2 doesn't start revealing until column 1's slice of the
+  // *scroll distance* has passed, not after a fixed delay.
+  const span = 1 / total;
+  const start = index * span;
+  const end = start + span;
+
+  const opacity = useTransform(progress, [start, end], [0, 1]);
+  const yOffset = useTransform(progress, [start, end], [y, 0]);
+  const MotionTag = ITEMS[as];
+
+  return (
+    <MotionTag className={className} style={{ opacity, y: yOffset }}>
       {children}
     </MotionTag>
   );
