@@ -76,7 +76,7 @@ function AboutStory() {
   const t = useTranslations("about");
 
   return (
-    <section className="on-abyss relative overflow-clip py-28 md:py-36">
+    <section className="on-abyss relative overflow-clip py-20 md:py-28">
       <div className="shell relative z-10 grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
         <div>
           <p className="eyebrow">{t("storyTitle")}</p>
@@ -121,7 +121,7 @@ function AboutTeam() {
   }));
 
   return (
-    <section className="overflow-clip py-28 md:py-36">
+    <section className="overflow-clip py-20 md:py-28">
       <div className="shell">
         <p className="eyebrow">{t("teamTitle")}</p>
         <RevealWords
@@ -146,7 +146,7 @@ function AboutValues() {
   const t = useTranslations("about");
 
   return (
-    <section className="py-28 md:py-36">
+    <section className="py-20 md:py-28">
       <div className="shell">
         <p className="eyebrow">{t("valuesTitle")}</p>
         <ScrollStagger
@@ -183,7 +183,7 @@ function AboutLocation() {
   const t = useTranslations("about");
 
   return (
-    <section className="pb-28 md:pb-36">
+    <section className="pb-20 md:pb-28">
       <div className="shell grid gap-10 border-t border-border pt-14 md:grid-cols-[0.85fr_1.15fr] lg:gap-20">
         <p className="eyebrow">{t("locationTitle")}</p>
         <div>
