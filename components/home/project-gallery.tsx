@@ -2,6 +2,7 @@
 
 import { useRef, type MouseEvent } from "react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import {
   motion,
   useMotionValue,
@@ -17,29 +18,52 @@ import { useIsCompact } from "@/lib/use-carousel";
 type GalleryItem = {
   id: number;
   image: string;
+  name: string;
 };
 
-// Placeholder frames until real project shots exist - same set (and the same
-// magnetic-hover, scroll-surfed 3D stack) as the reference component this
-// section is built from.
-const ITEMS: GalleryItem[] = [
-  { id: 1, image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80" },
-  { id: 2, image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=80" },
-  { id: 3, image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80" },
-  { id: 4, image: "https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?w=800&q=80" },
-  { id: 5, image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=800&q=80" },
-  { id: 6, image: "https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?w=800&q=80" },
-  { id: 7, image: "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=800&q=80" },
-  { id: 8, image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&q=80" },
-  { id: 9, image: "https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?w=800&q=80" },
-  { id: 10, image: "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=800&q=80" },
-  { id: 11, image: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&q=80" },
-  { id: 12, image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80" },
-  { id: 13, image: "https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=800&q=80" },
-  { id: 14, image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&q=80" },
-  { id: 15, image: "https://images.unsplash.com/photo-1496217590455-aa63a8350eea?w=800&q=80" },
-  { id: 16, image: "https://images.unsplash.com/photo-1571513722275-4b41940f54b8?w=800&q=80" },
+/**
+ * `Archicon-website.jpg` -> `Archicon Website`. The card label is read
+ * straight off the file on disk rather than a separate hand-typed list, so
+ * the two can never drift apart - dropping a new screenshot in and renaming
+ * the file *is* renaming the card. A segment that is already all-caps (`KF`,
+ * `CRM`) is left alone rather than title-cased into `Kf`/`Crm`.
+ */
+function titleFromFilename(filename: string) {
+  const base = filename.replace(/\.[a-z0-9]+$/i, "");
+  return base
+    .split("-")
+    .map((word) => (word === word.toUpperCase() ? word : word[0].toUpperCase() + word.slice(1)))
+    .join(" ");
+}
+
+// Real project screenshots, `/public/gallery`. The nine phone shots have
+// their status bar already cropped off (see the sibling note in that
+// folder) - this component just displays whatever is there.
+const FILES = [
+  // Archicon
+  "Archicon-website.jpg",
+  "Archicon-flyer.png",
+  "Archicon-logo-design.jpg",
+  // Profina Vuletić, then Profina
+  "Profina-Vuletic-website.jpg",
+  "Profina-Vuletic-business-card.png",
+  "Profina-CRM-web-app.jpg",
+  // Mobile game, then mobile app
+  "Fallen-Kingdom-mobile-game.jpg",
+  "Souvenir-tracker-mobile-app.jpg",
+  // The rest of the web apps
+  "Clay-workshop-web-app.jpg",
+  "Fizilab-web-app.jpg",
+  "KF-tracker-web-app.jpg",
+  "Offer-converter-web-app.jpg",
+  "Wedding-seating-planner-web-app.png",
 ];
+
+const ITEMS: GalleryItem[] = FILES.map((file, index) => ({
+  id: index + 1,
+  image: `/gallery/${file}`,
+  name: titleFromFilename(file),
+}));
 
 /** Scroll runway devoted to each card, plus a flat release stretch at the end
  *  so the pin lets go cleanly instead of snapping. In `vh`, not px, so the
@@ -84,7 +108,7 @@ export function ProjectGallery() {
     restDelta: 0.0005,
   });
 
-  // Smaller stack and steps on phones - the desktop values stack 16 cards
+  // Smaller stack and steps on phones - the desktop values stack the cards
   // across roughly 1.5x the viewport width, which is the point on a 300px
   // display.
   const stepX = isCompact ? 128 : 240;
@@ -174,7 +198,6 @@ export function ProjectGallery() {
                 mouseX={mouseX}
                 mouseY={mouseY}
                 progress={progress}
-                label={t("galleryCardLabel")}
               />
             ))}
           </motion.div>
@@ -195,7 +218,6 @@ function Card({
   mouseX,
   mouseY,
   progress,
-  label,
 }: {
   item: GalleryItem;
   index: number;
@@ -207,7 +229,6 @@ function Card({
   mouseX: MotionValue<number>;
   mouseY: MotionValue<number>;
   progress: MotionValue<number>;
-  label: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -240,14 +261,20 @@ function Card({
       className="group absolute overflow-hidden rounded-md shadow-2xl"
       style={{ width, height, transform, transformStyle: "preserve-3d" }}
     >
-      <span className="absolute left-1 top-2 z-10 font-mono text-xs text-paper/50 transition-colors duration-(--dur-base) group-hover:text-paper/90">
-        {label} {String(index + 1).padStart(2, "0")}
+      {/* A plain light-on-image label read fine over the reference set's
+          uniformly dark photography, but these screenshots include plenty of
+          near-white sections (Archicon, FiziLab) that the same white-on-image
+          text disappeared into. A small solid chip behind it holds contrast
+          no matter what is under it. */}
+      <span className="absolute left-2 top-2 z-10 max-w-[calc(100%-1rem)] truncate rounded-[3px] bg-ink/55 px-1.5 py-0.5 font-mono text-[0.65rem] leading-none text-paper backdrop-blur-[2px] transition-colors duration-(--dur-base) group-hover:bg-ink/75">
+        {item.name}
       </span>
-      <img
+      <Image
         src={item.image}
-        alt=""
-        loading="lazy"
-        className="h-full w-full object-cover brightness-75 transition-[filter] duration-(--dur-slow) group-hover:brightness-100"
+        alt={item.name}
+        fill
+        sizes="(max-width: 767px) 190px, 300px"
+        className="object-cover object-top brightness-75 transition-[filter] duration-(--dur-slow) group-hover:brightness-100"
       />
       <div
         aria-hidden="true"
