@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
 
+import { ForgeStrikeButton } from "@/components/forge-strike-button";
 import { cn, mulberry32 } from "@/lib/utils";
 
 type Person = {
@@ -15,9 +15,10 @@ type Person = {
 };
 
 /**
- * One photo active at a time, in a tilted stack, with arrows to step through
- * the rest - the "meet the two of us" section as a small, self-contained
- * switcher rather than the full-width scroll rows the site used to run here.
+ * One photo active at a time, in a tilted stack, with a hammer-and-anvil
+ * strike to step through the rest - the "meet the two of us" section as a
+ * small, self-contained switcher rather than the full-width scroll rows the
+ * site used to run here.
  *
  * The whole thing is one layout: there is no separate mobile version to keep
  * in sync, because there is nothing here a touch screen cannot do - the
@@ -140,23 +141,17 @@ export function TeamShowcase({
             </motion.p>
           </motion.div>
 
-          <div className="flex gap-4 pt-10 md:pt-0">
-            <button
-              type="button"
+          <div className="flex gap-2 pt-10 md:pt-0">
+            <ForgeStrikeButton
               onClick={handlePrev}
-              aria-label={prevLabel}
-              className="group/button flex h-9 w-9 items-center justify-center rounded-full border border-border bg-paper transition-colors duration-(--dur-base) hover:border-ink/35"
-            >
-              <ArrowLeft className="h-4 w-4 text-ink transition-transform duration-(--dur-base) group-hover/button:-translate-x-0.5" />
-            </button>
-            <button
-              type="button"
+              label={prevLabel}
+              direction="prev"
+            />
+            <ForgeStrikeButton
               onClick={handleNext}
-              aria-label={nextLabel}
-              className="group/button flex h-9 w-9 items-center justify-center rounded-full border border-border bg-paper transition-colors duration-(--dur-base) hover:border-ink/35"
-            >
-              <ArrowRight className="h-4 w-4 text-ink transition-transform duration-(--dur-base) group-hover/button:translate-x-0.5" />
-            </button>
+              label={nextLabel}
+              direction="next"
+            />
           </div>
         </div>
       </div>
