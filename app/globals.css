@@ -383,6 +383,30 @@
     transform: translate(2px, -2px);
   }
 
+  /* Portraits arrive in colour on hover, the same "quiet until touched" idea
+     the service panels use for their field.
+
+     Guarded by `(hover: hover)` rather than a plain `:hover`, and the guard
+     wraps the *base* `grayscale` too, not just the transition into colour. A
+     touch device can trigger `:hover` on tap but never cleanly leaves it, so
+     an unguarded rule would risk a portrait stuck grayscale until the next
+     tap elsewhere. Scoping the whole effect to devices that can genuinely
+     hover means touch just sees the photo in colour from the first paint -
+     which is the "something that does not depend on hovering" the mobile
+     layout needs anyway. */
+  @media (hover: hover) {
+    .portrait-bloom {
+      filter: grayscale(0.85);
+      transition:
+        filter var(--dur-slow) var(--ease-out-quint),
+        transform var(--dur-slow) var(--ease-out-quint);
+    }
+    .group:hover .portrait-bloom {
+      filter: grayscale(0);
+      transform: scale(1.045);
+    }
+  }
+
   /* Primary action. The lift is small on purpose - a button that jumps reads
      as a toy. */
   .btn-ink {

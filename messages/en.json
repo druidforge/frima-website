@@ -177,6 +177,21 @@
     "lead": "Working since 2019. Small enough that you talk to us directly, experienced enough to know where projects get stuck.",
     "storyTitle": "Why a forge",
     "storyBody": "A druid's knowledge is not read out of a book. It comes from working the same living material for years, until you know how it behaves before it moves. A forge is the other half of the name: raw metal goes in, and what comes out is a tool for one particular hand rather than a part off a shelf. Both describe how we work - whoever knows the material decides about it, instead of waiting for approval through three levels.",
+    "teamTitle": "The people behind the forge",
+    "teamPrev": "Previous person",
+    "teamNext": "Next person",
+    "team": {
+      "duje": {
+        "name": "Duje Milić",
+        "role": "Developer & Project Manager",
+        "bio": "At a computer for as long as he can remember - wrote his first lines of code as a kid, and it turned from habit into work. Keeps projects on track from first idea to delivery."
+      },
+      "dominko": {
+        "name": "Dominko Milić",
+        "role": "Developer & Project Manager",
+        "bio": "Coding since his teenage years, when he started building his own things instead of just playing games. That curiosity still runs every project that passes through his hands."
+      }
+    },
     "valuesTitle": "How we work",
     "values": {
       "directTitle": "No middle layer",

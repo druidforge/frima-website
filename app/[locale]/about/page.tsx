@@ -8,9 +8,11 @@ import { Stagger, StaggerItem } from "@/components/interactions";
 import { LogoDraw } from "@/components/logo-draw";
 import { Parallax, Reveal, RevealWords } from "@/components/motion-primitives";
 import { PageHeader } from "@/components/page-header";
+import { TeamShowcase } from "@/components/team-showcase";
 import { locales, type Locale } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/metadata";
 import { site } from "@/lib/site";
+import { team } from "@/lib/team";
 
 const values = ["direct", "own", "plain"] as const;
 
@@ -46,6 +48,7 @@ export default async function AboutPage({
     <>
       <AboutHeader />
       <AboutStory />
+      <AboutTeam />
       <AboutValues />
       <AboutLocation />
       <AboutCta />
@@ -93,6 +96,47 @@ function AboutStory() {
             </p>
           </Reveal>
         </Parallax>
+      </div>
+    </section>
+  );
+}
+
+/**
+ * The two people, not the studio's abstraction of them.
+ *
+ * Deliberately its own section rather than a line in the story above - a
+ * name in a sentence is not the same as a face. `TeamShowcase` is a small
+ * switcher rather than a grid or a stack of rows: at exactly two people,
+ * that is the whole roster, so one photo shown at a time with an arrow to
+ * step to the other reads as an introduction rather than a directory.
+ */
+function AboutTeam() {
+  const t = useTranslations("about");
+
+  const people = team.map((person) => ({
+    name: t(`team.${person.id}.name`),
+    role: t(`team.${person.id}.role`),
+    bio: t(`team.${person.id}.bio`),
+    photo: person.photo,
+  }));
+
+  return (
+    <section className="overflow-clip py-28 md:py-36">
+      <div className="shell">
+        <p className="eyebrow">{t("teamTitle")}</p>
+        <RevealWords
+          text={t("teamTitle")}
+          as="h2"
+          className="mt-5 max-w-[18ch] font-display text-(length:--text-step-3) font-semibold"
+        />
+      </div>
+
+      <div className="shell mt-20 md:mt-28">
+        <TeamShowcase
+          people={people}
+          prevLabel={t("teamPrev")}
+          nextLabel={t("teamNext")}
+        />
       </div>
     </section>
   );

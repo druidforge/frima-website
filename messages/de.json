@@ -177,6 +177,21 @@
     "lead": "Seit 2019 im Geschäft. Klein genug, dass Sie direkt mit uns reden, erfahren genug, um zu wissen, wo Projekte hängen bleiben.",
     "storyTitle": "Warum eine Schmiede",
     "storyBody": "Das Wissen eines Druiden steht in keinem Buch. Es entsteht daraus, jahrelang mit demselben lebendigen Material zu arbeiten, bis man weiß, wie es sich verhält, bevor es sich bewegt. Die Schmiede ist die andere Hälfte des Namens: hinein geht rohes Metall, heraus kommt ein Werkzeug für eine bestimmte Hand und kein Teil aus dem Regal. Beides beschreibt unsere Arbeitsweise - wer das Material kennt, entscheidet darüber, statt auf Freigaben über drei Ebenen zu warten.",
+    "teamTitle": "Die Leute hinter der Schmiede",
+    "teamPrev": "Vorherige Person",
+    "teamNext": "Nächste Person",
+    "team": {
+      "duje": {
+        "name": "Duje Milić",
+        "role": "Entwickler & Projektleiter",
+        "bio": "Am Computer, seit er sich erinnern kann – die ersten Zeilen Code schrieb er als Kind, daraus wurde irgendwann der Beruf. Hält Projekte auf Kurs, von der ersten Idee bis zur Lieferung."
+      },
+      "dominko": {
+        "name": "Dominko Milić",
+        "role": "Entwickler & Projektleiter",
+        "bio": "Programmiert seit seiner Jugend, als er anfing, eigene Dinge zu bauen, statt nur zu spielen. Diese Neugier bestimmt bis heute jedes Projekt, das durch seine Hände geht."
+      }
+    },
     "valuesTitle": "Wie wir arbeiten",
     "values": {
       "directTitle": "Keine Zwischenebene",
