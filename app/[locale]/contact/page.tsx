@@ -8,7 +8,7 @@ import { InstagramIcon } from "@/components/icons/instagram";
 import { PageHeader } from "@/components/page-header";
 import { locales, type Locale } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/metadata";
-import { site, team, whatsAppHref } from "@/lib/site";
+import { instagramHandle, site, team, whatsAppHref } from "@/lib/site";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -124,7 +124,7 @@ function ContactBody() {
                 rel="noopener noreferrer"
                 className={linkClass}
               >
-                @druid.forge
+                {instagramHandle}
               </a>
             </ContactRow>
             <ContactRow icon={<MessageCircle size={16} />} label={tc("whatsapp")}>

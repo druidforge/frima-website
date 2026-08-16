@@ -177,14 +177,19 @@ function ServiceBody({
               sticks while the longer list scrolls past. */}
           {service.image ? (
             <Reveal>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-md border border-border bg-abyss-deep lg:sticky lg:top-28">
-                <Image
-                  src={service.image}
-                  alt=""
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-cover"
-                />
+              {/* `sticky` and `relative` are the same CSS property - split
+                  across two elements so the sticking wrapper doesn't clobber
+                  the `<Image fill>` positioning root it wraps. */}
+              <div className="lg:sticky lg:top-28">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-md border border-border bg-abyss-deep">
+                  <Image
+                    src={service.image}
+                    alt=""
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </Reveal>
           ) : null}

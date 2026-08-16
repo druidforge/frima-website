@@ -13,7 +13,6 @@ export type Service = {
   seed: number;
   /** Hue offsets in degrees applied to the brand cyan -> violet ramp. */
   hue: [number, number];
-  /** Mock figures. Replace when real numbers land. */
   from: string;
   timeline: string;
   /** Unit `timeline` is measured in - defaults to weeks when omitted. */

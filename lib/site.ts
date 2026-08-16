@@ -40,6 +40,10 @@ export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
   "https://druid-forge.hr";
 
+/** Handle shown as link text on the contact page - derived so it can't drift
+ *  from `site.social.instagram`, the actual source of truth for the URL. */
+export const instagramHandle = `@${site.social.instagram.split("/").pop()}`;
+
 /**
  * The two people behind the studio each take their own calls. Duje's number
  * is the same one `site.phone` already uses everywhere else (JSON-LD, the
