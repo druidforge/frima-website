@@ -24,7 +24,7 @@
       "description": "Druid Forge je digitalni studio iz Splita. Radimo web stranice, web i mobilne aplikacije, digitalne pozivnice, vizitke i letke."
     },
     "services": {
-      "title": "Usluge",
+      "title": "Izrada web stranica i aplikacija",
       "description": "Šest područja rada: web stranice, web aplikacije, mobilne aplikacije, digitalne pozivnice za vjenčanje, dizajn vizitki i dizajn letaka."
     },
     "about": {
@@ -50,13 +50,13 @@
   },
   "home": {
     "heroEyebrow": "Digitalni studio — Split, Hrvatska",
-    "heroTitle": "Ovdje se sve kuje",
-    "heroLead": "Kovačnica svaki komad oblikuje vatrom i čekićem; tvornica ih štanca identične. Mi radimo na prvi način: šest zanata pod istim krovom u Splitu, i ništa s police.",
+    "heroTitle": "Druid Forge, web rješenja u Splitu",
+    "heroLead": "Kovačnica svaki komad oblikuje vatrom i čekićem; tvornica ih štanca identične. Izrađujemo web stranice te web i mobilne aplikacije za tvrtke i obrte diljem Hrvatske, Njemačke i šire — šest zanata pod istim krovom u Splitu, i ništa s police.",
     "heroPrimary": "Pokreni projekt",
     "heroSecondary": "Pogledaj usluge",
     "heroScroll": "Listaj",
     "servicesTitle": "Što radimo",
-    "servicesLead": "Svaki zanat pokriva jedno područje. Većina projekata koristi dva ili tri.",
+    "servicesLead": "Svaki zanat pokriva jedno područje — web dizajn, aplikacije ili tisak. Većina projekata koristi dva ili tri.",
     "servicesCta": "Sve usluge",
     "processTitle": "Kako radimo",
     "processLead": "Četiri koraka. Redoslijed je stvaran — svaki korak ovisi o prethodnom.",
@@ -79,7 +79,8 @@
   },
   "services": {
     "indexTitle": "Usluge",
-    "indexLead": "Šest područja rada. Cijene su početne i ovise o opsegu — točan iznos dolazi nakon razgovora.",
+    "indexHeadline": "Izrada web stranica, aplikacija i digitalnih rješenja",
+    "indexLead": "Šest usluga: web dizajn, razvoj i tisak. Cijene su početne i ovise o opsegu — točan iznos dolazi nakon razgovora.",
     "fromLabel": "Od",
     "timelineLabel": "Trajanje",
     "weeksSuffix": "tj.",
@@ -93,6 +94,7 @@
         "name": "Izrada web stranica",
         "short": "Brze, čitljive stranice koje Google razumije.",
         "description": "Predstavljačke stranice za tvrtke, obrte i restorane. Radimo strukturu, tekst, dizajn i kod. Stranica se učitava brzo, dobro izgleda na mobitelu i spremna je za pretraživače na dan objave.",
+        "metaDescription": "Izrada web stranica za tvrtke i obrte u Splitu i šire. Brze, SEO-spremne stranice od 1.200 €, gotove za 3–5 tjedana.",
         "included": [
           "Struktura stranica i SEO plan",
           "Dizajn prilagođen vašoj djelatnosti",
@@ -106,6 +108,7 @@
         "name": "Web aplikacije",
         "short": "Alati koji rade posao, ne samo prikazuju sadržaj.",
         "description": "Rezervacijski sustavi, interni alati, portali za klijente, nadzorne ploče. Gradimo na Next.js-u i PostgreSQL-u, s pravim korisničkim računima, ulogama i revizijskim tragom.",
+        "metaDescription": "Izrada web aplikacija — rezervacijski sustavi, portali, nadzorne ploče. Gradimo na Next.js-u, od 4.500 €.",
         "included": [
           "Analiza tijeka rada i podataka",
           "Prijava, uloge i dozvole",
@@ -119,6 +122,7 @@
         "name": "Mobilne aplikacije",
         "short": "Jedna baza koda za iOS i Android.",
         "description": "Aplikacije u React Nativeu, objavljene na App Storeu i Google Playu. Radimo i offline rad, push obavijesti i plaćanja unutar aplikacije kad su potrebni.",
+        "metaDescription": "Izrada mobilnih aplikacija za iOS i Android — React Native, offline rad, push obavijesti. Od 6.000 €.",
         "included": [
           "Dizajn sučelja za obje platforme",
           "Rad bez interneta i sinkronizacija",
@@ -132,6 +136,7 @@
         "name": "Digitalne pozivnice za vjenčanje",
         "short": "Pozivnica koja živi na linku, s potvrdom dolaska.",
         "description": "Osobna stranica za vaše vjenčanje: priča, raspored dana, karta, potvrda dolaska i popis želja. Gosti otvaraju link, vi u svakom trenutku vidite tko dolazi.",
+        "metaDescription": "Digitalne pozivnice za vjenčanje s potvrdom dolaska i popisom gostiju uživo. Od 350 €.",
         "included": [
           "Dizajn prema vašoj temi i bojama",
           "Potvrda dolaska s popisom gostiju",
@@ -145,6 +150,7 @@
         "name": "Dizajn vizitki",
         "short": "Vizitka koja preživi ladicu.",
         "description": "Dizajn vizitke s pripremom za tisak. Radimo tipografiju, papir i doradu — reljef, folija, obrezani rub. Dajemo datoteke spremne za bilo koju tiskaru.",
+        "metaDescription": "Dizajn vizitki, pripremljeno za tisak — tipografija, papir i dorada. Od 180 €, gotovo za tjedan dana.",
         "included": [
           "Dva različita smjera dizajna",
           "Priprema za tisak (PDF/X, CMYK)",
@@ -158,6 +164,7 @@
         "name": "Dizajn letaka",
         "short": "Jedna poruka, jasno postavljena.",
         "description": "Letci, plakati i brošure za događaje, ponude i otvorenja. Postavljamo hijerarhiju tako da se glavna poruka pročita s tri metra, a detalji izbliza.",
+        "metaDescription": "Dizajn letaka i plakata za događaje, ponude i otvorenja — jasna hijerarhija, spremno za tisak. Od 220 €.",
         "included": [
           "Koncept i tekst ako treba",
           "Format po izboru (A6 do A3)",

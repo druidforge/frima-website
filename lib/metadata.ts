@@ -43,7 +43,7 @@ export function buildAlternates(href: Href, locale: Locale) {
   };
 }
 
-const ogLocale: Record<Locale, string> = {
+export const ogLocale: Record<Locale, string> = {
   hr: "hr_HR",
   en: "en_US",
   de: "de_DE",

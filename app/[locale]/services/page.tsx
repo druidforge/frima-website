@@ -49,7 +49,7 @@ function ServicesHeader() {
   return (
     <PageHeader
       eyebrow={t("indexTitle")}
-      title={t("indexTitle")}
+      title={t("indexHeadline")}
       lead={t("indexLead")}
       seed={43}
       hue={[-14, 16]}

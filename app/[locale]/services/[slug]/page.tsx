@@ -14,7 +14,7 @@ import { PageHeader } from "@/components/page-header";
 import { getPathname } from "@/i18n/navigation";
 import { locales, type Locale } from "@/i18n/routing";
 import { getServiceBySlug, services } from "@/lib/services";
-import { absoluteUrl } from "@/lib/metadata";
+import { absoluteUrl, ogLocale } from "@/lib/metadata";
 
 type Params = { locale: Locale; slug: string };
 
@@ -52,7 +52,10 @@ export async function generateMetadata({
   languages["x-default"] = languages.hr;
 
   const title = t(`${service.id}.name`);
-  const description = t(`${service.id}.description`);
+  // A dedicated, budget-checked field - `.description` also does duty as this
+  // page's own visible lead paragraph, where a good meta description and a
+  // good lead paragraph want different lengths.
+  const description = t(`${service.id}.metaDescription`);
 
   return {
     title,
@@ -64,6 +67,12 @@ export async function generateMetadata({
       description,
       url: languages[locale],
       siteName: "Druid Forge",
+      // Every other page gets this from `buildMetadata()`. This page can't
+      // call that directly - its alternates need a different slug per
+      // locale, which `buildAlternates` doesn't support - so it's set here
+      // by hand instead of silently going without.
+      locale: ogLocale[locale],
+      alternateLocale: locales.filter((l) => l !== locale).map((l) => ogLocale[l]),
     },
   };
 }

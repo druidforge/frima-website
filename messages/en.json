@@ -24,7 +24,7 @@
       "description": "Druid Forge is a digital studio in Split, Croatia. We build websites, web and mobile apps, digital wedding invitations, business cards and flyers."
     },
     "services": {
-      "title": "Services",
+      "title": "Web Design & App Development Services",
       "description": "Six lines of work: websites, web applications, mobile applications, digital wedding invitations, business card design and flyer design."
     },
     "about": {
@@ -50,13 +50,13 @@
   },
   "home": {
     "heroEyebrow": "Digital studio — Split, Croatia",
-    "heroTitle": "Everything here is forged",
-    "heroLead": "A forge works each piece under heat and hammer; a factory stamps them out identical. We work the first way: six crafts under one roof in Split, and nothing pulled off a shelf.",
+    "heroTitle": "Druid Forge, Web Solutions in Split",
+    "heroLead": "A forge works each piece under heat and hammer; a factory stamps them out identical. We design and build websites, web and mobile applications for businesses across Croatia, Germany and beyond — six crafts under one roof in Split, and nothing pulled off a shelf.",
     "heroPrimary": "Start a project",
     "heroSecondary": "See services",
     "heroScroll": "Scroll",
     "servicesTitle": "What we do",
-    "servicesLead": "Each craft covers one area. Most projects use two or three of them.",
+    "servicesLead": "Each craft covers one area — web design, apps, or print. Most projects use two or three of them.",
     "servicesCta": "All services",
     "processTitle": "How we work",
     "processLead": "Four steps. The order is real — each one depends on the one before it.",
@@ -79,7 +79,8 @@
   },
   "services": {
     "indexTitle": "Services",
-    "indexLead": "Six lines of work. Prices are starting points and depend on scope — the real number comes after we talk.",
+    "indexHeadline": "Web Design, Apps & Digital Services",
+    "indexLead": "Six services: web design, development and print. Prices are starting points and depend on scope — the real number comes after we talk.",
     "fromLabel": "From",
     "timelineLabel": "Timeline",
     "weeksSuffix": "wks",
@@ -93,6 +94,7 @@
         "name": "Website design",
         "short": "Fast, readable sites that search engines understand.",
         "description": "Marketing sites for companies, trades and restaurants. We handle structure, copy, design and code. The site loads fast, works properly on a phone, and is ready for search engines on launch day.",
+        "metaDescription": "Custom website design for businesses in Split and beyond. Fast, SEO-ready sites from €1,200, live in 3–5 weeks.",
         "included": [
           "Page structure and SEO plan",
           "Design shaped around your trade",
@@ -106,6 +108,7 @@
         "name": "Web applications",
         "short": "Tools that do work, not just display content.",
         "description": "Booking systems, internal tools, client portals, dashboards. We build on Next.js and PostgreSQL, with real accounts, roles and an audit trail.",
+        "metaDescription": "Custom web application development — booking systems, portals, dashboards. Built on Next.js, from €4,500.",
         "included": [
           "Workflow and data analysis",
           "Login, roles and permissions",
@@ -119,6 +122,7 @@
         "name": "Mobile applications",
         "short": "One codebase for iOS and Android.",
         "description": "Apps in React Native, published to the App Store and Google Play. We add offline use, push notifications and in-app payments when the product calls for them.",
+        "metaDescription": "Mobile app development for iOS and Android — React Native, offline support, push notifications. From €6,000.",
         "included": [
           "Interface design for both platforms",
           "Offline use and syncing",
@@ -132,6 +136,7 @@
         "name": "Digital wedding invitations",
         "short": "An invitation that lives on a link, with RSVP built in.",
         "description": "A personal page for your wedding: your story, the schedule, a map, RSVP and a gift list. Guests open a link, and you see who is coming at any moment.",
+        "metaDescription": "Digital wedding invitations with RSVP and a live guest list, built as your own wedding website. From €350.",
         "included": [
           "Design built around your theme and colours",
           "RSVP with a live guest list",
@@ -145,6 +150,7 @@
         "name": "Business card design",
         "short": "A card that survives the drawer.",
         "description": "Card design with print-ready artwork. We work the typography, the stock and the finish — emboss, foil, painted edge. You get files any printer can use.",
+        "metaDescription": "Business card design, print-ready — typography, stock and finish handled. From €180, ready in a week.",
         "included": [
           "Two distinct design directions",
           "Print-ready artwork (PDF/X, CMYK)",
@@ -158,6 +164,7 @@
         "name": "Flyer design",
         "short": "One message, clearly placed.",
         "description": "Flyers, posters and brochures for events, offers and openings. We set the hierarchy so the main message reads from three metres away and the detail reads up close.",
+        "metaDescription": "Flyer and poster design for events, offers and openings — clear hierarchy, print-ready. From €220.",
         "included": [
           "Concept and copy if you need it",
           "Any format from A6 to A3",

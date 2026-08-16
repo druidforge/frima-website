@@ -24,7 +24,7 @@
       "description": "Druid Forge ist ein Digitalstudio in Split, Kroatien. Wir bauen Webseiten, Web- und Mobile-Anwendungen, digitale Hochzeitseinladungen, Visitenkarten und Flyer."
     },
     "services": {
-      "title": "Leistungen",
+      "title": "Webdesign & App-Entwicklung",
       "description": "Sechs Arbeitsbereiche: Webseiten, Web-Anwendungen, mobile Anwendungen, digitale Hochzeitseinladungen, Visitenkarten- und Flyer-Design."
     },
     "about": {
@@ -50,13 +50,13 @@
   },
   "home": {
     "heroEyebrow": "Digitalstudio — Split, Kroatien",
-    "heroTitle": "Hier wird alles geschmiedet",
-    "heroLead": "Eine Schmiede formt jedes Stück mit Hitze und Hammer; eine Fabrik stanzt sie identisch aus. Wir arbeiten auf die erste Art: sechs Handwerke unter einem Dach in Split, und nichts aus dem Regal.",
+    "heroTitle": "Druid Forge, Weblösungen in Split",
+    "heroLead": "Eine Schmiede formt jedes Stück mit Hitze und Hammer; eine Fabrik stanzt sie identisch aus. Wir gestalten und entwickeln Webseiten, Web- und mobile Anwendungen für Unternehmen in Kroatien, Deutschland und darüber hinaus — sechs Handwerke unter einem Dach in Split, und nichts aus dem Regal.",
     "heroPrimary": "Projekt starten",
     "heroSecondary": "Leistungen ansehen",
     "heroScroll": "Scrollen",
     "servicesTitle": "Was wir machen",
-    "servicesLead": "Jedes Handwerk deckt einen Bereich ab. Die meisten Projekte brauchen zwei oder drei davon.",
+    "servicesLead": "Jedes Handwerk deckt einen Bereich ab — Webdesign, Apps oder Print. Die meisten Projekte brauchen zwei oder drei davon.",
     "servicesCta": "Alle Leistungen",
     "processTitle": "Wie wir arbeiten",
     "processLead": "Vier Schritte. Die Reihenfolge ist echt — jeder Schritt baut auf dem vorigen auf.",
@@ -79,7 +79,8 @@
   },
   "services": {
     "indexTitle": "Leistungen",
-    "indexLead": "Sechs Arbeitsbereiche. Die Preise sind Startwerte und hängen vom Umfang ab — die echte Zahl kommt nach dem Gespräch.",
+    "indexHeadline": "Webdesign, Apps und digitale Leistungen",
+    "indexLead": "Sechs Leistungen: Webdesign, Entwicklung und Print. Die Preise sind Startwerte und hängen vom Umfang ab — die echte Zahl kommt nach dem Gespräch.",
     "fromLabel": "Ab",
     "timelineLabel": "Dauer",
     "weeksSuffix": "Wo.",
@@ -93,6 +94,7 @@
         "name": "Webseiten-Erstellung",
         "short": "Schnelle, lesbare Seiten, die Suchmaschinen verstehen.",
         "description": "Webseiten für Unternehmen, Handwerksbetriebe und Restaurants. Wir übernehmen Struktur, Text, Design und Code. Die Seite lädt schnell, funktioniert am Handy und ist ab dem Launch-Tag für Suchmaschinen bereit.",
+        "metaDescription": "Website-Design für Unternehmen in Split und darüber hinaus. Schnelle, SEO-optimierte Seiten ab 1.200 €.",
         "included": [
           "Seitenstruktur und SEO-Plan",
           "Design passend zu Ihrer Branche",
@@ -106,6 +108,7 @@
         "name": "Web-Anwendungen",
         "short": "Werkzeuge, die arbeiten, nicht nur Inhalte zeigen.",
         "description": "Buchungssysteme, interne Werkzeuge, Kundenportale, Dashboards. Wir bauen auf Next.js und PostgreSQL, mit echten Benutzerkonten, Rollen und Änderungsprotokoll.",
+        "metaDescription": "Individuelle Webanwendungen — Buchungssysteme, Portale, Dashboards. Gebaut auf Next.js, ab 4.500 €.",
         "included": [
           "Analyse von Abläufen und Daten",
           "Login, Rollen und Berechtigungen",
@@ -119,6 +122,7 @@
         "name": "Mobile Anwendungen",
         "short": "Eine Codebasis für iOS und Android.",
         "description": "Apps in React Native, veröffentlicht im App Store und bei Google Play. Offline-Betrieb, Push-Nachrichten und In-App-Zahlungen bauen wir ein, wenn das Produkt sie braucht.",
+        "metaDescription": "App-Entwicklung für iOS und Android — React Native, Offline-Betrieb, Push-Nachrichten. Ab 6.000 €.",
         "included": [
           "Oberflächendesign für beide Plattformen",
           "Offline-Betrieb und Synchronisierung",
@@ -132,6 +136,7 @@
         "name": "Digitale Hochzeitseinladungen",
         "short": "Eine Einladung, die auf einem Link lebt — mit Zusage.",
         "description": "Eine persönliche Seite für Ihre Hochzeit: Ihre Geschichte, der Tagesablauf, eine Karte, Zu- und Absagen sowie eine Wunschliste. Gäste öffnen einen Link, Sie sehen jederzeit, wer kommt.",
+        "metaDescription": "Digitale Hochzeitseinladungen mit Zusagen und Live-Gästeliste, als eigene Hochzeitswebsite. Ab 350 €.",
         "included": [
           "Design nach Ihrem Thema und Ihren Farben",
           "Zusagen mit laufender Gästeliste",
@@ -145,6 +150,7 @@
         "name": "Visitenkarten-Design",
         "short": "Eine Karte, die die Schublade überlebt.",
         "description": "Kartendesign mit Druckdaten. Wir arbeiten an Typografie, Papier und Veredelung — Prägung, Folie, gefärbte Kante. Sie erhalten Dateien, die jede Druckerei verarbeiten kann.",
+        "metaDescription": "Visitenkarten-Design, druckfertig — Typografie, Papier und Veredelung inklusive. Ab 180 €.",
         "included": [
           "Zwei eigenständige Design-Richtungen",
           "Druckfertige Daten (PDF/X, CMYK)",
@@ -158,6 +164,7 @@
         "name": "Flyer-Design",
         "short": "Eine Botschaft, klar gesetzt.",
         "description": "Flyer, Plakate und Broschüren für Veranstaltungen, Angebote und Eröffnungen. Wir setzen die Hierarchie so, dass die Hauptbotschaft aus drei Metern lesbar ist und die Details aus der Nähe.",
+        "metaDescription": "Flyer- und Plakatdesign für Veranstaltungen, Angebote und Eröffnungen — druckfertig. Ab 220 €.",
         "included": [
           "Konzept und Text, wenn nötig",
           "Jedes Format von A6 bis A3",
