@@ -1,6 +1,8 @@
 import { getLocale, getTranslations } from "next-intl/server";
+import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 
 import { CookieSettingsButton } from "@/components/cookie-settings-button";
+import { InstagramIcon } from "@/components/icons/instagram";
 import { LocaleSwitcher } from "@/components/locale-switcher";
 import { Logo } from "@/components/logo";
 import { Link } from "@/i18n/navigation";
@@ -48,40 +50,42 @@ export async function Footer() {
           </FooterColumn>
 
           <FooterColumn title={t("contactTitle")}>
-            <li>
+            <FooterContactItem icon={<Mail size={15} />}>
               <a
                 href={`mailto:${site.email}`}
                 className="link-sweep text-sm text-muted-foreground transition-colors duration-(--dur-base) hover:text-foreground"
               >
                 {site.email}
               </a>
-            </li>
+            </FooterContactItem>
             {/* Named rather than numbered - same reasoning as the contact
                 page's phone row: the link says who you're reaching. */}
-            <li>
+            <FooterContactItem icon={<Phone size={15} />}>
               <a
                 href={`tel:${team.duje.phone.replace(/\s/g, "")}`}
                 className="link-sweep text-sm text-muted-foreground transition-colors duration-(--dur-base) hover:text-foreground"
               >
                 {tt("duje.name")}
               </a>
-            </li>
-            <li>
+            </FooterContactItem>
+            <FooterContactItem icon={<Phone size={15} />}>
               <a
                 href={`tel:${team.dominko.phone.replace(/\s/g, "")}`}
                 className="link-sweep text-sm text-muted-foreground transition-colors duration-(--dur-base) hover:text-foreground"
               >
                 {tt("dominko.name")}
               </a>
-            </li>
-            <li className="text-sm leading-relaxed text-muted-foreground">
-              {site.address.street}
-              <br />
-              {site.address.postalCode} {site.address.city}
-              <br />
-              {site.address.countryName}
-            </li>
-            <li>
+            </FooterContactItem>
+            <FooterContactItem icon={<MapPin size={15} />}>
+              <span className="text-sm leading-relaxed text-muted-foreground">
+                {site.address.street}
+                <br />
+                {site.address.postalCode} {site.address.city}
+                <br />
+                {site.address.countryName}
+              </span>
+            </FooterContactItem>
+            <FooterContactItem icon={<InstagramIcon size={15} />}>
               <a
                 href={site.social.instagram}
                 target="_blank"
@@ -90,8 +94,8 @@ export async function Footer() {
               >
                 {tc("instagram")}
               </a>
-            </li>
-            <li>
+            </FooterContactItem>
+            <FooterContactItem icon={<MessageCircle size={15} />}>
               <a
                 href={whatsAppHref(tc("whatsappMessage"))}
                 target="_blank"
@@ -100,7 +104,7 @@ export async function Footer() {
               >
                 {tc("whatsapp")}
               </a>
-            </li>
+            </FooterContactItem>
           </FooterColumn>
         </div>
 
@@ -143,6 +147,29 @@ export async function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+/**
+ * Same icon-plus-content pairing as `ContactRow` on the contact page (violet
+ * icon, top-aligned against the first line) - just built for a `<ul>`/`<li>`
+ * list instead of a `<dl>`, since the footer has no per-row label to pair it
+ * with.
+ */
+function FooterContactItem({
+  icon,
+  children,
+}: {
+  icon: React.ReactNode;
+  children: React.ReactNode;
+}) {
+  return (
+    <li className="flex items-center gap-3">
+      <span aria-hidden="true" className="shrink-0 text-violet">
+        {icon}
+      </span>
+      <span>{children}</span>
+    </li>
   );
 }
 
