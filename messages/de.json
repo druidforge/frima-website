@@ -84,6 +84,7 @@
     "fromLabel": "Ab",
     "timelineLabel": "Dauer",
     "weeksSuffix": "Wo.",
+    "daysSuffix": "Tage",
     "includedTitle": "Was enthalten ist",
     "processTitle": "So läuft es ab",
     "otherTitle": "Weitere Leistungen",
@@ -93,8 +94,8 @@
       "websites": {
         "name": "Webseiten-Erstellung",
         "short": "Schnelle, lesbare Seiten, die Suchmaschinen verstehen.",
-        "description": "Webseiten für Unternehmen, Handwerksbetriebe und Restaurants. Wir übernehmen Struktur, Text, Design und Code. Die Seite lädt schnell, funktioniert am Handy und ist ab dem Launch-Tag für Suchmaschinen bereit.",
-        "metaDescription": "Website-Design für Unternehmen in Split und darüber hinaus. Schnelle, SEO-optimierte Seiten ab 1.200 €.",
+        "description": "Webseiten für Unternehmen, Handwerksbetriebe und Restaurants. Wir übernehmen Struktur, Text, Design und Code. Die Seite lädt schnell, funktioniert am Handy und ist ab dem Launch-Tag für Suchmaschinen bereit. Hosting, Domain und Wartung werden monatlich abgerechnet, ab 20 €.",
+        "metaDescription": "Website-Design für Unternehmen in Split und darüber hinaus. Schnelle, SEO-optimierte Seiten ab 700 €.",
         "included": [
           "Seitenstruktur und SEO-Plan",
           "Design passend zu Ihrer Branche",
@@ -108,7 +109,7 @@
         "name": "Web-Anwendungen",
         "short": "Werkzeuge, die arbeiten, nicht nur Inhalte zeigen.",
         "description": "Buchungssysteme, interne Werkzeuge, Kundenportale, Dashboards. Wir bauen auf Next.js und PostgreSQL, mit echten Benutzerkonten, Rollen und Änderungsprotokoll.",
-        "metaDescription": "Individuelle Webanwendungen — Buchungssysteme, Portale, Dashboards. Gebaut auf Next.js, ab 4.500 €.",
+        "metaDescription": "Individuelle Webanwendungen — Buchungssysteme, Portale, Dashboards. Gebaut auf Next.js, ab 4.000 €.",
         "included": [
           "Analyse von Abläufen und Daten",
           "Login, Rollen und Berechtigungen",
@@ -150,7 +151,7 @@
         "name": "Visitenkarten-Design",
         "short": "Eine Karte, die die Schublade überlebt.",
         "description": "Kartendesign mit Druckdaten. Wir arbeiten an Typografie, Papier und Veredelung — Prägung, Folie, gefärbte Kante. Sie erhalten Dateien, die jede Druckerei verarbeiten kann.",
-        "metaDescription": "Visitenkarten-Design, druckfertig — Typografie, Papier und Veredelung inklusive. Ab 180 €.",
+        "metaDescription": "Visitenkarten-Design, druckfertig — Typografie, Papier und Veredelung inklusive. Ab 70 €.",
         "included": [
           "Zwei eigenständige Design-Richtungen",
           "Druckfertige Daten (PDF/X, CMYK)",
@@ -164,7 +165,7 @@
         "name": "Flyer-Design",
         "short": "Eine Botschaft, klar gesetzt.",
         "description": "Flyer, Plakate und Broschüren für Veranstaltungen, Angebote und Eröffnungen. Wir setzen die Hierarchie so, dass die Hauptbotschaft aus drei Metern lesbar ist und die Details aus der Nähe.",
-        "metaDescription": "Flyer- und Plakatdesign für Veranstaltungen, Angebote und Eröffnungen — druckfertig. Ab 220 €.",
+        "metaDescription": "Flyer- und Plakatdesign für Veranstaltungen, Angebote und Eröffnungen — druckfertig. Ab 80 €.",
         "included": [
           "Konzept und Text, wenn nötig",
           "Jedes Format von A6 bis A3",

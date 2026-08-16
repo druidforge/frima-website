@@ -84,6 +84,7 @@
     "fromLabel": "From",
     "timelineLabel": "Timeline",
     "weeksSuffix": "wks",
+    "daysSuffix": "days",
     "includedTitle": "What is included",
     "processTitle": "How it goes",
     "otherTitle": "Other services",
@@ -93,8 +94,8 @@
       "websites": {
         "name": "Website design",
         "short": "Fast, readable sites that search engines understand.",
-        "description": "Marketing sites for companies, trades and restaurants. We handle structure, copy, design and code. The site loads fast, works properly on a phone, and is ready for search engines on launch day.",
-        "metaDescription": "Custom website design for businesses in Split and beyond. Fast, SEO-ready sites from €1,200, live in 3–5 weeks.",
+        "description": "Marketing sites for companies, trades and restaurants. We handle structure, copy, design and code. The site loads fast, works properly on a phone, and is ready for search engines on launch day. Hosting, domain and maintenance are billed monthly, from €20.",
+        "metaDescription": "Custom website design for businesses in Split and beyond. Fast, SEO-ready sites from €700, live in 2–4 weeks.",
         "included": [
           "Page structure and SEO plan",
           "Design shaped around your trade",
@@ -108,7 +109,7 @@
         "name": "Web applications",
         "short": "Tools that do work, not just display content.",
         "description": "Booking systems, internal tools, client portals, dashboards. We build on Next.js and PostgreSQL, with real accounts, roles and an audit trail.",
-        "metaDescription": "Custom web application development — booking systems, portals, dashboards. Built on Next.js, from €4,500.",
+        "metaDescription": "Custom web application development — booking systems, portals, dashboards. Built on Next.js, from €4,000.",
         "included": [
           "Workflow and data analysis",
           "Login, roles and permissions",
@@ -150,7 +151,7 @@
         "name": "Business card design",
         "short": "A card that survives the drawer.",
         "description": "Card design with print-ready artwork. We work the typography, the stock and the finish — emboss, foil, painted edge. You get files any printer can use.",
-        "metaDescription": "Business card design, print-ready — typography, stock and finish handled. From €180, ready in a week.",
+        "metaDescription": "Business card design, print-ready — typography, stock and finish handled. From €70, ready in 2–3 days.",
         "included": [
           "Two distinct design directions",
           "Print-ready artwork (PDF/X, CMYK)",
@@ -164,7 +165,7 @@
         "name": "Flyer design",
         "short": "One message, clearly placed.",
         "description": "Flyers, posters and brochures for events, offers and openings. We set the hierarchy so the main message reads from three metres away and the detail reads up close.",
-        "metaDescription": "Flyer and poster design for events, offers and openings — clear hierarchy, print-ready. From €220.",
+        "metaDescription": "Flyer and poster design for events, offers and openings — clear hierarchy, print-ready. From €80.",
         "included": [
           "Concept and copy if you need it",
           "Any format from A6 to A3",

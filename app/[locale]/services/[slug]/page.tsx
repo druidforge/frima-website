@@ -153,7 +153,10 @@ function ServiceBody({
                     {t("timelineLabel")}
                   </dt>
                   <dd className="mt-1 text-(length:--text-step-1)">
-                    {service.timeline} {t("weeksSuffix")}
+                    {service.timeline}{" "}
+                    {service.timelineUnit === "days"
+                      ? t("daysSuffix")
+                      : t("weeksSuffix")}
                   </dd>
                 </div>
               </dl>

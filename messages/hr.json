@@ -84,6 +84,7 @@
     "fromLabel": "Od",
     "timelineLabel": "Trajanje",
     "weeksSuffix": "tj.",
+    "daysSuffix": "dana",
     "includedTitle": "Što je uključeno",
     "processTitle": "Kako to izgleda",
     "otherTitle": "Ostale usluge",
@@ -93,8 +94,8 @@
       "websites": {
         "name": "Izrada web stranica",
         "short": "Brze, čitljive stranice koje Google razumije.",
-        "description": "Predstavljačke stranice za tvrtke, obrte i restorane. Radimo strukturu, tekst, dizajn i kod. Stranica se učitava brzo, dobro izgleda na mobitelu i spremna je za pretraživače na dan objave.",
-        "metaDescription": "Izrada web stranica za tvrtke i obrte u Splitu i šire. Brze, SEO-spremne stranice od 1.200 €, gotove za 3–5 tjedana.",
+        "description": "Predstavljačke stranice za tvrtke, obrte i restorane. Radimo strukturu, tekst, dizajn i kod. Stranica se učitava brzo, dobro izgleda na mobitelu i spremna je za pretraživače na dan objave. Hosting, domena i održavanje naplaćuju se mjesečno, od 20 €.",
+        "metaDescription": "Izrada web stranica za tvrtke i obrte u Splitu i šire. Brze, SEO-spremne stranice od 700 €, gotove za 2–4 tjedna.",
         "included": [
           "Struktura stranica i SEO plan",
           "Dizajn prilagođen vašoj djelatnosti",
@@ -108,7 +109,7 @@
         "name": "Web aplikacije",
         "short": "Alati koji rade posao, ne samo prikazuju sadržaj.",
         "description": "Rezervacijski sustavi, interni alati, portali za klijente, nadzorne ploče. Gradimo na Next.js-u i PostgreSQL-u, s pravim korisničkim računima, ulogama i revizijskim tragom.",
-        "metaDescription": "Izrada web aplikacija — rezervacijski sustavi, portali, nadzorne ploče. Gradimo na Next.js-u, od 4.500 €.",
+        "metaDescription": "Izrada web aplikacija — rezervacijski sustavi, portali, nadzorne ploče. Gradimo na Next.js-u, od 4.000 €.",
         "included": [
           "Analiza tijeka rada i podataka",
           "Prijava, uloge i dozvole",
@@ -150,7 +151,7 @@
         "name": "Dizajn vizitki",
         "short": "Vizitka koja preživi ladicu.",
         "description": "Dizajn vizitke s pripremom za tisak. Radimo tipografiju, papir i doradu — reljef, folija, obrezani rub. Dajemo datoteke spremne za bilo koju tiskaru.",
-        "metaDescription": "Dizajn vizitki, pripremljeno za tisak — tipografija, papir i dorada. Od 180 €, gotovo za tjedan dana.",
+        "metaDescription": "Dizajn vizitki, pripremljeno za tisak — tipografija, papir i dorada. Od 70 €, gotovo za 2–3 dana.",
         "included": [
           "Dva različita smjera dizajna",
           "Priprema za tisak (PDF/X, CMYK)",
@@ -164,7 +165,7 @@
         "name": "Dizajn letaka",
         "short": "Jedna poruka, jasno postavljena.",
         "description": "Letci, plakati i brošure za događaje, ponude i otvorenja. Postavljamo hijerarhiju tako da se glavna poruka pročita s tri metra, a detalji izbliza.",
-        "metaDescription": "Dizajn letaka i plakata za događaje, ponude i otvorenja — jasna hijerarhija, spremno za tisak. Od 220 €.",
+        "metaDescription": "Dizajn letaka i plakata za događaje, ponude i otvorenja — jasna hijerarhija, spremno za tisak. Od 80 €.",
         "included": [
           "Koncept i tekst ako treba",
           "Format po izboru (A6 do A3)",

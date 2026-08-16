@@ -197,7 +197,10 @@ export function ServicesShowcase({ locale }: { locale: Locale }) {
                       <div>
                         <dt>{t("timelineLabel")}</dt>
                         <dd className="mt-1 font-sans text-sm text-paper">
-                          {service.timeline} {t("weeksSuffix")}
+                          {service.timeline}{" "}
+                          {service.timelineUnit === "days"
+                            ? t("daysSuffix")
+                            : t("weeksSuffix")}
                         </dd>
                       </div>
                     </dl>

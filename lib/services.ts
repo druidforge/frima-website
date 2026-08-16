@@ -16,6 +16,8 @@ export type Service = {
   /** Mock figures. Replace when real numbers land. */
   from: string;
   timeline: string;
+  /** Unit `timeline` is measured in - defaults to weeks when omitted. */
+  timelineUnit?: "days" | "weeks";
   /**
    * Cover image for the services showcase, stored in `public/services/`.
    *
@@ -37,8 +39,8 @@ export const services: Service[] = [
     },
     seed: 17,
     hue: [0, 0],
-    from: "1.200 €",
-    timeline: "3–5",
+    from: "700 €",
+    timeline: "2–4",
     image: "/services/website-design.avif",
   },
   {
@@ -50,8 +52,8 @@ export const services: Service[] = [
     },
     seed: 43,
     hue: [-18, 12],
-    from: "4.500 €",
-    timeline: "6–12",
+    from: "4.000 €",
+    timeline: "5–10",
     image: "/services/web-applications.avif",
   },
   {
@@ -89,8 +91,9 @@ export const services: Service[] = [
     },
     seed: 58,
     hue: [-32, -6],
-    from: "180 €",
-    timeline: "1",
+    from: "70 €",
+    timeline: "2–3",
+    timelineUnit: "days",
     image: "/services/business-card.avif",
   },
   {
@@ -102,8 +105,9 @@ export const services: Service[] = [
     },
     seed: 92,
     hue: [12, 40],
-    from: "220 €",
-    timeline: "1–2",
+    from: "80 €",
+    timeline: "3–4",
+    timelineUnit: "days",
     image: "/services/flyer-design.avif",
   },
 ];
