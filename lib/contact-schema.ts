@@ -44,8 +44,6 @@ export const contactSchema = z.object({
   website: z.literal("").optional(),
 });
 
-export type ContactInput = z.infer<typeof contactSchema>;
-
 /** Everything the visitor typed, echoed back so a rejected form keeps it. */
 export type ContactValues = {
   name: string;

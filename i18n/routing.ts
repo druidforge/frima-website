@@ -3,7 +3,7 @@ import { defineRouting } from "next-intl/routing";
 export const locales = ["hr", "en", "de"] as const;
 export type Locale = (typeof locales)[number];
 
-export const defaultLocale: Locale = "hr";
+const defaultLocale: Locale = "hr";
 
 /**
  * Localized path segments. Search engines index each market separately, so the
@@ -55,5 +55,3 @@ export const routing = defineRouting({
     },
   },
 });
-
-export type AppPathnames = keyof typeof routing.pathnames;

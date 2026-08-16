@@ -108,10 +108,6 @@ export const services: Service[] = [
   },
 ];
 
-export function getService(id: string) {
-  return services.find((service) => service.id === id);
-}
-
 export function getServiceBySlug(slug: string, locale: Locale) {
   return services.find((service) => service.slug[locale] === slug);
 }
