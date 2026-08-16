@@ -185,7 +185,10 @@ function ServiceCard({
             <div>
               <dt className="text-ink-faint">{ts("timelineLabel")}</dt>
               <dd className="mt-1 text-sm">
-                {service.timeline} {ts("weeksSuffix")}
+                {service.timeline}{" "}
+                {service.timelineUnit === "days"
+                  ? ts("daysSuffix")
+                  : ts("weeksSuffix")}
               </dd>
             </div>
           </dl>
