@@ -69,7 +69,13 @@ export function RevealWords({
   // Both gates, because a rise that starts before the display face lands is the
   // one that visibly stutters. See `useFontsReady`.
   const shown = revealed && fontsReady;
-  const words = text.split(" ");
+  // A literal "\n" forces a deliberate line break instead of leaving the
+  // wrap point to whatever the container's width happens to produce - the
+  // hero title needs "Druid Forge" and its tagline on their own lines
+  // regardless of viewport, not wherever the browser runs out of room.
+  // Every other call site's copy has no "\n" in it, so `lines` is a single
+  // element there and this renders exactly as it did before.
+  const lines = text.split("\n");
 
   /**
    * Each word sits in its own clipping mask, and that mask has to be bigger
@@ -106,28 +112,44 @@ export function RevealWords({
    * room left over, and holds for any looser leading - a taller line box only
    * makes the fixed padding a smaller share of it.
    */
+  // Position within the *whole* heading, not just its own line, so the
+  // stagger delay keeps counting smoothly through a "\n" break instead of
+  // restarting at 0 for the second line.
+  let wordIndex = 0;
+
   return (
     <Tag ref={ref} className={className}>
-      <span className="sr-only">{text}</span>
+      <span className="sr-only">{text.replace(/\n/g, " ")}</span>
       <span aria-hidden="true">
-        {words.map((word, i) => (
-          <span
-            key={`${word}-${i}`}
-            className="inline-block overflow-hidden align-bottom px-[0.12em] py-[0.22em] -mx-[0.12em] -my-[0.22em]"
-          >
-            <motion.span
-              className="inline-block"
-              initial={{ y: "140%" }}
-              animate={shown ? { y: "0%" } : undefined}
-              transition={{
-                duration: 0.62,
-                delay: delay + i * 0.045,
-                ease: EASE,
-              }}
-            >
-              {word}
-              {i < words.length - 1 ? " " : ""}
-            </motion.span>
+        {lines.map((line, lineI) => (
+          <span key={lineI} className="block">
+            {line.split(" ").map((word, i, lineWords) => {
+              const globalIndex = wordIndex++;
+              return (
+                <span key={`${word}-${i}`}>
+                  <span className="inline-block overflow-hidden align-bottom px-[0.12em] py-[0.22em] -mx-[0.12em] -my-[0.22em]">
+                    <motion.span
+                      className="inline-block"
+                      initial={{ y: "140%" }}
+                      animate={shown ? { y: "0%" } : undefined}
+                      transition={{
+                        duration: 0.62,
+                        delay: delay + globalIndex * 0.045,
+                        ease: EASE,
+                      }}
+                    >
+                      {word}
+                    </motion.span>
+                  </span>
+                  {/* A trailing space *inside* the clipped, overflow-hidden
+                      box above gets silently collapsed away by the browser
+                      at certain box boundaries - moving it out here, as a
+                      plain sibling text node the mask never touches, is what
+                      actually keeps it. */}
+                  {i < lineWords.length - 1 ? " " : ""}
+                </span>
+              );
+            })}
           </span>
         ))}
       </span>
