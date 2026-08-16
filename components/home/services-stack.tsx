@@ -124,6 +124,25 @@ function ServiceCard({
         onBlur={() => setHovered(false)}
         className="card-lift group relative mb-4 flex min-h-[17rem] flex-col justify-between gap-6 overflow-clip rounded-md border border-border bg-paper p-7 hover:border-ink/35 md:min-h-0 md:flex-row md:items-center md:gap-10 md:p-9"
       >
+        {/* Below `md` there is no hover to reveal the field, the hairline or
+            the filled arrow, so the card would otherwise sit there as a bare
+            white box until tapped. A live chromatophore field per card isn't
+            the fix - six of them already run their own rAF loop each, kept
+            stopped specifically because nobody could see it at opacity-0; six
+            *always-on* loops on a phone is a worse trade than the one it
+            replaces. This is a static wash instead, built from the same
+            seed/hue "DNA" as the canvas so it still reads as this card's own
+            colour, just paid for once instead of every frame. `md:hidden`
+            hands the card back to the canvas + hover treatment above that
+            width, where hover actually exists. */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 md:hidden"
+          style={{
+            background: `linear-gradient(135deg, hsl(${183 + service.hue[0]} 70% 94%), hsl(${268 + service.hue[1]} 60% 95%))`,
+          }}
+        />
+
         {/* Each arm carries its own DNA: seed and hue shift per service. */}
         <ChromatophoreField
           seed={service.seed}
@@ -140,10 +159,12 @@ function ServiceCard({
           className="pointer-events-none absolute inset-0 bg-paper/70 opacity-0 transition-opacity duration-(--dur-glacial) group-hover:opacity-100"
         />
 
-        {/* Hairline that draws across the card's top edge on hover. */}
+        {/* Hairline across the card's top edge - permanently drawn in on
+            mobile, since it is the desktop hover reveal there is nothing
+            to trigger it; from `md` up it reverts to a hover reveal. */}
         <span
           aria-hidden="true"
-          className="absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-linear-to-r from-cyan to-violet transition-transform duration-(--dur-slow) ease-out-quint group-hover:scale-x-100"
+          className="absolute inset-x-0 top-0 h-px origin-left scale-x-100 bg-linear-to-r from-cyan to-violet transition-transform duration-(--dur-slow) ease-out-quint md:scale-x-0 md:group-hover:scale-x-100"
         />
 
         <div className="relative z-10 flex-1">
@@ -168,9 +189,13 @@ function ServiceCard({
               </dd>
             </div>
           </dl>
+          {/* Filled by default on mobile - the resting state doubles as
+              what `md`'s hover reveals, since there is no hover to reveal it
+              from. `md:` resets it to the plain outline and hands the fill
+              back to `group-hover`. */}
           <span
             aria-hidden="true"
-            className="flex size-11 items-center justify-center rounded-full border border-ink/20 transition-[background-color,border-color,color,transform] duration-(--dur-base) ease-out-quint group-hover:[transform:scale(1.1)] group-hover:border-ink group-hover:bg-ink group-hover:text-paper"
+            className="flex size-11 items-center justify-center rounded-full border border-ink bg-ink text-paper transition-[background-color,border-color,color,transform] duration-(--dur-base) ease-out-quint md:border-ink/20 md:bg-transparent md:text-ink md:group-hover:[transform:scale(1.1)] md:group-hover:border-ink md:group-hover:bg-ink md:group-hover:text-paper"
           >
             <ArrowUpRight size={17} className="arrow-travel" />
           </span>
