@@ -78,6 +78,14 @@ const nextConfig: NextConfig = {
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
           { key: "X-Frame-Options", value: "SAMEORIGIN" },
           {
+            // No `preload` yet - that's a much harder to reverse commitment
+            // (removal takes months and needs a non-preload header shipped
+            // first), so it stays a deliberate later step once HTTPS is
+            // confirmed solid everywhere, not bundled in here.
+            key: "Strict-Transport-Security",
+            value: "max-age=31536000; includeSubDomains",
+          },
+          {
             key: "Permissions-Policy",
             value: "camera=(), microphone=(), geolocation=()",
           },

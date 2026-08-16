@@ -305,7 +305,7 @@
     "necessaryTitle": "Necessary cookies",
     "necessaryBody": "They remember your language and your cookie choice, and protect the contact form from abuse. The site does not work correctly without them.",
     "analyticsTitle": "Analytics",
-    "analyticsBody": "They count visits and show which pages people read. The data is aggregated and is not used to identify individuals.",
+    "analyticsBody": "We use Google Analytics to count visits and show which pages people read. The data is aggregated and is not used to identify individuals.",
     "tableName": "Name",
     "tableDomain": "Domain",
     "tableExpiration": "Duration",
@@ -313,8 +313,8 @@
     "session": "Session",
     "ccCookie": "Remembers which cookie categories you allowed.",
     "localeCookie": "Remembers the language you selected.",
-    "analyticsId": "Distinguishes visitors in aggregate statistics, without name or email.",
-    "analyticsSession": "Groups page views within a single visit."
+    "analyticsId": "Google Analytics — distinguishes visitors in aggregate statistics, without name or email.",
+    "analyticsSession": "Google Analytics — remembers how long a visit lasted and how you arrived at the site."
   },
   "legal": {
     "lastUpdated": "Last updated",
@@ -331,7 +331,7 @@
       "s4Title": "How long we keep it",
       "s4Body": "Enquiries that do not lead to work are deleted after 12 months. Client data is kept for the duration of the contract and a further 11 years for invoices, as required by Croatian tax law. Security logs are deleted after 30 days.",
       "s5Title": "Who we share it with",
-      "s5Body": "We do not sell your data or pass it to third parties for their own purposes. We use processors for hosting and email delivery, who process data only on our instructions and within the European Economic Area, or under standard contractual clauses where a transfer outside it is necessary.",
+      "s5Body": "We do not sell your data or pass it to third parties for their own purposes. We use processors for hosting and email delivery, who process data only on our instructions and within the European Economic Area, or under standard contractual clauses where a transfer outside it is necessary. With your cookie consent, we also use Google Analytics for visit statistics.",
       "s6Title": "Your rights",
       "s6Body": "You have the right to access your data, correct inaccurate data, have it deleted, restrict processing, receive it in a portable format, and object to processing. You can withdraw consent at any time, without affecting the lawfulness of processing before withdrawal. Send requests to {email} and we respond within 30 days.",
       "s7Title": "Complaint to the supervisory authority",

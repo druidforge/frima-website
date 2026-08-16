@@ -14,6 +14,7 @@ import { notFound } from "next/navigation";
 
 import { CookieConsentLoader } from "@/components/cookie-consent-loader";
 import { Footer } from "@/components/footer";
+import { GoogleAnalytics } from "@/components/google-analytics";
 import { RoutePrefetcher } from "@/components/route-prefetcher";
 import { SiteHeader } from "@/components/site-header";
 import { StructuredData } from "@/components/structured-data";
@@ -74,6 +75,12 @@ export async function generateMetadata({
     // (icon.svg, apple-icon.tsx, opengraph-image.tsx), so no manual list here.
     manifest: "/manifest.webmanifest",
     formatDetection: { telephone: false },
+    // Search Console's "HTML tag" verification method. Unset until a
+    // property is verified - DNS TXT is the other supported method and
+    // doesn't need this at all, so this is optional either way.
+    verification: process.env.GOOGLE_SITE_VERIFICATION
+      ? { google: process.env.GOOGLE_SITE_VERIFICATION }
+      : undefined,
   };
 }
 
@@ -143,6 +150,7 @@ export default async function LocaleLayout({
           </main>
           <Footer />
           <CookieConsentLoader />
+          <GoogleAnalytics />
           {/* Lives in the layout so the queue survives navigation: it is worked
               through once per visit, not restarted on every page. */}
           <RoutePrefetcher />

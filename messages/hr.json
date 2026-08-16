@@ -305,7 +305,7 @@
     "necessaryTitle": "Nužni kolačići",
     "necessaryBody": "Pamte odabrani jezik i vaš izbor kolačića, te štite obrazac od zloupotrebe. Bez njih stranica ne radi ispravno.",
     "analyticsTitle": "Analitika",
-    "analyticsBody": "Broje posjete i pokazuju koje stranice ljudi čitaju. Podaci su skupni i ne koriste se za prepoznavanje pojedinca.",
+    "analyticsBody": "Koristimo Google Analytics za brojanje posjeta i praćenje koje stranice ljudi čitaju. Podaci su skupni i ne koriste se za prepoznavanje pojedinca.",
     "tableName": "Naziv",
     "tableDomain": "Domena",
     "tableExpiration": "Trajanje",
@@ -313,8 +313,8 @@
     "session": "Sesija",
     "ccCookie": "Pamti koje ste kategorije kolačića dopustili.",
     "localeCookie": "Pamti jezik koji ste odabrali.",
-    "analyticsId": "Razlikuje posjetitelje u skupnoj statistici, bez imena i e-adrese.",
-    "analyticsSession": "Grupira preglede stranica unutar jednog posjeta."
+    "analyticsId": "Google Analytics — razlikuje posjetitelje u skupnoj statistici, bez imena i e-adrese.",
+    "analyticsSession": "Google Analytics — pamti trajanje posjeta i kako ste stigli na stranicu."
   },
   "legal": {
     "lastUpdated": "Zadnja izmjena",
@@ -331,7 +331,7 @@
       "s4Title": "Koliko dugo ih čuvamo",
       "s4Body": "Upite koji ne završe suradnjom brišemo nakon 12 mjeseci. Podatke klijenata čuvamo koliko traje ugovorni odnos i dodatnih 11 godina za račune, koliko nalažu hrvatski porezni propisi. Sigurnosne zapise brišemo nakon 30 dana.",
       "s5Title": "S kim ih dijelimo",
-      "s5Body": "Podatke ne prodajemo i ne ustupamo trećima za njihove svrhe. Koristimo izvršitelje obrade za smještaj stranice i slanje e-pošte, koji podatke obrađuju isključivo po našim uputama i unutar Europskog gospodarskog prostora, ili uz standardne ugovorne klauzule ako je prijenos izvan njega nužan.",
+      "s5Body": "Podatke ne prodajemo i ne ustupamo trećima za njihove svrhe. Koristimo izvršitelje obrade za smještaj stranice i slanje e-pošte, koji podatke obrađuju isključivo po našim uputama i unutar Europskog gospodarskog prostora, ili uz standardne ugovorne klauzule ako je prijenos izvan njega nužan. Uz vaš pristanak na kolačiće, koristimo i Google Analytics za statistiku posjeta.",
       "s6Title": "Vaša prava",
       "s6Body": "Imate pravo na pristup svojim podacima, ispravak netočnih podataka, brisanje, ograničenje obrade, prenosivost i prigovor na obradu. Pristanak možete povući u svakom trenutku, bez utjecaja na zakonitost obrade prije povlačenja. Zahtjev šaljete na {email} i odgovaramo u roku od 30 dana.",
       "s7Title": "Pritužba nadzornom tijelu",

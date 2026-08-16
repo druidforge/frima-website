@@ -19,7 +19,6 @@ export default function AppleIcon() {
       }}
     >
       {/* Satori renders plain <img> only; next/image does not exist here. */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={markDataUri} width={136} height={136} alt="" />
     </div>,
     size,

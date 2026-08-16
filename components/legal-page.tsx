@@ -44,7 +44,7 @@ export async function LegalPage({
         hue={hue}
       >
         <p className="mt-8 font-mono text-xs text-ink-faint">
-          {t("lastUpdated")}: 2026-07-31
+          {t("lastUpdated")}: 2026-08-16
         </p>
       </PageHeader>
 

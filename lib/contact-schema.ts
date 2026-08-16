@@ -13,6 +13,22 @@ export const budgetKeys = [
 const serviceIds = services.map((service) => service.id);
 
 /**
+ * `name` and `company` both end up in an email *subject* line
+ * (`lib/email-templates.ts`), which - unlike the HTML body - is never
+ * HTML-escaped, because it isn't HTML. That makes it the field classic
+ * email-header injection targets: a value containing a newline could attempt
+ * to smuggle extra header-like content into the outgoing message. Stripping
+ * control characters here, once, covers every downstream use (both email
+ * subjects, both bodies, the values echoed back into the form) without
+ * relying on the sending API to have sanitized it first.
+ *
+ * `\p{Cc}` is the Unicode "control character" category - every C0 control
+ * (including \r and \n) plus the C1 range, in one readable pattern rather
+ * than an easy-to-typo hex range.
+ */
+const stripControlChars = (value: string) => value.replace(/\p{Cc}/gu, "");
+
+/**
  * Validation messages are message *keys*, not sentences. The action runs on the
  * server where the visitor's locale is known only from the route, so the client
  * resolves each key through next-intl and the same schema serves all three
@@ -23,9 +39,16 @@ export const contactSchema = z.object({
     .string()
     .trim()
     .min(2, { message: "nameShort" })
-    .max(120, { message: "nameLong" }),
+    .max(120, { message: "nameLong" })
+    .transform(stripControlChars),
   email: z.string().trim().email({ message: "emailInvalid" }).max(200),
-  company: z.string().trim().max(160).optional().or(z.literal("")),
+  company: z
+    .string()
+    .trim()
+    .max(160)
+    .transform(stripControlChars)
+    .optional()
+    .or(z.literal("")),
   service: z
     .string()
     .refine((v) => v === "other" || serviceIds.includes(v), {

@@ -29,15 +29,15 @@ export const cookieTable: Record<"necessary" | "analytics", CookieRow[]> = {
   ],
   analytics: [
     {
-      name: "_pk_id",
+      name: "_ga",
       domain: "druid-forge.hr",
-      duration: "13m",
+      duration: "24m",
       descriptionKey: "analyticsId",
     },
     {
-      name: "_pk_ses",
+      name: "_ga_*",
       domain: "druid-forge.hr",
-      duration: "session",
+      duration: "24m",
       descriptionKey: "analyticsSession",
     },
   ],

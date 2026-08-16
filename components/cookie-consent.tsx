@@ -41,9 +41,26 @@ export function CookieConsent() {
         desc: t(row.descriptionKey),
       }));
 
+    /**
+     * Tells `<GoogleAnalytics>` whether it's allowed to load, without that
+     * component needing its own import of the CC singleton. Fired on first
+     * consent, on every later page load (so a returning visitor who already
+     * opted in doesn't have to re-accept), and whenever the visitor changes
+     * their preference via the modal.
+     */
+    const broadcastAnalyticsConsent = () => {
+      window.dispatchEvent(
+        new CustomEvent("cc:analytics", {
+          detail: CC.acceptedCategory("analytics"),
+        }),
+      );
+    };
+
     void CC.run({
       autoShow: true,
       revision: 1,
+      onConsent: broadcastAnalyticsConsent,
+      onChange: broadcastAnalyticsConsent,
       guiOptions: {
         consentModal: { layout: "box", position: "bottom left" },
         preferencesModal: { layout: "box", equalWeightButtons: true },
@@ -53,7 +70,7 @@ export function CookieConsent() {
         analytics: {
           enabled: false,
           autoClear: {
-            cookies: [{ name: /^_pk_/ }],
+            cookies: [{ name: /^_ga/ }],
           },
         },
       },

@@ -40,7 +40,6 @@ export default async function OpengraphImage({
     >
       {/* Bleed the mark off the right edge so the card reads as a crop of
             something larger rather than a centred logo lockup. */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={markDataUri}
         width={620}
