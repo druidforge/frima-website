@@ -252,6 +252,20 @@
       "1kTo5k": "1.000 – 5.000 €",
       "5kTo15k": "5.000 – 15.000 €",
       "over15k": "über 15.000 €"
+    },
+    "confirmationEmail": {
+      "subject": "Wir haben Ihre Nachricht erhalten, {name}",
+      "preheader": "Wir antworten innerhalb eines Werktags - unten finden Sie eine Kopie Ihrer Angaben.",
+      "greeting": "Hallo {name},",
+      "body": "Danke für Ihre Anfrage. Wir lesen jede Anfrage selbst - hier gibt es keinen Sachbearbeiter, der Nachrichten weiterleitet - und antworten innerhalb eines Werktags an diese Adresse.",
+      "recapTitle": "Ihre Angaben",
+      "recapService": "Leistung",
+      "recapBudget": "Budget",
+      "recapMessage": "Nachricht",
+      "notSpecified": "Nicht angegeben",
+      "signOff": "Bis bald,",
+      "signature": "Druid Forge",
+      "footerNote": "Dies ist eine automatische Bestätigung - eine Antwort ist nicht nötig, außer Sie möchten etwas ergänzen."
     }
   },
   "footer": {

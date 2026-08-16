@@ -252,6 +252,20 @@
       "1kTo5k": "1.000 – 5.000 €",
       "5kTo15k": "5.000 – 15.000 €",
       "over15k": "preko 15.000 €"
+    },
+    "confirmationEmail": {
+      "subject": "Primili smo vašu poruku, {name}",
+      "preheader": "Javljamo se u roku od jednog radnog dana - u nastavku je kopija onoga što ste nam poslali.",
+      "greeting": "Bok {name},",
+      "body": "Hvala na upitu. Svaki upit čitamo osobno - nema voditelja koji prenosi poruke - i javit ćemo se na ovu adresu u roku od jednog radnog dana.",
+      "recapTitle": "Što ste nam poslali",
+      "recapService": "Usluga",
+      "recapBudget": "Budžet",
+      "recapMessage": "Poruka",
+      "notSpecified": "Nije navedeno",
+      "signOff": "Čujemo se uskoro,",
+      "signature": "Druid Forge",
+      "footerNote": "Ovo je automatska potvrda - ne morate odgovoriti osim ako želite nešto dodati."
     }
   },
   "footer": {

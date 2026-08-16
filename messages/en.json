@@ -252,6 +252,20 @@
       "1kTo5k": "€1,000 – €5,000",
       "5kTo15k": "€5,000 – €15,000",
       "over15k": "over €15,000"
+    },
+    "confirmationEmail": {
+      "subject": "We got your message, {name}",
+      "preheader": "We reply within one working day - here is a copy of what you sent us.",
+      "greeting": "Hi {name},",
+      "body": "Thanks for reaching out. We read every enquiry ourselves - there is no account manager relaying messages here - and we will get back to this email within one working day.",
+      "recapTitle": "What you sent us",
+      "recapService": "Service",
+      "recapBudget": "Budget",
+      "recapMessage": "Message",
+      "notSpecified": "Not specified",
+      "signOff": "Talk soon,",
+      "signature": "Druid Forge",
+      "footerNote": "This is an automatic confirmation - no need to reply unless you want to add something."
     }
   },
   "footer": {

@@ -16,13 +16,13 @@ export const cookieTable: Record<"necessary" | "analytics", CookieRow[]> = {
   necessary: [
     {
       name: "cc_cookie",
-      domain: "druidforge.hr",
+      domain: "druid-forge.hr",
       duration: "6m",
       descriptionKey: "ccCookie",
     },
     {
       name: "NEXT_LOCALE",
-      domain: "druidforge.hr",
+      domain: "druid-forge.hr",
       duration: "12m",
       descriptionKey: "localeCookie",
     },
@@ -30,13 +30,13 @@ export const cookieTable: Record<"necessary" | "analytics", CookieRow[]> = {
   analytics: [
     {
       name: "_pk_id",
-      domain: "druidforge.hr",
+      domain: "druid-forge.hr",
       duration: "13m",
       descriptionKey: "analyticsId",
     },
     {
       name: "_pk_ses",
-      domain: "druidforge.hr",
+      domain: "druid-forge.hr",
       duration: "session",
       descriptionKey: "analyticsSession",
     },

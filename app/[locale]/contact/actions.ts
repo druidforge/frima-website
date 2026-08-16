@@ -1,12 +1,19 @@
 "use server";
 
 import { headers } from "next/headers";
+import { getLocale, getTranslations } from "next-intl/server";
+import { Resend } from "resend";
 
 import {
   contactSchema,
   type ContactState,
   type ContactValues,
 } from "@/lib/contact-schema";
+import {
+  renderInquiryNotificationEmail,
+  renderThankYouEmail,
+} from "@/lib/email-templates";
+import { site, siteUrl } from "@/lib/site";
 
 /**
  * In-memory rate limit.
@@ -34,6 +41,31 @@ function rateLimited(key: string) {
   }
   return recent.length > MAX_PER_WINDOW;
 }
+
+/**
+ * Built once per cold start, not per submission - the SDK just wraps
+ * `fetch`, there is no connection to keep alive.
+ *
+ * The key is read lazily inside the action rather than at module scope so a
+ * missing env var surfaces as a caught, logged delivery failure on the first
+ * real submission instead of crashing the whole route at build/import time.
+ */
+function getResend() {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) return null;
+  return new Resend(apiKey);
+}
+
+/**
+ * Sandbox Resend accounts (no verified sending domain yet) can only deliver
+ * to the account's own address - `to: site.email` still works, but a real
+ * visitor's inbox will bounce. Once a domain is verified in the Resend
+ * dashboard, point this at an address on it (e.g. "Druid Forge
+ * <hello@druid-forge.hr>") via the env var and both sends start reaching
+ * anyone.
+ */
+const FROM = process.env.RESEND_FROM_EMAIL || "Druid Forge <onboarding@resend.dev>";
+const LOGO_URL = `${siteUrl}/brand/druid-forge-768.png`;
 
 export async function submitContact(
   _prev: ContactState,
@@ -92,33 +124,118 @@ export async function submitContact(
     return { status: "error", formError: "errorRateLimit", values };
   }
 
-  try {
-    // ---------------------------------------------------------------------
-    // Delivery stub. This is the single function to replace when an email
-    // provider is chosen - everything above (validation, honeypot, rate limit)
-    // stays exactly as it is.
-    //
-    //   await resend.emails.send({
-    //     from: "web@druidforge.hr",
-    //     to: site.email,
-    //     replyTo: parsed.data.email,
-    //     subject: `Upit: ${parsed.data.name}`,
-    //     text: buildBody(parsed.data),
-    //   });
-    // ---------------------------------------------------------------------
-    console.info("[contact] enquiry received", {
-      name: parsed.data.name,
-      email: parsed.data.email,
-      company: parsed.data.company || null,
-      service: parsed.data.service || null,
-      budget: parsed.data.budget || null,
-      length: parsed.data.message.length,
-      at: new Date().toISOString(),
-    });
-
-    return { status: "success", email: parsed.data.email };
-  } catch (error) {
-    console.error("[contact] delivery failed", error);
+  const resend = getResend();
+  if (!resend) {
+    console.error("[contact] RESEND_API_KEY is not set - enquiry not delivered");
     return { status: "error", formError: "errorGeneric", values };
   }
+
+  const locale = await getLocale();
+  const data = parsed.data;
+
+  // Human-readable labels for both emails, resolved once and shared by them -
+  // `service`/`budget` are optional, so an empty string is an expected input,
+  // not a bug, and `services.items` only has entries for real service ids
+  // (never "other"), so that lookup is guarded separately below.
+  const ts = await getTranslations({ locale, namespace: "contact" });
+  const ti = await getTranslations({ locale, namespace: "services.items" });
+  const tsEmail = await getTranslations({
+    locale,
+    namespace: "contact.confirmationEmail",
+  });
+
+  const serviceLabel = !data.service
+    ? tsEmail("notSpecified")
+    : data.service === "other"
+      ? ts("serviceOther")
+      : (() => {
+          try {
+            return ti(`${data.service}.name`);
+          } catch {
+            return data.service;
+          }
+        })();
+  // "undecided" is a real, selectable budget option, but it lives under the
+  // top-level `budgetUndecided` key rather than inside `budgets.*` - the form
+  // builds that option's label the same way (see contact-form.tsx). Only a
+  // truly empty string (field never touched) falls through to "not specified".
+  const budgetLabel = !data.budget
+    ? tsEmail("notSpecified")
+    : data.budget === "undecided"
+      ? ts("budgetUndecided")
+      : ts(`budgets.${data.budget}`);
+
+  // -------------------------------------------------------------------
+  // 1. Internal notification, to the studio's own inbox. This is the one
+  //    that actually matters - if it fails, the enquiry is lost, so its
+  //    failure is what the visitor sees reflected back as an error.
+  // -------------------------------------------------------------------
+  try {
+    const notification = renderInquiryNotificationEmail({
+      logoUrl: LOGO_URL,
+      siteName: site.name,
+      name: data.name,
+      email: data.email,
+      company: data.company ?? "",
+      serviceLabel,
+      budgetLabel,
+      message: data.message,
+      locale,
+    });
+
+    await resend.emails.send({
+      from: FROM,
+      to: site.email,
+      replyTo: data.email,
+      subject: notification.subject,
+      html: notification.html,
+      text: notification.text,
+    });
+  } catch (error) {
+    console.error("[contact] internal notification failed", error);
+    return { status: "error", formError: "errorGeneric", values };
+  }
+
+  // -------------------------------------------------------------------
+  // 2. Client-facing thank-you. Best-effort: the enquiry itself already
+  //    landed above, so a bounce here (most likely an unverified sending
+  //    domain rejecting delivery to a third party) is logged, not surfaced
+  //    to the visitor as a failed submission.
+  // -------------------------------------------------------------------
+  try {
+    const thankYou = renderThankYouEmail({
+      logoUrl: LOGO_URL,
+      siteName: site.name,
+      siteEmail: site.email,
+      sitePhone: site.phone,
+      addressLine: `${site.address.street}, ${site.address.postalCode} ${site.address.city}`,
+      legalLine: `${site.name}, obrt, vl. ${site.owner}`,
+      subject: tsEmail("subject", { name: data.name }),
+      greeting: tsEmail("greeting", { name: data.name }),
+      body: tsEmail("body"),
+      recapTitle: tsEmail("recapTitle"),
+      recapService: tsEmail("recapService"),
+      recapBudget: tsEmail("recapBudget"),
+      recapMessage: tsEmail("recapMessage"),
+      serviceValue: serviceLabel,
+      budgetValue: budgetLabel,
+      messageValue: data.message,
+      signOff: tsEmail("signOff"),
+      signature: tsEmail("signature"),
+      footerNote: tsEmail("footerNote"),
+    });
+
+    await resend.emails.send({
+      from: FROM,
+      to: data.email,
+      replyTo: site.email,
+      subject: thankYou.subject,
+      html: thankYou.html,
+      text: thankYou.text,
+    });
+  } catch (error) {
+    console.error("[contact] client confirmation failed", error);
+  }
+
+  return { status: "success", email: data.email };
 }
