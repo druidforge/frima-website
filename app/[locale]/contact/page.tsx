@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 
 import { ContactForm } from "@/components/contact-form";
+import { InstagramIcon } from "@/components/icons/instagram";
 import { PageHeader } from "@/components/page-header";
 import { locales, type Locale } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/metadata";
-import { site } from "@/lib/site";
+import { site, team, whatsAppHref } from "@/lib/site";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -61,6 +62,10 @@ function ContactHeader() {
 
 function ContactBody() {
   const t = useTranslations("contact");
+  const tc = useTranslations("common");
+  const tt = useTranslations("about.team");
+  const linkClass =
+    "underline decoration-ink/25 underline-offset-4 transition-colors hover:decoration-ink";
 
   // `PageHeader` already contributes pb-16 / md:pb-24, so pt-12 brings the
   // space above this block to 7rem / 9rem - the same air the section leaves
@@ -86,19 +91,20 @@ function ContactBody() {
           <h2 className="eyebrow">{t("directTitle")}</h2>
           <dl className="mt-7 space-y-7">
             <ContactRow icon={<Mail size={16} />} label={t("emailLabel")}>
-              <a
-                href={`mailto:${site.email}`}
-                className="underline decoration-ink/25 underline-offset-4 transition-colors hover:decoration-ink"
-              >
+              <a href={`mailto:${site.email}`} className={linkClass}>
                 {site.email}
               </a>
             </ContactRow>
             <ContactRow icon={<Phone size={16} />} label={t("phoneLabel")}>
-              <a
-                href={`tel:${site.phone.replace(/\s/g, "")}`}
-                className="underline decoration-ink/25 underline-offset-4 transition-colors hover:decoration-ink"
-              >
-                {site.phone}
+              {/* Named rather than numbered: both of them take calls, so the
+                  link says who you're reaching rather than making a visitor
+                  guess which number is whose. */}
+              <a href={`tel:${team.duje.phone.replace(/\s/g, "")}`} className={linkClass}>
+                {tt("duje.name")}
+              </a>
+              <br />
+              <a href={`tel:${team.dominko.phone.replace(/\s/g, "")}`} className={linkClass}>
+                {tt("dominko.name")}
               </a>
             </ContactRow>
             <ContactRow icon={<MapPin size={16} />} label={t("addressLabel")}>
@@ -110,6 +116,26 @@ function ContactBody() {
             </ContactRow>
             <ContactRow icon={<Clock size={16} />} label={t("hoursLabel")}>
               {t("hoursValue")}
+            </ContactRow>
+            <ContactRow icon={<InstagramIcon size={16} />} label={tc("instagram")}>
+              <a
+                href={site.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={linkClass}
+              >
+                @druid.forge
+              </a>
+            </ContactRow>
+            <ContactRow icon={<MessageCircle size={16} />} label={tc("whatsapp")}>
+              <a
+                href={whatsAppHref(tc("whatsappMessage"))}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={linkClass}
+              >
+                {t("whatsappCta")}
+              </a>
             </ContactRow>
           </dl>
         </aside>

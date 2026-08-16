@@ -9,7 +9,10 @@
     "readMore": "Saznaj više",
     "from": "Od",
     "weeks": "{count, plural, one {# tjedan} few {# tjedna} other {# tjedana}}",
-    "loading": "Učitavanje"
+    "loading": "Učitavanje",
+    "instagram": "Instagram",
+    "whatsapp": "WhatsApp",
+    "whatsappMessage": "Pozdrav, zanima me "
   },
   "nav": {
     "home": "Početna",
@@ -255,6 +258,7 @@
     "addressLabel": "Adresa",
     "hoursLabel": "Radno vrijeme",
     "hoursValue": "Pon–Pet, 9–17",
+    "whatsappCta": "Pošalji poruku",
     "budgets": {
       "under1k": "do 1.000 €",
       "1kTo5k": "1.000 – 5.000 €",
@@ -264,7 +268,7 @@
     "confirmationEmail": {
       "subject": "Primili smo vašu poruku, {name}",
       "preheader": "Javljamo se u roku od jednog radnog dana - u nastavku je kopija onoga što ste nam poslali.",
-      "greeting": "Bok {name},",
+      "greeting": "Pozdrav {name},",
       "body": "Hvala na upitu. Svaki upit čitamo osobno - nema voditelja koji prenosi poruke - i javit ćemo se na ovu adresu u roku od jednog radnog dana.",
       "recapTitle": "Što ste nam poslali",
       "recapService": "Usluga",

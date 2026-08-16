@@ -9,7 +9,10 @@
     "readMore": "Mehr erfahren",
     "from": "Ab",
     "weeks": "{count, plural, one {# Woche} other {# Wochen}}",
-    "loading": "Lädt"
+    "loading": "Lädt",
+    "instagram": "Instagram",
+    "whatsapp": "WhatsApp",
+    "whatsappMessage": "Hallo, mich interessiert "
   },
   "nav": {
     "home": "Start",
@@ -255,6 +258,7 @@
     "addressLabel": "Adresse",
     "hoursLabel": "Zeiten",
     "hoursValue": "Mo–Fr, 9–17 MEZ",
+    "whatsappCta": "Nachricht senden",
     "budgets": {
       "under1k": "bis 1.000 €",
       "1kTo5k": "1.000 – 5.000 €",

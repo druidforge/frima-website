@@ -6,13 +6,15 @@ import { Logo } from "@/components/logo";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { services } from "@/lib/services";
-import { site } from "@/lib/site";
+import { site, team, whatsAppHref } from "@/lib/site";
 
 export async function Footer() {
   const locale = (await getLocale()) as Locale;
   const t = await getTranslations("footer");
   const tn = await getTranslations("nav");
   const ts = await getTranslations("services.items");
+  const tc = await getTranslations("common");
+  const tt = await getTranslations("about.team");
 
   return (
     <footer className="on-abyss relative mt-px overflow-clip">
@@ -54,12 +56,22 @@ export async function Footer() {
                 {site.email}
               </a>
             </li>
+            {/* Named rather than numbered - same reasoning as the contact
+                page's phone row: the link says who you're reaching. */}
             <li>
               <a
-                href={`tel:${site.phone.replace(/\s/g, "")}`}
+                href={`tel:${team.duje.phone.replace(/\s/g, "")}`}
                 className="link-sweep text-sm text-muted-foreground transition-colors duration-(--dur-base) hover:text-foreground"
               >
-                {site.phone}
+                {tt("duje.name")}
+              </a>
+            </li>
+            <li>
+              <a
+                href={`tel:${team.dominko.phone.replace(/\s/g, "")}`}
+                className="link-sweep text-sm text-muted-foreground transition-colors duration-(--dur-base) hover:text-foreground"
+              >
+                {tt("dominko.name")}
               </a>
             </li>
             <li className="text-sm leading-relaxed text-muted-foreground">
@@ -68,6 +80,26 @@ export async function Footer() {
               {site.address.postalCode} {site.address.city}
               <br />
               {site.address.countryName}
+            </li>
+            <li>
+              <a
+                href={site.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-sweep text-sm text-muted-foreground transition-colors duration-(--dur-base) hover:text-foreground"
+              >
+                {tc("instagram")}
+              </a>
+            </li>
+            <li>
+              <a
+                href={whatsAppHref(tc("whatsappMessage"))}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-sweep text-sm text-muted-foreground transition-colors duration-(--dur-base) hover:text-foreground"
+              >
+                {tc("whatsapp")}
+              </a>
             </li>
           </FooterColumn>
         </div>
