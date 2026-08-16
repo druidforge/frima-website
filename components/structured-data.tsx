@@ -47,10 +47,17 @@ export async function StructuredData({ locale }: { locale: Locale }) {
         latitude: site.geo.lat,
         longitude: site.geo.lng,
       },
+      // Croatia and Germany stay named explicitly - they're the two actual
+      // priority markets, worth the regional-relevance signal a bare
+      // "Worldwide" can't give. Austria is dropped rather than swapped for
+      // a fourth country: the business takes clients anywhere (meetings are
+      // remote outside Split), so a fixed short list of countries was never
+      // the accurate shape - the last entry says that directly instead of
+      // us silently maintaining an ever-growing enumeration.
       areaServed: [
         { "@type": "Country", name: "Croatia" },
         { "@type": "Country", name: "Germany" },
-        { "@type": "Country", name: "Austria" },
+        { "@type": "Place", name: "Worldwide" },
       ],
       openingHoursSpecification: {
         "@type": "OpeningHoursSpecification",
