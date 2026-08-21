@@ -35,12 +35,8 @@ export function GoogleAnalytics() {
   return (
     <>
       <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
-      <Script id="ga4-init" strategy="afterInteractive">
-        {`window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${GA_ID}');`}
-      </Script>
+      {/* Same-origin file, not an inline block - see public/ga-init.js for why. */}
+      <Script src={`/ga-init.js?id=${GA_ID}`} strategy="afterInteractive" />
     </>
   );
 }
