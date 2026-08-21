@@ -51,8 +51,8 @@ export const services: Service[] = [
     },
     seed: 43,
     hue: [-18, 12],
-    from: "4.000 €",
-    timeline: "5–10",
+    from: "2.500 €",
+    timeline: "4–6",
     image: "/services/web-applications.avif",
   },
   {
@@ -64,8 +64,8 @@ export const services: Service[] = [
     },
     seed: 71,
     hue: [24, -10],
-    from: "6.000 €",
-    timeline: "8–16",
+    from: "4.000 €",
+    timeline: "6–8",
     image: "/services/mobile-applications.avif",
   },
   {

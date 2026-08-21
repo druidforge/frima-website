@@ -112,7 +112,7 @@
         "name": "Web-Anwendungen",
         "short": "Werkzeuge, die arbeiten, nicht nur Inhalte zeigen.",
         "description": "Buchungssysteme, interne Werkzeuge, Kundenportale, Dashboards. Wir bauen auf Next.js und PostgreSQL, mit echten Benutzerkonten, Rollen und Änderungsprotokoll.",
-        "metaDescription": "Individuelle Webanwendungen — Buchungssysteme, Portale, Dashboards. Gebaut auf Next.js, ab 4.000 €.",
+        "metaDescription": "Individuelle Webanwendungen — Buchungssysteme, Portale, Dashboards. Gebaut auf Next.js, ab 2.500 €.",
         "included": [
           "Analyse von Abläufen und Daten",
           "Login, Rollen und Berechtigungen",
@@ -126,7 +126,7 @@
         "name": "Mobile Anwendungen",
         "short": "Eine Codebasis für iOS und Android.",
         "description": "Apps in React Native, veröffentlicht im App Store und bei Google Play. Offline-Betrieb, Push-Nachrichten und In-App-Zahlungen bauen wir ein, wenn das Produkt sie braucht.",
-        "metaDescription": "App-Entwicklung für iOS und Android — React Native, Offline-Betrieb, Push-Nachrichten. Ab 6.000 €.",
+        "metaDescription": "App-Entwicklung für iOS und Android — React Native, Offline-Betrieb, Push-Nachrichten. Ab 4.000 €.",
         "included": [
           "Oberflächendesign für beide Plattformen",
           "Offline-Betrieb und Synchronisierung",

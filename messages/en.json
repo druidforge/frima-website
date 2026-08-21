@@ -112,7 +112,7 @@
         "name": "Web applications",
         "short": "Tools that do work, not just display content.",
         "description": "Booking systems, internal tools, client portals, dashboards. We build on Next.js and PostgreSQL, with real accounts, roles and an audit trail.",
-        "metaDescription": "Custom web application development — booking systems, portals, dashboards. Built on Next.js, from €4,000.",
+        "metaDescription": "Custom web application development — booking systems, portals, dashboards. Built on Next.js, from €2,500.",
         "included": [
           "Workflow and data analysis",
           "Login, roles and permissions",
@@ -126,7 +126,7 @@
         "name": "Mobile applications",
         "short": "One codebase for iOS and Android.",
         "description": "Apps in React Native, published to the App Store and Google Play. We add offline use, push notifications and in-app payments when the product calls for them.",
-        "metaDescription": "Mobile app development for iOS and Android — React Native, offline support, push notifications. From €6,000.",
+        "metaDescription": "Mobile app development for iOS and Android — React Native, offline support, push notifications. From €4,000.",
         "included": [
           "Interface design for both platforms",
           "Offline use and syncing",
