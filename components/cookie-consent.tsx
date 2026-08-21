@@ -11,6 +11,16 @@ import type { Locale } from "@/i18n/routing";
 import { cookieTable } from "@/lib/cookies";
 
 /**
+ * There's no regulatory "standard" delay - GDPR/ePrivacy require consent
+ * *before* any non-essential cookie is set, not that the banner appear
+ * within any given number of seconds. That's already true regardless of this
+ * value: analytics stays `enabled: false` and nothing in `<GoogleAnalytics>`
+ * loads until a real accept, so a visitor sees the page first and the
+ * banner second without anything firing in between.
+ */
+const BANNER_DELAY_MS = 6000;
+
+/**
  * GDPR consent gate.
  *
  * Nothing beyond the necessary category runs before an explicit opt-in:
@@ -23,6 +33,7 @@ export function CookieConsent() {
   const t = useTranslations("cookies");
 
   useEffect(() => {
+    let showTimer: ReturnType<typeof setTimeout> | undefined;
     const privacyHref = getPathname({ href: "/privacy", locale });
     const cookieHref = getPathname({ href: "/cookies", locale });
 
@@ -57,7 +68,8 @@ export function CookieConsent() {
     };
 
     void CC.run({
-      autoShow: true,
+      // Shown manually, after a delay, below - see `BANNER_DELAY_MS`.
+      autoShow: false,
       revision: 1,
       onConsent: broadcastAnalyticsConsent,
       onChange: broadcastAnalyticsConsent,
@@ -115,7 +127,16 @@ export function CookieConsent() {
           },
         },
       },
+    }).then(() => {
+      // A returning visitor with a stored, still-valid choice never needs
+      // the banner at all - only a first-time (or expired-consent) visitor
+      // waits out the delay before seeing it.
+      if (!CC.validConsent()) {
+        showTimer = setTimeout(() => CC.show(), BANNER_DELAY_MS);
+      }
     });
+
+    return () => clearTimeout(showTimer);
   }, [locale, t]);
 
   return null;
