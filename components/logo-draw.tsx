@@ -88,18 +88,47 @@ function fadeFill(id: keyof typeof T) {
 
 function grow(id: keyof typeof T, r: number) {
   const { begin, dur } = T[id];
+  /**
+   * The pop this is going for is a spring overshoot - grow past the target
+   * radius, then settle back to it - which a single SMIL `keySplines` can't
+   * express: unlike a CSS `cubic-bezier()`, its control points are spec-bound
+   * to 0-1, so a Y past 1 (what an overshoot curve needs) is an invalid value
+   * every browser warns on, even though the animation still visibly plays.
+   * Two valid, chained SMIL animations - grow past `r`, then ease back down
+   * to it - reproduce the same pop without leaving the spec, and without
+   * reaching for CSS/JS on a mark whose whole point is running on the
+   * browser's own SVG timeline (see the file-level comment above).
+   */
+  const overshootId = `${id}-overshoot`;
+  const overshootDur = dur * 0.7;
+  const settleDur = dur * 0.3;
+  const overshootR = r * 1.18;
   return (
-    <animate
-      attributeName="r"
-      from="0"
-      to={r}
-      begin={`${begin}s`}
-      dur={`${dur}s`}
-      fill="freeze"
-      calcMode="spline"
-      keySplines="0.34 1.56 0.64 1"
-      keyTimes="0;1"
-    />
+    <>
+      <animate
+        id={overshootId}
+        attributeName="r"
+        from="0"
+        to={overshootR}
+        begin={`${begin}s`}
+        dur={`${overshootDur}s`}
+        fill="freeze"
+        calcMode="spline"
+        keySplines="0.16 1 0.3 1"
+        keyTimes="0;1"
+      />
+      <animate
+        attributeName="r"
+        from={overshootR}
+        to={r}
+        begin={`${overshootId}.end`}
+        dur={`${settleDur}s`}
+        fill="freeze"
+        calcMode="spline"
+        keySplines="0.3 0 0.4 1"
+        keyTimes="0;1"
+      />
+    </>
   );
 }
 
