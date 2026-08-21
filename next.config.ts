@@ -29,14 +29,22 @@ const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
  * with `object-src 'none'`, `base-uri 'self'`, `form-action 'self'` and
  * `frame-ancestors` matching the existing `X-Frame-Options`, that's a real
  * reduction in attack surface even with the two inline exceptions.
+ *
+ * `isDev` gates two more exceptions, both dev-server-only: React uses `eval()`
+ * in development to reconstruct server-side stack traces for its error
+ * overlay - neither React nor Next.js call `eval()` in production, so
+ * `'unsafe-eval'` is dropped there rather than left in by default. `ws:`/`wss:`
+ * covers the HMR socket `next dev` opens back to itself; production is fully
+ * static, so there's no such connection to allow.
  */
+const isDev = process.env.NODE_ENV === "development";
 const cspHeader = `
   default-src 'self';
-  script-src 'self' 'unsafe-inline' https://www.googletagmanager.com;
+  script-src 'self' 'unsafe-inline' https://www.googletagmanager.com${isDev ? " 'unsafe-eval'" : ""};
   style-src 'self' 'unsafe-inline';
   img-src 'self' data: blob:;
   font-src 'self';
-  connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com;
+  connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com${isDev ? " ws: wss:" : ""};
   object-src 'none';
   base-uri 'self';
   form-action 'self';

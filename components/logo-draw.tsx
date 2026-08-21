@@ -99,14 +99,12 @@ function grow(id: keyof typeof T, r: number) {
    * reaching for CSS/JS on a mark whose whole point is running on the
    * browser's own SVG timeline (see the file-level comment above).
    */
-  const overshootId = `${id}-overshoot`;
   const overshootDur = dur * 0.7;
   const settleDur = dur * 0.3;
   const overshootR = r * 1.18;
   return (
     <>
       <animate
-        id={overshootId}
         attributeName="r"
         from="0"
         to={overshootR}
@@ -117,11 +115,15 @@ function grow(id: keyof typeof T, r: number) {
         keySplines="0.16 1 0.3 1"
         keyTimes="0;1"
       />
+      {/* Plain absolute timing, not a syncbase (`id.end`) reference - matches
+          every other animation in this file, and sidesteps a real bug the
+          syncbase form had: the settle-back phase never actually fired, so
+          the node froze on the overshoot radius instead of returning to `r`. */}
       <animate
         attributeName="r"
         from={overshootR}
         to={r}
-        begin={`${overshootId}.end`}
+        begin={`${begin + overshootDur}s`}
         dur={`${settleDur}s`}
         fill="freeze"
         calcMode="spline"
