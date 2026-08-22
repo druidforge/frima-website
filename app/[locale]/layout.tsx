@@ -1,9 +1,4 @@
 import type { Metadata } from "next";
-import {
-  Bricolage_Grotesque,
-  Instrument_Sans,
-  JetBrains_Mono,
-} from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import {
   getMessages,
@@ -19,42 +14,11 @@ import { RoutePrefetcher } from "@/components/route-prefetcher";
 import { SiteHeader } from "@/components/site-header";
 import { StructuredData } from "@/components/structured-data";
 import { locales, routing, type Locale } from "@/i18n/routing";
+import { bricolage, instrument, jetbrains } from "@/lib/fonts";
 import { buildAlternates } from "@/lib/metadata";
 import { siteUrl } from "@/lib/site";
 
 import "../globals.css";
-
-const bricolage = Bricolage_Grotesque({
-  variable: "--font-bricolage",
-  subsets: ["latin", "latin-ext"],
-  display: "swap",
-  /**
-   * `wdth` dropped: every extra variable axis makes Google Fonts serve a
-   * larger file, and this one was inert - it only ever applies through
-   * `font-stretch`, which nothing in this project sets. The face was the
-   * single heaviest resource on the homepage (129KB, still arriving at ~3.1s
-   * on throttled mobile) and it gates the hero's own text.
-   *
-   * `opsz` stays. Unlike `wdth` it is live without being written anywhere:
-   * `font-optical-sizing` defaults to `auto`, so the browser already varies
-   * it by font size - which is exactly what keeps the huge hero headline
-   * from looking like the body face scaled up.
-   */
-  axes: ["opsz"],
-});
-
-const instrument = Instrument_Sans({
-  variable: "--font-instrument",
-  subsets: ["latin", "latin-ext"],
-  display: "swap",
-});
-
-const jetbrains = JetBrains_Mono({
-  variable: "--font-jetbrains",
-  subsets: ["latin", "latin-ext"],
-  display: "swap",
-  weight: ["400", "500"],
-});
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));

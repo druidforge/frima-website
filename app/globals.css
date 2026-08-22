@@ -566,11 +566,40 @@
   }
 }
 
+/* The same rise as `rise-fade`, with the opacity ramp removed.
+
+   Moving the entrance off `motion` and into CSS fixed *when* the animation can
+   start, but not what it starts from, and for one element on the page that is
+   still the whole problem. The hero's lead paragraph is the homepage's LCP
+   candidate, and `both` deliberately holds the first keyframe through
+   `animation-delay` - so an `opacity: 0` start frame means Chrome has nothing
+   to count as a paint until the delay has elapsed. The measurement is pinned to
+   the delay, not to how fast the page actually arrived.
+
+   Transform-only sidesteps it: the element is painted and opaque from the first
+   frame, so LCP is recorded on arrival while the rise still plays out. This is
+   the same trick `word-rise` above already relies on, for the same reason.
+
+   Only the LCP element needs this. Everything else keeps `rise-fade`, where the
+   fade is free. */
+@keyframes rise-lcp {
+  from {
+    transform: translateY(16px);
+  }
+  to {
+    transform: none;
+  }
+}
+
 /* `both` holds the start frame through `animation-delay` and the end frame
    afterwards, matching how a `motion` element parks on its `initial` value
    until its transition begins. Per-element offsets are set inline. */
 .rise-fade {
   animation: rise-fade 0.8s var(--ease-out-quint) both;
+}
+
+.rise-lcp {
+  animation: rise-lcp 0.8s var(--ease-out-quint) both;
 }
 
 .word-rise {

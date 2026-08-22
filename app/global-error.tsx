@@ -2,33 +2,10 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import {
-  Bricolage_Grotesque,
-  Instrument_Sans,
-  JetBrains_Mono,
-} from "next/font/google";
+
+import { bricolage, instrument, jetbrains } from "@/lib/fonts";
 
 import "./globals.css";
-
-const bricolage = Bricolage_Grotesque({
-  variable: "--font-bricolage",
-  subsets: ["latin", "latin-ext"],
-  display: "swap",
-  axes: ["opsz", "wdth"],
-});
-
-const instrument = Instrument_Sans({
-  variable: "--font-instrument",
-  subsets: ["latin", "latin-ext"],
-  display: "swap",
-});
-
-const jetbrains = JetBrains_Mono({
-  variable: "--font-jetbrains",
-  subsets: ["latin", "latin-ext"],
-  display: "swap",
-  weight: ["400", "500"],
-});
 
 /**
  * Catches a crash in `app/[locale]/layout.tsx` itself - the one place

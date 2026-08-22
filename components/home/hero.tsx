@@ -73,11 +73,23 @@ export function Hero() {
         {/* CSS rather than `motion`, and this element is the reason why: it is
             the homepage's LCP element, and as a `motion.p` starting at
             `opacity: 0` it could not paint until the Motion bundle had
-            hydrated. Same fade, same rise, same easing - see the note above
-            `@keyframes rise-fade` in `app/globals.css`. */}
+            hydrated.
+
+            `rise-lcp` rather than `rise-fade` for the second half of the same
+            problem. Leaving JS behind fixed when the animation could start; it
+            did not change that the first keyframe was still transparent, and
+            `both` holds that frame through the delay. Chrome will not record an
+            invisible element, so LCP was pinned to `animation-delay` no matter
+            how quickly the page arrived - 0.55s of it. Dropping the opacity ramp
+            leaves the element painted from the first frame while the rise plays
+            out unchanged. See the note above `@keyframes rise-lcp` in
+            `app/globals.css`.
+
+            The delay is short rather than zero so the paragraph still follows
+            the headline in rather than arriving with it. */}
         <p
-          className="rise-fade mt-6 max-w-[52ch] text-(length:--text-step-1) leading-[1.5] text-ink-soft"
-          style={{ animationDelay: "0.55s" }}
+          className="rise-lcp mt-6 max-w-[52ch] text-(length:--text-step-1) leading-[1.5] text-ink-soft"
+          style={{ animationDelay: "0.15s" }}
         >
           {t("heroLead")}
         </p>
