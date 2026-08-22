@@ -28,7 +28,19 @@ const bricolage = Bricolage_Grotesque({
   variable: "--font-bricolage",
   subsets: ["latin", "latin-ext"],
   display: "swap",
-  axes: ["opsz", "wdth"],
+  /**
+   * `wdth` dropped: every extra variable axis makes Google Fonts serve a
+   * larger file, and this one was inert - it only ever applies through
+   * `font-stretch`, which nothing in this project sets. The face was the
+   * single heaviest resource on the homepage (129KB, still arriving at ~3.1s
+   * on throttled mobile) and it gates the hero's own text.
+   *
+   * `opsz` stays. Unlike `wdth` it is live without being written anywhere:
+   * `font-optical-sizing` defaults to `auto`, so the browser already varies
+   * it by font size - which is exactly what keeps the huge hero headline
+   * from looking like the body face scaled up.
+   */
+  axes: ["opsz"],
 });
 
 const instrument = Instrument_Sans({

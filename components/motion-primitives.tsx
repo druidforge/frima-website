@@ -128,18 +128,47 @@ export function RevealWords({
               return (
                 <span key={`${word}-${i}`}>
                   <span className="inline-block overflow-hidden align-bottom px-[0.12em] py-[0.22em] -mx-[0.12em] -my-[0.22em]">
-                    <motion.span
-                      className="inline-block"
-                      initial={{ y: "140%" }}
-                      animate={shown ? { y: "0%" } : undefined}
-                      transition={{
-                        duration: 0.62,
-                        delay: delay + globalIndex * 0.045,
-                        ease: EASE,
-                      }}
-                    >
-                      {word}
-                    </motion.span>
+                    {/**
+                     * `immediate` headings are above the fold by construction,
+                     * which makes them Largest Contentful Paint candidates - so
+                     * they animate in CSS, which runs at stylesheet parse
+                     * instead of waiting for the Motion bundle to hydrate. The
+                     * keyframes match this transition exactly (see
+                     * `@keyframes word-rise` in `app/globals.css`).
+                     *
+                     * The tradeoff taken knowingly: this path skips the
+                     * `fontsReady` gate below, so on a cold cache a word can
+                     * begin rising in the fallback face and swap mid-flight.
+                     * Waiting for the webfont is precisely what was delaying
+                     * the paint, and a brief swap costs less than a heading
+                     * that is invisible for seconds.
+                     *
+                     * Everything else keeps the observer-gated `motion` path:
+                     * it cannot affect LCP, and JS has long since arrived.
+                     */}
+                    {immediate ? (
+                      <span
+                        className="word-rise inline-block"
+                        style={{
+                          animationDelay: `${delay + globalIndex * 0.045}s`,
+                        }}
+                      >
+                        {word}
+                      </span>
+                    ) : (
+                      <motion.span
+                        className="inline-block"
+                        initial={{ y: "140%" }}
+                        animate={shown ? { y: "0%" } : undefined}
+                        transition={{
+                          duration: 0.62,
+                          delay: delay + globalIndex * 0.045,
+                          ease: EASE,
+                        }}
+                      >
+                        {word}
+                      </motion.span>
+                    )}
                   </span>
                   {/* A trailing space *inside* the clipped, overflow-hidden
                       box above gets silently collapsed away by the browser

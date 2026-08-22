@@ -70,20 +70,21 @@ export function Hero() {
           className="mt-5 max-w-[15ch] font-display text-[clamp(2.5rem,min(7vw,10.5svh),6.5rem)] font-bold leading-[0.88] tracking-[-0.045em]"
         />
 
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-6 max-w-[52ch] text-(length:--text-step-1) leading-[1.5] text-ink-soft"
+        {/* CSS rather than `motion`, and this element is the reason why: it is
+            the homepage's LCP element, and as a `motion.p` starting at
+            `opacity: 0` it could not paint until the Motion bundle had
+            hydrated. Same fade, same rise, same easing - see the note above
+            `@keyframes rise-fade` in `app/globals.css`. */}
+        <p
+          className="rise-fade mt-6 max-w-[52ch] text-(length:--text-step-1) leading-[1.5] text-ink-soft"
+          style={{ animationDelay: "0.55s" }}
         >
           {t("heroLead")}
-        </motion.p>
+        </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-8 flex flex-wrap items-center gap-3 md:mt-10"
+        <div
+          className="rise-fade mt-8 flex flex-wrap items-center gap-3 md:mt-10"
+          style={{ animationDelay: "0.7s" }}
         >
           {/* One magnetic element per page, and this is it. */}
           <Magnetic>
@@ -106,7 +107,7 @@ export function Hero() {
             />
             <span className="relative">{t("heroSecondary")}</span>
           </Link>
-        </motion.div>
+        </div>
       </motion.div>
 
       <motion.div

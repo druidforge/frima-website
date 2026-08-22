@@ -524,3 +524,55 @@
    The motion here is deliberately small in amplitude: short fades, a few pixels
    of travel, no autoplaying full-screen movement beyond the ambient canvas. */
 
+
+/* Entrance animations for above-the-fold content.
+
+   These exist in CSS rather than in `motion` for one reason: paint timing.
+   A `motion` element renders its `initial` state into the server HTML, so an
+   entrance that starts at `opacity: 0` stays invisible until the Motion bundle
+   has downloaded, parsed and hydrated. Chrome does not count an invisible
+   element for Largest Contentful Paint, which pinned the homepage's LCP to the
+   end of that whole JS chain - 5.3s on throttled mobile, against a 0ms TTFB.
+
+   CSS animations start when the stylesheet parses, before any of that, so the
+   same entrance no longer waits on JavaScript. The timing and easing below are
+   deliberately identical to the `motion` values they replace
+   (`--ease-out-quint` is the same cubic-bezier as the EASE constant in
+   `components/motion-primitives.tsx`), so nothing about the result changes
+   visually.
+
+   Below-the-fold reveals stay on `motion` - they are gated on a viewport
+   observer, cannot affect LCP, and the JS is loaded by then anyway. */
+
+@keyframes rise-fade {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* The word masks in `RevealWords`: each word starts pushed below its own
+   clipping box and rises into it. No opacity - the mask does the hiding. */
+@keyframes word-rise {
+  from {
+    transform: translateY(140%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+/* `both` holds the start frame through `animation-delay` and the end frame
+   afterwards, matching how a `motion` element parks on its `initial` value
+   until its transition begins. Per-element offsets are set inline. */
+.rise-fade {
+  animation: rise-fade 0.8s var(--ease-out-quint) both;
+}
+
+.word-rise {
+  animation: word-rise 0.62s var(--ease-out-quint) both;
+}
