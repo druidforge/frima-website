@@ -138,12 +138,12 @@
       },
       "weddingInvites": {
         "name": "Digital wedding invitations",
-        "short": "An invitation that lives on a link, with RSVP built in.",
-        "description": "A personal page for your wedding: your story, the schedule, a map, RSVP and a gift list. Guests open a link, and you see who is coming at any moment.",
-        "metaDescription": "Digital wedding invitations with RSVP and a live guest list, built as your own wedding website. From €350.",
+        "short": "An invitation that lives on a link, not in an envelope.",
+        "description": "A personal page for your wedding: your story, the schedule, a map and a gift list. Guests open a link; add the RSVP form and you see who is coming at any moment.",
+        "metaDescription": "Digital wedding invitations with RSVP and a live guest list, built as your own wedding website. From €300.",
         "included": [
           "Design and an animated opening in your theme and colours",
-          "RSVP form with a live guest list",
+          "Your story and a gift list",
           "Day schedule and venue map",
           "Your own domain if you want one",
           "Two languages"

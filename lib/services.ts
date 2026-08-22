@@ -77,7 +77,7 @@ export const services: Service[] = [
     },
     seed: 29,
     hue: [40, 28],
-    from: "350 €",
+    from: "300 €",
     timeline: "1–2",
     image: "/services/wedding-invitation.avif",
   },

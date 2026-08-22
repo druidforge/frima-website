@@ -138,12 +138,12 @@
       },
       "weddingInvites": {
         "name": "Digitalne pozivnice za vjenčanje",
-        "short": "Pozivnica koja živi na linku, s potvrdom dolaska.",
-        "description": "Osobna stranica za vaše vjenčanje: priča, raspored dana, karta, potvrda dolaska i popis želja. Gosti otvaraju link, vi u svakom trenutku vidite tko dolazi.",
-        "metaDescription": "Digitalne pozivnice za vjenčanje s potvrdom dolaska i popisom gostiju uživo. Od 350 €.",
+        "short": "Pozivnica koja živi na linku, a ne u omotnici.",
+        "description": "Osobna stranica za vaše vjenčanje: priča, raspored dana, karta i popis želja. Gosti otvaraju link; dodajte obrazac za potvrdu dolaska i u svakom trenutku vidite tko dolazi.",
+        "metaDescription": "Digitalne pozivnice za vjenčanje s potvrdom dolaska i popisom gostiju uživo. Od 300 €.",
         "included": [
           "Dizajn i animirani uvod prema vašoj temi i bojama",
-          "Obrazac za potvrdu dolaska i popis gostiju uživo",
+          "Vaša priča i popis želja",
           "Raspored dana i karta lokacije",
           "Vlastita domena po želji",
           "Hrvatski i još jedan jezik"
