@@ -257,7 +257,7 @@
     "phoneLabel": "Phone",
     "addressLabel": "Address",
     "hoursLabel": "Hours",
-    "hoursValue": "Mon–Fri, 9–17 CET",
+    "hoursValue": "Mon–Fri, 8–16 CET",
     "whatsappCta": "Send a message",
     "budgets": {
       "under1k": "under €1,000",

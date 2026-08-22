@@ -38,6 +38,15 @@ const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
  * static, so there's no such connection to allow.
  */
 const isDev = process.env.NODE_ENV === "development";
+
+/**
+ * Mirrors `isIndexableDeployment` in `lib/site.ts` - duplicated rather than
+ * imported because `next.config.ts` is loaded before the `@/` path alias
+ * exists. Keep the two in step.
+ */
+const isIndexableDeployment =
+  process.env.VERCEL_ENV !== "preview" &&
+  process.env.VERCEL_ENV !== "development";
 const cspHeader = `
   default-src 'self';
   script-src 'self' 'unsafe-inline' https://www.googletagmanager.com${isDev ? " 'unsafe-eval'" : ""};
@@ -145,6 +154,15 @@ const nextConfig: NextConfig = {
             value: "camera=(), microphone=(), geolocation=()",
           },
           { key: "Content-Security-Policy", value: cspHeader },
+          /**
+           * Preview deployments only. `robots.txt` stops the crawl, but a URL
+           * that was already discovered can stay indexed without one - this
+           * header is what actually keeps a `*.vercel.app` copy out of, and
+           * removes it from, the index. Never emitted in production.
+           */
+          ...(isIndexableDeployment
+            ? []
+            : [{ key: "X-Robots-Tag", value: "noindex, nofollow" }]),
         ],
       },
     ];

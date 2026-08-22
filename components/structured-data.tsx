@@ -2,7 +2,7 @@ import { getTranslations } from "next-intl/server";
 
 import { getPathname } from "@/i18n/navigation";
 import { locales, type Locale } from "@/i18n/routing";
-import { services } from "@/lib/services";
+import { priceRange, services } from "@/lib/services";
 import { absoluteUrl } from "@/lib/metadata";
 import { site, siteUrl } from "@/lib/site";
 
@@ -32,9 +32,15 @@ export async function StructuredData({ locale }: { locale: Locale }) {
       telephone: site.phone,
       foundingDate: site.founded,
       vatID: site.oib,
-      image: `${siteUrl}/opengraph-image`,
+      // Through `absoluteUrl` so this lands on the trailing-slash form the
+      // site actually serves. Built by hand it pointed at `/opengraph-image`,
+      // which 308s - structured data should reference the final URL, not a
+      // redirect to it. The logo is exempt: paths with a file extension are
+      // not rewritten by `trailingSlash`, and serve 200 as-is.
+      image: absoluteUrl("/opengraph-image"),
       logo: `${siteUrl}/druid-forge.svg`,
-      priceRange: "€€",
+      // Derived from the services' own entry prices - see `lib/services.ts`.
+      priceRange,
       address: {
         "@type": "PostalAddress",
         streetAddress: site.address.street,
@@ -61,9 +67,11 @@ export async function StructuredData({ locale }: { locale: Locale }) {
       ],
       openingHoursSpecification: {
         "@type": "OpeningHoursSpecification",
+        // Mon-Fri 08:00-16:00, closed weekends - matching the Google Business
+        // Profile exactly, so the two sources cannot disagree.
         dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "09:00",
-        closes: "17:00",
+        opens: "08:00",
+        closes: "16:00",
       },
       sameAs: Object.values(site.social),
       hasOfferCatalog: {

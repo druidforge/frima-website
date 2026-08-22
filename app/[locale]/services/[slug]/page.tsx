@@ -5,6 +5,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Check } from "lucide-react";
 
+import { ServiceBreadcrumbSchema } from "@/components/breadcrumb-schema";
 import { CtaBand } from "@/components/cta-band";
 import { OtherServicesCarousel } from "@/components/other-services-carousel";
 import { Stagger, StaggerItem } from "@/components/interactions";
@@ -90,6 +91,11 @@ export default async function ServicePage({
 
   return (
     <>
+      <ServiceBreadcrumbSchema
+        locale={locale}
+        serviceId={service.id}
+        slug={slug}
+      />
       <ServiceBody serviceId={service.id} locale={locale} />
       <ServiceCta />
     </>

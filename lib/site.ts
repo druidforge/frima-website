@@ -27,18 +27,46 @@ export const site = {
     countryName: "Hrvatska",
   },
   geo: { lat: 43.5081, lng: 16.4402 },
-  founded: "2019",
+  /**
+   * Date the obrt was entered in the craft register, ISO 8601 for schema.org's
+   * `foundingDate`.
+   *
+   * Note this is the *legal entity's* start, not the studio's - the About page
+   * says the team has been working since 2019, which is the longer, informal
+   * history. See the note in the summary if those two should be reconciled.
+   */
+  founded: "2026-08-13",
   social: {
     instagram: "https://instagram.com/druid.forge",
     whatsapp: "https://wa.me/385955617511",
-    linkedin: "https://www.linkedin.com/company/druid-forge",
-    github: "https://github.com/druid-forge",
+    linkedin: "https://www.linkedin.com/in/druid-forge-b28371430/",
+    github: "https://github.com/druidforge",
   },
 } as const;
 
 export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
   "https://druid-forge.hr";
+
+/**
+ * Whether this deployment is allowed to be indexed.
+ *
+ * Vercel builds every branch and every pull request at its own
+ * `*.vercel.app` URL, serving a byte-identical site. Left alone those
+ * previews are crawlable, which is how a staging copy ends up competing with
+ * the real domain for its own content.
+ *
+ * `VERCEL_ENV` is "production" | "preview" | "development" on Vercel, and
+ * undefined anywhere else. Only the two explicit non-production values are
+ * blocked, so a self-hosted build or a local `next start` still behaves like
+ * production rather than silently shipping `noindex` to a real site.
+ *
+ * Read at build time, which is correct: these routes are all statically
+ * generated, so the value baked in is the one for that deployment.
+ */
+export const isIndexableDeployment =
+  process.env.VERCEL_ENV !== "preview" &&
+  process.env.VERCEL_ENV !== "development";
 
 /** Handle shown as link text on the contact page - derived so it can't drift
  *  from `site.social.instagram`, the actual source of truth for the URL. */
