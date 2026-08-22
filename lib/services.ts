@@ -114,24 +114,3 @@ export const services: Service[] = [
 export function getServiceBySlug(slug: string, locale: Locale) {
   return services.find((service) => service.slug[locale] === slug);
 }
-
-/**
- * `priceRange` for the JSON-LD, derived from the same `from` figures the
- * service pages display rather than written out separately - a hand-kept
- * copy would silently go stale the next time a price moves, and structured
- * data that disagrees with the visible page is worse than none.
- *
- * These are entry prices, so the range is the cheapest and dearest starting
- * point, not a claim about what any given project finally costs.
- *
- * Parsing strips everything but digits: the figures are written in the
- * European style this site uses throughout ("2.500 €"), where the dot is a
- * thousands separator, and none of them carry cents.
- */
-export const priceRange = (() => {
-  const amounts = services.map((service) =>
-    Number(service.from.replace(/\D/g, "")),
-  );
-  const format = (value: number) => value.toLocaleString("de-DE");
-  return `${format(Math.min(...amounts))}–${format(Math.max(...amounts))} €`;
-})();

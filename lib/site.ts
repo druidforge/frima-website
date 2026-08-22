@@ -29,17 +29,23 @@ export const site = {
   geo: { lat: 43.5081, lng: 16.4402 },
   /**
    * Date the obrt was entered in the craft register, ISO 8601 for schema.org's
-   * `foundingDate`.
-   *
-   * Note this is the *legal entity's* start, not the studio's - the About page
-   * says the team has been working since 2019, which is the longer, informal
-   * history. See the note in the summary if those two should be reconciled.
+   * `foundingDate`. The studio dates from the same year, so this and the "since
+   * 2026" line in the About copy (`about.lead`) describe one start, not two -
+   * keep them in step if either ever changes.
    */
   founded: "2026-08-13",
+  /**
+   * Contact and profile links used across the UI. Not every entry here is a
+   * `sameAs` candidate - see `components/structured-data.tsx` for which ones
+   * actually represent the business as an entity.
+   *
+   * No LinkedIn: the only account is a personal `/in/` profile, which stands
+   * for a person rather than for Druid Forge. Add one here when a real
+   * company page exists.
+   */
   social: {
     instagram: "https://instagram.com/druid.forge",
     whatsapp: "https://wa.me/385955617511",
-    linkedin: "https://www.linkedin.com/in/druid-forge-b28371430/",
     github: "https://github.com/druidforge",
   },
 } as const;

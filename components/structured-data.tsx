@@ -2,7 +2,7 @@ import { getTranslations } from "next-intl/server";
 
 import { getPathname } from "@/i18n/navigation";
 import { locales, type Locale } from "@/i18n/routing";
-import { priceRange, services } from "@/lib/services";
+import { services } from "@/lib/services";
 import { absoluteUrl } from "@/lib/metadata";
 import { site, siteUrl } from "@/lib/site";
 
@@ -39,8 +39,17 @@ export async function StructuredData({ locale }: { locale: Locale }) {
       // not rewritten by `trailingSlash`, and serve 200 as-is.
       image: absoluteUrl("/opengraph-image"),
       logo: `${siteUrl}/druid-forge.svg`,
-      // Derived from the services' own entry prices - see `lib/services.ts`.
-      priceRange,
+      /**
+       * No `priceRange`, deliberately.
+       *
+       * The figures on the service pages are *entry* prices - what a project
+       * starts at, not what it settles at. Publishing their span (70–4.000 €)
+       * would assert 4.000 € as this business's ceiling, when a custom app can
+       * run well past it. A property that is technically valid but says
+       * something untrue about the business is worse than an absent one, and
+       * Google asks for the properties that genuinely apply rather than all of
+       * them. Add it back only as a real, defensible figure.
+       */
       address: {
         "@type": "PostalAddress",
         streetAddress: site.address.street,
@@ -73,7 +82,18 @@ export async function StructuredData({ locale }: { locale: Locale }) {
         opens: "08:00",
         closes: "16:00",
       },
-      sameAs: Object.values(site.social),
+      /**
+       * Listed explicitly rather than `Object.values(site.social)`, because
+       * `sameAs` means "another page that is unambiguously this same entity",
+       * not "every link we have". The WhatsApp entry in `site.social` is a
+       * `wa.me` click-to-chat deep link to a personal number - a contact
+       * mechanism, not a profile representing the studio - so it belongs on
+       * the contact page and not here.
+       *
+       * Keep this list to real business profiles. A short accurate list is
+       * worth more than a long one that dilutes the entity match.
+       */
+      sameAs: [site.social.instagram, site.social.github],
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: site.name,
