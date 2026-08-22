@@ -74,7 +74,11 @@ export function TeamShowcase({
             context - without it that 999 out-ranks the site header's fixed
             z-50 (nothing between them creates a context otherwise), and the
             photo floats above the nav bar mid-swap. */}
-        <div className="relative isolate h-72 w-full sm:h-80">
+        {/* Portrait box, matching the 4:5 the photos are mastered at, so the
+            frame crops nothing rather than taking a landscape slice off the
+            top of a standing shot. `mx-auto max-w-xs` keeps it from growing
+            unwieldy on a wide viewport once the ratio drives the height. */}
+        <div className="relative isolate mx-auto aspect-4/5 w-full max-w-xs">
           <AnimatePresence>
             {people.map((person, index) => (
               <motion.div
@@ -99,7 +103,7 @@ export function TeamShowcase({
                   src={person.photo}
                   alt={person.name}
                   fill
-                  sizes="(max-width: 767px) 90vw, 22rem"
+                  sizes="(max-width: 767px) 90vw, 20rem"
                   draggable={false}
                   className="rounded-3xl object-cover object-top"
                 />
