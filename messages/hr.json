@@ -142,10 +142,9 @@
         "description": "Osobna stranica za vaše vjenčanje: priča, raspored dana, karta, potvrda dolaska i popis želja. Gosti otvaraju link, vi u svakom trenutku vidite tko dolazi.",
         "metaDescription": "Digitalne pozivnice za vjenčanje s potvrdom dolaska i popisom gostiju uživo. Od 350 €.",
         "included": [
-          "Dizajn prema vašoj temi i bojama",
-          "Potvrda dolaska s popisom gostiju",
+          "Dizajn i animirani uvod prema vašoj temi i bojama",
+          "Obrazac za potvrdu dolaska i popis gostiju uživo",
           "Raspored dana i karta lokacije",
-          "Galerija fotografija",
           "Vlastita domena po želji",
           "Hrvatski i još jedan jezik"
         ]
@@ -153,7 +152,7 @@
       "businessCards": {
         "name": "Dizajn vizitki",
         "short": "Vizitka koja preživi ladicu.",
-        "description": "Dizajn vizitke s pripremom za tisak. Radimo tipografiju, papir i doradu — reljef, folija, obrezani rub. Dajemo datoteke spremne za bilo koju tiskaru.",
+        "description": "Dizajn vizitke s pripremom za tisak. Radimo tipografiju, a papir i doradu — reljef, folija, obrezani rub — preporučujemo. Dajemo datoteke spremne za bilo koju tiskaru.",
         "metaDescription": "Dizajn vizitki, pripremljeno za tisak — tipografija, papir i dorada. Od 70 €, gotovo za 2–3 dana.",
         "included": [
           "Dva različita smjera dizajna",

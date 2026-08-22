@@ -142,10 +142,9 @@
         "description": "A personal page for your wedding: your story, the schedule, a map, RSVP and a gift list. Guests open a link, and you see who is coming at any moment.",
         "metaDescription": "Digital wedding invitations with RSVP and a live guest list, built as your own wedding website. From €350.",
         "included": [
-          "Design built around your theme and colours",
-          "RSVP with a live guest list",
+          "Design and an animated opening in your theme and colours",
+          "RSVP form with a live guest list",
           "Day schedule and venue map",
-          "Photo gallery",
           "Your own domain if you want one",
           "Two languages"
         ]
@@ -153,7 +152,7 @@
       "businessCards": {
         "name": "Business card design",
         "short": "A card that survives the drawer.",
-        "description": "Card design with print-ready artwork. We work the typography, the stock and the finish — emboss, foil, painted edge. You get files any printer can use.",
+        "description": "Card design with print-ready artwork. We work the typography and advise on stock and finish — emboss, foil, painted edge. You get files any printer can use.",
         "metaDescription": "Business card design, print-ready — typography, stock and finish handled. From €70, ready in 2–3 days.",
         "included": [
           "Two distinct design directions",
