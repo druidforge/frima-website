@@ -11,6 +11,7 @@
     "weeks": "{count, plural, one {# tjedan} few {# tjedna} other {# tjedana}}",
     "loading": "Učitavanje",
     "instagram": "Instagram",
+    "facebook": "Facebook",
     "whatsapp": "WhatsApp",
     "whatsappMessage": "Pozdrav Dominko, zanima me "
   },

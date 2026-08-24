@@ -93,7 +93,11 @@ export async function StructuredData({ locale }: { locale: Locale }) {
        * Keep this list to real business profiles. A short accurate list is
        * worth more than a long one that dilutes the entity match.
        */
-      sameAs: [site.social.instagram, site.social.github],
+      sameAs: [
+        site.social.instagram,
+        site.social.facebook,
+        site.social.github,
+      ],
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: site.name,

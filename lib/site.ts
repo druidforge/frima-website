@@ -45,6 +45,12 @@ export const site = {
    */
   social: {
     instagram: "https://instagram.com/druid.forge",
+    /**
+     * Facebook has not been given a username yet, so this is the numeric
+     * `profile.php?id=` form. It is canonical and resolves fine; swap it for
+     * the vanity URL once one is claimed, and `sameAs` picks that up with it.
+     */
+    facebook: "https://www.facebook.com/profile.php?id=61593599047218",
     whatsapp: "https://wa.me/385955617511",
     github: "https://github.com/druidforge",
   },

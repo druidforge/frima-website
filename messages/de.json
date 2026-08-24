@@ -11,6 +11,7 @@
     "weeks": "{count, plural, one {# Woche} other {# Wochen}}",
     "loading": "Lädt",
     "instagram": "Instagram",
+    "facebook": "Facebook",
     "whatsapp": "WhatsApp",
     "whatsappMessage": "Hallo Dominko, mich interessiert "
   },

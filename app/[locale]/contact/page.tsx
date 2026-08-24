@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 
 import { ContactForm } from "@/components/contact-form";
+import { FacebookIcon } from "@/components/icons/facebook";
 import { InstagramIcon } from "@/components/icons/instagram";
 import { PageHeader } from "@/components/page-header";
 import { locales, type Locale } from "@/i18n/routing";
@@ -125,6 +126,16 @@ function ContactBody() {
                 className={linkClass}
               >
                 {instagramHandle}
+              </a>
+            </ContactRow>
+            <ContactRow icon={<FacebookIcon size={16} />} label={tc("facebook")}>
+              <a
+                href={site.social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={linkClass}
+              >
+                {site.name}
               </a>
             </ContactRow>
             <ContactRow icon={<MessageCircle size={16} />} label={tc("whatsapp")}>

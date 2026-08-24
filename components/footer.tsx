@@ -2,6 +2,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 
 import { CookieSettingsButton } from "@/components/cookie-settings-button";
+import { FacebookIcon } from "@/components/icons/facebook";
 import { InstagramIcon } from "@/components/icons/instagram";
 import { LocaleSwitcher } from "@/components/locale-switcher";
 import { Logo } from "@/components/logo";
@@ -93,6 +94,16 @@ export async function Footer() {
                 className="link-sweep text-sm text-muted-foreground transition-colors duration-(--dur-base) hover:text-foreground"
               >
                 {tc("instagram")}
+              </a>
+            </FooterContactItem>
+            <FooterContactItem icon={<FacebookIcon size={15} />}>
+              <a
+                href={site.social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-sweep text-sm text-muted-foreground transition-colors duration-(--dur-base) hover:text-foreground"
+              >
+                {tc("facebook")}
               </a>
             </FooterContactItem>
             <FooterContactItem icon={<MessageCircle size={15} />}>
