@@ -6,7 +6,8 @@ import { motion } from "motion/react";
 import { useId } from "react";
 
 import { Link, usePathname } from "@/i18n/navigation";
-import { locales, type Locale } from "@/i18n/routing";
+import { locales, routing, type Locale } from "@/i18n/routing";
+import { services } from "@/lib/services";
 import { cn } from "@/lib/utils";
 
 const labels: Record<Locale, string> = { hr: "HR", en: "EN", de: "DE" };
@@ -18,12 +19,21 @@ const titles: Record<Locale, string> = {
 
 /**
  * Switching locale has to land on the *translated* URL, not just swap the
- * prefix, or every hreflang pair breaks. `usePathname` from next-intl returns
- * the internal template (e.g. `/services/[slug]`), so passing the same params
- * back through `Link` re-resolves the localised segments.
+ * prefix, or every hreflang pair breaks. `Link` re-resolves the localised
+ * segments, but only when it is handed a pathname that matches a key in the
+ * routing config - see the note on `template` below for why the one
+ * `usePathname` returns does not.
  *
- * Dynamic slugs are locale-specific too, so pages that own one pass a
- * `slugs` map and we substitute per target locale.
+ * Dynamic slugs are locale-specific too, so the target locale needs its own
+ * slug rather than the current one. A page that owns the slug may pass a
+ * `slugs` map; when it does not, we resolve it from the URL instead.
+ *
+ * That fallback is not a nicety. The header and footer render this switcher on
+ * every page, service detail pages included, and neither has any way to know
+ * which service is on screen. Without a map the target locale keeps the
+ * *current* locale's slug - `/en/services/izrada-web-stranica` - which 404s.
+ * Resolving here means every switcher on the page is right, whether or not its
+ * parent remembered to hand one over.
  */
 export function LocaleSwitcher({
   slugs,
@@ -39,6 +49,34 @@ export function LocaleSwitcher({
   const params = useParams();
   const active = useLocale() as Locale;
   const t = useTranslations("common");
+  const slugParam = typeof params.slug === "string" ? params.slug : undefined;
+  const resolvedSlugs =
+    slugs ??
+    (slugParam
+      ? services.find((service) => service.slug[active] === slugParam)?.slug
+      : undefined);
+
+  /**
+   * `usePathname` is documented as returning the internal template, but with
+   * `trailingSlash: true` it hands back the *concrete* path with a slash on
+   * the end - `/about/`, `/services/izrada-web-stranica/`. Neither matches a
+   * key in `routing.pathnames` (`/about`, `/services/[slug]`), so next-intl
+   * finds no mapping, quietly falls back to passing the name through, and the
+   * link keeps the untranslated segment: `/de/about/` instead of
+   * `/de/ueber-uns/`, and on service pages `/en/services/<croatian-slug>/`,
+   * which 404s.
+   *
+   * So resolve the template ourselves: a page carrying a service slug is the
+   * `[slug]` route, anything else is matched by its trimmed path. Anything
+   * unrecognised is the catch-all 404, which has no translation - send those
+   * to the target locale's home page rather than emit a dead URL.
+   */
+  const trimmed = pathname.replace(/\/+$/, "") || "/";
+  const template = resolvedSlugs
+    ? "/services/[slug]"
+    : Object.prototype.hasOwnProperty.call(routing.pathnames, trimmed)
+      ? trimmed
+      : "/";
   // Scopes the shared layout animation, so two switchers on one page (header
   // and footer) do not fight over the same pill.
   const groupId = useId();
@@ -50,14 +88,17 @@ export function LocaleSwitcher({
     >
       {locales.map((locale) => {
         const isActive = locale === active;
-        const nextParams = slugs
-          ? { ...params, slug: slugs[locale] }
-          : (params as Record<string, string | string[]>);
+
+        /* Only the params this route declares - spreading `useParams()` would
+           also pass `locale`, which is not part of any template. */
+        const href = resolvedSlugs
+          ? { pathname: template, params: { slug: resolvedSlugs[locale] } }
+          : { pathname: template };
 
         return (
           <Link
             key={locale}
-            href={{ pathname, params: nextParams } as never}
+            href={href as never}
             locale={locale}
             hrefLang={locale}
             onClick={onNavigate}
