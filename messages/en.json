@@ -291,7 +291,7 @@
     "cookies": "Cookie policy",
     "cookieSettings": "Cookie settings",
     "rights": "All rights reserved.",
-    "oib": "VAT ID",
+    "vatId": "VAT ID",
     "madeIn": "Made in Split"
   },
   "cookies": {
@@ -332,7 +332,7 @@
       "title": "Privacy policy",
       "intro": "This policy explains which personal data {legalName} collects, why it collects it, and what rights you have under the General Data Protection Regulation (GDPR).",
       "s1Title": "Data controller",
-      "s1Body": "The controller is {legalName}, {street}, {postalCode} {city}, Croatia, VAT ID {oib}. For any data protection question write to {email}.",
+      "s1Body": "The controller is {legalName}, {street}, {postalCode} {city}, Croatia, VAT ID {vatId}. For any data protection question write to {email}.",
       "s2Title": "What we collect",
       "s2Body": "We collect only what you send through the contact form: your name, email address, optionally a company name, the service you selected, a rough budget and your message. We also record technical data needed for security — your IP address and the time the form was submitted.",
       "s3Title": "Why we process it",
@@ -358,7 +358,7 @@
       "s2Title": "Contact",
       "s2Body": "Email: {email}. Phone: {phone}.",
       "s3Title": "Registration",
-      "s3Body": "Registered as a craft business (obrt) with the {authority}. Craft register number (MBO) {mbo}, trade licence number {craftLicenseNumber}, tax number (OIB) {oib}.",
+      "s3Body": "Registered as a craft business (obrt) with the {authority}. Craft register number (MBO) {mbo}, trade licence number {craftLicenseNumber}, tax number (OIB) {oib}, VAT ID {vatId}.",
       "s4Title": "Responsible for content",
       "s4Body": "{owner}, at the address above.",
       "s5Title": "Dispute resolution",

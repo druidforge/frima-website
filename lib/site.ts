@@ -11,6 +11,13 @@ export const site = {
   legalName: "Druid Forge, obrt za proizvodnju, usluge i umjetničko stvaralaštvo",
   owner: "Jurica Milić",
   oib: "89043488267",
+  /**
+   * EU VAT identification number, as it must appear on invoices and in the
+   * VIES register - the OIB with the country prefix, which is how Croatia
+   * forms it. Kept as its own literal rather than built from `oib` so a
+   * search for the number as clients see it actually finds it here.
+   */
+  vatId: "HR89043488267",
   registration: {
     /** Matični broj obrta - the craft register's own identifier. */
     mbo: "99349841",

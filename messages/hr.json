@@ -291,7 +291,7 @@
     "cookies": "Politika kolačića",
     "cookieSettings": "Postavke kolačića",
     "rights": "Sva prava pridržana.",
-    "oib": "OIB",
+    "vatId": "PDV ID",
     "madeIn": "Rađeno u Splitu"
   },
   "cookies": {
@@ -332,7 +332,7 @@
       "title": "Politika privatnosti",
       "intro": "Ova politika objašnjava koje osobne podatke prikuplja {legalName}, zašto ih prikuplja i koja prava imate prema Općoj uredbi o zaštiti podataka (GDPR).",
       "s1Title": "Voditelj obrade",
-      "s1Body": "Voditelj obrade je {legalName}, {street}, {postalCode} {city}, Hrvatska, OIB {oib}. Za sva pitanja o zaštiti podataka pišite na {email}.",
+      "s1Body": "Voditelj obrade je {legalName}, {street}, {postalCode} {city}, Hrvatska, OIB {oib}, PDV ID {vatId}. Za sva pitanja o zaštiti podataka pišite na {email}.",
       "s2Title": "Koje podatke prikupljamo",
       "s2Body": "Prikupljamo samo podatke koje nam sami pošaljete putem obrasca za kontakt: ime i prezime, e-adresu, opcionalno naziv tvrtke, odabranu uslugu, okvirni budžet i tekst poruke. Uz to bilježimo tehničke podatke nužne za sigurnost — IP adresu i vrijeme slanja obrasca.",
       "s3Title": "Zašto ih obrađujemo",
@@ -358,7 +358,7 @@
       "s2Title": "Kontakt",
       "s2Body": "E-pošta: {email}. Telefon: {phone}.",
       "s3Title": "Registracija",
-      "s3Body": "Registrirano kao obrt pri tijelu {authority}. Matični broj obrta (MBO) {mbo}, broj obrtnice {craftLicenseNumber}, OIB {oib}.",
+      "s3Body": "Registrirano kao obrt pri tijelu {authority}. Matični broj obrta (MBO) {mbo}, broj obrtnice {craftLicenseNumber}, OIB {oib}, PDV identifikacijski broj {vatId}.",
       "s4Title": "Odgovorna osoba za sadržaj",
       "s4Body": "{owner}, na gore navedenoj adresi.",
       "s5Title": "Rješavanje sporova",

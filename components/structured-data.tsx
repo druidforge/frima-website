@@ -31,7 +31,11 @@ export async function StructuredData({ locale }: { locale: Locale }) {
       email: site.email,
       telephone: site.phone,
       foundingDate: site.founded,
-      vatID: site.oib,
+      // `vatID` is the EU VAT identification number - the prefixed form that
+      // resolves in VIES. The bare OIB is the national tax number, so it goes
+      // in `taxID` rather than doubling as a VAT ID.
+      vatID: site.vatId,
+      taxID: site.oib,
       // Through `absoluteUrl` so this lands on the trailing-slash form the
       // site actually serves. Built by hand it pointed at `/opengraph-image`,
       // which 308s - structured data should reference the final URL, not a

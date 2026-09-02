@@ -128,7 +128,7 @@ export async function Footer() {
             © {new Date().getFullYear()} {site.name}, obrt, vl. {site.owner}.{" "}
             {t("rights")}{" "}
             <span className="whitespace-nowrap">
-              {t("oib")} {site.oib}
+              {t("vatId")} {site.vatId}
             </span>
           </p>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">

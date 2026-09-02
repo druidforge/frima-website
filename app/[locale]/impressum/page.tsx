@@ -57,6 +57,7 @@ export default async function ImpressumPage({
     email: site.email,
     phone: site.phone,
     oib: site.oib,
+    vatId: site.vatId,
     mbo: site.registration.mbo,
     craftLicenseNumber: site.registration.craftLicenseNumber,
     authority: site.registration.authority,

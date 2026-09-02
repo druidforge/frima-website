@@ -59,6 +59,7 @@ export default async function PrivacyPage({
     postalCode: site.address.postalCode,
     city: site.address.city,
     oib: site.oib,
+    vatId: site.vatId,
     email: site.email,
   };
 
