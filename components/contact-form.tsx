@@ -9,6 +9,7 @@ import { submitContact } from "@/app/[locale]/contact/actions";
 import { FormSelect, type SelectOption } from "@/components/form-select";
 import { Link } from "@/i18n/navigation";
 import { budgetKeys, type ContactState } from "@/lib/contact-schema";
+import { trackContactConversion } from "@/lib/google-ads";
 import { services } from "@/lib/services";
 import { site } from "@/lib/site";
 import { cn } from "@/lib/utils";
@@ -22,12 +23,23 @@ export function ContactForm() {
   const [state, action, pending] = useActionState(submitContact, initial);
   const formRef = useRef<HTMLFormElement>(null);
   const alertRef = useRef<HTMLDivElement>(null);
+  const convertedRef = useRef(false);
   const uid = useId();
 
   // Move focus to the outcome so it is announced instead of silently appearing
   // below the fold.
   useEffect(() => {
     if (state.status !== "idle") alertRef.current?.focus();
+  }, [state]);
+
+  // Counts the submission as a Google Ads conversion, once. The ref guards
+  // against the double effect invocation React does in development, which
+  // would otherwise report two conversions for one form. It no-ops entirely
+  // unless the visitor accepted the "ads" cookie category.
+  useEffect(() => {
+    if (state.status !== "success" || convertedRef.current) return;
+    convertedRef.current = true;
+    trackContactConversion();
   }, [state]);
 
   if (state.status === "success") {

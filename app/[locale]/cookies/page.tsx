@@ -4,7 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { CookieSettingsButton } from "@/components/cookie-settings-button";
 import { LegalPage, type LegalSection } from "@/components/legal-page";
 import { locales, type Locale } from "@/i18n/routing";
-import { cookieTable } from "@/lib/cookies";
+import { cookieTable, type CookieCategory } from "@/lib/cookies";
 import { buildMetadata } from "@/lib/metadata";
 
 export function generateStaticParams() {
@@ -69,6 +69,10 @@ export default async function CookiePolicyPage({
               <dt className="font-medium text-ink">{tc("analyticsTitle")}</dt>
               <dd className="mt-1">{tc("analyticsBody")}</dd>
             </div>
+            <div>
+              <dt className="font-medium text-ink">{tc("adsTitle")}</dt>
+              <dd className="mt-1">{tc("adsBody")}</dd>
+            </div>
           </dl>
         </>
       ),
@@ -81,6 +85,7 @@ export default async function CookiePolicyPage({
           <p>{t("s3Body")}</p>
           <CookieList category="necessary" title={tc("necessaryTitle")} />
           <CookieList category="analytics" title={tc("analyticsTitle")} />
+          <CookieList category="ads" title={tc("adsTitle")} />
         </>
       ),
     },
@@ -111,7 +116,7 @@ async function CookieList({
   category,
   title,
 }: {
-  category: "necessary" | "analytics";
+  category: CookieCategory;
   title: string;
 }) {
   const tc = await getTranslations("cookies");

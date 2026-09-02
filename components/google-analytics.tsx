@@ -35,8 +35,8 @@ export function GoogleAnalytics() {
   return (
     <>
       <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
-      {/* Same-origin file, not an inline block - see public/ga-init.js for why. */}
-      <Script src={`/ga-init.js?id=${GA_ID}`} strategy="afterInteractive" />
+      {/* Same-origin file, not an inline block - see public/gtag-init.js. */}
+      <Script src={`/gtag-init.js?id=${GA_ID}`} strategy="afterInteractive" />
     </>
   );
 }

@@ -12,7 +12,9 @@ export type CookieRow = {
   descriptionKey: string;
 };
 
-export const cookieTable: Record<"necessary" | "analytics", CookieRow[]> = {
+export type CookieCategory = "necessary" | "analytics" | "ads";
+
+export const cookieTable: Record<CookieCategory, CookieRow[]> = {
   necessary: [
     {
       name: "cc_cookie",
@@ -39,6 +41,26 @@ export const cookieTable: Record<"necessary" | "analytics", CookieRow[]> = {
       domain: "druid-forge.hr",
       duration: "24m",
       descriptionKey: "analyticsSession",
+    },
+  ],
+  ads: [
+    {
+      name: "_gcl_au",
+      domain: "druid-forge.hr",
+      duration: "3m",
+      descriptionKey: "adsLinker",
+    },
+    {
+      name: "_gcl_aw",
+      domain: "druid-forge.hr",
+      duration: "3m",
+      descriptionKey: "adsClick",
+    },
+    {
+      name: "test_cookie",
+      domain: "doubleclick.net",
+      duration: "15min",
+      descriptionKey: "adsTestCookie",
     },
   ],
 };

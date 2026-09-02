@@ -296,7 +296,7 @@
   },
   "cookies": {
     "bannerTitle": "Kolačići",
-    "bannerBody": "Nužni kolačići drže stranicu u funkciji. Za analitiku trebamo vaš pristanak. Možete ga povući u svakom trenutku.",
+    "bannerBody": "Nužni kolačići drže stranicu u funkciji. Za analitiku i mjerenje oglasa trebamo vaš pristanak. Možete ga povući u svakom trenutku.",
     "acceptAll": "Prihvati sve",
     "rejectAll": "Samo nužni",
     "manage": "Postavke",
@@ -310,6 +310,8 @@
     "necessaryBody": "Pamte odabrani jezik i vaš izbor kolačića, te štite obrazac od zloupotrebe. Bez njih stranica ne radi ispravno.",
     "analyticsTitle": "Analitika",
     "analyticsBody": "Koristimo Google Analytics za brojanje posjeta i praćenje koje stranice ljudi čitaju. Podaci su skupni i ne koriste se za prepoznavanje pojedinca.",
+    "adsTitle": "Oglašavanje",
+    "adsBody": "Koristimo Google Ads kako bismo znali je li posjet stigao preko našeg oglasa i je li završio slanjem obrasca. Time mjerimo uspješnost oglasa; sadržaj vaše poruke se ne šalje Googleu.",
     "tableName": "Naziv",
     "tableDomain": "Domena",
     "tableExpiration": "Trajanje",
@@ -318,7 +320,10 @@
     "ccCookie": "Pamti koje ste kategorije kolačića dopustili.",
     "localeCookie": "Pamti jezik koji ste odabrali.",
     "analyticsId": "Google Analytics — razlikuje posjetitelje u skupnoj statistici, bez imena i e-adrese.",
-    "analyticsSession": "Google Analytics — pamti trajanje posjeta i kako ste stigli na stranicu."
+    "analyticsSession": "Google Analytics — pamti trajanje posjeta i kako ste stigli na stranicu.",
+    "adsLinker": "Google Ads — povezuje klik na oglas sa slanjem obrasca na ovoj stranici.",
+    "adsClick": "Google Ads — pamti identifikator klika na oglas kojim ste stigli na stranicu.",
+    "adsTestCookie": "Google Ads — provjerava podržava li vaš preglednik kolačiće."
   },
   "legal": {
     "lastUpdated": "Zadnja izmjena",
@@ -335,7 +340,7 @@
       "s4Title": "Koliko dugo ih čuvamo",
       "s4Body": "Upite koji ne završe suradnjom brišemo nakon 12 mjeseci. Podatke klijenata čuvamo koliko traje ugovorni odnos i dodatnih 11 godina za račune, koliko nalažu hrvatski porezni propisi. Sigurnosne zapise brišemo nakon 30 dana.",
       "s5Title": "S kim ih dijelimo",
-      "s5Body": "Podatke ne prodajemo i ne ustupamo trećima za njihove svrhe. Koristimo izvršitelje obrade za smještaj stranice i slanje e-pošte, koji podatke obrađuju isključivo po našim uputama i unutar Europskog gospodarskog prostora, ili uz standardne ugovorne klauzule ako je prijenos izvan njega nužan. Uz vaš pristanak na kolačiće, koristimo i Google Analytics za statistiku posjeta.",
+      "s5Body": "Podatke ne prodajemo i ne ustupamo trećima za njihove svrhe. Koristimo izvršitelje obrade za smještaj stranice i slanje e-pošte, koji podatke obrađuju isključivo po našim uputama i unutar Europskog gospodarskog prostora, ili uz standardne ugovorne klauzule ako je prijenos izvan njega nužan. Uz vaš pristanak na kolačiće, koristimo i Google Analytics za statistiku posjeta te Google Ads za mjerenje uspješnosti oglasa. Google Ads saznaje samo da je posjet završio slanjem obrasca — ne i sadržaj poruke ni vaše kontaktne podatke.",
       "s6Title": "Vaša prava",
       "s6Body": "Imate pravo na pristup svojim podacima, ispravak netočnih podataka, brisanje, ograničenje obrade, prenosivost i prigovor na obradu. Pristanak možete povući u svakom trenutku, bez utjecaja na zakonitost obrade prije povlačenja. Zahtjev šaljete na {email} i odgovaramo u roku od 30 dana.",
       "s7Title": "Pritužba nadzornom tijelu",

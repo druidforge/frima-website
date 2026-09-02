@@ -296,7 +296,7 @@
   },
   "cookies": {
     "bannerTitle": "Cookies",
-    "bannerBody": "Necessary cookies keep the site working. Analytics need your consent. You can withdraw it at any time.",
+    "bannerBody": "Necessary cookies keep the site working. Analytics and ad measurement need your consent. You can withdraw it at any time.",
     "acceptAll": "Accept all",
     "rejectAll": "Necessary only",
     "manage": "Settings",
@@ -310,6 +310,8 @@
     "necessaryBody": "They remember your language and your cookie choice, and protect the contact form from abuse. The site does not work correctly without them.",
     "analyticsTitle": "Analytics",
     "analyticsBody": "We use Google Analytics to count visits and show which pages people read. The data is aggregated and is not used to identify individuals.",
+    "adsTitle": "Advertising",
+    "adsBody": "We use Google Ads to tell whether a visit came from one of our ads and whether it ended in a form submission. This measures how the ads perform; the content of your message is never sent to Google.",
     "tableName": "Name",
     "tableDomain": "Domain",
     "tableExpiration": "Duration",
@@ -318,7 +320,10 @@
     "ccCookie": "Remembers which cookie categories you allowed.",
     "localeCookie": "Remembers the language you selected.",
     "analyticsId": "Google Analytics — distinguishes visitors in aggregate statistics, without name or email.",
-    "analyticsSession": "Google Analytics — remembers how long a visit lasted and how you arrived at the site."
+    "analyticsSession": "Google Analytics — remembers how long a visit lasted and how you arrived at the site.",
+    "adsLinker": "Google Ads — links an ad click to a form submission on this site.",
+    "adsClick": "Google Ads — remembers the identifier of the ad click that brought you to the site.",
+    "adsTestCookie": "Google Ads — checks whether your browser supports cookies."
   },
   "legal": {
     "lastUpdated": "Last updated",
@@ -335,7 +340,7 @@
       "s4Title": "How long we keep it",
       "s4Body": "Enquiries that do not lead to work are deleted after 12 months. Client data is kept for the duration of the contract and a further 11 years for invoices, as required by Croatian tax law. Security logs are deleted after 30 days.",
       "s5Title": "Who we share it with",
-      "s5Body": "We do not sell your data or pass it to third parties for their own purposes. We use processors for hosting and email delivery, who process data only on our instructions and within the European Economic Area, or under standard contractual clauses where a transfer outside it is necessary. With your cookie consent, we also use Google Analytics for visit statistics.",
+      "s5Body": "We do not sell your data or pass it to third parties for their own purposes. We use processors for hosting and email delivery, who process data only on our instructions and within the European Economic Area, or under standard contractual clauses where a transfer outside it is necessary. With your cookie consent, we also use Google Analytics for visit statistics and Google Ads to measure how our ads perform. Google Ads only learns that a visit ended in a form submission — not the content of your message or your contact details.",
       "s6Title": "Your rights",
       "s6Body": "You have the right to access your data, correct inaccurate data, have it deleted, restrict processing, receive it in a portable format, and object to processing. You can withdraw consent at any time, without affecting the lawfulness of processing before withdrawal. Send requests to {email} and we respond within 30 days.",
       "s7Title": "Complaint to the supervisory authority",

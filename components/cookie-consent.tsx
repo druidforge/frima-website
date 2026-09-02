@@ -8,7 +8,7 @@ import "vanilla-cookieconsent/dist/cookieconsent.css";
 
 import { getPathname } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
-import { cookieTable } from "@/lib/cookies";
+import { cookieTable, type CookieCategory } from "@/lib/cookies";
 
 /**
  * There's no regulatory "standard" delay - GDPR/ePrivacy require consent
@@ -44,7 +44,7 @@ export function CookieConsent() {
       exp: t("tableExpiration"),
     };
 
-    const rows = (category: "necessary" | "analytics") =>
+    const rows = (category: CookieCategory) =>
       cookieTable[category].map((row) => ({
         name: row.name,
         domain: row.domain,
@@ -53,26 +53,32 @@ export function CookieConsent() {
       }));
 
     /**
-     * Tells `<GoogleAnalytics>` whether it's allowed to load, without that
-     * component needing its own import of the CC singleton. Fired on first
-     * consent, on every later page load (so a returning visitor who already
-     * opted in doesn't have to re-accept), and whenever the visitor changes
-     * their preference via the modal.
+     * Tells `<GoogleAnalytics>` and `<GoogleAds>` whether they're allowed to
+     * load, without those components needing their own import of the CC
+     * singleton. Fired on first consent, on every later page load (so a
+     * returning visitor who already opted in doesn't have to re-accept), and
+     * whenever the visitor changes their preference via the modal.
+     *
+     * Analytics and ads are two separate categories and two separate events:
+     * measuring visits and measuring ad conversions are different purposes,
+     * and consent to one is not consent to the other.
      */
-    const broadcastAnalyticsConsent = () => {
-      window.dispatchEvent(
-        new CustomEvent("cc:analytics", {
-          detail: CC.acceptedCategory("analytics"),
-        }),
-      );
+    const broadcastConsent = () => {
+      for (const category of ["analytics", "ads"] as const) {
+        window.dispatchEvent(
+          new CustomEvent(`cc:${category}`, {
+            detail: CC.acceptedCategory(category),
+          }),
+        );
+      }
     };
 
     void CC.run({
       // Shown manually, after a delay, below - see `BANNER_DELAY_MS`.
       autoShow: false,
-      revision: 1,
-      onConsent: broadcastAnalyticsConsent,
-      onChange: broadcastAnalyticsConsent,
+      revision: 2,
+      onConsent: broadcastConsent,
+      onChange: broadcastConsent,
       guiOptions: {
         consentModal: { layout: "box", position: "bottom left" },
         preferencesModal: { layout: "box", equalWeightButtons: true },
@@ -83,6 +89,12 @@ export function CookieConsent() {
           enabled: false,
           autoClear: {
             cookies: [{ name: /^_ga/ }],
+          },
+        },
+        ads: {
+          enabled: false,
+          autoClear: {
+            cookies: [{ name: /^_gcl/ }],
           },
         },
       },
@@ -118,6 +130,12 @@ export function CookieConsent() {
                   description: t("analyticsBody"),
                   linkedCategory: "analytics",
                   cookieTable: { headers, body: rows("analytics") },
+                },
+                {
+                  title: t("adsTitle"),
+                  description: t("adsBody"),
+                  linkedCategory: "ads",
+                  cookieTable: { headers, body: rows("ads") },
                 },
                 {
                   description: `<a href="${cookieHref}">${t("prefTitle")}</a>`,

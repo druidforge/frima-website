@@ -47,13 +47,33 @@ const isDev = process.env.NODE_ENV === "development";
 const isIndexableDeployment =
   process.env.VERCEL_ENV !== "preview" &&
   process.env.VERCEL_ENV !== "development";
+/**
+ * Google Ads conversion tracking needs more origins than GA4 does, and gets
+ * them per-directive rather than as one blanket allowance.
+ *
+ * gtag.js pulls its conversion module from `googleadservices.com`, then reports
+ * the conversion through `google.com`, `google.<ccTLD>` (the visitor's local
+ * Google domain - `.hr` and `.de` for two of the three locales here) and
+ * `googleads.g.doubleclick.net`. Historically those pings were 1x1 images and
+ * are now largely `fetch`, and gtag falls back between the two, so both
+ * `img-src` and `connect-src` have to allow them or conversions are dropped
+ * silently in whichever mode the browser picks.
+ *
+ * `frame-src` appears for the first time here: it was inheriting `default-src
+ * 'self'`, which blocks the `td.doubleclick.net` iframe the tag uses to write
+ * its cookies in browsers that still allow third-party storage.
+ */
+const googleAdsOrigins =
+  "https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com https://www.google.hr https://www.google.de";
+
 const cspHeader = `
   default-src 'self';
-  script-src 'self' 'unsafe-inline' https://www.googletagmanager.com${isDev ? " 'unsafe-eval'" : ""};
+  script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net${isDev ? " 'unsafe-eval'" : ""};
   style-src 'self' 'unsafe-inline';
-  img-src 'self' data: blob:;
+  img-src 'self' data: blob: ${googleAdsOrigins};
   font-src 'self';
-  connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com${isDev ? " ws: wss:" : ""};
+  connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com ${googleAdsOrigins}${isDev ? " ws: wss:" : ""};
+  frame-src 'self' https://td.doubleclick.net https://www.googletagmanager.com;
   object-src 'none';
   base-uri 'self';
   form-action 'self';

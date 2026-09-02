@@ -9,6 +9,7 @@ import { notFound } from "next/navigation";
 
 import { CookieConsentLoader } from "@/components/cookie-consent-loader";
 import { Footer } from "@/components/footer";
+import { GoogleAds } from "@/components/google-ads";
 import { GoogleAnalytics } from "@/components/google-analytics";
 import { RoutePrefetcher } from "@/components/route-prefetcher";
 import { SiteHeader } from "@/components/site-header";
@@ -127,6 +128,7 @@ export default async function LocaleLayout({
           <Footer />
           <CookieConsentLoader />
           <GoogleAnalytics />
+          <GoogleAds />
           {/* Lives in the layout so the queue survives navigation: it is worked
               through once per visit, not restarted on every page. */}
           <RoutePrefetcher />

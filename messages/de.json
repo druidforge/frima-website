@@ -296,7 +296,7 @@
   },
   "cookies": {
     "bannerTitle": "Cookies",
-    "bannerBody": "Notwendige Cookies halten die Seite am Laufen. Für Analytics brauchen wir Ihre Einwilligung. Sie können sie jederzeit widerrufen.",
+    "bannerBody": "Notwendige Cookies halten die Seite am Laufen. Für Analytics und Anzeigenmessung brauchen wir Ihre Einwilligung. Sie können sie jederzeit widerrufen.",
     "acceptAll": "Alle annehmen",
     "rejectAll": "Nur notwendige",
     "manage": "Einstellungen",
@@ -310,6 +310,8 @@
     "necessaryBody": "Sie merken sich Ihre Sprache und Ihre Cookie-Auswahl und schützen das Kontaktformular vor Missbrauch. Ohne sie funktioniert die Seite nicht richtig.",
     "analyticsTitle": "Analytics",
     "analyticsBody": "Wir nutzen Google Analytics, um Besuche zu zählen und zu zeigen, welche Seiten gelesen werden. Die Daten sind aggregiert und dienen nicht dazu, einzelne Personen zu erkennen.",
+    "adsTitle": "Werbung",
+    "adsBody": "Wir nutzen Google Ads, um zu erkennen, ob ein Besuch über eine unserer Anzeigen kam und ob er mit einem abgeschickten Formular endete. Damit messen wir die Wirkung der Anzeigen; der Inhalt Ihrer Nachricht wird nicht an Google übermittelt.",
     "tableName": "Name",
     "tableDomain": "Domain",
     "tableExpiration": "Dauer",
@@ -318,7 +320,10 @@
     "ccCookie": "Merkt sich, welche Cookie-Kategorien Sie erlaubt haben.",
     "localeCookie": "Merkt sich die von Ihnen gewählte Sprache.",
     "analyticsId": "Google Analytics — unterscheidet Besucher in der aggregierten Statistik, ohne Name und E-Mail.",
-    "analyticsSession": "Google Analytics — merkt sich die Dauer eines Besuchs und wie Sie auf die Seite gelangt sind."
+    "analyticsSession": "Google Analytics — merkt sich die Dauer eines Besuchs und wie Sie auf die Seite gelangt sind.",
+    "adsLinker": "Google Ads — verknüpft einen Anzeigenklick mit einem abgeschickten Formular auf dieser Seite.",
+    "adsClick": "Google Ads — merkt sich die Kennung des Anzeigenklicks, über den Sie auf die Seite kamen.",
+    "adsTestCookie": "Google Ads — prüft, ob Ihr Browser Cookies unterstützt."
   },
   "legal": {
     "lastUpdated": "Zuletzt geändert",
@@ -335,7 +340,7 @@
       "s4Title": "Wie lange wir sie speichern",
       "s4Body": "Anfragen ohne Auftrag löschen wir nach 12 Monaten. Kundendaten bewahren wir für die Dauer des Vertrags und weitere 11 Jahre für Rechnungen auf, wie es das kroatische Steuerrecht verlangt. Sicherheitsprotokolle löschen wir nach 30 Tagen.",
       "s5Title": "An wen wir sie weitergeben",
-      "s5Body": "Wir verkaufen Ihre Daten nicht und geben sie nicht für fremde Zwecke weiter. Wir setzen Auftragsverarbeiter für Hosting und E-Mail-Versand ein, die Daten ausschließlich nach unseren Weisungen und innerhalb des Europäischen Wirtschaftsraums verarbeiten — oder auf Basis von Standardvertragsklauseln, falls eine Übermittlung darüber hinaus nötig ist. Mit Ihrer Cookie-Einwilligung nutzen wir außerdem Google Analytics für Besuchsstatistiken.",
+      "s5Body": "Wir verkaufen Ihre Daten nicht und geben sie nicht für fremde Zwecke weiter. Wir setzen Auftragsverarbeiter für Hosting und E-Mail-Versand ein, die Daten ausschließlich nach unseren Weisungen und innerhalb des Europäischen Wirtschaftsraums verarbeiten — oder auf Basis von Standardvertragsklauseln, falls eine Übermittlung darüber hinaus nötig ist. Mit Ihrer Cookie-Einwilligung nutzen wir außerdem Google Analytics für Besuchsstatistiken und Google Ads, um die Wirkung unserer Anzeigen zu messen. Google Ads erfährt lediglich, dass ein Besuch mit einem abgeschickten Formular endete — nicht den Inhalt Ihrer Nachricht und nicht Ihre Kontaktdaten.",
       "s6Title": "Ihre Rechte",
       "s6Body": "Sie haben das Recht auf Auskunft, Berichtigung unrichtiger Daten, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Ihre Einwilligung können Sie jederzeit widerrufen, ohne dass die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung berührt wird. Anfragen richten Sie an {email}; wir antworten innerhalb von 30 Tagen.",
       "s7Title": "Beschwerde bei der Aufsichtsbehörde",
