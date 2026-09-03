@@ -62,9 +62,26 @@ const isIndexableDeployment =
  * `frame-src` appears for the first time here: it was inheriting `default-src
  * 'self'`, which blocks the `td.doubleclick.net` iframe the tag uses to write
  * its cookies in browsers that still allow third-party storage.
+ *
+ * `pagead2.googlesyndication.com` and `ad.doubleclick.net` were both found by
+ * firing a real conversion in a browser and reading the violations back, which
+ * is the only way these surface - a blocked ping is not an error anywhere in
+ * the page, it is simply a conversion that never arrives. The first carries
+ * the conversion when consent is denied, so leaving it out silently removes
+ * exactly the modelled conversions Consent Mode was added for; the second is
+ * cross-domain conversion measurement once consent is granted. Note that it is
+ * `ad.doubleclick.net`, a different host from the `googleads.g.` one already
+ * listed.
+ *
+ * The `google.<ccTLD>` entries are the visitor's own Google domain, not the
+ * site's locale: someone browsing from Austria pings `www.google.at`. Only
+ * `.hr` and `.de` are listed, so a conversion from outside those two markets
+ * loses its ccTLD ping - `www.google.com` still receives it, so the conversion
+ * is recorded either way. Add the ccTLD if the campaign is ever targeted
+ * somewhere new.
  */
 const googleAdsOrigins =
-  "https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com https://www.google.hr https://www.google.de";
+  "https://www.googleadservices.com https://googleads.g.doubleclick.net https://ad.doubleclick.net https://pagead2.googlesyndication.com https://www.google.com https://www.google.hr https://www.google.de";
 
 const cspHeader = `
   default-src 'self';
