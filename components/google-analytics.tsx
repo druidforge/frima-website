@@ -1,36 +1,43 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Script from "next/script";
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+import { GA_ID } from "@/lib/google-analytics";
+import { consentState, updateConsent } from "@/lib/google-consent";
 
 /**
- * GA4, loaded only after the visitor accepts the "analytics" cookie category.
+ * GA4, gated through Consent Mode v2 rather than by withholding the script.
  *
- * `<CookieConsent>` (see `components/cookie-consent.tsx`) broadcasts a
- * `cc:analytics` event on first consent, on every page load, and whenever the
- * preference changes later - this just listens rather than importing the CC
- * singleton itself. Nothing here runs before that event says so, matching the
- * site's stated principle that nothing beyond necessary cookies fires before
- * explicit opt-in.
+ * `analytics_storage` starts denied in `public/gtag-bootstrap.js`, so the tag
+ * loads without setting a `_ga` cookie or reading one. `<CookieConsent>`
+ * broadcasts `cc:analytics` on first consent, on every page load, and whenever
+ * the preference changes later - this listens rather than importing the CC
+ * singleton itself, and sends the answer as a consent update in both
+ * directions, so withdrawing consent is honoured without a reload.
+ *
+ * Only `analytics_storage` is touched here. The three advertising signals
+ * belong to the "ads" category and are sent by `<GoogleAds>`; gtag merges
+ * consecutive updates, so neither component overwrites the other's answer.
  */
 export function GoogleAnalytics() {
-  const [consented, setConsented] = useState(false);
-
   useEffect(() => {
     if (!GA_ID) return;
 
     const onConsentEvent = (event: Event) => {
-      setConsented(Boolean((event as CustomEvent<boolean>).detail));
+      updateConsent({
+        analytics_storage: consentState(
+          Boolean((event as CustomEvent<boolean>).detail),
+        ),
+      });
     };
 
     window.addEventListener("cc:analytics", onConsentEvent);
     return () => window.removeEventListener("cc:analytics", onConsentEvent);
   }, []);
 
-  // No property configured yet, or consent not (yet) granted - render nothing.
-  if (!GA_ID || !consented) return null;
+  // No property configured yet - render nothing.
+  if (!GA_ID) return null;
 
   return (
     <>

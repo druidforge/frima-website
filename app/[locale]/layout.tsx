@@ -11,6 +11,7 @@ import { CookieConsentLoader } from "@/components/cookie-consent-loader";
 import { Footer } from "@/components/footer";
 import { GoogleAds } from "@/components/google-ads";
 import { GoogleAnalytics } from "@/components/google-analytics";
+import { GoogleTagBootstrap } from "@/components/google-tag-bootstrap";
 import { RoutePrefetcher } from "@/components/route-prefetcher";
 import { SiteHeader } from "@/components/site-header";
 import { StructuredData } from "@/components/structured-data";
@@ -133,6 +134,10 @@ export default async function LocaleLayout({
               through once per visit, not restarted on every page. */}
           <RoutePrefetcher />
         </NextIntlClientProvider>
+        {/* Consent Mode v2 defaults, ahead of both tags. `beforeInteractive`
+            only works from the root layout - see
+            components/google-tag-bootstrap.tsx. */}
+        <GoogleTagBootstrap />
       </body>
     </html>
   );
