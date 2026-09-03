@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import { Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 
+import { CallLink } from "@/components/call-link";
 import { ContactForm } from "@/components/contact-form";
 import { FacebookIcon } from "@/components/icons/facebook";
 import { InstagramIcon } from "@/components/icons/instagram";
@@ -100,13 +101,13 @@ function ContactBody() {
               {/* Named rather than numbered: both of them take calls, so the
                   link says who you're reaching rather than making a visitor
                   guess which number is whose. */}
-              <a href={`tel:${team.duje.phone.replace(/\s/g, "")}`} className={linkClass}>
+              <CallLink phone={team.duje.phone} className={linkClass}>
                 {tt("duje.name")}
-              </a>
+              </CallLink>
               <br />
-              <a href={`tel:${team.dominko.phone.replace(/\s/g, "")}`} className={linkClass}>
+              <CallLink phone={team.dominko.phone} className={linkClass}>
                 {tt("dominko.name")}
-              </a>
+              </CallLink>
             </ContactRow>
             <ContactRow icon={<MapPin size={16} />} label={t("addressLabel")}>
               {site.address.street}

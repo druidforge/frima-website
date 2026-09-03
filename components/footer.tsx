@@ -1,6 +1,7 @@
 import { getLocale, getTranslations } from "next-intl/server";
 import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 
+import { CallLink } from "@/components/call-link";
 import { CookieSettingsButton } from "@/components/cookie-settings-button";
 import { FacebookIcon } from "@/components/icons/facebook";
 import { InstagramIcon } from "@/components/icons/instagram";
@@ -62,20 +63,20 @@ export async function Footer() {
             {/* Named rather than numbered - same reasoning as the contact
                 page's phone row: the link says who you're reaching. */}
             <FooterContactItem icon={<Phone size={15} />}>
-              <a
-                href={`tel:${team.duje.phone.replace(/\s/g, "")}`}
+              <CallLink
+                phone={team.duje.phone}
                 className="link-sweep text-sm text-muted-foreground transition-colors duration-(--dur-base) hover:text-foreground"
               >
                 {tt("duje.name")}
-              </a>
+              </CallLink>
             </FooterContactItem>
             <FooterContactItem icon={<Phone size={15} />}>
-              <a
-                href={`tel:${team.dominko.phone.replace(/\s/g, "")}`}
+              <CallLink
+                phone={team.dominko.phone}
                 className="link-sweep text-sm text-muted-foreground transition-colors duration-(--dur-base) hover:text-foreground"
               >
                 {tt("dominko.name")}
-              </a>
+              </CallLink>
             </FooterContactItem>
             <FooterContactItem icon={<MapPin size={15} />}>
               <span className="text-sm leading-relaxed text-muted-foreground">

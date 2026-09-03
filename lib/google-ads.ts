@@ -16,13 +16,38 @@
  * no-ops rather than sending an unattributed hit.
  */
 export const ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
-const ADS_LABEL = process.env.NEXT_PUBLIC_GOOGLE_ADS_LABEL;
+const CONTACT_LABEL = process.env.NEXT_PUBLIC_GOOGLE_ADS_LABEL;
+const CALL_LABEL = process.env.NEXT_PUBLIC_GOOGLE_ADS_CALL_LABEL;
 
 type GtagFn = (
   command: "event",
   eventName: string,
   params: Record<string, unknown>,
 ) => void;
+
+/**
+ * Sends one conversion event.
+ *
+ * Each conversion action in the Ads account has its own label, and `send_to`
+ * is what routes the event to the right one - the id alone would be an event
+ * Ads cannot attribute. A missing label therefore means "not configured yet"
+ * rather than "send it anyway", so this no-ops instead of reporting an
+ * unattributed hit.
+ */
+function sendConversion(
+  label: string | undefined,
+  params: Record<string, unknown> = {},
+) {
+  if (!ADS_ID || !label) return;
+
+  const gtag = (window as unknown as { gtag?: GtagFn }).gtag;
+  if (typeof gtag !== "function") return;
+
+  gtag("event", "conversion", {
+    send_to: `${ADS_ID}/${label}`,
+    ...params,
+  });
+}
 
 /**
  * Reports one contact-form submission as a conversion.
@@ -48,12 +73,26 @@ type GtagFn = (
  * the bootstrap has run at all.
  */
 export function trackContactConversion() {
-  if (!ADS_ID || !ADS_LABEL) return;
+  sendConversion(CONTACT_LABEL);
+}
 
-  const gtag = (window as unknown as { gtag?: GtagFn }).gtag;
-  if (typeof gtag !== "function") return;
-
-  gtag("event", "conversion", {
-    send_to: `${ADS_ID}/${ADS_LABEL}`,
-  });
+/**
+ * Reports one click on a `tel:` link as a "Click to call" conversion.
+ *
+ * A separate conversion action from the form, with its own label: a call and a
+ * form submission are different actions and Ads counts and bids on them
+ * separately. The value Google's generated snippet carries for this one is
+ * kept as it generated it.
+ *
+ * Google's version of this snippet wraps the call in `gtag_report_conversion`
+ * and reassigns `window.location` from an `event_callback`, because it assumes
+ * an `onclick` that returns false and therefore has to perform the navigation
+ * itself. Nothing here cancels the click - the anchor keeps its normal
+ * behaviour and the browser hands off to the dialer - so there is no
+ * navigation to reproduce and no callback to wait on. A `tel:` hand-off does
+ * not unload the document either, and gtag sends these over `sendBeacon`,
+ * so the ping is not at risk from the click that triggered it.
+ */
+export function trackCallConversion() {
+  sendConversion(CALL_LABEL, { value: 1.0, currency: "EUR" });
 }
