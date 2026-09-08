@@ -89,6 +89,8 @@
     "timelineLabel": "Trajanje",
     "monthlyLabel": "Održavanje",
     "monthlySuffix": "/mj",
+    "storeFeeLabel": "Objava i održavanje računa",
+    "storeFeeSuffix": "/god",
     "weeksSuffix": "tj.",
     "daysSuffix": "dana",
     "includedTitle": "Što je uključeno",
@@ -130,7 +132,7 @@
       "mobileApps": {
         "name": "Mobilne aplikacije",
         "short": "Jedna baza koda za iOS i Android.",
-        "description": "Mobilne aplikacije za iOS i Android, objavljene na App Storeu i Google Playu. Gradimo u React Nativeu iz jedne baze koda, pa se ispravci i nove verzije rade jednom za obje platforme. Offline rad, push obavijesti i plaćanja unutar aplikacije dodajemo kad ih proizvod traži.",
+        "description": "Mobilne aplikacije za iOS i Android, objavljene na App Storeu i Google Playu. Gradimo u React Nativeu iz jedne baze koda, pa se ispravci i nove verzije rade jednom za obje platforme. Offline rad, push obavijesti i plaćanja unutar aplikacije dodajemo kad ih proizvod traži. Objavu na App Storeu vodimo preko našeg Apple developerskog računa. Želite li račun na svoje ime, dogovorimo to na početku.",
         "metaDescription": "Izrada mobilnih aplikacija za iOS i Android — React Native, offline rad, push obavijesti. Od 4.000 €.",
         "included": [
           "Dizajn sučelja za obje platforme",

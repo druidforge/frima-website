@@ -89,6 +89,8 @@
     "timelineLabel": "Timeline",
     "monthlyLabel": "Maintenance",
     "monthlySuffix": "/mo",
+    "storeFeeLabel": "Publishing and account upkeep",
+    "storeFeeSuffix": "/yr",
     "weeksSuffix": "wks",
     "daysSuffix": "days",
     "includedTitle": "What is included",
@@ -130,7 +132,7 @@
       "mobileApps": {
         "name": "Mobile applications",
         "short": "One codebase for iOS and Android.",
-        "description": "Mobile applications for iOS and Android, published to the App Store and Google Play. We build in React Native from a single codebase, so fixes and new versions are done once for both platforms. Offline use, push notifications and in-app payments are added when the product calls for them.",
+        "description": "Mobile applications for iOS and Android, published to the App Store and Google Play. We build in React Native from a single codebase, so fixes and new versions are done once for both platforms. Offline use, push notifications and in-app payments are added when the product calls for them. We publish to the App Store through our Apple developer account. If you would rather hold the account yourself, we set that up at the start.",
         "metaDescription": "Mobile app development for iOS and Android — React Native, offline support, push notifications. From €4,000.",
         "included": [
           "Interface design for both platforms",

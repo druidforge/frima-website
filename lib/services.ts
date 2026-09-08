@@ -20,6 +20,13 @@ export type Service = {
    * a service only advertises upkeep once we know what to charge for it.
    */
   monthly?: string;
+  /**
+   * Yearly charge for publishing the app and keeping the store account it
+   * lives under. Billed by us, not by the platform - one developer account
+   * covers every app we ship, so this is a service line rather than a
+   * pass-through of Apple's fee, and the label on the page says so.
+   */
+  storeFee?: string;
   timeline: string;
   /** Unit `timeline` is measured in - defaults to weeks when omitted. */
   timelineUnit?: "days" | "weeks";
@@ -74,6 +81,7 @@ export const services: Service[] = [
     hue: [24, -10],
     from: "4.000 €",
     monthly: "20 €",
+    storeFee: "100 €",
     timeline: "6–8",
     image: "/services/mobile-applications.avif",
   },

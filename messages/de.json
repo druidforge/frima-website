@@ -89,6 +89,8 @@
     "timelineLabel": "Dauer",
     "monthlyLabel": "Wartung",
     "monthlySuffix": "/Mon.",
+    "storeFeeLabel": "Veröffentlichung und Kontopflege",
+    "storeFeeSuffix": "/Jahr",
     "weeksSuffix": "Wo.",
     "daysSuffix": "Tage",
     "includedTitle": "Was enthalten ist",
@@ -130,7 +132,7 @@
       "mobileApps": {
         "name": "Mobile Anwendungen",
         "short": "Eine Codebasis für iOS und Android.",
-        "description": "Mobile Anwendungen für iOS und Android, veröffentlicht im App Store und bei Google Play. Wir bauen in React Native aus einer einzigen Codebasis, sodass Korrekturen und neue Versionen nur einmal für beide Plattformen entstehen. Offline-Betrieb, Push-Nachrichten und In-App-Zahlungen kommen dazu, wenn das Produkt sie braucht.",
+        "description": "Mobile Anwendungen für iOS und Android, veröffentlicht im App Store und bei Google Play. Wir bauen in React Native aus einer einzigen Codebasis, sodass Korrekturen und neue Versionen nur einmal für beide Plattformen entstehen. Offline-Betrieb, Push-Nachrichten und In-App-Zahlungen kommen dazu, wenn das Produkt sie braucht. Die Veröffentlichung im App Store läuft über unser Apple-Entwicklerkonto. Möchten Sie das Konto lieber selbst halten, richten wir das zu Beginn ein.",
         "metaDescription": "App-Entwicklung für iOS und Android — React Native, Offline-Betrieb, Push-Nachrichten. Ab 4.000 €.",
         "included": [
           "Oberflächendesign für beide Plattformen",

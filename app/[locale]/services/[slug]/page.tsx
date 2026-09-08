@@ -180,6 +180,20 @@ function ServiceBody({
                     </dd>
                   </div>
                 ) : null}
+                {/* Paid by the client to the platform, not to us - stated so
+                    the yearly cost is visible before anyone commits, and sat
+                    under `monthly` because both are money after launch. */}
+                {service.storeFee ? (
+                  <div className="col-start-2 row-start-2">
+                    <dt className="font-mono text-xs text-ink-faint">
+                      {t("storeFeeLabel")}
+                    </dt>
+                    <dd className="mt-1 text-(length:--text-step-1)">
+                      {service.storeFee}
+                      {t("storeFeeSuffix")}
+                    </dd>
+                  </div>
+                ) : null}
               </dl>
             </Reveal>
             <Reveal delay={0.08}>
