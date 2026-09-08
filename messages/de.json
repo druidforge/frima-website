@@ -174,11 +174,11 @@
       "flyers": {
         "name": "Flyer-Design",
         "short": "Eine Botschaft, klar gesetzt.",
-        "description": "Flyer, Plakate und Broschüren für Veranstaltungen, Angebote und Eröffnungen. Wir setzen die Hierarchie so, dass die Hauptbotschaft aus drei Metern lesbar ist und die Details aus der Nähe.",
-        "metaDescription": "Flyer- und Plakatdesign für Veranstaltungen, Angebote und Eröffnungen — druckfertig. Ab 80 €.",
+        "description": "Flyer, Plakate und Broschüren für Veranstaltungen, Angebote und Eröffnungen. Wir setzen die Hierarchie so, dass die Hauptbotschaft aus drei Metern lesbar ist und die Details aus der Nähe. Wenn Sie den Text nicht haben, schreiben wir ihn.",
+        "metaDescription": "Flyer- und Plakatdesign für Veranstaltungen, Angebote und Eröffnungen: klare Hierarchie, druckfertig. Ab 80 €.",
         "included": [
           "Konzept und Text, wenn nötig",
-          "Alle Formate von A6 bis A3, nicht nur eines",
+          "Alle Formate von A6 bis A3",
           "Daten für Druck und Web",
           "Version für soziale Netzwerke",
           "Zwei Korrekturrunden",

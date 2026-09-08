@@ -174,15 +174,15 @@
       "flyers": {
         "name": "Dizajn letaka",
         "short": "Jedna poruka, jasno postavljena.",
-        "description": "Letci, plakati i brošure za događaje, ponude i otvorenja. Postavljamo hijerarhiju tako da se glavna poruka pročita s tri metra, a detalji izbliza.",
-        "metaDescription": "Dizajn letaka i plakata za događaje, ponude i otvorenja — jasna hijerarhija, spremno za tisak. Od 80 €.",
+        "description": "Letci, plakati i brošure za događaje, ponude i otvorenja. Postavljamo hijerarhiju tako da se glavna poruka pročita s tri metra, a detalji izbliza. Ako nemate tekst, pišemo ga mi.",
+        "metaDescription": "Dizajn letaka i plakata za događaje, ponude i otvorenja: jasna hijerarhija, spremno za tisak. Od 80 €.",
         "included": [
           "Koncept i tekst ako treba",
-          "Svi formati od A6 do A3, ne samo jedan",
+          "Svi formati od A6 do A3",
           "Priprema za tisak i za web",
           "Verzija za društvene mreže",
           "Dva kruga izmjena",
-          "Izvorne datoteke u vlasništvu"
+          "Izvorne datoteke ostaju vama"
         ]
       }
     }
