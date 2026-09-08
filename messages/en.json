@@ -63,16 +63,16 @@
     "servicesLead": "Websites, apps and graphic design",
     "servicesCta": "All services",
     "processTitle": "How we work",
-    "processLead": "Four steps. The order is real — each one depends on the one before it.",
+    "processLead": "From first call to launch",
     "process": {
       "step1Title": "Talk",
-      "step1Body": "An hour on what you are building and who it is for. No quote before we understand the problem.",
+      "step1Body": "An hour on what you're building and who it's for. We don't send a quote until we understand the problem.",
       "step2Title": "Plan",
-      "step2Body": "Structure, content and scope on paper. Price and deadline get agreed here.",
+      "step2Body": "Structure, content and scope on paper. Price and deadline are agreed here.",
       "step3Title": "Build",
-      "step3Body": "Design and code run in parallel. You see progress on a live version every week.",
+      "step3Body": "Design and code run in parallel. Every week you get a link showing exactly where the work stands.",
       "step4Title": "Hand over",
-      "step4Body": "Launch, measurement and training. You keep the documentation and access to everything."
+      "step4Body": "Launch, analytics and a short handover session. The documentation stays with you."
     },
     "galleryEyebrow": "Our projects",
     "galleryTitle": "Six crafts, one gallery",

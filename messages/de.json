@@ -63,16 +63,16 @@
     "servicesLead": "Webseiten, Apps und Grafikdesign",
     "servicesCta": "Alle Leistungen",
     "processTitle": "Wie wir arbeiten",
-    "processLead": "Vier Schritte. Die Reihenfolge ist echt — jeder Schritt baut auf dem vorigen auf.",
+    "processLead": "Vom Gespräch bis zum Launch",
     "process": {
       "step1Title": "Gespräch",
-      "step1Body": "Eine Stunde darüber, was Sie bauen und für wen. Kein Angebot, bevor wir das Problem verstanden haben.",
+      "step1Body": "Eine Stunde darüber, was Sie bauen und für wen. Ein Angebot kommt erst, wenn wir das Problem verstanden haben.",
       "step2Title": "Plan",
-      "step2Body": "Struktur, Inhalt und Umfang auf Papier. Preis und Termin werden hier vereinbart.",
+      "step2Body": "Struktur, Inhalt und Umfang auf Papier. Preis und Termin werden hier festgelegt.",
       "step3Title": "Umsetzung",
-      "step3Body": "Design und Code laufen parallel. Sie sehen den Fortschritt jede Woche auf einer Live-Version.",
+      "step3Body": "Design und Code laufen parallel. Jede Woche erhalten Sie einen Link, der den aktuellen Stand zeigt.",
       "step4Title": "Übergabe",
-      "step4Body": "Launch, Messung und Einschulung. Dokumentation und alle Zugänge bleiben bei Ihnen."
+      "step4Body": "Launch, Messung und eine kurze Einschulung. Die Dokumentation bleibt bei Ihnen."
     },
     "galleryEyebrow": "Unsere Projekte",
     "galleryTitle": "Sechs Handwerke, eine Galerie",

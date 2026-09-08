@@ -63,16 +63,16 @@
     "servicesLead": "Web stranice, aplikacije i grafički dizajn",
     "servicesCta": "Sve usluge",
     "processTitle": "Kako radimo",
-    "processLead": "Četiri koraka. Redoslijed je stvaran — svaki korak ovisi o prethodnom.",
+    "processLead": "Od razgovora do objave",
     "process": {
       "step1Title": "Razgovor",
-      "step1Body": "Sat vremena o tome što gradite i za koga. Bez ponude prije nego shvatimo problem.",
+      "step1Body": "Sat vremena o tome što gradite i za koga. Ne šaljemo ponudu dok ne razumijemo problem.",
       "step2Title": "Nacrt",
-      "step2Body": "Struktura, sadržaj i opseg na papiru. Ovdje se dogovara cijena i rok.",
+      "step2Body": "Struktura, sadržaj i opseg na papiru. Tu dogovaramo cijenu i rok.",
       "step3Title": "Izrada",
-      "step3Body": "Dizajn i kod idu paralelno. Vidite napredak na živoj verziji svakog tjedna.",
+      "step3Body": "Dizajn i kod idu paralelno. Svaki tjedan dobivate link na kojem vidite dokle smo stigli.",
       "step4Title": "Predaja",
-      "step4Body": "Objava, mjerenje i obuka. Ostavljamo dokumentaciju i pristup svemu."
+      "step4Body": "Objava, mjerenje i kratka obuka. Dokumentacija ostaje kod vas."
     },
     "galleryEyebrow": "Naši projekti",
     "galleryTitle": "Šest zanata, jedna galerija",
