@@ -115,8 +115,8 @@
       },
       "webApps": {
         "name": "Web-Anwendungen",
-        "short": "Werkzeuge, die arbeiten, nicht nur Inhalte zeigen.",
-        "description": "Buchungssysteme, interne Werkzeuge, Kundenportale, Dashboards. Wir bauen auf Next.js und PostgreSQL, mit echten Benutzerkonten, Rollen und Änderungsprotokoll.",
+        "short": "Werkzeuge, die Handarbeit übernehmen.",
+        "description": "Individuelle Web-Anwendungen: Buchungssysteme, interne Werkzeuge, Kundenportale und Dashboards. Bevor Code entsteht, bilden wir den Ablauf ab, den Sie bereits haben, damit die Anwendung Ihrem echten Prozess folgt. Gebaut auf Next.js und PostgreSQL, mit Benutzerkonten, Rollen und einem Protokoll jeder Änderung.",
         "metaDescription": "Individuelle Webanwendungen — Buchungssysteme, Portale, Dashboards. Gebaut auf Next.js, ab 2.500 €.",
         "included": [
           "Analyse von Abläufen und Daten",

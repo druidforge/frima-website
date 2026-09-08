@@ -115,8 +115,8 @@
       },
       "webApps": {
         "name": "Web aplikacije",
-        "short": "Alati koji rade posao, ne samo prikazuju sadržaj.",
-        "description": "Rezervacijski sustavi, interni alati, portali za klijente, nadzorne ploče. Gradimo na Next.js-u i PostgreSQL-u, s pravim korisničkim računima, ulogama i revizijskim tragom.",
+        "short": "Alati koji preuzimaju ručni posao.",
+        "description": "Web aplikacije po mjeri: rezervacijski sustavi, interni alati, portali za klijente i nadzorne ploče. Prije pisanja koda mapiramo tijek rada koji već imate, pa aplikacija prati stvarni proces u firmi. Gradimo na Next.js-u i PostgreSQL-u, s korisničkim računima, ulogama i zapisom o svakoj promjeni.",
         "metaDescription": "Izrada web aplikacija — rezervacijski sustavi, portali, nadzorne ploče. Gradimo na Next.js-u, od 2.500 €.",
         "included": [
           "Analiza tijeka rada i podataka",

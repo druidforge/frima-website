@@ -115,8 +115,8 @@
       },
       "webApps": {
         "name": "Web applications",
-        "short": "Tools that do work, not just display content.",
-        "description": "Booking systems, internal tools, client portals, dashboards. We build on Next.js and PostgreSQL, with real accounts, roles and an audit trail.",
+        "short": "Tools that take over the manual work.",
+        "description": "Custom web applications: booking systems, internal tools, client portals and dashboards. Before any code is written we map the workflow you already run, so the application follows your real process. Built on Next.js and PostgreSQL, with user accounts, roles and a record of every change.",
         "metaDescription": "Custom web application development — booking systems, portals, dashboards. Built on Next.js, from €2,500.",
         "included": [
           "Workflow and data analysis",
