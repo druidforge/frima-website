@@ -146,14 +146,15 @@
       "weddingInvites": {
         "name": "Digitale Hochzeitseinladungen",
         "short": "Eine Einladung, die auf einem Link lebt, nicht im Umschlag.",
-        "description": "Eine persönliche Seite für Ihre Hochzeit: Ihre Geschichte, der Tagesablauf, eine Karte und eine Wunschliste. Gäste öffnen einen Link; mit dem RSVP-Formular sehen Sie jederzeit, wer kommt.",
-        "metaDescription": "Digitale Hochzeitseinladungen mit Zusagen und Live-Gästeliste, als eigene Hochzeitswebsite. Ab 270 €.",
+        "description": "Digitale Hochzeitseinladungen: Ihre Geschichte, der Tagesablauf, eine Karte und eine Wunschliste auf einer Seite. Gäste öffnen einen Link und sehen alles auf dem Handy. Mit dem Formular für Zusagen wissen Sie jederzeit, wer kommt. Wenn Sie sie länger behalten möchten, deckt 80 € zwölf Monate ab einem Startdatum Ihrer Wahl.",
+        "metaDescription": "Digitale Hochzeitseinladungen mit Ihrer Geschichte, Tagesablauf und Karte. Zusage-Formular als Zusatz. Ab 270 €.",
         "included": [
           "Design und animierter Auftakt nach Ihrem Thema und Ihren Farben",
           "Ihre Geschichte, eine Wunschliste und ein Countdown zum Tag",
           "Tagesablauf und Karte zum Veranstaltungsort",
-          "Eigene Domain auf Wunsch",
-          "Zwei Sprachen"
+          "Adresse mit Ihren Namen, eigene Domain gegen Aufpreis",
+          "Zwei Sprachen",
+          "Seite online von einem Monat vor der Hochzeit bis eine Woche danach"
         ]
       },
       "businessCards": {
