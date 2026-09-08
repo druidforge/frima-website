@@ -145,8 +145,12 @@ function ServiceBody({
           <div className="grid gap-10 md:grid-cols-[0.85fr_1.15fr] lg:gap-20">
             <Reveal>
               <p className="eyebrow">{t("indexTitle")}</p>
-              <dl className="mt-6 space-y-6">
-                <div>
+              {/* Two columns rather than one stack of three: what the build
+                  costs and how long it takes belong together on the left, and
+                  the recurring figure reads as a separate commitment on the
+                  right. Services with no `monthly` keep the left column only. */}
+              <dl className="mt-6 grid grid-cols-2 items-start gap-x-8 gap-y-6">
+                <div className="col-start-1 row-start-1">
                   <dt className="font-mono text-xs text-ink-faint">
                     {t("fromLabel")}
                   </dt>
@@ -154,7 +158,7 @@ function ServiceBody({
                     {service.from}
                   </dd>
                 </div>
-                <div>
+                <div className="col-start-1 row-start-2">
                   <dt className="font-mono text-xs text-ink-faint">
                     {t("timelineLabel")}
                   </dt>
@@ -165,6 +169,17 @@ function ServiceBody({
                       : t("weeksSuffix")}
                   </dd>
                 </div>
+                {service.monthly ? (
+                  <div className="col-start-2 row-start-1">
+                    <dt className="font-mono text-xs text-ink-faint">
+                      {t("monthlyLabel")}
+                    </dt>
+                    <dd className="mt-1 text-(length:--text-step-1)">
+                      {t("fromLabel")} {service.monthly}
+                      {t("monthlySuffix")}
+                    </dd>
+                  </div>
+                ) : null}
               </dl>
             </Reveal>
             <Reveal delay={0.08}>

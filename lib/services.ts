@@ -14,6 +14,12 @@ export type Service = {
   /** Hue offsets in degrees applied to the brand cyan -> violet ramp. */
   hue: [number, number];
   from: string;
+  /**
+   * Recurring cost after launch, shown as a third figure beside `from` and
+   * `timeline`. Left unset, the stats block renders two entries as before -
+   * a service only advertises upkeep once we know what to charge for it.
+   */
+  monthly?: string;
   timeline: string;
   /** Unit `timeline` is measured in - defaults to weeks when omitted. */
   timelineUnit?: "days" | "weeks";
@@ -39,6 +45,7 @@ export const services: Service[] = [
     seed: 17,
     hue: [0, 0],
     from: "300 €",
+    monthly: "20 €",
     timeline: "2–4",
     image: "/services/website-design.avif",
   },

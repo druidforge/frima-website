@@ -87,6 +87,8 @@
     "indexLead": "Sechs Leistungen, von Webseiten und Apps bis zu Visitenkarten und Flyern. Die genannten Preise sind Startwerte und hängen vom Umfang ab. Die genaue Zahl erhalten Sie nach einem kurzen Gespräch.",
     "fromLabel": "Ab",
     "timelineLabel": "Dauer",
+    "monthlyLabel": "Wartung",
+    "monthlySuffix": "/Mon.",
     "weeksSuffix": "Wo.",
     "daysSuffix": "Tage",
     "includedTitle": "Was enthalten ist",
@@ -100,7 +102,7 @@
       "websites": {
         "name": "Webseiten-Erstellung",
         "short": "Schnelle, lesbare Seiten, die Suchmaschinen verstehen.",
-        "description": "Webseiten für Unternehmen, Handwerksbetriebe und Restaurants. Wir übernehmen Struktur, Text, Design und Code. Die Seite lädt schnell, funktioniert am Handy und ist ab dem Launch-Tag für Suchmaschinen bereit. Hosting, Domain und Wartung werden monatlich abgerechnet, ab 20 €.",
+        "description": "Webseiten für Unternehmen, Handwerksbetriebe und Restaurants. Wir übernehmen Struktur, Text, Design und Code. Die Seite lädt schnell, funktioniert am Handy und ist ab dem Launch-Tag für Suchmaschinen bereit.",
         "metaDescription": "Website-Design für Unternehmen in Split und darüber hinaus. Schnelle, SEO-optimierte Seiten ab 300 €.",
         "included": [
           "Bis zu vier Seiten, aufgebaut auf Ihrem Angebot",

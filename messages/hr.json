@@ -87,6 +87,8 @@
     "indexLead": "Šest usluga, od web stranica i aplikacija do vizitki i letaka. Navedene cijene su početne i ovise o opsegu. Točan iznos dobivate nakon kratkog razgovora.",
     "fromLabel": "Od",
     "timelineLabel": "Trajanje",
+    "monthlyLabel": "Održavanje",
+    "monthlySuffix": "/mj",
     "weeksSuffix": "tj.",
     "daysSuffix": "dana",
     "includedTitle": "Što je uključeno",
@@ -100,7 +102,7 @@
       "websites": {
         "name": "Izrada web stranica",
         "short": "Brze, čitljive stranice koje Google razumije.",
-        "description": "Predstavljačke stranice za tvrtke, obrte i restorane. Radimo strukturu, tekst, dizajn i kod. Stranica se učitava brzo, dobro izgleda na mobitelu i spremna je za pretraživače na dan objave. Hosting, domena i održavanje naplaćuju se mjesečno, od 20 €.",
+        "description": "Web stranice za tvrtke, obrte i restorane. Radimo strukturu, tekst, dizajn i kod. Stranica se učitava brzo, dobro izgleda na mobitelu i spremna je za pretraživače na dan objave.",
         "metaDescription": "Izrada web stranica za tvrtke i obrte u Splitu i šire. Brze, SEO-spremne stranice od 300 €, gotove za 2–4 tjedna.",
         "included": [
           "Do četiri stranice, složene oko onoga što nudite",
