@@ -130,7 +130,7 @@
       "mobileApps": {
         "name": "Mobilne aplikacije",
         "short": "Jedna baza koda za iOS i Android.",
-        "description": "Aplikacije u React Nativeu, objavljene na App Storeu i Google Playu. Radimo i offline rad, push obavijesti i plaćanja unutar aplikacije kad su potrebni.",
+        "description": "Mobilne aplikacije za iOS i Android, objavljene na App Storeu i Google Playu. Gradimo u React Nativeu iz jedne baze koda, pa se ispravci i nove verzije rade jednom za obje platforme. Offline rad, push obavijesti i plaćanja unutar aplikacije dodajemo kad ih proizvod traži.",
         "metaDescription": "Izrada mobilnih aplikacija za iOS i Android — React Native, offline rad, push obavijesti. Od 4.000 €.",
         "included": [
           "Dizajn sučelja za obje platforme",
