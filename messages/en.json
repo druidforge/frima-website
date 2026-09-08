@@ -53,7 +53,7 @@
     }
   },
   "home": {
-    "heroEyebrow": "Digital studio — Split, Croatia",
+    "heroEyebrow": "Digital studio · Split, Croatia",
     "heroTitle": "Druid Forge\nWeb Solutions in Split",
     "heroLead": "We design and build websites, web apps and mobile apps for companies in Croatia, Germany and further afield. Every project starts with structure and content, not with a template.",
     "heroPrimary": "Start a project",
@@ -217,7 +217,7 @@
       "plainBody": "Scope and price are agreed before we start. If the scope changes, we tell you before we build."
     },
     "locationTitle": "Where we are",
-    "locationBody": "Split, Croatia. Our clients are mainly in Croatia and Germany, but we work with businesses anywhere — meetings in person in Split, everything else online.",
+    "locationBody": "Split, Croatia. Our clients are mainly in Croatia and Germany, but we work with businesses anywhere. Meetings in person in Split, everything else online.",
     "ctaTitle": "Prefer a conversation over a form?",
     "ctaBody": "Call or write. We reply the same or the next working day."
   },
