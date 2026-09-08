@@ -189,9 +189,11 @@
   },
   "about": {
     "title": "A small studio in Split",
-    "lead": "Working since 2026. Small enough that you talk to us directly, experienced enough to know where projects get stuck.",
+    "lead": "Two brothers in Split. We both write code and we both talk to clients, so reach whichever of us you like.",
+    "storyEyebrow": "The name",
     "storyTitle": "Why a forge",
-    "storyBody": "A druid's knowledge is not read out of a book. It comes from working the same living material for years, until you know how it behaves before it moves. A forge is the other half of the name: raw metal goes in, and what comes out is a tool for one particular hand rather than a part off a shelf. Both describe how we work - whoever knows the material decides about it, instead of waiting for approval through three levels.",
+    "storyBody": "A druid's knowledge comes from practice, not from a book. A forge turns raw metal into a tool for one particular hand. The name joins the two, and so do we: whoever knows the material makes the call.",
+    "teamEyebrow": "Team",
     "teamTitle": "The people behind the forge",
     "teamPrev": "Previous person",
     "teamNext": "Next person",
@@ -199,27 +201,27 @@
       "duje": {
         "name": "Duje Milić",
         "role": "Developer & Project Manager",
-        "bio": "At a computer for as long as he can remember - wrote his first lines of code as a kid, and it turned from habit into work. Keeps projects on track from first idea to delivery."
+        "bio": "At a computer for as long as he can remember. He wrote his first code as a kid, and the habit turned into the job."
       },
       "dominko": {
         "name": "Dominko Milić",
         "role": "Developer & Project Manager",
-        "bio": "Coding since his teenage years, when he started building his own things instead of just playing games. That curiosity still runs every project that passes through his hands."
+        "bio": "Coding since his teens, when he started making games instead of playing them. The same curiosity still drives him."
       }
     },
     "valuesTitle": "How we work",
     "values": {
       "directTitle": "No middle layer",
-      "directBody": "You talk to the people working on your project. There is no manager relaying messages.",
+      "directBody": "Write to either of us. Whoever answers leads the project, and the other one works on the code.",
       "ownTitle": "What is yours stays yours",
-      "ownBody": "Code, design and domain are in your name from day one. Nothing is locked to us.",
-      "plainTitle": "No billing for vagueness",
-      "plainBody": "Scope and price are agreed before we start. If the scope changes, we tell you before we build."
+      "ownBody": "The code and design are yours from day one. You get the source files when the project ends.",
+      "plainTitle": "No surprises on the invoice",
+      "plainBody": "Scope and price are agreed before we start. If the scope changes, you hear about it before we do the work."
     },
     "locationTitle": "Where we are",
     "locationBody": "Split, Croatia. Our clients are mainly in Croatia and Germany, but we work with businesses anywhere. Meetings in person in Split, everything else online.",
     "ctaTitle": "Prefer a conversation over a form?",
-    "ctaBody": "Call or write. We reply the same or the next working day."
+    "ctaBody": "Call or write. We reply within one working day."
   },
   "contact": {
     "title": "Tell us what you are building",

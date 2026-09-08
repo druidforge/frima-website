@@ -189,9 +189,11 @@
   },
   "about": {
     "title": "Ein kleines Studio in Split",
-    "lead": "Seit 2026 im Geschäft. Klein genug, dass Sie direkt mit uns reden, erfahren genug, um zu wissen, wo Projekte hängen bleiben.",
+    "lead": "Zwei Brüder in Split. Wir schreiben beide Code und sprechen beide mit Kunden, wenden Sie sich also an wen Sie möchten.",
+    "storyEyebrow": "Der Name",
     "storyTitle": "Warum eine Schmiede",
-    "storyBody": "Das Wissen eines Druiden steht in keinem Buch. Es entsteht daraus, jahrelang mit demselben lebendigen Material zu arbeiten, bis man weiß, wie es sich verhält, bevor es sich bewegt. Die Schmiede ist die andere Hälfte des Namens: hinein geht rohes Metall, heraus kommt ein Werkzeug für eine bestimmte Hand und kein Teil aus dem Regal. Beides beschreibt unsere Arbeitsweise - wer das Material kennt, entscheidet darüber, statt auf Freigaben über drei Ebenen zu warten.",
+    "storyBody": "Das Wissen eines Druiden kommt aus der Praxis, nicht aus einem Buch. Eine Schmiede macht aus rohem Metall ein Werkzeug für eine bestimmte Hand. Der Name verbindet beides, und genau so arbeiten wir: Wer das Material kennt, entscheidet.",
+    "teamEyebrow": "Team",
     "teamTitle": "Die Leute hinter der Schmiede",
     "teamPrev": "Vorherige Person",
     "teamNext": "Nächste Person",
@@ -199,27 +201,27 @@
       "duje": {
         "name": "Duje Milić",
         "role": "Entwickler & Projektleiter",
-        "bio": "Am Computer, seit er sich erinnern kann – die ersten Zeilen Code schrieb er als Kind, daraus wurde irgendwann der Beruf. Hält Projekte auf Kurs, von der ersten Idee bis zur Lieferung."
+        "bio": "Seit er denken kann am Rechner. Seinen ersten Code schrieb er als Kind, aus der Gewohnheit wurde der Beruf."
       },
       "dominko": {
         "name": "Dominko Milić",
         "role": "Entwickler & Projektleiter",
-        "bio": "Programmiert seit seiner Jugend, als er anfing, eigene Dinge zu bauen, statt nur zu spielen. Diese Neugier bestimmt bis heute jedes Projekt, das durch seine Hände geht."
+        "bio": "Programmiert seit seiner Jugend, als er anfing, Spiele zu bauen statt sie zu spielen. Dieselbe Neugier treibt ihn bis heute."
       }
     },
     "valuesTitle": "Wie wir arbeiten",
     "values": {
       "directTitle": "Keine Zwischenebene",
-      "directBody": "Sie sprechen mit den Leuten, die an Ihrem Projekt arbeiten. Kein Manager, der Nachrichten weitergibt.",
+      "directBody": "Schreiben Sie einem von uns beiden. Wer antwortet, führt das Projekt, der andere arbeitet am Code.",
       "ownTitle": "Ihres bleibt Ihres",
-      "ownBody": "Code, Design und Domain laufen ab Tag eins auf Ihren Namen. Nichts ist an uns gebunden.",
-      "plainTitle": "Keine Rechnung für Unklarheiten",
-      "plainBody": "Umfang und Preis stehen vor dem Start fest. Ändert sich der Umfang, sagen wir es, bevor wir bauen."
+      "ownBody": "Code und Design gehören Ihnen ab dem ersten Tag. Die Quelldateien erhalten Sie zum Projektende.",
+      "plainTitle": "Preise ohne Überraschungen",
+      "plainBody": "Umfang und Preis vereinbaren wir vor dem Start. Ändert sich der Umfang, erfahren Sie es, bevor wir arbeiten."
     },
     "locationTitle": "Wo wir sind",
     "locationBody": "Split, Kroatien. Unsere Kunden kommen vor allem aus Kroatien und Deutschland, aber wir arbeiten mit Unternehmen überall. Treffen vor Ort in Split, alles Weitere online.",
     "ctaTitle": "Lieber ein Gespräch als ein Formular?",
-    "ctaBody": "Rufen Sie an oder schreiben Sie. Wir antworten am selben oder am nächsten Werktag."
+    "ctaBody": "Rufen Sie an oder schreiben Sie. Wir antworten innerhalb eines Werktags."
   },
   "contact": {
     "title": "Erzählen Sie uns, was Sie bauen",

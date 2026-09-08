@@ -79,7 +79,7 @@ function AboutStory() {
     <section className="on-abyss relative overflow-clip py-20 md:py-28">
       <div className="shell relative z-10 grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
         <div>
-          <p className="eyebrow">{t("storyTitle")}</p>
+          <p className="eyebrow">{t("storyEyebrow")}</p>
           {/* Same spot the silhouette used to resolve in, but the mark
               itself now - drawn once on arrival, not found by hovering. */}
           <LogoDraw className="mt-10" />
@@ -123,7 +123,7 @@ function AboutTeam() {
   return (
     <section className="overflow-clip py-20 md:py-28">
       <div className="shell">
-        <p className="eyebrow">{t("teamTitle")}</p>
+        <p className="eyebrow">{t("teamEyebrow")}</p>
         <RevealWords
           text={t("teamTitle")}
           as="h2"

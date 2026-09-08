@@ -189,9 +189,11 @@
   },
   "about": {
     "title": "Mali studio u Splitu",
-    "lead": "Radimo od 2026. Dovoljno mali da s nama razgovarate izravno, dovoljno iskusni da znamo gdje projekti zapinju.",
+    "lead": "Dvojica braće iz Splita. Oba programiramo i oba razgovaramo s klijentima, pa se možete javiti bilo kojem od nas.",
+    "storyEyebrow": "O imenu",
     "storyTitle": "Zašto kovačnica",
-    "storyBody": "Druidovo znanje ne dolazi iz knjige. Nastaje godinama rada s istim živim materijalom, dok ne naučiš kako se ponaša prije nego se pomakne. Kovačnica je druga polovica imena: unutra ide sirovi metal, a van izlazi alat za jednu određenu ruku, a ne dio s police. Oboje opisuje kako radimo - onaj tko poznaje materijal odlučuje o njemu, umjesto da čeka odobrenje kroz tri razine.",
+    "storyBody": "Druidovo znanje dolazi iz prakse, ne iz knjige. Kovačnica od sirovog metala radi alat za jednu određenu ruku. Ime spaja to dvoje, i tako radimo: odluku donosi onaj tko poznaje materijal.",
+    "teamEyebrow": "Tim",
     "teamTitle": "Tim iza kovačnice",
     "teamPrev": "Prethodna osoba",
     "teamNext": "Sljedeća osoba",
@@ -199,27 +201,27 @@
       "duje": {
         "name": "Duje Milić",
         "role": "Programer i voditelj projekata",
-        "bio": "Za računalom otkad zna za sebe – prvi kod napisao je kao klinac, a otad je to postala navika koja se pretvorila u posao. Drži projekte na tračnicama, od prve ideje do isporuke."
+        "bio": "Za računalom otkad zna za sebe. Prvi kod napisao je kao klinac, a navika je s vremenom prerasla u posao."
       },
       "dominko": {
         "name": "Dominko Milić",
         "role": "Programer i voditelj projekata",
-        "bio": "Programira od tinejdžerskih dana, kad je umjesto igranja igrica počeo praviti svoje. Ta znatiželja i danas vodi svaki projekt koji prođe kroz njegove ruke."
+        "bio": "Programira od tinejdžerskih dana, kad je umjesto igranja igrica počeo praviti svoje. Ista znatiželja vodi ga i danas."
       }
     },
     "valuesTitle": "Kako radimo",
     "values": {
       "directTitle": "Bez posrednika",
-      "directBody": "Razgovarate s ljudima koji rade na vašem projektu. Nema voditelja koji prenosi poruke.",
+      "directBody": "Javite se bilo kojem od nas dvojice. Tko se javi, vodi projekt, a drugi radi na kodu.",
       "ownTitle": "Vaše je vaše",
-      "ownBody": "Kod, dizajn i domena su u vašem vlasništvu od prvog dana. Nema zaključavanja kod nas.",
-      "plainTitle": "Bez naplaćivanja nejasnoća",
-      "plainBody": "Opseg i cijena se dogovore prije početka. Ako se opseg mijenja, javimo prije nego što radimo."
+      "ownBody": "Kod i dizajn vaši su od prvog dana. Izvorne datoteke dobivate na kraju projekta.",
+      "plainTitle": "Cijena bez iznenađenja",
+      "plainBody": "Opseg i cijenu dogovaramo prije početka. Ako se opseg mijenja, čujete to prije nego što počnemo raditi."
     },
     "locationTitle": "Gdje smo",
     "locationBody": "Split, Hrvatska. Naši klijenti su uglavnom iz Hrvatske i Njemačke, no radimo s tvrtkama bilo gdje. Sastanci uživo u Splitu, sve ostalo online.",
     "ctaTitle": "Radije razgovor nego formular?",
-    "ctaBody": "Nazovite ili pišite. Odgovaramo isti ili sljedeći radni dan."
+    "ctaBody": "Nazovite ili pišite. Javljamo se u roku od jednog radnog dana."
   },
   "contact": {
     "title": "Recite nam što gradite",
