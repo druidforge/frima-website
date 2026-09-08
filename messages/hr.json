@@ -119,7 +119,7 @@
         "name": "Web aplikacije",
         "short": "Alati koji preuzimaju ručni posao.",
         "description": "Web aplikacije po mjeri: rezervacijski sustavi, interni alati, portali za klijente i nadzorne ploče. Prije pisanja koda mapiramo tijek rada koji već imate, pa aplikacija prati stvarni proces u firmi. Gradimo na Next.js-u i PostgreSQL-u, s korisničkim računima, ulogama i zapisom o svakoj promjeni.",
-        "metaDescription": "Izrada web aplikacija — rezervacijski sustavi, portali, nadzorne ploče. Gradimo na Next.js-u, od 2.500 €.",
+        "metaDescription": "Izrada web aplikacija: rezervacijski sustavi, portali, nadzorne ploče. Gradimo na Next.js-u, od 2.500 €.",
         "included": [
           "Analiza tijeka rada i podataka",
           "Prijava, uloge i dozvole",
@@ -133,7 +133,7 @@
         "name": "Mobilne aplikacije",
         "short": "Jedna baza koda za iOS i Android.",
         "description": "Mobilne aplikacije za iOS i Android, objavljene na App Storeu i Google Playu. Gradimo u React Nativeu iz jedne baze koda, pa se ispravci i nove verzije rade jednom za obje platforme. Offline rad, push obavijesti i plaćanja unutar aplikacije dodajemo kad ih proizvod traži. Objavu na App Storeu vodimo preko našeg Apple developerskog računa. Želite li račun na svoje ime, dogovorimo to na početku.",
-        "metaDescription": "Izrada mobilnih aplikacija za iOS i Android — React Native, offline rad, push obavijesti. Od 4.000 €.",
+        "metaDescription": "Izrada mobilnih aplikacija za iOS i Android: React Native, offline rad, push obavijesti. Od 4.000 €.",
         "included": [
           "Dizajn sučelja za obje platforme",
           "Rad bez interneta i sinkronizacija",

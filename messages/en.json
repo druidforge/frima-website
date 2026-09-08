@@ -119,7 +119,7 @@
         "name": "Web applications",
         "short": "Tools that take over the manual work.",
         "description": "Custom web applications: booking systems, internal tools, client portals and dashboards. Before any code is written we map the workflow you already run, so the application follows your real process. Built on Next.js and PostgreSQL, with user accounts, roles and a record of every change.",
-        "metaDescription": "Custom web application development — booking systems, portals, dashboards. Built on Next.js, from €2,500.",
+        "metaDescription": "Custom web application development: booking systems, portals, dashboards. Built on Next.js, from €2,500.",
         "included": [
           "Workflow and data analysis",
           "Login, roles and permissions",
@@ -133,7 +133,7 @@
         "name": "Mobile applications",
         "short": "One codebase for iOS and Android.",
         "description": "Mobile applications for iOS and Android, published to the App Store and Google Play. We build in React Native from a single codebase, so fixes and new versions are done once for both platforms. Offline use, push notifications and in-app payments are added when the product calls for them. We publish to the App Store through our Apple developer account. If you would rather hold the account yourself, we set that up at the start.",
-        "metaDescription": "Mobile app development for iOS and Android — React Native, offline support, push notifications. From €4,000.",
+        "metaDescription": "Mobile app development for iOS and Android: React Native, offline support, push notifications. From €4,000.",
         "included": [
           "Interface design for both platforms",
           "Offline use and syncing",
