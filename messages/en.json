@@ -94,6 +94,8 @@
     "otherTitle": "Other services",
     "ctaTitle": "Interested in this service?",
     "ctaBody": "Give us a few details and you get a real quote, not a generic price list.",
+    "indexCtaTitle": "Not sure which one you need?",
+    "indexCtaBody": "Tell us briefly what you do and what you want to achieve. We'll suggest which services make sense and which you can skip.",
     "items": {
       "websites": {
         "name": "Website design",

@@ -71,5 +71,7 @@ function ServicesGrid({ locale }: { locale: Locale }) {
 
 function ServicesCta() {
   const t = useTranslations("services");
-  return <CtaBand title={t("ctaTitle")} body={t("ctaBody")} />;
+  // The index lists all six services, so it cannot ask about "this service"
+  // the way the detail pages do - it gets its own pair of keys.
+  return <CtaBand title={t("indexCtaTitle")} body={t("indexCtaBody")} />;
 }

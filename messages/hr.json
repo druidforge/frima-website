@@ -94,6 +94,8 @@
     "otherTitle": "Ostale usluge",
     "ctaTitle": "Zanima vas ova usluga?",
     "ctaBody": "Recite nam nekoliko detalja i dobit ćete konkretnu ponudu, ne generički cjenik.",
+    "indexCtaTitle": "Niste sigurni što vam treba?",
+    "indexCtaBody": "Opišite nam ukratko čime se bavite i što želite postići. Predložit ćemo koje usluge imaju smisla, a koje možete preskočiti.",
     "items": {
       "websites": {
         "name": "Izrada web stranica",
