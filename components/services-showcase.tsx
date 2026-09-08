@@ -59,7 +59,6 @@ export function ServicesShowcase({ locale }: { locale: Locale }) {
     trackRef,
     active,
     setActive,
-    isCompact,
     loop,
     goTo,
     expand,
@@ -92,7 +91,7 @@ export function ServicesShowcase({ locale }: { locale: Locale }) {
           const Icon = icons[service.id];
           const real = loop ? index % count : index;
           const clone = isClone(index);
-          const isActive = !isCompact && real === active;
+          const isActive = real === active;
 
           return (
             <li
@@ -123,9 +122,10 @@ export function ServicesShowcase({ locale }: { locale: Locale }) {
                    * a phone, while an expanded desktop panel is 5fr of 10 (~50vw,
                    * capped by the 88rem shell).
                    *
-                   * The grayscale-until-active treatment is `md:` only. On mobile
-                   * every card is equally "open", so desaturating all but one
-                   * would just look broken.
+                   * Grayscale until active, both viewports. `active` follows the
+                   * centred card on mobile (the carousel sets it on scroll), so
+                   * the card you are looking at is the one in colour - same
+                   * behaviour as hovering a desktop panel.
                    */
                   <Image
                     src={service.image}
@@ -133,7 +133,7 @@ export function ServicesShowcase({ locale }: { locale: Locale }) {
                     fill
                     priority={index === 0}
                     sizes="(max-width: 767px) 82vw, 55vw"
-                    className="object-cover transition-[transform,filter] duration-700 ease-out-quint md:[filter:grayscale(1)] md:[transform:scale(1.05)] md:group-data-[active]:[filter:grayscale(0)] md:group-data-[active]:[transform:scale(1)]"
+                    className="object-cover transition-[transform,filter] duration-700 ease-out-quint [filter:grayscale(1)] [transform:scale(1.05)] group-data-[active]:[filter:grayscale(0)] group-data-[active]:[transform:scale(1)]"
                   />
                 ) : (
                   <ChromatophoreField
