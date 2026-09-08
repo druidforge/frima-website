@@ -51,7 +51,7 @@ export const services: Service[] = [
     },
     seed: 17,
     hue: [0, 0],
-    from: "300 €",
+    from: "700 €",
     monthly: "20 €",
     timeline: "2–4",
     image: "/services/website-design.avif",
