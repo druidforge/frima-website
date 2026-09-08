@@ -29,7 +29,7 @@
     },
     "services": {
       "title": "Izrada web stranica i aplikacija",
-      "description": "Šest područja rada: web stranice, web aplikacije, mobilne aplikacije, digitalne pozivnice za vjenčanje, dizajn vizitki i dizajn letaka."
+      "description": "Šest usluga: web stranice, web aplikacije, mobilne aplikacije, digitalne pozivnice za vjenčanje, dizajn vizitki i dizajn letaka."
     },
     "about": {
       "title": "O nama",
@@ -83,8 +83,8 @@
   },
   "services": {
     "indexTitle": "Usluge",
-    "indexHeadline": "Izrada web stranica, aplikacija i digitalnih rješenja",
-    "indexLead": "Šest usluga: web dizajn, razvoj i tisak. Cijene su početne i ovise o opsegu — točan iznos dolazi nakon razgovora.",
+    "indexHeadline": "Izrada web stranica i aplikacija",
+    "indexLead": "Šest usluga, od web stranica i aplikacija do vizitki i letaka. Navedene cijene su početne i ovise o opsegu. Točan iznos dobivate nakon kratkog razgovora.",
     "fromLabel": "Od",
     "timelineLabel": "Trajanje",
     "weeksSuffix": "tj.",

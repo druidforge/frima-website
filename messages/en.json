@@ -29,7 +29,7 @@
     },
     "services": {
       "title": "Web Design & App Development Services",
-      "description": "Six lines of work: websites, web applications, mobile applications, digital wedding invitations, business card design and flyer design."
+      "description": "Six services: websites, web applications, mobile applications, digital wedding invitations, business card design and flyer design."
     },
     "about": {
       "title": "About",
@@ -83,8 +83,8 @@
   },
   "services": {
     "indexTitle": "Services",
-    "indexHeadline": "Web Design, Apps & Digital Services",
-    "indexLead": "Six services: web design, development and print. Prices are starting points and depend on scope — the real number comes after we talk.",
+    "indexHeadline": "Websites and applications",
+    "indexLead": "Six services, from websites and apps to business cards and flyers. The prices listed are starting points and depend on scope. You get the exact figure after a short conversation.",
     "fromLabel": "From",
     "timelineLabel": "Timeline",
     "weeksSuffix": "wks",

@@ -29,7 +29,7 @@
     },
     "services": {
       "title": "Webdesign & App-Entwicklung",
-      "description": "Sechs Arbeitsbereiche: Webseiten, Web-Anwendungen, mobile Anwendungen, digitale Hochzeitseinladungen, Visitenkarten- und Flyer-Design."
+      "description": "Sechs Leistungen: Webseiten, Web-Anwendungen, mobile Anwendungen, digitale Hochzeitseinladungen, Visitenkarten- und Flyer-Design."
     },
     "about": {
       "title": "Über uns",
@@ -83,8 +83,8 @@
   },
   "services": {
     "indexTitle": "Leistungen",
-    "indexHeadline": "Webdesign, Apps und digitale Leistungen",
-    "indexLead": "Sechs Leistungen: Webdesign, Entwicklung und Print. Die Preise sind Startwerte und hängen vom Umfang ab — die echte Zahl kommt nach dem Gespräch.",
+    "indexHeadline": "Webseiten und Anwendungen",
+    "indexLead": "Sechs Leistungen, von Webseiten und Apps bis zu Visitenkarten und Flyern. Die genannten Preise sind Startwerte und hängen vom Umfang ab. Die genaue Zahl erhalten Sie nach einem kurzen Gespräch.",
     "fromLabel": "Ab",
     "timelineLabel": "Dauer",
     "weeksSuffix": "Wo.",
