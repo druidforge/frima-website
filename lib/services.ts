@@ -33,8 +33,15 @@ export type Service = {
   /**
    * Cover image for the services showcase, stored in `public/services/`.
    *
-   * Masters are AVIF, resized to fit 2000px - far larger than any panel needs,
-   * but enough headroom for `next/image` to derive every responsive size from.
+   * Masters are AVIF at 2000px on the long edge - far larger than any panel
+   * needs, but enough headroom for `next/image` to derive every responsive
+   * size from. Built by `npm run build:service-images`; do not hand-edit these
+   * paths or the files they name.
+   *
+   * The hash in each filename is the hash of the file's own bytes, and it is
+   * what makes the year-long `immutable` header in `next.config.ts` honest: a
+   * reworked photograph lands on a new URL, so a returning visitor is never
+   * left holding a cached copy of the old one.
    * Left unset, a panel falls back to this service's own chromatophore field,
    * so the page still renders without any photography.
    */
@@ -54,7 +61,7 @@ export const services: Service[] = [
     from: "700 €",
     monthly: "20 €",
     timeline: "2–4",
-    image: "/services/website-design.avif",
+    image: "/services/website-design.94e5f3ea.avif",
   },
   {
     id: "webApps",
@@ -68,7 +75,7 @@ export const services: Service[] = [
     from: "2.500 €",
     monthly: "30 €",
     timeline: "4–6",
-    image: "/services/web-applications.avif",
+    image: "/services/web-applications.c639c491.avif",
   },
   {
     id: "mobileApps",
@@ -83,7 +90,7 @@ export const services: Service[] = [
     monthly: "20 €",
     storeFee: "100 €",
     timeline: "6–8",
-    image: "/services/mobile-applications.avif",
+    image: "/services/mobile-applications.d4947919.avif",
   },
   {
     id: "weddingInvites",
@@ -96,7 +103,7 @@ export const services: Service[] = [
     hue: [40, 28],
     from: "270 €",
     timeline: "1–2",
-    image: "/services/wedding-invitation.avif",
+    image: "/services/wedding-invitation.072066a3.avif",
   },
   {
     id: "businessCards",
@@ -110,7 +117,7 @@ export const services: Service[] = [
     from: "70 €",
     timeline: "2–3",
     timelineUnit: "days",
-    image: "/services/business-card.avif",
+    image: "/services/business-card.9831c261.avif",
   },
   {
     id: "flyers",
@@ -124,7 +131,7 @@ export const services: Service[] = [
     from: "80 €",
     timeline: "3–4",
     timelineUnit: "days",
-    image: "/services/flyer-design.avif",
+    image: "/services/flyer-design.78e44cb7.avif",
   },
 ];
 

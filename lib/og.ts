@@ -23,12 +23,12 @@ export const ogSize = { width: 1200, height: 630 };
 /**
  * Per-service photo, pre-cropped to the card's fixed photo-panel box.
  *
- * Cropped once with sharp (480x630, "cover") rather than at request time:
- * Satori has no image resizing of its own, and the source masters are AVIF,
- * a format `ImageResponse`'s renderer does not reliably decode - the same
- * reason `markDataUri` above reads a PNG rather than the brand SVG. `basename`
- * is a service's `image` field with the directory and extension stripped, so
- * `/services/website-design.avif` reads `public/services/og/website-design.png`.
+ * Cropped once (480x630, "cover") rather than at request time: Satori has no
+ * image resizing of its own, and it does not reliably decode every master
+ * format we ship - the same reason `markDataUri` above reads a PNG rather
+ * than the brand SVG. `basename` is a service's `image` field with the
+ * directory and extension stripped, so `/services/website-design.jpg` reads
+ * `public/services/og/website-design.png`.
  *
  * Cached per basename - these routes are prerendered once per locale/service
  * pair at build time, and would otherwise re-read the same handful of files

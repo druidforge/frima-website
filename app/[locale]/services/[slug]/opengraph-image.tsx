@@ -47,13 +47,14 @@ export default async function OpengraphImage({
     );
   }
 
-  // `service.image` is `/services/website-design.avif` - the basename is all
+  // `service.image` is `/services/website-design.jpg` - the basename is all
   // `serviceOgImageDataUri` (in `lib/og.ts`) needs to find the pre-cropped
-  // card photo.
+  // card photo. The extension is stripped generically because masters are
+  // mid-swap: the photographed set is JPEG, the remaining stock one AVIF.
   const imageBasename = service.image
     ?.split("/")
     .pop()
-    ?.replace(/\.avif$/, "");
+    ?.replace(/\.[^.]+$/, "");
 
   if (!imageBasename) {
     return new ImageResponse(
