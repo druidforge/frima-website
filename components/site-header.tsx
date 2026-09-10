@@ -173,18 +173,31 @@ export function SiteHeader() {
                 a Google Ads call conversion, so these land in the same column
                 as form submits rather than going uncounted.
 
-                Icon alone until `lg`; that is the first width where the digits
-                fit beside the nav, the locale switcher and the CTA without
-                crowding them. The label stays in the accessible name at every
-                width. */}
+                Two presentations of one link, not two links: below `lg` the
+                glyph alone, and from `lg` the digits in the same mono face,
+                size and tracking the locale switcher beside it uses. Pairing
+                the glyph with the digits is what made this read as a stray nav
+                item - at header scale the icon is redundant once the number is
+                legible, and it dragged the nav's own typeface in with it. The
+                accessible name carries the label at every width. */}
             <CallLink
               phone={site.phone}
-              className="-m-2 inline-flex items-center gap-2 rounded-sm p-2 text-sm text-ink-faint transition-colors duration-(--dur-base) hover:text-foreground"
+              className="-m-2 inline-flex items-center rounded-sm p-2 text-ink-faint transition-colors duration-(--dur-base) hover:text-foreground lg:m-0 lg:p-0 lg:font-mono lg:text-[0.7rem] lg:font-medium lg:tracking-wider lg:text-muted-foreground"
             >
               <span className="sr-only">{t("call")}</span>
-              <Phone size={16} aria-hidden="true" className="shrink-0" />
-              <span className="hidden lg:inline">{site.phone}</span>
+              <Phone size={18} aria-hidden="true" className="lg:hidden" />
+              <span aria-hidden="true" className="hidden lg:inline">
+                {site.phone}
+              </span>
             </CallLink>
+
+            {/* Groups the number with the switcher as one block of header
+                chrome, so the CTA stays the only element reading as a button.
+                Only earns its keep once the digits are showing. */}
+            <span
+              aria-hidden="true"
+              className="hidden h-3 w-px bg-border lg:block"
+            />
             <LocaleSwitcher className="hidden sm:flex" />
             <Link
               href="/contact"
