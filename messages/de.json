@@ -20,6 +20,7 @@
     "services": "Leistungen",
     "about": "Über uns",
     "contact": "Kontakt",
+    "call": "Anrufen",
     "startProject": "Projekt starten"
   },
   "meta": {
@@ -56,8 +57,9 @@
     "heroEyebrow": "Digitalstudio · Split, Kroatien",
     "heroTitle": "Druid Forge\nWeblösungen in Split",
     "heroLead": "Wir gestalten und entwickeln Webseiten, Web-Apps und mobile Apps für Unternehmen in Kroatien, Deutschland und darüber hinaus. Jedes Projekt beginnt mit Struktur und Inhalt, nicht mit einer Vorlage.",
-    "heroPrimary": "Projekt starten",
-    "heroSecondary": "Leistungen ansehen",
+    "heroPriceAnchor": "Webseiten ab {price}. Fertig in {weeks} Wochen.",
+    "heroPrimary": "Angebot anfordern",
+    "heroSecondary": "Preise ansehen",
     "heroScroll": "Scrollen",
     "servicesTitle": "Was wir machen",
     "servicesLead": "Webseiten, Apps und Grafikdesign",
@@ -94,6 +96,7 @@
     "weeksSuffix": "Wo.",
     "daysSuffix": "Tage",
     "includedTitle": "Was enthalten ist",
+    "tiersTitle": "Zwei Optionen",
     "processTitle": "So läuft es ab",
     "otherTitle": "Weitere Leistungen",
     "ctaTitle": "Was würde Ihr Projekt kosten?",
@@ -146,16 +149,41 @@
       "weddingInvites": {
         "name": "Digitale Hochzeitseinladungen",
         "short": "Eine Einladung, die auf einem Link lebt, nicht im Umschlag.",
-        "description": "Digitale Hochzeitseinladungen: Ihre Geschichte, der Tagesablauf, eine Karte und eine Wunschliste auf einer Seite. Gäste öffnen einen Link und sehen alles auf dem Handy. Mit dem Formular für Zusagen wissen Sie jederzeit, wer kommt. Wenn Sie sie länger behalten möchten, deckt 80 € zwölf Monate ab einem Startdatum Ihrer Wahl.",
-        "metaDescription": "Digitale Hochzeitseinladungen mit Ihrer Geschichte, Tagesablauf und Karte. Zusage-Formular als Zusatz. Ab 270 €.",
-        "included": [
-          "Design und animierter Auftakt nach Ihrem Thema und Ihren Farben",
-          "Ihre Geschichte, eine Wunschliste und ein Countdown zum Tag",
-          "Tagesablauf und Karte zum Veranstaltungsort",
-          "Adresse mit Ihren Namen, eigene Domain gegen Aufpreis",
-          "Zwei Sprachen",
-          "Seite online von einem Monat vor der Hochzeit bis eine Woche danach"
-        ]
+        "description": "Eine Einladung, die auf einem Link lebt: Ihre Geschichte, der Tagesablauf, eine Karte und eine Wunschliste auf einer Seite, die Gäste am Handy öffnen. Sie wählen zwischen einer fertigen Vorlage, die wir mit Ihren Angaben füllen, und einer Einladung, die wir von Grund auf gestalten. Das Zusage-Formular gibt es als Zusatz, und 80 € decken weitere zwölf Monate ab einem Startdatum Ihrer Wahl.",
+        "metaDescription": "Digitale Hochzeitseinladungen: Vorlage ab 18 €, individuell ab 180 €. Ihre Geschichte, Tagesablauf, Karte und Zusagen.",
+        "tiers": {
+          "template": {
+            "name": "Einladung aus der Vorlage",
+            "tagline": "Fertiges Design, Ihre Inhalte.",
+            "description": "Sie wählen eine unserer Vorlagen, und wir füllen sie mit Ihren Namen, dem Datum, dem Ablauf und Ihren Fotos. Farben und Schrift passen wir Ihrem Thema an, alles andere ist bereits gebaut und getestet - deshalb ist die Einladung in ein bis zwei Tagen online.",
+            "included": [
+              "Vorlage Ihrer Wahl aus unserer Galerie",
+              "Ihre Namen, das Datum und ein Countdown zum Tag",
+              "Tagesablauf und Karte zum Veranstaltungsort",
+              "Ihre Fotos an den dafür vorgesehenen Stellen",
+              "Farben und Schrift nach Ihrem Thema",
+              "Link fertig zum Versand über WhatsApp und Viber",
+              "Eine Korrekturrunde für den Text",
+              "Seite online von einem Monat vor der Hochzeit bis eine Woche danach"
+            ],
+            "note": "Die Vorlagengalerie entsteht gerade. Bis dahin schicken wir Ihnen auf Anfrage die fertigen Vorlagen. Zusage-Formular, zweite Sprache und eigene Domain gibt es gegen Aufpreis."
+          },
+          "custom": {
+            "name": "Individuelle Einladung",
+            "tagline": "Von Grund auf gestaltet, nur für Sie.",
+            "description": "Wir gestalten die Einladung von der leeren Seite an, nach Ihrem Thema, Ihren Farben und Ihrer Geschichte. Der animierte Auftakt, die Reihenfolge der Abschnitte und Details wie Countdown und Wunschliste richten sich nach Ihrem Tag, nicht nach einer Vorlage.",
+            "included": [
+              "Design und animierter Auftakt nach Ihrem Thema und Ihren Farben",
+              "Ihre Geschichte, eine Wunschliste und ein Countdown zum Tag",
+              "Tagesablauf und Karte zum Veranstaltungsort",
+              "Adresse mit Ihren Namen, eigene Domain gegen Aufpreis",
+              "Zwei Sprachen",
+              "Zwei Korrekturrunden",
+              "Seite online von einem Monat vor der Hochzeit bis eine Woche danach"
+            ],
+            "note": "Der Preis deckt Gestaltung und Umsetzung einer Einladung in zwei Sprachen. Zusage-Formular und eigene Domain sind Zusatzleistungen."
+          }
+        }
       },
       "businessCards": {
         "name": "Visitenkarten-Design",

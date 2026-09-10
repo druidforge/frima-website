@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { getTranslations } from "next-intl/server";
 
 import { locales, type Locale } from "@/i18n/routing";
-import { getServiceBySlug, services } from "@/lib/services";
+import { entryPricing, getServiceBySlug, services } from "@/lib/services";
 import { GenericOgCard, ServiceOgCard } from "@/lib/og-card";
 import { ogSize } from "@/lib/og";
 
@@ -72,7 +72,7 @@ export default async function OpengraphImage({
       eyebrow={ts("indexTitle")}
       title={t(`${service.id}.name`)}
       subtitle={t(`${service.id}.short`)}
-      from={`${ts("fromLabel")} ${service.from}`}
+      from={`${ts("fromLabel")} ${entryPricing(service).from}`}
       imageBasename={imageBasename}
     />,
     size,

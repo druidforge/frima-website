@@ -3,12 +3,15 @@
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "motion/react";
+import { Phone } from "lucide-react";
 
+import { CallLink } from "@/components/call-link";
 import { ScrollProgress } from "@/components/interactions";
 import { LocaleSwitcher } from "@/components/locale-switcher";
 import { Logo } from "@/components/logo";
 import { MenuToggleIcon } from "@/components/menu-toggle-icon";
 import { Link, usePathname } from "@/i18n/navigation";
+import { site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const links = [
@@ -164,6 +167,24 @@ export function SiteHeader() {
           </nav>
 
           <div className="flex items-center gap-3">
+            {/* A local trade gets phoned as often as it gets emailed, and the
+                number previously lived only in the footer - two screens below
+                where a paid click drops someone. `CallLink` reports the tap as
+                a Google Ads call conversion, so these land in the same column
+                as form submits rather than going uncounted.
+
+                Icon alone until `lg`; that is the first width where the digits
+                fit beside the nav, the locale switcher and the CTA without
+                crowding them. The label stays in the accessible name at every
+                width. */}
+            <CallLink
+              phone={site.phone}
+              className="-m-2 inline-flex items-center gap-2 rounded-sm p-2 text-sm text-ink-faint transition-colors duration-(--dur-base) hover:text-foreground"
+            >
+              <span className="sr-only">{t("call")}</span>
+              <Phone size={16} aria-hidden="true" className="shrink-0" />
+              <span className="hidden lg:inline">{site.phone}</span>
+            </CallLink>
             <LocaleSwitcher className="hidden sm:flex" />
             <Link
               href="/contact"
@@ -223,6 +244,31 @@ export function SiteHeader() {
                     </Link>
                   </motion.span>
                 ))}
+                {/* Spelled out here rather than left as an icon: on a phone
+                    this is the shortest path from ad to conversation, and it
+                    closes the drawer like every other link in it. */}
+                <motion.span
+                  initial={{ opacity: 0, x: -12 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{
+                    duration: 0.4,
+                    delay: 0.06 + links.length * 0.05,
+                    ease: EASE,
+                  }}
+                >
+                  <CallLink
+                    phone={site.phone}
+                    onClick={() => setOpen(false)}
+                    className="flex items-center gap-3 border-b border-border/60 py-4 font-display text-2xl tracking-tight transition-[padding-left,color] duration-(--dur-base) ease-out-quint hover:pl-2"
+                  >
+                    <Phone
+                      size={20}
+                      aria-hidden="true"
+                      className="shrink-0 text-ink-faint"
+                    />
+                    {site.phone}
+                  </CallLink>
+                </motion.span>
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}

@@ -16,7 +16,7 @@ import {
 import { ChromatophoreField } from "@/components/chromatophore-field";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
-import { services } from "@/lib/services";
+import { entryPricing, services } from "@/lib/services";
 import { useLoopCarousel } from "@/lib/use-carousel";
 import { cn } from "@/lib/utils";
 
@@ -89,6 +89,9 @@ export function ServicesShowcase({ locale }: { locale: Locale }) {
       >
         {items.map((service, index) => {
           const Icon = icons[service.id];
+          // Tiered services quote their cheapest tier here - one figure is all
+          // a card has room for, and "from" is what it says.
+          const pricing = entryPricing(service);
           const real = loop ? index % count : index;
           const clone = isClone(index);
           const isActive = real === active;
@@ -191,14 +194,14 @@ export function ServicesShowcase({ locale }: { locale: Locale }) {
                       <div>
                         <dt>{t("fromLabel")}</dt>
                         <dd className="mt-1 font-sans text-sm text-paper">
-                          {service.from}
+                          {pricing.from}
                         </dd>
                       </div>
                       <div>
                         <dt>{t("timelineLabel")}</dt>
                         <dd className="mt-1 font-sans text-sm text-paper">
-                          {service.timeline}{" "}
-                          {service.timelineUnit === "days"
+                          {pricing.timeline}{" "}
+                          {pricing.timelineUnit === "days"
                             ? t("daysSuffix")
                             : t("weeksSuffix")}
                         </dd>

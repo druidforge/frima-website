@@ -9,10 +9,19 @@ import { ChromatophoreField } from "@/components/chromatophore-field";
 import { Magnetic } from "@/components/interactions";
 import { RevealWords } from "@/components/motion-primitives";
 import { Link } from "@/i18n/navigation";
+import { entryPricing, services } from "@/lib/services";
 
 export function Hero() {
   const t = useTranslations("home");
   const ref = useRef<HTMLElement>(null);
+
+  // Read through `entryPricing` rather than restated in the message catalogue,
+  // so the one number a visitor from an ad sees first cannot drift from what
+  // the service cards below and the service page itself quote. `websites` is
+  // the service the search campaign targets; its timeline is in weeks, which
+  // is what `heroPriceAnchor` spells out in each locale.
+  const websites = services.find((service) => service.id === "websites");
+  const websitePricing = websites ? entryPricing(websites) : null;
 
   // The copy lifts and fades as the field disperses, so the hero hands off to
   // the next section instead of just scrolling away.
@@ -93,6 +102,26 @@ export function Hero() {
         >
           {t("heroLead")}
         </p>
+
+        {/* A visitor arriving from a paid click asks "what does this cost"
+            before anything else, and leaving that unanswered above the fold
+            sends them back to compare. Rendered only when the figure resolves
+            - a hero that quotes nothing beats one that quotes a blank. */}
+        {websitePricing ? (
+          <p
+            className="rise-fade mt-6 inline-flex w-fit items-center gap-2.5 rounded-sm border border-ink/15 bg-paper/60 px-4 py-2.5 text-sm text-ink-soft"
+            style={{ animationDelay: "0.5s" }}
+          >
+            <span
+              aria-hidden="true"
+              className="size-1.5 shrink-0 rounded-full bg-linear-to-r from-cyan to-violet"
+            />
+            {t("heroPriceAnchor", {
+              price: websitePricing.from,
+              weeks: websitePricing.timeline,
+            })}
+          </p>
+        ) : null}
 
         <div
           className="rise-fade mt-8 flex flex-wrap items-center gap-3 md:mt-10"

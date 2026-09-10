@@ -8,7 +8,7 @@ import { ChromatophoreField } from "@/components/chromatophore-field";
 import { Reveal, RevealWords } from "@/components/motion-primitives";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
-import { services } from "@/lib/services";
+import { entryPricing, services } from "@/lib/services";
 
 /**
  * The six arms.
@@ -71,6 +71,8 @@ function ServiceCard({
 }) {
   const ts = useTranslations("services");
   const ti = useTranslations("services.items");
+  // A tiered service shows its entry tier here - see `entryPricing`.
+  const pricing = entryPricing(service);
 
   /**
    * The card's field is invisible until hover, so it should not be animating
@@ -180,13 +182,13 @@ function ServiceCard({
           <dl className="flex gap-8 font-mono text-xs">
             <div>
               <dt className="text-ink-faint">{ts("fromLabel")}</dt>
-              <dd className="mt-1 text-sm">{service.from}</dd>
+              <dd className="mt-1 text-sm">{pricing.from}</dd>
             </div>
             <div>
               <dt className="text-ink-faint">{ts("timelineLabel")}</dt>
               <dd className="mt-1 text-sm">
-                {service.timeline}{" "}
-                {service.timelineUnit === "days"
+                {pricing.timeline}{" "}
+                {pricing.timelineUnit === "days"
                   ? ts("daysSuffix")
                   : ts("weeksSuffix")}
               </dd>

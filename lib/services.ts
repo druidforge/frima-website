@@ -1,19 +1,40 @@
 import type { Locale } from "@/i18n/routing";
 
 /**
+ * What a job costs and how long it runs.
+ *
+ * Held apart from `Service` because a service can quote one set of these or
+ * several - see `tiers`.
+ */
+export type Pricing = {
+  from: string;
+  timeline: string;
+  /** Unit `timeline` is measured in - defaults to weeks when omitted. */
+  timelineUnit?: "days" | "weeks";
+};
+
+/**
+ * One named way to buy a service, with its own price and timeline.
+ *
+ * Copy lives in `services.items.<service>.tiers.<tier>` - name, description
+ * and its own `included` list, so a tier states what it covers rather than
+ * inheriting a list written for a different price.
+ */
+export type ServiceTier = Pricing & { id: string };
+
+/**
  * Each service carries its own slug per locale so every market gets a keyword
  * URL in its own language rather than an English slug under a translated path.
  *
  * `seed` and `hue` drive the chromatophore canvas: same system, different DNA
  * per arm, so no two service pages animate identically.
  */
-export type Service = {
+type ServiceBase = {
   id: string;
   slug: Record<Locale, string>;
   seed: number;
   /** Hue offsets in degrees applied to the brand cyan -> violet ramp. */
   hue: [number, number];
-  from: string;
   /**
    * Recurring cost after launch, shown as a third figure beside `from` and
    * `timeline`. Left unset, the stats block renders two entries as before -
@@ -27,9 +48,6 @@ export type Service = {
    * pass-through of Apple's fee, and the label on the page says so.
    */
   storeFee?: string;
-  timeline: string;
-  /** Unit `timeline` is measured in - defaults to weeks when omitted. */
-  timelineUnit?: "days" | "weeks";
   /**
    * Cover image for the services showcase, stored in `public/services/`.
    *
@@ -47,6 +65,29 @@ export type Service = {
    */
   image?: string;
 };
+
+/**
+ * A service quotes its price one of two ways, never both: a single figure, or
+ * a list of tiers the visitor picks between. The union is what keeps the two
+ * from drifting - there is no second copy of the entry price to forget to
+ * update, and reading `service.from` without going through `entryPricing()`
+ * does not compile.
+ */
+export type Service = ServiceBase &
+  (
+    | (Pricing & { tiers?: undefined })
+    | { tiers: readonly [ServiceTier, ...ServiceTier[]] }
+  );
+
+/**
+ * The figures a card, a stat block or an OG image quotes for a service.
+ *
+ * For a tiered service that is the first tier - the cheapest way in, which is
+ * what "from" means. Order `tiers` accordingly.
+ */
+export function entryPricing(service: Service): Pricing {
+  return service.tiers ? service.tiers[0] : service;
+}
 
 export const services: Service[] = [
   {
@@ -101,8 +142,16 @@ export const services: Service[] = [
     },
     seed: 29,
     hue: [40, 28],
-    from: "270 €",
-    timeline: "1–2",
+    /**
+     * Template first: it is the cheaper way in, so it is the figure the cards
+     * and the OG image quote as "from". Full custom is what we have always
+     * sold; the template tier fills a page we have already built with your
+     * text and photographs.
+     */
+    tiers: [
+      { id: "template", from: "18 €", timeline: "2–3", timelineUnit: "days" },
+      { id: "custom", from: "180 €", timeline: "1–2" },
+    ],
     image: "/services/wedding-invitation.072066a3.avif",
   },
   {

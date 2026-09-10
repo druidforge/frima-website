@@ -20,6 +20,7 @@
     "services": "Usluge",
     "about": "O nama",
     "contact": "Kontakt",
+    "call": "Nazovi",
     "startProject": "Pokreni projekt"
   },
   "meta": {
@@ -56,8 +57,9 @@
     "heroEyebrow": "Digitalni studio · Split, Hrvatska",
     "heroTitle": "Druid Forge\nweb rješenja u Splitu",
     "heroLead": "Izrađujemo web stranice, web aplikacije i mobilne aplikacije za tvrtke i obrte u Splitu, Hrvatskoj i Njemačkoj. Svaki projekt kreće od strukture i sadržaja, a ne od gotovog predloška.",
-    "heroPrimary": "Pokreni projekt",
-    "heroSecondary": "Pogledaj usluge",
+    "heroPriceAnchor": "Web stranice od {price}. Gotove za {weeks} tjedna.",
+    "heroPrimary": "Zatraži ponudu",
+    "heroSecondary": "Pogledaj cijene",
     "heroScroll": "Listaj",
     "servicesTitle": "Što radimo",
     "servicesLead": "Web stranice, aplikacije i grafički dizajn",
@@ -94,6 +96,7 @@
     "weeksSuffix": "tj.",
     "daysSuffix": "dana",
     "includedTitle": "Što je uključeno",
+    "tiersTitle": "Dvije opcije",
     "processTitle": "Kako to izgleda",
     "otherTitle": "Ostale usluge",
     "ctaTitle": "Koliko bi to koštalo?",
@@ -146,16 +149,41 @@
       "weddingInvites": {
         "name": "Digitalne pozivnice za vjenčanje",
         "short": "Pozivnica koja živi na linku, a ne u omotnici.",
-        "description": "Digitalne pozivnice za vjenčanje: vaša priča, raspored dana, karta i popis želja na jednoj stranici. Gosti otvaraju link i sve vide na mobitelu. Uz obrazac za potvrdu dolaska u svakom trenutku znate tko dolazi. Želite li je zadržati dulje, 80 € pokriva 12 mjeseci od datuma koji sami odaberete.",
-        "metaDescription": "Digitalne pozivnice za vjenčanje s vašom pričom, rasporedom dana i kartom lokacije. Potvrda dolaska dostupna kao dodatak. Od 270 €.",
-        "included": [
-          "Dizajn i animirani uvod prema vašoj temi i bojama",
-          "Vaša priča, popis želja i odbrojavanje do dana",
-          "Raspored dana i karta lokacije",
-          "Adresa s vašim imenima, vlastita domena uz doplatu",
-          "Hrvatski i još jedan jezik",
-          "Stranica online od mjesec dana prije vjenčanja do tjedan nakon"
-        ]
+        "description": "Pozivnica koja živi na linku: vaša priča, raspored dana, karta lokacije i popis želja na jednoj stranici koju gosti otvaraju na mobitelu. Birate između gotove šablone koju ispunimo vašim podacima i pozivnice koju crtamo od nule. Obrazac za potvrdu dolaska dolazi kao dodatak, a 80 € pokriva dodatnih 12 mjeseci od datuma koji sami odaberete.",
+        "metaDescription": "Digitalne pozivnice za vjenčanje: šablonska od 18 €, po mjeri od 180 €. Vaša priča, raspored dana, karta lokacije i potvrda dolaska.",
+        "tiers": {
+          "template": {
+            "name": "Šablonska pozivnica",
+            "tagline": "Gotov dizajn, vaš sadržaj.",
+            "description": "Birate jednu od naših šablona, a mi je ispunimo vašim imenima, datumom, rasporedom i fotografijama. Boje i font prilagodimo vašoj temi, a sve ostalo je već složeno i testirano, pa je pozivnica online za dan-dva.",
+            "included": [
+              "Šablona po izboru iz naše galerije",
+              "Vaša imena, datum i odbrojavanje do dana",
+              "Raspored dana i karta lokacije",
+              "Vaše fotografije na mjestima koja šablona predviđa",
+              "Boje i font prilagođeni vašoj temi",
+              "Link spreman za slanje na WhatsApp i Viber",
+              "Jedan krug izmjena teksta",
+              "Stranica online od mjesec dana prije vjenčanja do tjedan nakon"
+            ],
+            "note": "Galerija šablona je u izradi. Do tada vam na upit šaljemo one koje su gotove. Obrazac za potvrdu dolaska, drugi jezik i vlastita domena dostupni su uz doplatu."
+          },
+          "custom": {
+            "name": "Pozivnica po mjeri",
+            "tagline": "Dizajn od nule, samo za vas.",
+            "description": "Pozivnicu crtamo od prazne stranice prema vašoj temi, bojama i priči. Animirani uvod, redoslijed sekcija i sitnice poput odbrojavanja i popisa želja slažemo prema vašem danu, a ne prema gotovom predlošku.",
+            "included": [
+              "Dizajn i animirani uvod prema vašoj temi i bojama",
+              "Vaša priča, popis želja i odbrojavanje do dana",
+              "Raspored dana i karta lokacije",
+              "Adresa s vašim imenima, vlastita domena uz doplatu",
+              "Hrvatski i još jedan jezik",
+              "Dva kruga izmjena",
+              "Stranica online od mjesec dana prije vjenčanja do tjedan nakon"
+            ],
+            "note": "Cijena pokriva dizajn i izradu jedne pozivnice na dva jezika. Obrazac za potvrdu dolaska i vlastita domena su dodatak."
+          }
+        }
       },
       "businessCards": {
         "name": "Dizajn vizitki",

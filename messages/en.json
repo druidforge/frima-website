@@ -20,6 +20,7 @@
     "services": "Services",
     "about": "About",
     "contact": "Contact",
+    "call": "Call",
     "startProject": "Start a project"
   },
   "meta": {
@@ -56,8 +57,9 @@
     "heroEyebrow": "Digital studio · Split, Croatia",
     "heroTitle": "Druid Forge\nWeb Solutions in Split",
     "heroLead": "We design and build websites, web apps and mobile apps for companies in Croatia, Germany and further afield. Every project starts with structure and content, not with a template.",
-    "heroPrimary": "Start a project",
-    "heroSecondary": "See services",
+    "heroPriceAnchor": "Websites from {price}. Live in {weeks} weeks.",
+    "heroPrimary": "Request a quote",
+    "heroSecondary": "See prices",
     "heroScroll": "Scroll",
     "servicesTitle": "What we do",
     "servicesLead": "Websites, apps and graphic design",
@@ -94,6 +96,7 @@
     "weeksSuffix": "wks",
     "daysSuffix": "days",
     "includedTitle": "What is included",
+    "tiersTitle": "Two options",
     "processTitle": "How it goes",
     "otherTitle": "Other services",
     "ctaTitle": "What would yours cost?",
@@ -146,16 +149,41 @@
       "weddingInvites": {
         "name": "Digital wedding invitations",
         "short": "An invitation that lives on a link, not in an envelope.",
-        "description": "Digital wedding invitations: your story, the schedule, a map and a gift list on one page. Guests open a link and see everything on their phone. Add the RSVP form and you know who is coming at any moment. To keep it up longer, €80 covers 12 months from a start date you choose.",
-        "metaDescription": "Digital wedding invitations with your story, the schedule and a venue map. RSVP form available as an add-on. From €270.",
-        "included": [
-          "Design and an animated opening in your theme and colours",
-          "Your story, a gift list and a countdown to the day",
-          "Day schedule and venue map",
-          "An address with your names, custom domain extra",
-          "Two languages",
-          "Page online from a month before the wedding to a week after"
-        ]
+        "description": "An invitation that lives on a link: your story, the schedule, a venue map and a gift list on one page guests open on their phone. Pick a template we fill with your details, or an invitation drawn from scratch for your day. The RSVP form comes as an add-on, and €80 covers another 12 months from a start date you choose.",
+        "metaDescription": "Digital wedding invitations: a template from €18, fully custom from €180. Your story, the schedule, a venue map and RSVPs.",
+        "tiers": {
+          "template": {
+            "name": "Template invitation",
+            "tagline": "A finished design, your content.",
+            "description": "You pick one of our templates and we fill it with your names, the date, the schedule and your photographs. Colours and type are matched to your theme, and everything else is already built and tested, so the invitation is online in a day or two.",
+            "included": [
+              "A template of your choice from our gallery",
+              "Your names, the date and a countdown to the day",
+              "Day schedule and venue map",
+              "Your photographs in the places the template makes room for",
+              "Colours and type matched to your theme",
+              "A link ready to send on WhatsApp and Viber",
+              "One round of text changes",
+              "Page online from a month before the wedding to a week after"
+            ],
+            "note": "The template gallery is still being built. Until it is up, ask and we'll send the ones that are finished. The RSVP form, a second language and a custom domain are available as add-ons."
+          },
+          "custom": {
+            "name": "Custom invitation",
+            "tagline": "Drawn from scratch, only yours.",
+            "description": "We draw the invitation from an empty page around your theme, your colours and your story. The animated opening, the order of the sections and the details like the countdown and the gift list follow your day rather than a template.",
+            "included": [
+              "Design and an animated opening in your theme and colours",
+              "Your story, a gift list and a countdown to the day",
+              "Day schedule and venue map",
+              "An address with your names, custom domain extra",
+              "Two languages",
+              "Two rounds of changes",
+              "Page online from a month before the wedding to a week after"
+            ],
+            "note": "The price covers the design and build of one invitation in two languages. The RSVP form and a custom domain are add-ons."
+          }
+        }
       },
       "businessCards": {
         "name": "Business card design",

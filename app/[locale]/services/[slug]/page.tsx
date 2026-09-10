@@ -14,7 +14,13 @@ import { Reveal } from "@/components/motion-primitives";
 import { PageHeader } from "@/components/page-header";
 import { getPathname } from "@/i18n/navigation";
 import { locales, type Locale } from "@/i18n/routing";
-import { getServiceBySlug, services } from "@/lib/services";
+import { ServiceTiers } from "@/components/service-tiers";
+import {
+  entryPricing,
+  getServiceBySlug,
+  services,
+  type Service,
+} from "@/lib/services";
 import { absoluteUrl, ogLocale } from "@/lib/metadata";
 
 type Params = { locale: Locale; slug: string };
@@ -112,7 +118,6 @@ function ServiceBody({
   const t = useTranslations("services");
   const ti = useTranslations("services.items");
   const service = services.find((s) => s.id === serviceId)!;
-  const included = ti.raw(`${serviceId}.included`) as string[];
   const others = services.filter((s) => s.id !== serviceId);
 
   return (
@@ -137,125 +142,29 @@ function ServiceBody({
 
       {/* Opens the page: the figures and the paragraph state what this is
           and what it costs before the spec sheet elaborates. */}
-      <section className="pt-12 pb-12 md:pb-16">
-        <div className="shell">
-          {/* The left column held only a label and a lot of empty space. The
-              price and timeline fill it instead - stacked rather than side by
-              side, so the pair reads as one block against the prose. */}
-          <div className="grid gap-10 md:grid-cols-[0.85fr_1.15fr] lg:gap-20">
+      {service.tiers ? (
+        /* A tiered service prices the same page two ways, so the figures and
+           the inclusion list belong to whichever tier is selected rather than
+           to the page. One section covers what the two stacked ones do below:
+           the lead, the choice, and the answer for the chosen option. */
+        <section className="pt-12 pb-24 md:pb-32">
+          <div className="shell">
             <Reveal>
-              <p className="eyebrow">{t("indexTitle")}</p>
-              {/* Two columns rather than one stack of three: what the build
-                  costs and how long it takes belong together on the left, and
-                  the recurring figure reads as a separate commitment on the
-                  right. Services with no `monthly` keep the left column only. */}
-              <dl className="mt-6 grid grid-cols-2 items-start gap-x-8 gap-y-6">
-                <div className="col-start-1 row-start-1">
-                  <dt className="font-mono text-xs text-ink-faint">
-                    {t("fromLabel")}
-                  </dt>
-                  <dd className="mt-1 text-(length:--text-step-1)">
-                    {service.from}
-                  </dd>
-                </div>
-                <div className="col-start-1 row-start-2">
-                  <dt className="font-mono text-xs text-ink-faint">
-                    {t("timelineLabel")}
-                  </dt>
-                  <dd className="mt-1 text-(length:--text-step-1)">
-                    {service.timeline}{" "}
-                    {service.timelineUnit === "days"
-                      ? t("daysSuffix")
-                      : t("weeksSuffix")}
-                  </dd>
-                </div>
-                {service.monthly ? (
-                  <div className="col-start-2 row-start-1">
-                    <dt className="font-mono text-xs text-ink-faint">
-                      {t("monthlyLabel")}
-                    </dt>
-                    <dd className="mt-1 text-(length:--text-step-1)">
-                      {t("fromLabel")} {service.monthly}
-                      {t("monthlySuffix")}
-                    </dd>
-                  </div>
-                ) : null}
-                {/* Paid by the client to the platform, not to us - stated so
-                    the yearly cost is visible before anyone commits, and sat
-                    under `monthly` because both are money after launch. */}
-                {service.storeFee ? (
-                  <div className="col-start-2 row-start-2">
-                    <dt className="font-mono text-xs text-ink-faint">
-                      {t("storeFeeLabel")}
-                    </dt>
-                    <dd className="mt-1 text-(length:--text-step-1)">
-                      {service.storeFee}
-                      {t("storeFeeSuffix")}
-                    </dd>
-                  </div>
-                ) : null}
-              </dl>
-            </Reveal>
-            <Reveal delay={0.08}>
-              <p className="max-w-[58ch] text-(length:--text-step-1) leading-[1.6] text-ink-soft">
-                {ti(`${serviceId}.description`)}
-              </p>
+              <ServiceTiers
+                serviceId={serviceId}
+                tiers={service.tiers}
+                image={service.image}
+                lead={ti(`${serviceId}.description`)}
+              />
             </Reveal>
           </div>
-        </div>
-      </section>
-
-      <section className="pb-20 md:pb-28">
-        <div className="shell grid items-start gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
-          {/* Image kept to a column rather than spanning the page: it sits
-              beside the spec list instead of pushing it below the fold, and
-              sticks while the longer list scrolls past. */}
-          {service.image ? (
-            <Reveal>
-              {/* `sticky` and `relative` are the same CSS property - split
-                  across two elements so the sticking wrapper doesn't clobber
-                  the `<Image fill>` positioning root it wraps. */}
-              <div className="lg:sticky lg:top-28">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-md border border-border bg-abyss-deep">
-                  <Image
-                    src={service.image}
-                    alt=""
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 40vw"
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-            </Reveal>
-          ) : null}
-
-          <div>
-            <h2 className="eyebrow">{t("includedTitle")}</h2>
-            {/* Rows with hairline rules rather than a boxed column: it reads as
-                a spec sheet and carries no implied order - these are parallel
-                inclusions, not steps. */}
-            <Stagger as="ul" step={0.06} className="mt-6">
-              {included.map((item) => (
-                <StaggerItem
-                  key={item}
-                  as="li"
-                  y={10}
-                  className="group flex items-start gap-4 border-b border-border py-4 transition-colors duration-(--dur-base) last:border-0 hover:text-ink"
-                >
-                  <Check
-                    size={16}
-                    aria-hidden="true"
-                    className="mt-1 shrink-0 text-violet transition-[transform] duration-(--dur-base) ease-out-quint [transform:scale(1)] group-hover:[transform:scale(1.15)]"
-                  />
-                  <span className="leading-relaxed text-ink-soft transition-colors duration-(--dur-base) group-hover:text-ink">
-                    {item}
-                  </span>
-                </StaggerItem>
-              ))}
-            </Stagger>
-          </div>
-        </div>
-      </section>
+        </section>
+      ) : (
+        <>
+          <ServiceStats service={service} />
+          <ServiceIncluded service={service} />
+        </>
+      )}
 
       <section className="pb-24 md:pb-32">
         <div className="shell">
@@ -270,6 +179,148 @@ function ServiceBody({
         </div>
       </section>
     </>
+  );
+}
+
+/**
+ * Price, timeline and any recurring figures for a service sold one way.
+ *
+ * Tiered services state their figures per tier instead - see `ServiceTiers`.
+ */
+function ServiceStats({ service }: { service: Service }) {
+  const t = useTranslations("services");
+  const ti = useTranslations("services.items");
+  const pricing = entryPricing(service);
+
+  return (
+    <section className="pt-12 pb-12 md:pb-16">
+      <div className="shell">
+        {/* The left column held only a label and a lot of empty space. The
+            price and timeline fill it instead - stacked rather than side by
+            side, so the pair reads as one block against the prose. */}
+        <div className="grid gap-10 md:grid-cols-[0.85fr_1.15fr] lg:gap-20">
+          <Reveal>
+            <p className="eyebrow">{t("indexTitle")}</p>
+            {/* Two columns rather than one stack of three: what the build
+                costs and how long it takes belong together on the left, and
+                the recurring figure reads as a separate commitment on the
+                right. Services with no `monthly` keep the left column only. */}
+            <dl className="mt-6 grid grid-cols-2 items-start gap-x-8 gap-y-6">
+              <div className="col-start-1 row-start-1">
+                <dt className="font-mono text-xs text-ink-faint">
+                  {t("fromLabel")}
+                </dt>
+                <dd className="mt-1 text-(length:--text-step-1)">
+                  {pricing.from}
+                </dd>
+              </div>
+              <div className="col-start-1 row-start-2">
+                <dt className="font-mono text-xs text-ink-faint">
+                  {t("timelineLabel")}
+                </dt>
+                <dd className="mt-1 text-(length:--text-step-1)">
+                  {pricing.timeline}{" "}
+                  {pricing.timelineUnit === "days"
+                    ? t("daysSuffix")
+                    : t("weeksSuffix")}
+                </dd>
+              </div>
+              {service.monthly ? (
+                <div className="col-start-2 row-start-1">
+                  <dt className="font-mono text-xs text-ink-faint">
+                    {t("monthlyLabel")}
+                  </dt>
+                  <dd className="mt-1 text-(length:--text-step-1)">
+                    {t("fromLabel")} {service.monthly}
+                    {t("monthlySuffix")}
+                  </dd>
+                </div>
+              ) : null}
+              {/* Paid by the client to the platform, not to us - stated so
+                  the yearly cost is visible before anyone commits, and sat
+                  under `monthly` because both are money after launch. */}
+              {service.storeFee ? (
+                <div className="col-start-2 row-start-2">
+                  <dt className="font-mono text-xs text-ink-faint">
+                    {t("storeFeeLabel")}
+                  </dt>
+                  <dd className="mt-1 text-(length:--text-step-1)">
+                    {service.storeFee}
+                    {t("storeFeeSuffix")}
+                  </dd>
+                </div>
+              ) : null}
+            </dl>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <p className="max-w-[58ch] text-(length:--text-step-1) leading-[1.6] text-ink-soft">
+              {ti(`${service.id}.description`)}
+            </p>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/** The spec sheet, beside the photograph, for a service sold one way. */
+function ServiceIncluded({ service }: { service: Service }) {
+  const t = useTranslations("services");
+  const ti = useTranslations("services.items");
+  const included = ti.raw(`${service.id}.included`) as string[];
+
+  return (
+    <section className="pb-20 md:pb-28">
+      <div className="shell grid items-start gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+        {/* Image kept to a column rather than spanning the page: it sits
+            beside the spec list instead of pushing it below the fold, and
+            sticks while the longer list scrolls past. */}
+        {service.image ? (
+          <Reveal>
+            {/* `sticky` and `relative` are the same CSS property - split
+                across two elements so the sticking wrapper doesn't clobber
+                the `<Image fill>` positioning root it wraps. */}
+            <div className="lg:sticky lg:top-28">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-md border border-border bg-abyss-deep">
+                <Image
+                  src={service.image}
+                  alt=""
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </Reveal>
+        ) : null}
+
+        <div>
+          <h2 className="eyebrow">{t("includedTitle")}</h2>
+          {/* Rows with hairline rules rather than a boxed column: it reads as
+              a spec sheet and carries no implied order - these are parallel
+              inclusions, not steps. */}
+          <Stagger as="ul" step={0.06} className="mt-6">
+            {included.map((item) => (
+              <StaggerItem
+                key={item}
+                as="li"
+                y={10}
+                className="group flex items-start gap-4 border-b border-border py-4 transition-colors duration-(--dur-base) last:border-0 hover:text-ink"
+              >
+                <Check
+                  size={16}
+                  aria-hidden="true"
+                  className="mt-1 shrink-0 text-violet transition-[transform] duration-(--dur-base) ease-out-quint [transform:scale(1)] group-hover:[transform:scale(1.15)]"
+                />
+                <span className="leading-relaxed text-ink-soft transition-colors duration-(--dur-base) group-hover:text-ink">
+                  {item}
+                </span>
+              </StaggerItem>
+            ))}
+          </Stagger>
+        </div>
+      </div>
+    </section>
   );
 }
 
