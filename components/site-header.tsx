@@ -173,38 +173,33 @@ export function SiteHeader() {
                 a Google Ads call conversion, so these land in the same column
                 as form submits rather than going uncounted.
 
-                Two presentations of one link, not two links: below `lg` the
-                glyph alone, and from `lg` the digits in the same mono face,
-                size and tracking the locale switcher beside it uses. Pairing
-                the glyph with the digits is what made this read as a stray nav
-                item - at header scale the icon is redundant once the number is
-                legible, and it dragged the nav's own typeface in with it. The
-                accessible name carries the label at every width. */}
+                Below `lg` the glyph alone, beside the menu toggle. The digits
+                are not repeated here because the button below carries them
+                from `lg` up, and the two never show at once. */}
             <CallLink
               phone={site.phone}
-              className="-m-2 inline-flex items-center rounded-sm p-2 text-ink-faint transition-colors duration-(--dur-base) hover:text-foreground lg:m-0 lg:p-0 lg:font-mono lg:text-[0.7rem] lg:font-medium lg:tracking-wider lg:text-muted-foreground"
+              className="-m-2 inline-flex items-center rounded-sm p-2 text-ink-faint transition-colors duration-(--dur-base) hover:text-foreground lg:hidden"
             >
               <span className="sr-only">{t("call")}</span>
-              <Phone size={18} aria-hidden="true" className="lg:hidden" />
-              <span aria-hidden="true" className="hidden lg:inline">
-                {site.phone}
-              </span>
+              <Phone size={18} aria-hidden="true" />
             </CallLink>
 
-            {/* Groups the number with the switcher as one block of header
-                chrome, so the CTA stays the only element reading as a button.
-                Only earns its keep once the digits are showing. */}
-            <span
-              aria-hidden="true"
-              className="hidden h-3 w-px bg-border lg:block"
-            />
             <LocaleSwitcher className="hidden sm:flex" />
-            <Link
-              href="/contact"
-              className="btn-ink hidden rounded-sm bg-ink px-4 py-2.5 text-sm font-medium text-paper lg:inline-flex"
+
+            {/* The one filled button in the header calls rather than opening
+                the contact form. `Kontakt` in the nav already reaches that
+                page, so a second link to it made two of the header's three
+                routes lead to one destination, and left the number reading as
+                a stray nav item beside them. A phone is the shorter path to a
+                deal and the number carries more weight than a verb - it is
+                something a visitor can read now and dial later. */}
+            <CallLink
+              phone={site.phone}
+              className="btn-ink hidden items-center gap-2 rounded-sm bg-ink px-4 py-2.5 text-sm font-medium text-paper lg:inline-flex"
             >
-              {t("startProject")}
-            </Link>
+              <Phone size={15} aria-hidden="true" className="shrink-0" />
+              {site.phone}
+            </CallLink>
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
