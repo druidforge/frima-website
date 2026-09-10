@@ -149,7 +149,7 @@ export const services: Service[] = [
      * text and photographs.
      */
     tiers: [
-      { id: "template", from: "18 €", timeline: "2–3", timelineUnit: "days" },
+      { id: "template", from: "40 €", timeline: "2–3", timelineUnit: "days" },
       { id: "custom", from: "180 €", timeline: "1–2" },
     ],
     image: "/services/wedding-invitation.072066a3.avif",
