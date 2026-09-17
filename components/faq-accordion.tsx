@@ -152,7 +152,7 @@ function DotsToCross({ open }: { open: boolean }) {
             style={{ width: ARM, transform: `rotate(${angle}deg)` }}
           >
             <span
-              className="absolute top-0 right-0 rounded-full bg-current transition-[width,height,margin-top] duration-[420ms] ease-out-quint motion-reduce:transition-none"
+              className="absolute top-0 right-0 rounded-full bg-current transition-[width,height,margin-top] duration-[420ms] ease-out-quint"
               style={{
                 width: open ? ARM : DOT,
                 height: open ? LINE : DOT,

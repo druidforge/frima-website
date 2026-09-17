@@ -1,6 +1,7 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { useInView } from "motion/react";
 
 import { cn } from "@/lib/utils";
@@ -21,9 +22,16 @@ import { cn } from "@/lib/utils";
  * drawable path carries its own `pathLength="1"`, so `stroke-dasharray`/
  * `-dashoffset` are always fractions of 1 regardless of how convoluted the
  * underlying `d` is - the timings below don't have to know the geometry.
- * Every `<animate>` ends with `fill="freeze"`, so once a stroke or fill
- * reaches its target it simply holds there - no raster swap, no second
- * asset, just the vector settling into the finished mark.
+ * Every `<animate>` ends with `fill="freeze"`, so each stroke and fill holds
+ * where it lands until the drawing is complete.
+ *
+ * **The drawing is a sketch; the mark it resolves into is the master.** The
+ * vector trace has strokes in the wrong colour and curves that drift off the
+ * artwork - fine in motion, not what the studio's own logo should look like at
+ * rest. So once the last animation ends, the raster master (cropped to this
+ * same viewBox by `scripts/build-brand-mark.mjs`, so it lands on exactly the
+ * same pixels) fades in over it, the SVG fades out and is then removed, and a
+ * single glint crosses the finished mark to say it is done.
  *
  * Sequence: the anvil's outline draws first, the circuit traces ink in behind
  * it staggered slightly apart, the nodes pop once their trace arrives, and
@@ -134,20 +142,108 @@ function grow(id: keyof typeof T, r: number) {
   );
 }
 
+/** When the last SMIL animation in `T` finishes, in ms - derived, so retiming a
+ * step can never leave the swap firing early or late. */
+const DRAW_END_MS =
+  Math.max(...Object.values(T).map(({ begin, dur }) => begin + dur)) * 1000;
+
+/** Built by `scripts/build-brand-mark.mjs`; content-hashed, never rename by hand. */
+const MARK_SRC = "/brand/druid-forge-mark.63461439.avif";
+
+/** Crossfade length, and how long after it the SVG leaves the DOM. */
+const SWAP_MS = 600;
+
 export function LogoDraw({
   className,
   size = 340,
 }: {
   className?: string;
-  /** Rendered width in px. Height follows the mark's own ~1.8:1 aspect. */
+  /** Rendered width in px. Height follows the mark's own 615:350 crop. */
   size?: number;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-10% 0px" });
 
+  const [drawn, setDrawn] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+  const [svgGone, setSvgGone] = useState(false);
+
+  // The clock starts when the SVG mounts, because that is when its SMIL
+  // timeline starts too - an inline <svg> begins its own document time on
+  // insertion, and the SVG is only inserted once `inView` flips.
+  useEffect(() => {
+    if (!inView) return;
+    const timer = setTimeout(() => setDrawn(true), DRAW_END_MS);
+    return () => clearTimeout(timer);
+  }, [inView]);
+
+  // Swap only when both are true. On a slow connection the drawing can finish
+  // before the image arrives, and fading the SVG out onto nothing would blank
+  // the mark; the drawing simply holds its last frame a little longer instead.
+  const settled = drawn && loaded;
+
+  useEffect(() => {
+    if (!settled) return;
+    const timer = setTimeout(() => setSvgGone(true), SWAP_MS);
+    return () => clearTimeout(timer);
+  }, [settled]);
+
   return (
-    <div ref={ref} className={cn("max-w-full", className)} style={{ width: size }}>
-      {inView ? <AnimatedMark /> : null}
+    <div
+      ref={ref}
+      role="img"
+      aria-label="Druid Forge"
+      // The box is reserved up front. It used to have no height until the SVG
+      // mounted on scroll, so the section grew by the mark's height mid-view.
+      className={cn("relative aspect-[615/350] max-w-full", className)}
+      style={{ width: size }}
+    >
+      {inView ? (
+        <>
+          {!svgGone ? (
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 transition-opacity ease-out-quint"
+              style={{ opacity: settled ? 0 : 1, transitionDuration: `${SWAP_MS}ms` }}
+            >
+              <AnimatedMark />
+            </div>
+          ) : null}
+
+          {/* Mounted with the SVG, not after it, so it is already loading
+              while the drawing plays. `unoptimized` because the file is
+              already the final AVIF at its final size - the optimiser would
+              only re-encode it. */}
+          <Image
+            src={MARK_SRC}
+            alt=""
+            aria-hidden="true"
+            width={615}
+            height={350}
+            unoptimized
+            onLoad={() => setLoaded(true)}
+            className="absolute inset-0 h-full w-full transition-opacity ease-out-quint"
+            style={{ opacity: settled ? 1 : 0, transitionDuration: `${SWAP_MS}ms` }}
+          />
+
+          {/* One pass of light across the finished mark, clipped to the
+              logo's own alpha by using the same file as a mask - so it
+              catches the anvil and the circuit, never the empty corners.
+              Mounted only once the SVG is gone: started at the swap, it ran
+              underneath the crossfade and was over before anyone could see
+              the mark it was lighting. */}
+          {svgGone ? (
+            <span
+              aria-hidden="true"
+              className="logo-glint pointer-events-none absolute inset-0"
+              style={{
+                maskImage: `url(${MARK_SRC})`,
+                WebkitMaskImage: `url(${MARK_SRC})`,
+              }}
+            />
+          ) : null}
+        </>
+      ) : null}
     </div>
   );
 }
@@ -172,11 +268,9 @@ function AnimatedMark() {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox={VIEW_BOX}
-      role="img"
-      aria-labelledby="draw-title"
+      aria-hidden="true"
       className="block h-auto w-full"
     >
-      <title id="draw-title">Druid Forge circuit-anvil logo</title>
 
       <defs>
         <linearGradient id="d-baseGradient" x1="218" y1="500" x2="806" y2="500" gradientUnits="userSpaceOnUse">

@@ -605,3 +605,36 @@
 .word-rise {
   animation: word-rise 0.62s var(--ease-out-quint) both;
 }
+
+/* The glint that crosses the About page mark once it settles into the raster
+   master (`components/logo-draw.tsx`). The element is masked to the logo's own
+   alpha inline, so this only has to move a soft band of light across the box:
+   a gradient twice the box wide, slid from off the left edge to off the right.
+   Runs once and ends transparent, so nothing is left on the mark afterwards. */
+@keyframes logo-glint {
+  from {
+    background-position: 150% 0;
+    opacity: 1;
+  }
+  to {
+    background-position: -50% 0;
+    opacity: 1;
+  }
+}
+
+.logo-glint {
+  background-image: linear-gradient(
+    105deg,
+    transparent 35%,
+    rgb(255 255 255 / 0.5) 50%,
+    transparent 65%
+  );
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  mask-size: 100% 100%;
+  -webkit-mask-size: 100% 100%;
+  opacity: 0;
+  /* Symmetric ease, not the site's ease-out-quint: that curve spends almost
+     all its travel in the first quarter, which turns a sweep into a flash. */
+  animation: logo-glint 1.2s cubic-bezier(0.45, 0, 0.25, 1) 0.1s both;
+}
