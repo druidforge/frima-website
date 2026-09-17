@@ -53,6 +53,7 @@ export function ServiceTiers({
   const tier = tiers[active];
   const base = `${serviceId}.tiers.${tier.id}`;
   const included = ti.raw(`${base}.included`) as string[];
+  const panelImage = tier.image ?? image;
 
   const tabId = (index: number) => `tier-tab-${serviceId}-${tiers[index].id}`;
   const panelId = (index: number) => `tier-panel-${serviceId}-${tiers[index].id}`;
@@ -181,11 +182,15 @@ export function ServiceTiers({
             `sticky` and `relative` are the same CSS property, so the sticking
             wrapper is split from the `<Image fill>` positioning root it wraps
             rather than clobbering it. */}
-        {image ? (
+        {/* A tier can show its own image - the template gallery for the
+            template tier - and falls back to the service's photograph. The
+            panel is keyed by tier, so switching tabs remounts it and the new
+            image arrives with the same `rise-fade` as the copy beside it. */}
+        {panelImage ? (
           <div className="lg:sticky lg:top-28">
             <div className="relative aspect-[4/3] overflow-hidden rounded-md border border-border bg-abyss-deep">
               <Image
-                src={image}
+                src={panelImage}
                 alt=""
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"

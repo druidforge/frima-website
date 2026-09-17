@@ -33,6 +33,13 @@ import sharp from "sharp";
 
 const SRC_DIR =
   process.env.SERVICE_PHOTO_DIR ?? join(homedir(), "Documents", "slike-s-fotica");
+/**
+ * Sources that live in the repo rather than in the photo folder: rendered
+ * artwork such as the template-gallery mockup, which has no camera original
+ * to go back to. Kept out of `public/` on purpose - anything there is served
+ * as-is, so a 1.6 MB master would be downloadable and crawlable at its own URL.
+ */
+const LOCAL_SRC_DIR = join(process.cwd(), "scripts", "sources");
 const OUT_DIR = join(process.cwd(), "public", "services");
 const OG_DIR = join(OUT_DIR, "og");
 
@@ -69,6 +76,23 @@ const RECIPES = [
   { id: "wedding-invitation", src: "IMG_1756.JPG", out: [2000, 1651], focal: [0.52, 0.5] },
   { id: "business-card", src: "IMG_1749.JPG", out: [2000, 1333], focal: [0.45, 0.45] },
   { id: "flyer-design", src: "IMG_5155.JPG", out: [1333, 2000], focal: [0.56, 0.48] },
+  /**
+   * The template tier's panel image; the custom tier keeps `wedding-invitation`.
+   *
+   * `local` reads it from `scripts/sources/`. `out` is 4:3 at the source's own
+   * width rather than the 2000px the photographs get: the source is a 2x
+   * screenshot, 1308px wide, and scaling it up would add bytes, not detail.
+   * `og: false` because a tier image is never used in a social card - the OG
+   * image is per service and already has its crop.
+   */
+  {
+    id: "wedding-invitation-templates",
+    src: "wedding-invitation-templates.png",
+    local: true,
+    og: false,
+    out: [1308, 981],
+    focal: [0.5, 0.5],
+  },
 ];
 
 /** Oriented dimensions: EXIF tags 5-8 all swap the axes. */
@@ -94,7 +118,7 @@ async function coverFocal(input, size, [tw, th], [fx, fy]) {
 
 /** The oriented, deskewed source as a lossless buffer, plus its true size. */
 async function prepare(recipe) {
-  const path = join(SRC_DIR, recipe.src);
+  const path = join(recipe.local ? LOCAL_SRC_DIR : SRC_DIR, recipe.src);
   const meta = await sharp(path).metadata();
 
   if (!recipe.rotate) {
@@ -125,24 +149,45 @@ async function prepare(recipe) {
 async function main() {
   const results = [];
 
-  for (const recipe of RECIPES) {
+  /**
+   * `--only id,id` rebuilds just those recipes. Adding one image should not
+   * re-encode every photograph: a different sharp or libavif build can emit
+   * different bytes for the same input, which means a new hash, a new URL and
+   * a year of cached copies thrown away for pictures that did not change. The
+   * cleanup below only ever touches recipes that ran, so the rest are safe.
+   */
+  const onlyArg = process.argv.find((arg) => arg.startsWith("--only="));
+  const only = onlyArg ? new Set(onlyArg.slice("--only=".length).split(",")) : null;
+  const recipes = only ? RECIPES.filter((r) => only.has(r.id)) : RECIPES;
+  if (only && recipes.length !== only.size) {
+    const known = new Set(RECIPES.map((r) => r.id));
+    throw new Error(`unknown recipe id: ${[...only].filter((id) => !known.has(id)).join(", ")}`);
+  }
+
+  for (const recipe of recipes) {
     const { input, size } = await prepare(recipe);
     const oriented = recipe.rotate ? input : await sharp(input).rotate().toBuffer();
 
+    // `removeAlpha` is a no-op for the JPEGs. A PNG source can carry an alpha
+    // channel that is fully opaque - the template mockup does - and encoding it
+    // would spend bytes on a channel that changes no pixel.
     const master = await (await coverFocal(oriented, size, recipe.out, recipe.focal))
+      .removeAlpha()
       .avif(MASTER)
       .toBuffer();
     const hash = createHash("sha256").update(master).digest("hex").slice(0, 8);
 
-    const og = await (
-      await coverFocal(oriented, size, [OG_SIZE.w, OG_SIZE.h], recipe.focal)
-    )
-      .png(OG_ENCODE)
-      .toBuffer();
-
     const masterName = `${recipe.id}.${hash}.avif`;
     await writeFile(join(OUT_DIR, masterName), master);
-    await writeFile(join(OG_DIR, `${recipe.id}.${hash}.png`), og);
+
+    if (recipe.og !== false) {
+      const og = await (
+        await coverFocal(oriented, size, [OG_SIZE.w, OG_SIZE.h], recipe.focal)
+      )
+        .png(OG_ENCODE)
+        .toBuffer();
+      await writeFile(join(OG_DIR, `${recipe.id}.${hash}.png`), og);
+    }
 
     results.push({ ...recipe, hash, masterName, bytes: master.length });
     console.log(

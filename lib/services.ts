@@ -20,7 +20,19 @@ export type Pricing = {
  * and its own `included` list, so a tier states what it covers rather than
  * inheriting a list written for a different price.
  */
-export type ServiceTier = Pricing & { id: string };
+export type ServiceTier = Pricing & {
+  id: string;
+  /**
+   * The panel image while this tier is selected, when it should differ from
+   * the service's own. Left unset, the tier shows `Service.image`.
+   *
+   * Same rules as `Service.image`: built by `npm run build:service-images`,
+   * content-hashed, never renamed by hand. The service image stays the one
+   * cards, the showcase and the OG crop use - a tier image is only ever shown
+   * inside its own tab.
+   */
+  image?: string;
+};
 
 /**
  * Each service carries its own slug per locale so every market gets a keyword
@@ -181,7 +193,15 @@ export const services: Service[] = [
      * text and photographs.
      */
     tiers: [
-      { id: "template", from: "40 €", timeline: "2–3", timelineUnit: "days" },
+      {
+        id: "template",
+        from: "40 €",
+        timeline: "2–3",
+        timelineUnit: "days",
+        // The gallery of ready-made designs, since that is what this tier
+        // sells. The custom tier keeps the photograph of a real invitation.
+        image: "/services/wedding-invitation-templates.95614a04.avif",
+      },
       { id: "custom", from: "180 €", timeline: "1–2" },
     ],
     image: "/services/wedding-invitation.072066a3.avif",
