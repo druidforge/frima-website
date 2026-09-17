@@ -119,38 +119,42 @@
         ],
         "process": [
           {
-            "title": "A conversation and a page list",
-            "body": "We ask what you offer, who it is for and what a visitor has to be able to do. Out of that comes the list of pages and the order they are read in."
+            "title": "The page list",
+            "body": "We ask what you offer and who for. The list of pages falls out of that — usually four, not twelve."
           },
           {
             "title": "Words before pictures",
-            "body": "We write the text first and design around it. A page built around finished copy has no empty boxes for someone to fill in later."
+            "body": "We write the copy first and design around it. The other order always leaves empty boxes for someone to fill in later."
           },
           {
-            "title": "Design and build",
-            "body": "We design in the browser, not in a picture. You see the first version on a real address and open it on your own phone while we are still changing things."
+            "title": "Built in the browser",
+            "body": "You open the first version at a real address, on your own phone, while we are still changing it. No flat image that behaves differently later."
           },
           {
-            "title": "Launch and handover",
-            "body": "We set up the domain, the certificate, analytics and Search Console. Then we show you how to change text and images yourself."
+            "title": "Launch",
+            "body": "Domain, certificate, analytics and Search Console. Then we show you how to change text and prices yourself."
           }
         ],
         "faq": [
           {
-            "q": "Do I need to have the text ready?",
-            "a": "No. We write it, from the conversation and whatever you already have. If you bring your own, we build it in and suggest cuts where the page gains from them."
+            "q": "How much does a website cost?",
+            "a": "From €700 for a site of up to four pages, with the copy, design and code included. A shop, a booking flow or extra languages push it up. Send a few sentences about the project and we come back with a range, not a number pulled from the air."
+          },
+          {
+            "q": "How long does a website take?",
+            "a": "Two to four weeks from the point we have the content. The usual cause of delay is neither design nor code but photographs and text, which is why we ask for them on day one rather than at the end."
           },
           {
             "q": "What about the domain and hosting?",
-            "a": "The domain is registered in your name and stays yours. The 20 € a month covers hosting, the certificate and monitoring. If you already own a domain, we move the site onto it without downtime."
+            "a": "The domain is registered in your name and stays yours even if you move on one day. The €20 a month covers hosting, the certificate and monitoring. If you already own a domain, we move the site onto it without downtime."
           },
           {
-            "q": "Can I change the content myself afterwards?",
-            "a": "For text, images and prices you get access and a short guide. Bigger changes, like a new page or a different structure, we handle."
+            "q": "Can I edit the content myself afterwards?",
+            "a": "For text, images and prices you get access and a one-page guide. A new page or a different structure we handle, because that stops being content entry and becomes a change to the structure."
           },
           {
-            "q": "When will the site show up on Google?",
-            "a": "It is technically ready on launch day: sitemap, structured data and Search Console submission. How fast it appears depends on the competition for your terms, and Google indexes new domains gradually, usually over several weeks."
+            "q": "When will the site appear on Google?",
+            "a": "It is technically ready on launch day: sitemap, structured data and Search Console submission. Appearing depends on the competition for your terms, and Google indexes new domains gradually, usually over several weeks."
           }
         ]
       },
@@ -169,38 +173,42 @@
         ],
         "process": [
           {
-            "title": "Mapping what you do now",
-            "body": "We sit with the people who do the work daily and write the steps down as they actually happen, including the exceptions nobody mentions until one occurs."
+            "title": "How the work runs today",
+            "body": "We sit with the people who do it daily. What we are after is the exceptions — half the job, never in the job description."
           },
           {
-            "title": "Data model and prototype",
-            "body": "Before any code we settle what gets stored and who is allowed to see what. A clickable prototype tests the flow while changing it is still cheap."
+            "title": "Data and a prototype",
+            "body": "Before any code we settle what is stored and who may see it. A clickable prototype catches a wrong flow while changing it is still free."
           },
           {
-            "title": "Built in pieces",
-            "body": "We build flow by flow and hand each one over as soon as it works. A wrong assumption is easier to fix in week two than in the last week."
+            "title": "Flow by flow",
+            "body": "You get each part to try as soon as it works, not at the end. A wrong assumption in week two is an edit; in the last week it is a new project."
           },
           {
-            "title": "Migration and go-live",
-            "body": "We move your existing data across and leave the old process running alongside until it is no longer needed. Monitoring reports a fault before a user has to."
+            "title": "Migration",
+            "body": "We bring your data across and let the old process run alongside until it is no longer needed. Monitoring reports a fault before a user does."
           }
         ],
         "faq": [
+          {
+            "q": "How much does a web application cost?",
+            "a": "From €2,500 for one complete workflow — a booking system with user accounts and an overview, say. The price follows the number of flows and integrations, so a real estimate is only possible once we know which steps the app takes over."
+          },
           {
             "q": "Will it work with the software we already use?",
             "a": "Usually yes. If the system has an API we connect to it; if not, we set up file import and export on an agreed schedule. We check what is feasible before quoting, not after."
           },
           {
             "q": "Who owns the code?",
-            "a": "You do. We hand it over into your repository, along with the database and setup instructions. Nothing stays locked up with us."
+            "a": "You do. We hand it over into your repository, with the database and setup instructions. Another developer can pick the application up without ever speaking to us."
           },
           {
-            "q": "What does the 30 € a month cover?",
-            "a": "The server, backups, monitoring and security updates to libraries. New features are quoted separately, before we start on them."
+            "q": "What does the €30 a month cover?",
+            "a": "The server, backups, monitoring and security updates to libraries. New features are quoted separately and before we start them, so the monthly figure stays predictable."
           },
           {
             "q": "How many users can it handle?",
-            "a": "For internal tools, team size is not the constraint. If you expect thousands of concurrent users that is a different architecture and a different price, and we say so before we start."
+            "a": "For an internal tool, team size is not the constraint — ten people or two hundred is the same architecture. If you expect thousands of concurrent users that is a different setup and a different price, and we say so before we start."
           }
         ]
       },
@@ -219,34 +227,38 @@
         ],
         "process": [
           {
-            "title": "Scoping the first release",
-            "body": "We decide what ships first and what waits. An app that does one thing well clears review faster than one doing five things halfway."
+            "title": "What ships first",
+            "body": "We decide what goes in and what waits. An app that does one thing well clears review faster than one doing five things halfway."
           },
           {
-            "title": "Interface for both platforms",
-            "body": "iOS and Android expect different gestures, navigation and type. We design once but check on both devices before any code is written."
+            "title": "One interface, two systems",
+            "body": "iOS and Android expect different gestures and navigation. We design once but check on both devices before the first line of code."
           },
           {
-            "title": "Test builds in your hands",
-            "body": "Builds go out through TestFlight and Google Play internal testing, so you are using the app for weeks before it is published."
+            "title": "The app in your hands",
+            "body": "Builds go out through TestFlight and Google Play internal testing. You use the app for weeks before anyone else sees it."
           },
           {
-            "title": "Release and updates",
-            "body": "We prepare the description, screenshots and privacy disclosures, take the app through review and publish. Fixes after launch are written once for both platforms."
+            "title": "Release",
+            "body": "Description, screenshots, privacy disclosures and the review itself — we run all of it. Fixes afterwards are written once for both platforms."
           }
         ],
         "faq": [
           {
+            "q": "How much does a mobile app cost?",
+            "a": "From €4,000 for a first release on iOS and Android from a single codebase. In-app payments, offline use and integrations with third-party systems push it up, so they are worth mentioning in the first email."
+          },
+          {
             "q": "Do I need my own developer account?",
-            "a": "Not necessarily. We publish through our Apple account, and 100 € a year covers the account and the release. If you want the app listed under your own name, you open your own account and we agree that at the start."
+            "a": "Not necessarily. We publish through our Apple account, and €100 a year covers the account and the release. If you want the app listed under your own name, you open your own account and we agree that at the start, not the week before launch."
           },
           {
             "q": "Why React Native instead of two separate apps?",
-            "a": "Because a fix gets written once instead of twice. For apps that display, capture and sync data the speed difference is not visible. For games and heavy video work React Native is the wrong choice, and we will say so upfront."
+            "a": "Because a fix is written once rather than twice, which halves both cost and time. For apps that display, capture and sync data the speed difference is not visible. For games and heavy video work React Native is the wrong choice, and we say so upfront."
           },
           {
-            "q": "Does it work without an internet connection?",
-            "a": "Yes, where the product calls for it. Data is stored on the device and synced when the connection returns, with agreed rules for when the same record changed in two places."
+            "q": "Does the app work without an internet connection?",
+            "a": "Yes, where the product calls for it. Data is stored on the device and synced when the connection returns. We also agree what happens when the same record changed in two places — a question that needs an answer before it occurs, not after."
           },
           {
             "q": "What if Apple rejects the app?",
@@ -294,37 +306,41 @@
         },
         "process": [
           {
-            "title": "Template or a blank page",
-            "body": "First we pick the route. For a custom design we ask for the colours, flowers and tone you have already chosen for the rest of the day, so the invitation sits alongside everything else."
+            "title": "Template or blank page",
+            "body": "First we pick the route. For a design from scratch we ask for the colours and tone you have already chosen for the rest of the day."
           },
           {
             "title": "Your content",
-            "body": "You send names, the date, the schedule, locations and photographs. If you have no text for the story or the gift list, we draft it and you edit."
+            "body": "Names, the date, the schedule, locations and photographs. No text for the story or the gift list? We draft it, you edit it."
           },
           {
             "title": "First version on a link",
-            "body": "You see the invitation at a real address and open it on your own phone, the way your guests will. We keep revising until it is yours."
+            "body": "You open the invitation on your own phone, exactly as your guests will. We keep changing it until it is yours."
           },
           {
-            "title": "Sending it to guests",
-            "body": "The link is ready for WhatsApp and Viber, with a title and image that render correctly in the preview. The page stays online until a week after the wedding."
+            "title": "Sending",
+            "body": "The link is ready for WhatsApp and Viber, with a title and image that render correctly in the preview."
           }
         ],
         "faq": [
           {
-            "q": "When does the page go live, and for how long?",
-            "a": "As standard, from a month before the wedding to a week after. You choose the publication date, and 80 € covers a further 12 months from that date."
+            "q": "How much does a digital wedding invitation cost?",
+            "a": "From €40 for a template, from €180 for a custom design. An RSVP form and your own domain are add-ons, and €80 covers a further 12 months online."
+          },
+          {
+            "q": "When does the page go live, and how long does it stay?",
+            "a": "As standard, from a month before the wedding to a week after. You choose the publication date — if you are sending earlier, say so straight away, because it moves the start of that window."
           },
           {
             "q": "Can guests confirm attendance?",
-            "a": "Yes, an RSVP form is available as an add-on. Replies arrive in a single table, with headcounts and notes about food."
+            "a": "Yes, an RSVP form is available as an add-on. Replies land in a single table, with headcounts and notes about food, so nothing has to be copied out of messages."
           },
           {
             "q": "What about guests without a smartphone?",
-            "a": "The invitation opens in any browser, so the link works just as well on a computer. For guests who need paper we prepare a printable version."
+            "a": "The invitation opens in any browser, so the link works just as well on a computer. For guests who need paper we prepare a printable version in the same design."
           },
           {
-            "q": "What is the real difference between the two options?",
+            "q": "What is the difference between the template and the custom invitation?",
             "a": "The template has a finished, tested layout and is online in a day or two. Custom starts from a blank page: the animated opening, the order of sections and the small touches are arranged around your day, with two languages and two rounds of revisions."
           }
         ]
@@ -345,29 +361,33 @@
         "process": [
           {
             "title": "What goes on the card",
-            "body": "We go through the details you want on it and drop the ones nobody ever calls or copies out. Fewer lines means larger, more legible type."
+            "body": "We drop the details nobody ever calls or types in. Fewer lines means larger, more legible type."
           },
           {
             "title": "Two directions",
-            "body": "You get two genuinely different proposals, not two variants of one. We choose one together and take that one to the end."
+            "body": "Two genuinely different proposals, not two variants of one. We choose one together and take it to the end."
           },
           {
             "title": "Paper and finish",
-            "body": "We suggest a weight and a finish that suits the chosen direction: embossing, foil or a painted edge. Each comes with a rough note on what it adds to the printing cost."
+            "body": "We suggest a weight and finish that suits the direction: embossing, foil or a painted edge, each with a note on what it adds to the print bill."
           },
           {
-            "title": "Print-ready files",
-            "body": "You get PDF/X in CMYK with bleed and crop marks, plus a digital version for your email signature. Any printer will take the files without further questions."
+            "title": "Handover to the printer",
+            "body": "PDF/X in CMYK with bleed and crop marks, plus a version for your email signature. Any printer takes them without questions."
           }
         ],
         "faq": [
           {
-            "q": "Do you print the cards?",
-            "a": "No. We do the design and the print preparation; you order the printing from a printer of your choice. That way you pay their price with no margin from us, and you pick the paper in person."
+            "q": "How much does business card design cost?",
+            "a": "From €70, ready in two to three days. That covers two design directions, two rounds of revisions and print preparation. Printing is paid separately, directly to the printer."
           },
           {
-            "q": "I have a logo, is that enough?",
-            "a": "For a card, yes, provided we get it as a vector (AI, EPS, SVG or PDF). If all you have is a low-resolution image, we redraw it as a vector for an additional fee."
+            "q": "Do you print the cards?",
+            "a": "No. We do the design and print preparation; you order printing from a printer of your choice. That way you pay their price with no margin from us and pick the paper in person, which for a finish like embossing is the only serious method."
+          },
+          {
+            "q": "Do I need a logo?",
+            "a": "For a card it is enough, provided we get it as a vector (AI, EPS, SVG or PDF). If all you have is a low-resolution image, we redraw it as a vector for an additional fee — in print the difference shows immediately."
           },
           {
             "q": "What if I like neither direction?",
@@ -375,7 +395,7 @@
           },
           {
             "q": "Do I get the source files?",
-            "a": "Yes, at no extra charge. The source files are yours, so later changes can be made by someone else if you prefer."
+            "a": "Yes, at no extra charge. The source files are yours, so a later change can be made by anyone — including someone else, if we are not around one day."
           }
         ]
       },
@@ -395,37 +415,41 @@
         "process": [
           {
             "title": "One message",
-            "body": "We start from what the reader has to remember if they remember only one thing. Everything else is arranged underneath it."
+            "body": "What must the reader remember if they remember only one thing? Everything else arranges itself underneath."
           },
           {
             "title": "Hierarchy and format",
-            "body": "Sizes are set so the main message reads from three metres away and the details read up close. The format follows whether the flyer is handed over, posted on a wall or dropped in a letterbox."
+            "body": "The main message reads from three metres, the details up close. Format follows whether the flyer is handed over, posted on a wall or dropped in a letterbox."
           },
           {
             "title": "Copy and layout",
-            "body": "If you have no text we write it and cut it back until it fits without crowding. White space is not emptiness; it is what makes the main message visible."
+            "body": "No text — we write it and cut it back until it fits without crowding. White space is not emptiness; it is what makes the message visible."
           },
           {
             "title": "Print and social",
-            "body": "You get the print-ready file and a separate web version, laid out in the ratios Instagram and Facebook will not crop."
+            "body": "The print-ready file plus a separate web version, in the ratios Instagram and Facebook will not crop."
           }
         ],
         "faq": [
           {
-            "q": "Which formats do you work in?",
-            "a": "Everything from A6 to A3, including tri-fold brochures. If you need a poster larger than A3, say so before we start: it changes the preparation, not the design price."
+            "q": "How much does flyer design cost?",
+            "a": "From €80, ready in three to four days. That covers the concept, layout, two rounds of revisions and a version for social media. Printing you order yourself."
           },
           {
-            "q": "Do I get a version for social media?",
-            "a": "Yes, it is included. The same content laid out for a square and for a story, because an A5 flyer posted to Instagram ends up with empty bands down each side."
+            "q": "Which formats do you work in?",
+            "a": "Everything from A6 to A3, including tri-fold brochures and posters. If you need something larger than A3, say so before we start: it changes the preparation, not the design price."
           },
           {
             "q": "Can you write the copy?",
-            "a": "We can. Tell us what is on offer, who it is for and until when, and we propose a headline and a subheading. The copy goes through the same two revision rounds as the design."
+            "a": "We can, and usually do. Tell us what is on offer, who for and until when, and we propose a headline and a subheading. The copy goes through the same two revision rounds as the design."
           },
           {
-            "q": "How long before the event do you need?",
-            "a": "The design takes 3–4 days and printing needs a few working days more. Come to us at least two weeks ahead if the flyer has to be in hand on the day."
+            "q": "Do I get a version for social media?",
+            "a": "Yes, it is included. The same content laid out for a square and for a story, because an A5 flyer posted to Instagram ends up with empty bands down each side and loses half its area."
+          },
+          {
+            "q": "How much time do you need before the event?",
+            "a": "The design takes three to four days and printing needs a few working days more. Come to us at least two weeks ahead if the flyer has to be in hand on the day."
           }
         ]
       }

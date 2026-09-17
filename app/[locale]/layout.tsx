@@ -107,6 +107,44 @@ export default async function LocaleLayout({
       .map((key) => [key, messages[key as keyof typeof messages]]),
   );
 
+  /**
+   * `services` has to stay in the list above - four Client Components read it
+   * - but `services.items` is the biggest object in the catalogue and they
+   * only ever touch three keys of each service.
+   *
+   * `name` and `short` are the card labels (`services-showcase`,
+   * `home/services-stack`, `other-services-carousel`, `contact-form`), and the
+   * whole `tiers` subtree belongs to `service-tiers`, which renders a tier's
+   * name, tagline, description, note and inclusion list on the client.
+   *
+   * Everything else is read on the server and was being serialised into every
+   * page for nothing: `metaDescription` (used only in `generateMetadata`), the
+   * top-level `included` list, and now `process` and `faq`, which are six
+   * services' worth of prose per locale. `service-tiers` gets the service's
+   * own `description` as a prop from the page, not from here.
+   *
+   * Adding a `useTranslations("services.items")` call to a file marked "use
+   * client" means checking this projection, or the key arrives `undefined`.
+   */
+  const clientItemKeys = ["name", "short", "tiers"] as const;
+  const items = (messages.services as Record<string, Record<string, unknown>>)
+    ?.items;
+  if (items) {
+    clientMessages.services = {
+      ...(clientMessages.services as Record<string, unknown>),
+      items: Object.fromEntries(
+        Object.entries(items).map(([id, item]) => [
+          id,
+          Object.fromEntries(
+            clientItemKeys
+              .filter((key) => key in (item as Record<string, unknown>))
+              .map((key) => [key, (item as Record<string, unknown>)[key]]),
+          ),
+        ]),
+      ),
+    };
+  }
+
   return (
     <html
       lang={locale}
