@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 
 import { getPathname } from "@/i18n/navigation";
 import { locales, type Locale } from "@/i18n/routing";
+import { serviceNodeId } from "@/lib/service-schema";
 import { services } from "@/lib/services";
 import { absoluteUrl } from "@/lib/metadata";
 import { site, siteUrl } from "@/lib/site";
@@ -105,23 +106,38 @@ export async function StructuredData({ locale }: { locale: Locale }) {
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: site.name,
-        itemListElement: services.map((service) => ({
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: t(`${service.id}.name`),
-            description: t(`${service.id}.short`),
-            url: absoluteUrl(
-              getPathname({
-                href: {
-                  pathname: "/services/[slug]",
-                  params: { slug: service.slug[locale] },
-                },
-                locale,
-              }),
-            ),
-          },
-        })),
+        itemListElement: services.map((service) => {
+          const url = absoluteUrl(
+            getPathname({
+              href: {
+                pathname: "/services/[slug]",
+                params: { slug: service.slug[locale] },
+              },
+              locale,
+            }),
+          );
+
+          return {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              /**
+               * Shared with the full node `components/service-schema.tsx`
+               * emits on this service's own page - see `serviceNodeId`.
+               *
+               * Without it this catalogue was the only `Service` markup on the
+               * site, repeated identically on all thirty URLs, and the six
+               * service pages had no entity of their own for it to attach to.
+               * The identifier is what turns "six similar nodes, once per
+               * page" into "one entity, described where it is described best".
+               */
+              "@id": serviceNodeId(url),
+              name: t(`${service.id}.name`),
+              description: t(`${service.id}.short`),
+              url,
+            },
+          };
+        }),
       },
     },
     {

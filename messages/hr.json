@@ -97,6 +97,7 @@
     "includedTitle": "Što je uključeno",
     "tiersTitle": "Dvije opcije",
     "processTitle": "Kako to izgleda",
+    "faqTitle": "Česta pitanja",
     "otherTitle": "Ostale usluge",
     "ctaTitle": "Koliko bi to koštalo?",
     "ctaBody": "Navedena cijena je početna. Pošaljite nekoliko rečenica o projektu i javljamo se s procjenom opsega i rasponom cijene.",
@@ -115,6 +116,42 @@
           "Tekst koji napišemo mi, ili vaš koji ugradimo",
           "Mjerenje posjeta i osnovna analitika",
           "Kolačići i obvezne pravne stranice"
+        ],
+        "process": [
+          {
+            "title": "Razgovor i popis stranica",
+            "body": "Pitamo što nudite, kome i što posjetitelj mora moći napraviti. Iz toga izlazi popis stranica i redoslijed kojim se čitaju."
+          },
+          {
+            "title": "Tekst prije dizajna",
+            "body": "Prvo pišemo tekst, pa tek onda crtamo. Stranica složena oko gotovog teksta nema praznih okvira koje netko poslije mora popuniti."
+          },
+          {
+            "title": "Dizajn i izrada",
+            "body": "Dizajn radimo u pregledniku, ne u slici. Prvu verziju vidite na pravoj adresi i otvarate je na svom mobitelu dok još mijenjamo."
+          },
+          {
+            "title": "Objava i predaja",
+            "body": "Postavljamo domenu, certifikat, analitiku i Search Console. Pokazujemo vam kako sami mijenjate tekst i slike."
+          }
+        ],
+        "faq": [
+          {
+            "q": "Trebam li imati gotov tekst?",
+            "a": "Ne. Tekst pišemo mi, na temelju razgovora i onoga što već imate. Ako ga imate svoj, ugrađujemo ga i predlažemo skraćivanja ondje gdje stranica od toga dobiva."
+          },
+          {
+            "q": "Što je s domenom i hostingom?",
+            "a": "Domena ide na vaše ime i ostaje vaša. Mjesečnih 20 € pokriva hosting, certifikat i nadzor. Ako domenu već imate, prenosimo stranicu na nju bez prekida rada."
+          },
+          {
+            "q": "Mogu li poslije sam mijenjati sadržaj?",
+            "a": "Za tekst, slike i cijene dobivate pristup i kratku uputu. Veće zahvate, poput nove stranice ili drukčije strukture, radimo mi."
+          },
+          {
+            "q": "Kada će se stranica vidjeti na Googleu?",
+            "a": "Tehnički je spremna na dan objave: sitemap, strukturirani podaci i prijava u Search Console. Koliko brzo se pojavi ovisi o konkurenciji za vaše pojmove, a nove domene Google indeksira postupno, obično kroz nekoliko tjedana."
+          }
         ]
       },
       "webApps": {
@@ -129,6 +166,42 @@
           "Integracije s postojećim sustavima",
           "Automatsko testiranje ključnih tokova",
           "Postavljanje i nadzor u produkciji"
+        ],
+        "process": [
+          {
+            "title": "Mapiranje postojećeg procesa",
+            "body": "Sjednemo s ljudima koji posao rade svaki dan i zapišemo korake onako kako se stvarno odvijaju, uključujući iznimke koje nitko ne spominje dok se ne dogode."
+          },
+          {
+            "title": "Model podataka i prototip",
+            "body": "Prije koda slažemo što se pamti i tko što smije vidjeti. Klikabilan prototip provjerava tijek dok je promjena još jeftina."
+          },
+          {
+            "title": "Izrada u dijelovima",
+            "body": "Gradimo tok po tok i svaki puštamo vama na probu čim radi. Krivi je zaključak lakše ispraviti u drugom tjednu nego u zadnjem."
+          },
+          {
+            "title": "Preseljenje i puštanje u rad",
+            "body": "Prenosimo postojeće podatke i ostavljamo stari postupak da radi usporedno dok ne prestane biti potreban. Nadzor javlja grešku prije nego što je korisnik prijavi."
+          }
+        ],
+        "faq": [
+          {
+            "q": "Radi li s programom koji već koristimo?",
+            "a": "Uglavnom da. Ako sustav ima API, spajamo se na njega; ako nema, radimo uvoz i izvoz datoteka po dogovorenom rasporedu. Što je izvedivo provjeravamo prije ponude, ne poslije."
+          },
+          {
+            "q": "Tko je vlasnik koda?",
+            "a": "Vi. Kod predajemo u vaš repozitorij, zajedno s bazom i uputama za postavljanje. Ništa ne ostaje zaključano kod nas."
+          },
+          {
+            "q": "Što pokriva mjesečnih 30 €?",
+            "a": "Poslužitelj, sigurnosne kopije, nadzor i sigurnosna ažuriranja knjižnica. Nove funkcije procjenjujemo zasebno, prije nego što ih počnemo raditi."
+          },
+          {
+            "q": "Koliko korisnika aplikacija podnosi?",
+            "a": "Za interne alate veličina tima nije ograničenje. Ako očekujete tisuće istovremenih korisnika, to je drukčija arhitektura i drukčija cijena, pa to kažemo prije početka."
+          }
         ]
       },
       "mobileApps": {
@@ -143,6 +216,42 @@
           "Objava na App Store i Google Play",
           "Analitika i praćenje grešaka",
           "Podrška kod ažuriranja platformi"
+        ],
+        "process": [
+          {
+            "title": "Opseg prve verzije",
+            "body": "Odlučujemo što ulazi u prvo izdanje, a što čeka. Aplikacija koja jednu stvar radi dobro prolazi recenziju brže od one koja pet stvari radi napola."
+          },
+          {
+            "title": "Sučelje za obje platforme",
+            "body": "iOS i Android očekuju različite geste, navigaciju i tipografiju. Crtamo jednom, ali provjeravamo na oba uređaja prije nego što se piše kod."
+          },
+          {
+            "title": "Probne verzije u vašim rukama",
+            "body": "Građevne verzije šaljemo kroz TestFlight i internu probu na Google Playu, pa aplikaciju koristite tjednima prije objave."
+          },
+          {
+            "title": "Objava i ažuriranja",
+            "body": "Pripremamo opis, snimke zaslona i izjavu o privatnosti, vodimo aplikaciju kroz recenziju i objavljujemo. Ispravke poslije objave radimo jednom za obje platforme."
+          }
+        ],
+        "faq": [
+          {
+            "q": "Treba li mi vlastiti developerski račun?",
+            "a": "Ne mora. Objavljujemo preko našeg Apple računa, a 100 € godišnje pokriva račun i objavu. Želite li aplikaciju u trgovini na svoje ime, otvarate vlastiti račun i to dogovaramo na početku."
+          },
+          {
+            "q": "Zašto React Native, a ne dvije zasebne aplikacije?",
+            "a": "Zato što se ispravak piše jednom umjesto dvaput. Za aplikacije koje prikazuju, unose i sinkroniziraju podatke razlika u brzini nije vidljiva. Za igre i tešku obradu videa React Native nije pravi izbor i to ćemo reći unaprijed."
+          },
+          {
+            "q": "Radi li aplikacija bez interneta?",
+            "a": "Da, kad to proizvod traži. Podatke spremamo na uređaj i sinkroniziramo kad se veza vrati, uz dogovorena pravila za slučaj da se isti zapis promijenio na dva mjesta."
+          },
+          {
+            "q": "Što ako Apple odbije aplikaciju?",
+            "a": "Uobičajeno je i rješivo. Odgovaramo na primjedbu i šaljemo ponovno, bez dodatne naplate. Najčešće se radi o izjavi o privatnosti ili načinu prijave, a ne o samoj aplikaciji."
+          }
         ]
       },
       "weddingInvites": {
@@ -182,7 +291,43 @@
             ],
             "note": "Cijena pokriva dizajn i izradu jedne pozivnice na dva jezika. Obrazac za potvrdu dolaska i vlastita domena su dodatak."
           }
-        }
+        },
+        "process": [
+          {
+            "title": "Šablona ili dizajn od nule",
+            "body": "Prvo biramo put. Za dizajn od nule tražimo boje, cvijeće i ton koje ste već odabrali za ostatak dana, pa pozivnica stoji uz sve ostalo."
+          },
+          {
+            "title": "Vaš sadržaj",
+            "body": "Šaljete imena, datum, raspored, lokacije i fotografije. Ako nemate tekst za priču ili popis želja, predlažemo ga mi pa ga vi mijenjate."
+          },
+          {
+            "title": "Prva verzija na linku",
+            "body": "Pozivnicu vidite na pravoj adresi i otvarate je na svom mobitelu, onako kako će je otvoriti i gosti. Izmjene radimo dok ne bude vaša."
+          },
+          {
+            "title": "Slanje gostima",
+            "body": "Link je spreman za WhatsApp i Viber, s naslovom i slikom koji se ispravno prikažu u pretpregledu. Stranica ostaje online do tjedan dana nakon vjenčanja."
+          }
+        ],
+        "faq": [
+          {
+            "q": "Kada stranica ide online i dokad ostaje?",
+            "a": "Standardno od mjesec dana prije vjenčanja do tjedan nakon. Datum objave birate sami, a dodatnih 12 mjeseci od tog datuma pokriva 80 €."
+          },
+          {
+            "q": "Mogu li gosti potvrditi dolazak?",
+            "a": "Da, obrazac za potvrdu dolaska dolazi kao dodatak. Odgovore vidite u jednoj tablici, s brojem osoba i napomenama o hrani."
+          },
+          {
+            "q": "Što s gostima koji ne koriste pametni telefon?",
+            "a": "Pozivnica se otvara u svakom pregledniku, pa je link jednako dobar na računalu. Za goste koji trebaju papir pripremamo verziju za ispis."
+          },
+          {
+            "q": "Koja je stvarna razlika između dvije opcije?",
+            "a": "Šablona ima gotov i testiran raspored, pa je online za dan-dva. Po mjeri crtamo od prazne stranice: animirani uvod, redoslijed sekcija i sitnice slažemo prema vašem danu, uz dva jezika i dva kruga izmjena."
+          }
+        ]
       },
       "businessCards": {
         "name": "Dizajn vizitki",
@@ -196,6 +341,42 @@
           "Digitalna verzija za potpis u e-pošti",
           "Dva kruga izmjena",
           "Izvorne datoteke ostaju vama"
+        ],
+        "process": [
+          {
+            "title": "Što na vizitku ide",
+            "body": "Prolazimo podatke koje želite na kartici i mičemo one koje nitko nikad ne nazove ni ne prepiše. Manje redaka znači veći i čitljiviji tekst."
+          },
+          {
+            "title": "Dva smjera",
+            "body": "Dobivate dva različita prijedloga, ne dvije varijante istoga. Jedan biramo zajedno i njega dovodimo do kraja."
+          },
+          {
+            "title": "Papir i dorada",
+            "body": "Predlažemo gramaturu i završnu obradu koja pristaje odabranom smjeru: reljef, foliju ili obrezani rub. Uz svaku ide gruba procjena koliko diže cijenu tiska."
+          },
+          {
+            "title": "Priprema za tiskaru",
+            "body": "Predajemo PDF/X u CMYK-u, s napustima i oznakama reza, i digitalnu verziju za potpis u e-pošti. Datoteke prima svaka tiskara bez dodatnih pitanja."
+          }
+        ],
+        "faq": [
+          {
+            "q": "Tiskate li vi vizitke?",
+            "a": "Ne. Radimo dizajn i pripremu, a tisak naručujete sami kod tiskare po izboru. Tako plaćate tisak po njihovoj cijeni, bez naše marže, i papir birate uživo."
+          },
+          {
+            "q": "Imam logotip, je li to dovoljno?",
+            "a": "Za vizitku jest, ako ga imamo u vektoru (AI, EPS, SVG ili PDF). Imate li samo sliku niske rezolucije, precrtavamo ga u vektor uz doplatu."
+          },
+          {
+            "q": "Što ako mi se nijedan smjer ne svidi?",
+            "a": "Pitamo što nije sjelo i crtamo iznova; to je jedan od dva kruga izmjena. Dva smjera i postoje zato da se rano vidi u kojem smjeru ne treba ići."
+          },
+          {
+            "q": "Dobivam li izvorne datoteke?",
+            "a": "Da, bez dodatne naplate. Izvorne datoteke ostaju vama, pa kasnije izmjene možete napraviti i kod nekoga drugog."
+          }
         ]
       },
       "flyers": {
@@ -210,6 +391,42 @@
           "Verzija za društvene mreže",
           "Dva kruga izmjena",
           "Izvorne datoteke ostaju vama"
+        ],
+        "process": [
+          {
+            "title": "Jedna poruka",
+            "body": "Počinjemo od pitanja što čitatelj mora zapamtiti ako zapamti samo jedno. Sve ostalo se slaže ispod toga."
+          },
+          {
+            "title": "Hijerarhija i format",
+            "body": "Veličine postavljamo tako da se glavna poruka pročita s tri metra, a detalji izbliza. Format biramo prema tome dijeli li se letak u ruke, ide li na zid ili u poštanski sandučić."
+          },
+          {
+            "title": "Tekst i prijelom",
+            "body": "Ako nemate tekst, pišemo ga mi i skraćujemo dok ne stane bez gužve. Bijeli prostor nije praznina nego ono što glavnu poruku čini vidljivom."
+          },
+          {
+            "title": "Tisak i društvene mreže",
+            "body": "Predajemo pripremu za tisak i zasebnu verziju za web, prelomljenu u omjerima koje Instagram i Facebook ne režu."
+          }
+        ],
+        "faq": [
+          {
+            "q": "Koje formate radite?",
+            "a": "Sve od A6 do A3, uključujući trodijelne brošure. Trebate li plakat veći od A3, recite prije početka: to mijenja pripremu, ne cijenu dizajna."
+          },
+          {
+            "q": "Dobivam li verziju za društvene mreže?",
+            "a": "Da, uključena je. Isti sadržaj prelomljen za kvadrat i za priču, jer letak u A5 omjeru na Instagramu ostane s prazninama sa strane."
+          },
+          {
+            "q": "Možete li napisati tekst?",
+            "a": "Možemo. Recite nam što se nudi, kome i dokad, a mi predlažemo naslov i podnaslov. Tekst prolazi kroz iste dvije runde izmjena kao i dizajn."
+          },
+          {
+            "q": "Koliko mi treba prije događaja?",
+            "a": "Dizajn je gotov za 3–4 dana, a tisak traži još nekoliko radnih dana. Javite nam se barem dva tjedna prije ako letak mora biti u rukama na dan događaja."
+          }
         ]
       }
     }

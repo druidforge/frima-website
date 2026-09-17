@@ -89,6 +89,38 @@ export function entryPricing(service: Service): Pricing {
   return service.tiers ? service.tiers[0] : service;
 }
 
+/**
+ * `from` as a number, for JSON-LD.
+ *
+ * Parsed out of the display string rather than stored alongside it. A second
+ * numeric field would be a copy of the price that nothing forces anyone to
+ * update, which is exactly what the `tiers` union above exists to prevent -
+ * and a schema.org `minPrice` that silently disagrees with the figure printed
+ * on the page is worse than none at all.
+ *
+ * The strings are authored here in one format: Croatian/German convention,
+ * `.` grouping thousands and `,` for any decimal ("2.500 €", "70 €").
+ */
+export function priceAmount(from: string): number {
+  const normalised = from
+    .replace(/[^\d.,]/g, "")
+    .replace(/\./g, "")
+    .replace(",", ".");
+  return Number(normalised);
+}
+
+/**
+ * `timeline` as a numeric range, for an Offer's `deliveryLeadTime`.
+ *
+ * Every current value is a span ("2-4"), but a single figure has to parse too
+ * or the first one written that way silently becomes `NaN`; `max` then simply
+ * equals `min`. The separator is an en dash, not a hyphen.
+ */
+export function timelineRange(timeline: string): { min: number; max: number } {
+  const [min, max] = timeline.split(/[–-]/).map((part) => Number(part.trim()));
+  return { min, max: Number.isFinite(max) ? max : min };
+}
+
 export const services: Service[] = [
   {
     id: "websites",

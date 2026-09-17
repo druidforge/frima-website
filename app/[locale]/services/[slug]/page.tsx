@@ -12,6 +12,9 @@ import { Stagger, StaggerItem } from "@/components/interactions";
 import { LocaleSwitcher } from "@/components/locale-switcher";
 import { Reveal } from "@/components/motion-primitives";
 import { PageHeader } from "@/components/page-header";
+import { ServiceFaq } from "@/components/service-faq";
+import { ServiceProcess } from "@/components/service-process";
+import { ServiceSchema } from "@/components/service-schema";
 import { getPathname } from "@/i18n/navigation";
 import { locales, type Locale } from "@/i18n/routing";
 import { ServiceTiers } from "@/components/service-tiers";
@@ -102,6 +105,7 @@ export default async function ServicePage({
         serviceId={service.id}
         slug={slug}
       />
+      <ServiceSchema locale={locale} service={service} slug={slug} />
       <ServiceBody serviceId={service.id} locale={locale} />
       <ServiceCta />
     </>
@@ -165,6 +169,13 @@ function ServiceBody({
           <ServiceIncluded service={service} />
         </>
       )}
+
+      {/* How the job runs, then the questions it raises - both after the
+          figures and the spec sheet, so someone who only wants the price and
+          the inclusions still gets them above the fold, and before the exit
+          links below, which are the last thing the page should offer. */}
+      <ServiceProcess serviceId={serviceId} />
+      <ServiceFaq serviceId={serviceId} />
 
       <section className="pb-24 md:pb-32">
         <div className="shell">
