@@ -138,7 +138,7 @@
         "faq": [
           {
             "q": "Was kostet eine Website?",
-            "a": "Ab 700 € für eine Seite mit bis zu vier Unterseiten, inklusive Text, Gestaltung und Code. Shop, Buchungsstrecke oder weitere Sprachen erhöhen den Preis. Schicken Sie ein paar Sätze zum Projekt, und Sie bekommen eine Spanne zurück, keine gegriffene Zahl."
+            "a": "Ab 700 € für eine Seite mit bis zu vier Unterseiten, inklusive Text, Gestaltung und Code. Shop, Buchungsstrecke oder weitere Sprachen erhöhen den Preis. Schicken Sie ein paar Sätze zum Projekt, und Sie bekommen eine Spanne zurück, keine aus der Luft gegriffene Zahl."
           },
           {
             "q": "Wie lange dauert die Erstellung einer Website?",
@@ -311,7 +311,7 @@
           },
           {
             "title": "Ihre Inhalte",
-            "body": "Namen, Datum, Ablauf, Orte und Fotos. Kein Text für die Geschichte oder die Wunschliste? Wir entwerfen ihn, Sie ändern daran."
+            "body": "Namen, Datum, Ablauf, Orte und Fotos. Kein Text für die Geschichte oder die Wunschliste? Wir entwerfen ihn, Sie passen ihn an."
           },
           {
             "title": "Erste Fassung als Link",
@@ -387,7 +387,7 @@
           },
           {
             "q": "Brauche ich ein Logo?",
-            "a": "Für eine Karte reicht es, sofern wir es als Vektor bekommen (AI, EPS, SVG oder PDF). Haben Sie nur ein Bild in niedriger Auflösung, zeichnen wir es gegen Aufpreis nach — im Druck sieht man den Unterschied sofort."
+            "a": "Für eine Karte reicht ein Logo, sofern wir es als Vektor bekommen (AI, EPS, SVG oder PDF). Haben Sie nur ein Bild in niedriger Auflösung, zeichnen wir es gegen Aufpreis nach — im Druck sieht man den Unterschied sofort."
           },
           {
             "q": "Was, wenn mir keine der Richtungen gefällt?",
@@ -423,10 +423,10 @@
           },
           {
             "title": "Text und Satz",
-            "body": "Kein Text — wir schreiben ihn und kürzen, bis er ohne Gedränge passt. Weißraum ist keine Leere, sondern das, was die Botschaft sichtbar macht."
+            "body": "Haben Sie keinen Text, schreiben wir ihn und kürzen, bis er ohne Gedränge passt. Weißraum ist keine Leere, sondern das, was die Botschaft sichtbar macht."
           },
           {
-            "title": "Druck und Netzwerke",
+            "title": "Druck und soziale Netzwerke",
             "body": "Die Druckdatei und eine eigene Webfassung, in den Seitenverhältnissen, die Instagram und Facebook nicht beschneiden."
           }
         ],
