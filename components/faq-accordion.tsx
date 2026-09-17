@@ -25,15 +25,15 @@ export type FaqEntry = { q: string; a: string };
  * answers ran to most of a screen of text that a visitor had not asked for,
  * which is what "a lot of words saying nothing" looks like from the outside.
  * Collapsed, the same section is a scannable list of five real questions, and
- * the answer arrives when one is picked. The first opens on load so the
- * section shows what kind of answer it gives rather than reading as five inert
- * rows.
+ * the answer arrives when one is picked. Every panel starts closed, on first
+ * load and on reload alike - nothing opens until the visitor asks for it.
  *
  * Single-open: opening one closes the others. With answers this short, keeping
  * several open only makes the reader hunt for where they were.
  */
 export function FaqAccordion({ entries }: { entries: FaqEntry[] }) {
-  const [open, setOpen] = useState(0);
+  // -1 is "none open"; it matches no index.
+  const [open, setOpen] = useState(-1);
   const baseId = useId();
 
   return (
@@ -75,8 +75,8 @@ export function FaqAccordion({ entries }: { entries: FaqEntry[] }) {
               // DOM for crawlers. No focusable content inside, so there is no
               // tab stop to trap.
               aria-hidden={!isOpen}
-              // `false` so the first panel is simply open on load rather than
-              // animating itself open while the page settles.
+              // `false` so the panels render already collapsed on load rather
+              // than animating shut from their natural height as the page settles.
               initial={false}
               animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
               transition={{ duration: 0.34, ease: EASE }}
