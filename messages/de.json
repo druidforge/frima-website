@@ -119,42 +119,42 @@
         ],
         "process": [
           {
-            "title": "Die Seitenliste",
-            "body": "Wir fragen, was Sie anbieten und für wen. Daraus ergibt sich die Seitenliste — meist vier Seiten, nicht zwölf."
+            "title": "Gespräch",
+            "body": "Wir besprechen, was Sie anbieten und wen Sie ansprechen, und stellen daraus die Seitenliste zusammen. Vier Seiten sind im Grundpreis enthalten, zum Beispiel Startseite, Über uns, Leistungen und Kontakt."
           },
           {
-            "title": "Text vor Gestaltung",
-            "body": "Erst schreiben wir den Text, dann gestalten wir. Andersherum bleiben immer leere Kästen übrig, die später jemand füllen muss."
+            "title": "Text und Gestaltung",
+            "body": "Die Texte schreiben wir, oder wir übernehmen Ihre, wenn Sie schon welche haben. Die Gestaltung passen wir an Ihre Branche an."
           },
           {
-            "title": "Gebaut im Browser",
-            "body": "Die erste Fassung öffnen Sie unter einer echten Adresse auf Ihrem eigenen Handy, während wir noch ändern. Kein flaches Bild, das sich später anders verhält."
+            "title": "Umsetzung",
+            "body": "Die Website lädt schnell und funktioniert gut auf dem Smartphone. Außerdem hinterlegen wir strukturierte Daten, die Suchmaschinen auslesen."
           },
           {
             "title": "Veröffentlichung",
-            "body": "Domain, Zertifikat, Analytics und Search Console. Danach zeigen wir Ihnen, wie Sie Texte und Preise selbst ändern."
+            "body": "Wir veröffentlichen die Website und melden sie bei Google an. Besucherstatistik, Cookie-Hinweis und die vorgeschriebenen Rechtsseiten sind enthalten."
           }
         ],
         "faq": [
           {
             "q": "Was kostet eine Website?",
-            "a": "Ab 700 € für eine Seite mit bis zu vier Unterseiten, inklusive Text, Gestaltung und Code. Shop, Buchungsstrecke oder weitere Sprachen erhöhen den Preis. Schicken Sie ein paar Sätze zum Projekt, und Sie bekommen eine Spanne zurück, keine aus der Luft gegriffene Zahl."
+            "a": "Der Grundpreis liegt bei 700 € und umfasst bis zu vier Seiten, Text, Gestaltung, Umsetzung und die Anmeldung bei Google. Weitere Seiten, zusätzliche Sprachen, Buchungen oder ein Onlineshop werden gesondert berechnet. Schicken Sie uns ein paar Sätze zu Ihrem Projekt, und Sie erhalten eine Preiseinschätzung."
           },
           {
             "q": "Wie lange dauert die Erstellung einer Website?",
-            "a": "Zwei bis vier Wochen, gerechnet ab dem Moment, in dem die Inhalte vorliegen. Verzögerungen kommen selten von Gestaltung oder Code, sondern von Fotos und Texten — deshalb fragen wir sie am ersten Tag ab und nicht am letzten."
+            "a": "In der Regel zwei bis vier Wochen. Das hängt auch davon ab, wie schnell wir die Angaben und Fotos bekommen, die wir von Ihnen brauchen."
           },
           {
-            "q": "Was ist mit Domain und Hosting?",
-            "a": "Die Domain läuft auf Ihren Namen und bleibt Ihre, auch wenn Sie eines Tages weiterziehen. Die 20 € im Monat decken Hosting, Zertifikat und Überwachung. Haben Sie bereits eine Domain, ziehen wir die Seite ohne Ausfall darauf um."
+            "q": "Was deckt die monatliche Wartung ab?",
+            "a": "Server, Domain, SSL-Zertifikat, Datensicherungen und Sicherheitsupdates. Das braucht jede Website, um online zu bleiben. Nutzt die Website eine Datenbank, etwa für Buchungen oder einen Blog, fällt der monatliche Betrag etwas höher aus."
           },
           {
-            "q": "Kann ich die Inhalte später selbst ändern?",
-            "a": "Für Texte, Bilder und Preise bekommen Sie einen Zugang und eine Anleitung auf einer Seite. Eine neue Unterseite oder eine andere Struktur übernehmen wir, denn das ist keine Inhaltspflege mehr, sondern ein Eingriff in den Aufbau."
+            "q": "Kann ich Texte und Bilder selbst ändern?",
+            "a": "Ja, wenn Sie zur Website ein Redaktionssystem dazunehmen. Dann melden Sie sich an und ändern Texte, Bilder und Preise selbst, ganz ohne Entwickler. Ohne Redaktionssystem übernehmen wir die Änderungen."
           },
           {
             "q": "Wann ist die Website bei Google zu finden?",
-            "a": "Technisch ist sie am Tag der Veröffentlichung bereit: Sitemap, strukturierte Daten und Anmeldung in der Search Console. Wann sie erscheint, hängt vom Wettbewerb um Ihre Begriffe ab, und neue Domains nimmt Google schrittweise auf, meist über mehrere Wochen."
+            "a": "Wir melden die Website am Tag der Veröffentlichung bei Google an. Wie schnell sie in den Ergebnissen erscheint, hängt von Google und vom Wettbewerb um Ihre Suchbegriffe ab. Neue Domains brauchen meist einige Wochen."
           }
         ]
       },
@@ -173,42 +173,42 @@
         ],
         "process": [
           {
-            "title": "Wie die Arbeit heute läuft",
-            "body": "Wir setzen uns zu den Menschen, die sie täglich erledigen. Uns interessieren die Ausnahmen — die Hälfte der Arbeit, und nie in der Stellenbeschreibung."
+            "title": "Analyse der Arbeitsweise",
+            "body": "Zuerst schauen wir uns an, wie die Arbeit heute läuft: wer was macht, wo Daten entstehen und wo Zeit verloren geht."
           },
           {
-            "title": "Daten und Prototyp",
-            "body": "Vor dem Code klären wir, was gespeichert wird und wer es sehen darf. Ein klickbarer Prototyp findet den falschen Ablauf, solange eine Änderung noch nichts kostet."
+            "title": "Nutzer und Daten",
+            "body": "Wir richten die Anmeldung mit Rollen und Berechtigungen ein, dazu die Datenbank, in der die Anwendung alle Einträge speichert."
           },
           {
-            "title": "Ablauf für Ablauf",
-            "body": "Jeden Teil bekommen Sie zum Ausprobieren, sobald er läuft, nicht erst am Ende. Eine falsche Annahme ist in Woche zwei eine Korrektur, in der letzten Woche ein neues Projekt."
+            "title": "Umsetzung",
+            "body": "Wir entwickeln Oberfläche und API und sichern die wichtigsten Teile der Anwendung mit automatisierten Tests ab."
           },
           {
-            "title": "Umzug",
-            "body": "Wir übernehmen Ihre Daten und lassen den alten Ablauf parallel laufen, bis er nicht mehr gebraucht wird. Die Überwachung meldet den Fehler vor dem Nutzer."
+            "title": "Veröffentlichung und Überwachung",
+            "body": "Wir bringen die Anwendung in Betrieb und richten eine Überwachung ein, damit wir sofort merken, wenn etwas nicht mehr funktioniert."
           }
         ],
         "faq": [
           {
             "q": "Was kostet eine Webanwendung?",
-            "a": "Ab 2.500 € für einen vollständigen Arbeitsablauf — etwa ein Buchungssystem mit Benutzerkonten und Übersicht. Der Preis richtet sich nach der Zahl der Abläufe und Schnittstellen, eine belastbare Schätzung gibt es also erst, wenn klar ist, welche Schritte die Anwendung übernimmt."
+            "a": "Der Grundpreis liegt bei 2.500 €, die Umsetzung dauert vier bis sechs Wochen. Enthalten sind die Analyse Ihrer Arbeitsweise, Anmeldung mit Rollen, Datenbank, API, Tests und Veröffentlichung. Zahlungen, Anbindungen an andere Systeme oder KI-Funktionen kommen bei Bedarf hinzu."
           },
           {
-            "q": "Funktioniert das mit unserer bisherigen Software?",
-            "a": "Meistens ja. Hat das System eine Schnittstelle, binden wir sie an; hat es keine, richten wir Import und Export von Dateien nach vereinbartem Zeitplan ein. Was machbar ist, prüfen wir vor dem Angebot, nicht danach."
+            "q": "Lässt sich die Anwendung mit unserer bestehenden Software verbinden?",
+            "a": "Ja, sofern diese Software das zulässt. Vor dem Angebot prüfen wir, ob Ihr System, etwa Buchhaltungsprogramm, CRM oder Kassensystem, eine offene Schnittstelle hat, über die sich die Anwendung anbinden lässt."
           },
           {
-            "q": "Wem gehört der Code?",
-            "a": "Ihnen. Wir übergeben ihn in Ihr Repository, mit Datenbank und Einrichtungsanleitung. Ein anderer Entwickler kann die Anwendung übernehmen, ohne je mit uns gesprochen zu haben."
+            "q": "Kann die Anwendung E-Rechnungen ausstellen?",
+            "a": "Ja. Wir binden sie an einen zugelassenen E-Rechnungs-Dienstleister an, sodass Rechnungen nach den kroatischen Vorschriften ausgestellt und fiskalisiert werden. Das ist eine Zusatzleistung zum Grundpreis."
           },
           {
-            "q": "Was decken die 30 € im Monat ab?",
-            "a": "Server, Sicherungen, Überwachung und Sicherheitsaktualisierungen der Bibliotheken. Neue Funktionen kalkulieren wir getrennt und bevor wir sie beginnen, damit der monatliche Betrag planbar bleibt."
+            "q": "Können Sie Daten aus Excel oder einem alten Programm übernehmen?",
+            "a": "Ja. Wir bereinigen die Daten und importieren sie in die neue Anwendung. Vor dem Angebot bitten wir um eine Beispieldatei, denn vom Zustand der Daten hängt ab, wie aufwendig die Übernahme ist."
           },
           {
-            "q": "Wie viele Nutzer verträgt die Anwendung?",
-            "a": "Bei einem internen Werkzeug ist die Teamgröße nicht die Grenze — zehn Personen oder zweihundert sind dieselbe Architektur. Erwarten Sie Tausende gleichzeitige Nutzer, ist das ein anderer Aufbau und ein anderer Preis, und das sagen wir vor dem Start."
+            "q": "Was passiert nach der Veröffentlichung?",
+            "a": "Die monatliche Wartung umfasst Server, Datensicherungen, Updates und Fehlerbehebungen. Neue Funktionen nach der Übergabe schätzen wir zuerst ab und berechnen sie dann gesondert."
           }
         ]
       },
@@ -227,42 +227,42 @@
         ],
         "process": [
           {
-            "title": "Was zuerst erscheint",
-            "body": "Wir entscheiden, was hineinkommt und was wartet. Eine App, die eine Sache gut macht, kommt schneller durch die Prüfung als eine, die fünf halb macht."
+            "title": "Oberfläche für iOS und Android",
+            "body": "Wir gestalten die Oberfläche für beide Plattformen, damit sie sich auf dem iPhone und unter Android so verhält, wie es die Nutzer des jeweiligen Systems erwarten."
           },
           {
-            "title": "Eine Oberfläche, zwei Systeme",
-            "body": "iOS und Android erwarten andere Gesten und Navigation. Wir gestalten einmal, prüfen aber auf beiden Geräten — vor der ersten Zeile Code."
+            "title": "Eine Codebasis",
+            "body": "Wir entwickeln die App in React Native aus einer Codebasis, sodass Korrekturen und neue Versionen nur einmal für beide Systeme entstehen."
           },
           {
-            "title": "Die App in Ihren Händen",
-            "body": "Die Versionen laufen über TestFlight und den internen Test bei Google Play. Sie benutzen die App wochenlang, bevor sie sonst jemand sieht."
+            "title": "Offline nutzbar",
+            "body": "Die App funktioniert auch ohne Verbindung und gleicht ihre Daten ab, sobald die Verbindung wieder da ist. Sie kann Push-Nachrichten an die Nutzer senden."
           },
           {
             "title": "Veröffentlichung",
-            "body": "Beschreibung, Screenshots, Datenschutzangaben und die Prüfung selbst — das übernehmen wir. Korrekturen danach werden einmal für beide Plattformen geschrieben."
+            "body": "Wir veröffentlichen sie im App Store und bei Google Play, mit eingebauter Analyse und Absturzberichten, damit wir Probleme sehen, bevor Nutzer sie melden."
           }
         ],
         "faq": [
           {
             "q": "Was kostet eine mobile App?",
-            "a": "Ab 4.000 € für eine erste Version für iOS und Android aus einer Codebasis. Zahlungen in der App, Offline-Betrieb und Schnittstellen zu fremden Systemen erhöhen den Betrag — erwähnen Sie sie also ruhig schon in der ersten Mail."
+            "a": "Der Grundpreis liegt bei 4.000 €, die Umsetzung dauert sechs bis acht Wochen. Sie erhalten eine App für iOS und Android mit Offline-Betrieb, Push-Nachrichten und Veröffentlichung in beiden Stores. Zahlungen, Karten, Kamerafunktionen oder KI kommen bei Bedarf hinzu."
           },
           {
             "q": "Brauche ich ein eigenes Entwicklerkonto?",
-            "a": "Nicht zwingend. Wir veröffentlichen über unser Apple-Konto, und 100 € im Jahr decken Konto und Veröffentlichung. Soll die App unter Ihrem eigenen Namen im Store stehen, eröffnen Sie ein eigenes Konto — das vereinbaren wir zu Beginn, nicht in der Woche vor dem Start."
+            "a": "Nein. Wir veröffentlichen die App über unser Apple-Entwicklerkonto. Soll sie im Store unter Ihrem eigenen Namen erscheinen, vereinbaren wir das zu Beginn."
           },
           {
             "q": "Warum React Native und nicht zwei getrennte Apps?",
-            "a": "Weil eine Korrektur einmal statt zweimal geschrieben wird, was Kosten und Zeit halbiert. Bei Apps, die Daten anzeigen, erfassen und abgleichen, ist der Geschwindigkeitsunterschied nicht sichtbar. Für Spiele und aufwendige Videobearbeitung ist React Native die falsche Wahl, und das sagen wir vorher."
+            "a": "Weil aus einer Codebasis die App für beide Systeme entsteht. Jede Korrektur und jede neue Version wird einmal umgesetzt statt getrennt für iOS und Android."
           },
           {
             "q": "Funktioniert die App ohne Internet?",
-            "a": "Ja, wo das Produkt es verlangt. Daten liegen auf dem Gerät und werden abgeglichen, sobald die Verbindung zurück ist. Wir klären auch, was passiert, wenn derselbe Datensatz an zwei Stellen geändert wurde — eine Frage, die vorher eine Antwort braucht und nicht hinterher."
+            "a": "Ja. Die Daten werden auf dem Gerät gespeichert und abgeglichen, sobald die Verbindung zurück ist. Bearbeiten mehrere Personen offline dieselben Daten auf verschiedenen Geräten, braucht es einen erweiterten Abgleich, der gesondert vereinbart wird."
           },
           {
-            "q": "Was, wenn Apple die App ablehnt?",
-            "a": "Das ist üblich und lösbar. Wir antworten auf die Beanstandung und reichen erneut ein, ohne zusätzliche Kosten. Meist geht es um Datenschutzangaben oder die Anmeldung, nicht um die App selbst."
+            "q": "Kann ich in der App Abonnements verkaufen?",
+            "a": "Ja, über In-App-Käufe auf beiden Systemen. Apple und Google behalten von jedem dieser Verkäufe 15 bis 30 % ein. Für physische Waren und Dienstleistungen kommt stattdessen die Kartenzahlung zum Einsatz, bei der die Stores keinen Anteil nehmen."
           }
         ]
       },
@@ -306,42 +306,42 @@
         },
         "process": [
           {
-            "title": "Vorlage oder leeres Blatt",
-            "body": "Zuerst wählen wir den Weg. Für eine Gestaltung von Grund auf fragen wir nach Farben und Ton, die Sie für den restlichen Tag schon gewählt haben."
+            "title": "Vorlage oder Maßanfertigung",
+            "body": "Sie wählen eine fertige Vorlage oder eine Einladung, die wir von Grund auf nach Ihrem Thema, Ihren Farben und Ihrer Geschichte gestalten."
           },
           {
-            "title": "Ihre Inhalte",
-            "body": "Namen, Datum, Ablauf, Orte und Fotos. Kein Text für die Geschichte oder die Wunschliste? Wir entwerfen ihn, Sie passen ihn an."
+            "title": "Ihre Angaben",
+            "body": "Sie schicken uns Namen, Datum, den Ablauf des Tages, die Orte und Fotos."
           },
           {
-            "title": "Erste Fassung als Link",
-            "body": "Sie öffnen die Einladung auf Ihrem eigenen Handy, genau so wie Ihre Gäste es tun werden. Wir ändern, bis sie Ihre ist."
+            "title": "Umsetzung und Korrekturen",
+            "body": "Wir setzen die Einladung um und schicken Ihnen den Link. Bei der Vorlage ist eine Korrekturrunde für den Text enthalten, bei der Maßanfertigung zwei Korrekturrunden."
           },
           {
-            "title": "Versand",
-            "body": "Der Link ist für WhatsApp und Viber vorbereitet, mit Titel und Bild, die in der Vorschau korrekt erscheinen."
+            "title": "Versand an die Gäste",
+            "body": "Sie erhalten einen Link, den Sie direkt über WhatsApp und Viber teilen können. Die Gäste öffnen ihn auf dem Handy und finden alles an einem Ort."
           }
         ],
         "faq": [
           {
             "q": "Was kostet eine digitale Hochzeitseinladung?",
-            "a": "Ab 40 € mit Vorlage, ab 180 € als Maßanfertigung. Ein Formular für die Zusage und eine eigene Domain kommen als Zusatz dazu, und 80 € decken weitere 12 Monate online."
+            "a": "Eine Einladung mit Vorlage gibt es ab 40 €, eine Maßanfertigung ab 180 €. Zu beiden lassen sich ein Zusage-Formular, eine Galerie für die Fotos der Gäste oder Hintergrundmusik hinzubuchen."
           },
           {
-            "q": "Wann geht die Seite online, und wie lange bleibt sie?",
-            "a": "Standardmäßig von einem Monat vor der Hochzeit bis eine Woche danach. Das Veröffentlichungsdatum wählen Sie selbst — versenden Sie früher, sagen Sie es gleich, denn das verschiebt den Beginn dieses Zeitraums."
+            "q": "Wie lange bleibt die Einladung online?",
+            "a": "Von einem Monat vor der Hochzeit bis eine Woche danach. Möchten Sie sie länger behalten, kosten weitere 12 Monate 80 €."
           },
           {
             "q": "Können Gäste ihr Kommen bestätigen?",
-            "a": "Ja, ein Formular für die Zusage gibt es als Zusatz. Die Antworten landen in einer einzigen Tabelle, mit Personenzahl und Hinweisen zum Essen, sodass nichts aus Nachrichten abgeschrieben werden muss."
+            "a": "Ja, mit dem Zusage-Formular als Zusatzleistung. Die Gäste tragen ihren Namen und die Personenzahl ein, und Sie sehen die vollständige Liste auf einer eigenen Seite. Menüwahl und Allergien lassen sich in dasselbe Formular aufnehmen."
           },
           {
             "q": "Was ist mit Gästen ohne Smartphone?",
-            "a": "Die Einladung öffnet sich in jedem Browser, der Link funktioniert am Rechner genauso gut. Für Gäste, die Papier brauchen, bereiten wir eine Druckfassung im selben Design vor."
+            "a": "Die Einladung öffnet sich in jedem Browser, der Link funktioniert also auch am Computer. Für alle, die lieber etwas in der Hand halten, können wir eine gedruckte Karte im selben Stil vorbereiten, mit einem QR-Code, der zur Einladung führt."
           },
           {
             "q": "Worin unterscheiden sich Vorlage und Maßanfertigung?",
-            "a": "Die Vorlage hat ein fertiges, erprobtes Layout und ist in ein bis zwei Tagen online. Die Maßanfertigung beginnt beim leeren Blatt: animierter Auftakt, Reihenfolge der Abschnitte und Kleinigkeiten richten sich nach Ihrem Tag, dazu zwei Sprachen und zwei Korrekturrunden."
+            "a": "Die Vorlage füllen wir mit Ihren Angaben und passen Farben und Schrift an, sodass sie in ein bis zwei Tagen online ist. Die Maßanfertigung entsteht von Grund auf: animierter Auftakt, Abschnitte nach dem Ablauf Ihres Tages, zwei Sprachen und zwei Korrekturrunden."
           }
         ]
       },
@@ -360,42 +360,42 @@
         ],
         "process": [
           {
-            "title": "Was auf die Karte kommt",
-            "body": "Wir streichen die Angaben, die nie jemand anruft oder abtippt. Weniger Zeilen heißt größere, besser lesbare Schrift."
+            "title": "Inhalt der Karte",
+            "body": "Wir klären, was auf die Karte soll: Name, Funktion, Kontaktdaten und Logo. Gestaltet werden beide Seiten."
           },
           {
             "title": "Zwei Richtungen",
-            "body": "Zwei wirklich verschiedene Vorschläge, nicht zwei Varianten desselben. Eine wählen wir gemeinsam und führen sie zu Ende."
+            "body": "Sie erhalten zwei unterschiedliche Gestaltungsvorschläge. Sie wählen einen aus, und wir stellen ihn mit zwei Korrekturrunden fertig."
           },
           {
             "title": "Papier und Veredelung",
-            "body": "Wir schlagen Grammatur und Veredelung passend zur Richtung vor: Prägung, Folie oder farbige Schnittkante — je mit einer Einschätzung, was sie beim Druck kostet."
+            "body": "Wir beraten Sie, welches Papier und welche Veredelung passen, zum Beispiel Prägung oder Folie."
           },
           {
-            "title": "Übergabe an die Druckerei",
-            "body": "PDF/X in CMYK mit Beschnitt und Schnittmarken, dazu eine Fassung für die E-Mail-Signatur. Jede Druckerei nimmt sie ohne Rückfragen."
+            "title": "Übergabe",
+            "body": "Sie erhalten druckfertige Dateien für jede Druckerei (PDF/X, CMYK), eine Version für Ihre E-Mail-Signatur und die Quelldateien."
           }
         ],
         "faq": [
           {
             "q": "Was kostet Visitenkarten-Design?",
-            "a": "Ab 70 €, fertig in zwei bis drei Tagen. Darin enthalten sind zwei Gestaltungsrichtungen, zwei Korrekturrunden und die Druckvorstufe. Den Druck zahlen Sie getrennt, direkt an die Druckerei."
+            "a": "Ab 70 €, fertig in zwei bis drei Tagen. Im Preis enthalten sind zwei Gestaltungsrichtungen, beide Seiten der Karte, zwei Korrekturrunden, druckfertige Dateien und die Quelldateien. Der Druck wird gesondert bezahlt."
           },
           {
             "q": "Drucken Sie die Karten auch?",
-            "a": "Nein. Wir machen Gestaltung und Druckvorstufe; den Druck beauftragen Sie bei einer Druckerei Ihrer Wahl. So zahlen Sie deren Preis ohne Aufschlag von uns und wählen das Papier in der Hand — bei einer Veredelung wie Prägung die einzige ernsthafte Methode."
+            "a": "Nein, wir übernehmen Gestaltung und Druckvorbereitung. Die Dateien sind für jede Druckerei bereit, und wir beraten Sie bei der Wahl von Papier und Veredelung."
           },
           {
             "q": "Brauche ich ein Logo?",
-            "a": "Für eine Karte reicht ein Logo, sofern wir es als Vektor bekommen (AI, EPS, SVG oder PDF). Haben Sie nur ein Bild in niedriger Auflösung, zeichnen wir es gegen Aufpreis nach — im Druck sieht man den Unterschied sofort."
+            "a": "Nein. Wenn Sie keines haben, können wir es entwerfen, und ein vorhandenes Logo in schlechter Qualität zeichnen wir so nach, dass es scharf gedruckt wird. Beides wird gesondert berechnet."
           },
           {
-            "q": "Was, wenn mir keine der Richtungen gefällt?",
-            "a": "Wir fragen, was nicht gepasst hat, und zeichnen neu; das ist eine der zwei Korrekturrunden. Zwei Richtungen gibt es gerade deshalb, damit früh klar wird, wohin es nicht gehen soll."
+            "q": "Können Sie Karten für das ganze Team erstellen?",
+            "a": "Ja. Wir passen dasselbe Design für jede Person mit eigenem Namen und eigener Funktion an, schon ab zwei Personen. Schicken Sie uns am besten die vollständige Liste auf einmal."
           },
           {
             "q": "Bekomme ich die Quelldateien?",
-            "a": "Ja, ohne Aufpreis. Die Quelldateien gehören Ihnen, eine spätere Änderung kann also jeder machen — auch jemand anderes, falls wir eines Tages nicht in der Nähe sind."
+            "a": "Ja, ohne Aufpreis. Die Quelldateien gehören Ihnen."
           }
         ]
       },
@@ -414,42 +414,42 @@
         ],
         "process": [
           {
-            "title": "Eine Botschaft",
-            "body": "Was muss der Leser behalten, wenn er nur eines behält? Alles Weitere ordnet sich darunter."
+            "title": "Die Hauptbotschaft",
+            "body": "Zuerst legen wir fest, was der Leser behalten soll. Alles andere ordnen wir darunter an."
           },
           {
-            "title": "Hierarchie und Format",
-            "body": "Die Hauptbotschaft liest sich aus drei Metern, die Details aus der Nähe. Das Format folgt der Frage, ob der Flyer in die Hand, an die Wand oder in den Briefkasten geht."
+            "title": "Hierarchie",
+            "body": "Die Hauptbotschaft setzen wir so, dass sie aus drei Metern lesbar ist, die Details so, dass man sie aus der Nähe liest."
           },
           {
-            "title": "Text und Satz",
-            "body": "Haben Sie keinen Text, schreiben wir ihn und kürzen, bis er ohne Gedränge passt. Weißraum ist keine Leere, sondern das, was die Botschaft sichtbar macht."
+            "title": "Text",
+            "body": "Wenn Sie keinen Text haben, schreiben wir ihn."
           },
           {
-            "title": "Druck und soziale Netzwerke",
-            "body": "Die Druckdatei und eine eigene Webfassung, in den Seitenverhältnissen, die Instagram und Facebook nicht beschneiden."
+            "title": "Formate und Übergabe",
+            "body": "Sie erhalten alle Formate von A6 bis A3 auf einmal, Dateien für Druck und Web sowie eine Version für soziale Netzwerke."
           }
         ],
         "faq": [
           {
             "q": "Was kostet Flyer-Design?",
-            "a": "Ab 80 €, fertig in drei bis vier Tagen. Enthalten sind Konzept, Satz, zwei Korrekturrunden und eine Fassung für soziale Netzwerke. Den Druck beauftragen Sie selbst."
+            "a": "Ab 80 €, fertig in drei bis vier Tagen. Im Preis enthalten sind alle Formate von A6 bis A3, Dateien für Druck und Web, eine Version für soziale Netzwerke, zwei Korrekturrunden und die Quelldateien."
           },
           {
-            "q": "Welche Formate machen Sie?",
-            "a": "Alles von A6 bis A3, auch dreifach gefalzte Broschüren und Plakate. Brauchen Sie etwas Größeres als A3, sagen Sie es vorher: das ändert die Druckvorstufe, nicht den Gestaltungspreis."
+            "q": "Gestalten Sie auch Broschüren, Plakate und Roll-ups?",
+            "a": "Ja. Mehrseitige Faltbroschüren, Roll-up-Banner, Großplakate, Speisekarten und Grafiken für Fahrzeuge oder Schaufenster sind eigene Aufträge, weil sie ein anderes Format und eine andere Druckvorbereitung brauchen."
           },
           {
             "q": "Können Sie den Text schreiben?",
-            "a": "Können wir, und meistens tun wir es auch. Sagen Sie uns, was angeboten wird, für wen und bis wann, und wir schlagen Überschrift und Unterzeile vor. Der Text durchläuft dieselben zwei Korrekturrunden wie die Gestaltung."
+            "a": "Ja. Sagen Sie uns, was Sie anbieten, für wen und wie lange das Angebot gilt, und wir schlagen Überschrift und Text vor."
           },
           {
-            "q": "Bekomme ich eine Fassung für soziale Netzwerke?",
-            "a": "Ja, sie ist enthalten. Derselbe Inhalt, gesetzt fürs Quadrat und für die Story — ein Flyer im A5-Verhältnis hat auf Instagram sonst links und rechts leere Streifen und verliert die halbe Fläche."
+            "q": "Bekomme ich eine Version für soziale Netzwerke?",
+            "a": "Ja, eine Version für soziale Netzwerke ist im Preis enthalten. Ein komplettes Set mit Beitrag, Story und Titelbild oder eine animierte Version für Reels wird gesondert umgesetzt."
           },
           {
-            "q": "Wie viel Vorlauf brauchen Sie vor dem Termin?",
-            "a": "Die Gestaltung dauert drei bis vier Tage, der Druck braucht einige Werktage mehr. Melden Sie sich mindestens zwei Wochen vorher, wenn der Flyer am Veranstaltungstag in der Hand sein muss."
+            "q": "Wie schnell kann ein Flyer fertig sein?",
+            "a": "In der Regel in drei bis vier Tagen. Wenn es eilt, bereiten wir die Dateien gegen Aufpreis innerhalb von 24 Stunden vor, sofern Text und Material bereitstehen."
           }
         ]
       }

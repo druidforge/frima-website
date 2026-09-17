@@ -119,42 +119,42 @@
         ],
         "process": [
           {
-            "title": "Popis stranica",
-            "body": "Pitamo što nudite i kome. Iz toga izlazi popis stranica — obično četiri, a ne dvanaest."
+            "title": "Razgovor",
+            "body": "Prolazimo što nudite i kome se obraćate, pa slažemo popis stranica. U osnovnu cijenu ulaze četiri, na primjer naslovna, o nama, usluge i kontakt."
           },
           {
-            "title": "Tekst prije dizajna",
-            "body": "Prvo pišemo tekst, pa onda crtamo. Obrnuti redoslijed uvijek ostavi prazne okvire koje netko poslije mora popuniti."
+            "title": "Tekst i dizajn",
+            "body": "Tekst pišemo mi, a ako ga već imate, ugradimo vaš. Dizajn prilagođavamo vašoj djelatnosti."
           },
           {
-            "title": "Izrada u pregledniku",
-            "body": "Prvu verziju otvarate na pravoj adresi i na svom mobitelu, dok još mijenjamo. Nema slike koja poslije izgleda drukčije."
+            "title": "Izrada",
+            "body": "Stranica se brzo učitava i dobro izgleda na mobitelu. Postavljamo i strukturirane podatke koje pretraživači čitaju."
           },
           {
             "title": "Objava",
-            "body": "Domena, certifikat, analitika i Search Console. Pokazujemo vam kako sami mijenjate tekst i cijene."
+            "body": "Objavljujemo stranicu i prijavljujemo je Googleu. Uključeni su mjerenje posjeta, traka o kolačićima i obvezne pravne stranice."
           }
         ],
         "faq": [
           {
             "q": "Koliko košta izrada web stranice?",
-            "a": "Od 700 € za stranicu do četiri podstranice, s tekstom, dizajnom i kodom. Cijenu diže webshop, rezervacije ili više jezika. Nakon nekoliko rečenica o projektu javljamo se s rasponom, ne s jednim brojem iz zraka."
+            "a": "Osnovna cijena je 700 € i uključuje do četiri stranice, tekst, dizajn, izradu i prijavu Googleu. Dodatne stranice, više jezika, rezervacije ili web trgovina naplaćuju se zasebno. Pošaljite nam nekoliko rečenica o projektu i javit ćemo vam okvirnu cijenu."
           },
           {
             "q": "Koliko traje izrada web stranice?",
-            "a": "Dva do četiri tjedna od trenutka kad imamo sadržaj. Najčešći razlog kašnjenja nisu dizajn ni kod nego fotografije i tekst, pa ih tražimo prvi dan, a ne zadnji."
+            "a": "Obično dva do četiri tjedna. Rok ovisi i o tome koliko brzo od vas dobijemo podatke i fotografije koje su nam potrebne."
           },
           {
-            "q": "Što je s domenom i hostingom?",
-            "a": "Domena ide na vaše ime i ostaje vaša i ako jednog dana odete drugdje. Mjesečnih 20 € pokriva hosting, certifikat i nadzor. Imate li domenu već, prenosimo stranicu na nju bez prekida rada."
+            "q": "Što pokriva mjesečno održavanje?",
+            "a": "Server, domenu, SSL certifikat, sigurnosne kopije i sigurnosna ažuriranja. To je potrebno svakoj stranici da bi bila online. Ako stranica koristi bazu podataka, na primjer za rezervacije ili blog, mjesečni iznos je nešto veći."
           },
           {
-            "q": "Mogu li poslije sam mijenjati sadržaj?",
-            "a": "Za tekst, slike i cijene dobivate pristup i uputu na jednoj stranici. Novu podstranicu ili drukčiju strukturu radimo mi, jer to više nije unos sadržaja nego zahvat u strukturu."
+            "q": "Mogu li sam mijenjati tekst i slike?",
+            "a": "Možete, ako uz stranicu uzmete sustav za uređivanje sadržaja. Tada se prijavite i sami mijenjate tekst, slike i cijene, bez programera. Bez njega izmjene radimo mi."
           },
           {
             "q": "Kada će se stranica vidjeti na Googleu?",
-            "a": "Tehnički je spremna na dan objave: sitemap, strukturirani podaci i prijava u Search Console. Pojavljivanje ovisi o konkurenciji za vaše pojmove, a nove domene Google indeksira postupno, obično kroz nekoliko tjedana."
+            "a": "Stranicu prijavljujemo Googleu na dan objave. Koliko brzo će se pojaviti u rezultatima ovisi o Googleu i o konkurenciji za vaše pojmove, a nove domene obično trebaju nekoliko tjedana."
           }
         ]
       },
@@ -173,42 +173,42 @@
         ],
         "process": [
           {
-            "title": "Kako posao ide danas",
-            "body": "Sjednemo s ljudima koji ga rade svaki dan. Zanimaju nas iznimke — one su pola posla, a nikad nisu u opisu."
+            "title": "Analiza načina rada",
+            "body": "Prvo razložimo kako posao sada ide: tko što radi, gdje nastaju podaci i gdje se gubi vrijeme."
           },
           {
-            "title": "Podaci i prototip",
-            "body": "Prije koda slažemo što se pamti i tko što smije vidjeti. Klikabilan prototip lovi krivi tijek dok je promjena još besplatna."
+            "title": "Korisnici i podaci",
+            "body": "Postavljamo prijavu s ulogama i ovlastima te bazu podataka u kojoj aplikacija čuva sve zapise."
           },
           {
-            "title": "Tok po tok",
-            "body": "Svaki dio dobivate na probu čim radi, ne na kraju. Kriva pretpostavka u drugom tjednu je izmjena, u zadnjem je novi projekt."
+            "title": "Izrada",
+            "body": "Izrađujemo sučelje i API, a najvažnije dijelove aplikacije pokrivamo automatskim testovima."
           },
           {
-            "title": "Preseljenje",
-            "body": "Prenosimo postojeće podatke i puštamo stari postupak da radi usporedno dok ne prestane trebati. Nadzor javlja grešku prije korisnika."
+            "title": "Objava i nadzor",
+            "body": "Aplikaciju objavljujemo i postavljamo nadzor, pa odmah znamo ako nešto prestane raditi."
           }
         ],
         "faq": [
           {
             "q": "Koliko košta izrada web aplikacije?",
-            "a": "Od 2.500 € za jedan zaokružen tijek rada — recimo rezervacije s korisničkim računima i pregledom. Cijena prati broj tokova i integracija, pa je procjenu moguće dati tek kad znamo koje korake aplikacija preuzima."
+            "a": "Osnovna cijena je 2.500 €, a izrada traje četiri do šest tjedana. U to ulaze analiza načina rada, prijava s ulogama, baza podataka, API, testovi i objava. Plaćanja, povezivanje s drugim sustavima ili AI funkcije dodaju se prema potrebi."
           },
           {
-            "q": "Radi li s programom koji već koristimo?",
-            "a": "Uglavnom da. Ima li sustav API, spajamo se na njega; nema li ga, radimo uvoz i izvoz datoteka po dogovorenom rasporedu. Što je izvedivo provjeravamo prije ponude, ne poslije."
+            "q": "Može li se aplikacija povezati s programima koje već koristimo?",
+            "a": "Može, ako taj program to omogućuje. Prije ponude provjerimo ima li vaš sustav, na primjer knjigovodstveni program, CRM ili blagajna, otvoreno sučelje preko kojeg se aplikacija može spojiti."
           },
           {
-            "q": "Tko je vlasnik koda?",
-            "a": "Vi. Kod predajemo u vaš repozitorij, s bazom i uputama za postavljanje. Aplikaciju može preuzeti drugi programer bez razgovora s nama."
+            "q": "Može li aplikacija izdavati e-račune?",
+            "a": "Može. Aplikaciju spajamo na ovlaštenog informacijskog posrednika, pa se e-računi izdaju i fiskaliziraju u skladu s propisima. To je dodatak osnovnoj cijeni."
           },
           {
-            "q": "Što pokriva mjesečnih 30 €?",
-            "a": "Poslužitelj, sigurnosne kopije, nadzor i sigurnosna ažuriranja knjižnica. Nove funkcije procjenjujemo zasebno i prije nego što ih počnemo raditi, pa mjesečni iznos ostaje predvidiv."
+            "q": "Možete li prenijeti podatke iz Excela ili starog programa?",
+            "a": "Možemo. Podatke očistimo i uvezemo u novu aplikaciju. Prije ponude tražimo uzorak datoteke, jer o stanju podataka ovisi koliko posla prijenos traži."
           },
           {
-            "q": "Koliko korisnika aplikacija podnosi?",
-            "a": "Za interni alat veličina tima nije ograničenje — deset ili dvjesto ljudi je ista arhitektura. Očekujete li tisuće istovremenih korisnika, to je drukčija postavka i drukčija cijena, pa to kažemo prije početka."
+            "q": "Što nakon objave?",
+            "a": "Mjesečno održavanje pokriva server, sigurnosne kopije, ažuriranja i popravke grešaka. Nove funkcionalnosti nakon predaje najprije procijenimo, a zatim naplaćujemo zasebno."
           }
         ]
       },
@@ -227,42 +227,42 @@
         ],
         "process": [
           {
-            "title": "Što ide u prvo izdanje",
-            "body": "Odlučujemo što ulazi, a što čeka. Aplikacija koja jednu stvar radi dobro prolazi recenziju brže od one koja pet stvari radi napola."
+            "title": "Sučelje za iOS i Android",
+            "body": "Sučelje crtamo za obje platforme, tako da se na iPhoneu i na Androidu ponaša onako kako korisnici tog sustava očekuju."
           },
           {
-            "title": "Sučelje za oba sustava",
-            "body": "iOS i Android očekuju različite geste i navigaciju. Crtamo jednom, ali provjeravamo na oba uređaja prije prvog retka koda."
+            "title": "Jedan kod",
+            "body": "Aplikaciju gradimo u React Nativeu iz jednog koda, pa se ispravci i nove verzije rade jednom za oba sustava."
           },
           {
-            "title": "Aplikacija u vašim rukama",
-            "body": "Verzije šaljemo kroz TestFlight i internu probu na Google Playu. Aplikaciju koristite tjednima prije nego što je itko drugi vidi."
+            "title": "Rad bez interneta",
+            "body": "Aplikacija radi i bez veze i usklađuje podatke kad se veza vrati. Korisnicima može slati push obavijesti."
           },
           {
             "title": "Objava",
-            "body": "Opis, snimke zaslona, izjava o privatnosti i recenzija — vodimo to mi. Ispravke poslije objave pišu se jednom za obje platforme."
+            "body": "Objavljujemo je u App Storeu i Google Playu. Ugrađujemo analitiku i prijavu rušenja, da probleme vidimo prije nego što ih korisnici prijave."
           }
         ],
         "faq": [
           {
             "q": "Koliko košta izrada mobilne aplikacije?",
-            "a": "Od 4.000 € za prvo izdanje za iOS i Android iz jedne baze koda. Plaćanja u aplikaciji, offline rad i integracije s tuđim sustavima dižu iznos, pa ih vrijedi spomenuti u prvom mailu."
+            "a": "Osnovna cijena je 4.000 €, a izrada traje šest do osam tjedana. Dobivate jednu aplikaciju za iOS i Android, s radom bez interneta, push obavijestima i objavom u obje trgovine. Plaćanja, karte, kamera ili AI funkcije dodaju se prema potrebi."
           },
           {
             "q": "Treba li mi vlastiti developerski račun?",
-            "a": "Ne mora. Objavljujemo preko našeg Apple računa, a 100 € godišnje pokriva račun i objavu. Želite li aplikaciju u trgovini na svoje ime, otvarate vlastiti račun i to dogovaramo na početku, ne pred objavu."
+            "a": "Ne treba. Aplikaciju objavljujemo preko našeg Apple developerskog računa. Ako želite da u trgovini bude na vaše ime, dogovorit ćemo to na početku."
           },
           {
             "q": "Zašto React Native, a ne dvije zasebne aplikacije?",
-            "a": "Zato što se ispravak piše jednom umjesto dvaput, što prepolovi i cijenu i vrijeme. Za aplikacije koje prikazuju, unose i sinkroniziraju podatke razlika u brzini nije vidljiva. Za igre i tešku obradu videa React Native nije pravi izbor i to kažemo unaprijed."
+            "a": "Zato što iz jednog koda nastaje aplikacija za oba sustava. Svaki ispravak i svaka nova verzija rade se jednom, umjesto zasebno za iOS i za Android."
           },
           {
             "q": "Radi li aplikacija bez interneta?",
-            "a": "Da, kad to proizvod traži. Podatke spremamo na uređaj i sinkroniziramo kad se veza vrati. Dogovorimo i što se događa ako se isti zapis promijenio na dva mjesta — to je pitanje na koje odgovor mora postojati prije nego što se dogodi."
+            "a": "Radi. Podaci se spremaju na uređaj i usklađuju kad se veza vrati. Ako više ljudi bez veze mijenja iste podatke na različitim uređajima, za to je potrebno naprednije usklađivanje, koje se dogovara zasebno."
           },
           {
-            "q": "Što ako Apple odbije aplikaciju?",
-            "a": "Uobičajeno je i rješivo. Odgovaramo na primjedbu i šaljemo ponovno, bez dodatne naplate. Najčešće se radi o izjavi o privatnosti ili načinu prijave, a ne o samoj aplikaciji."
+            "q": "Mogu li u aplikaciji naplaćivati pretplate?",
+            "a": "Možete, preko kupnje u aplikaciji na oba sustava. Apple i Google od svake takve prodaje zadržavaju 15 do 30 %. Za fizičku robu i usluge koristi se plaćanje karticom, gdje trgovine ne uzimaju taj postotak."
           }
         ]
       },
@@ -306,42 +306,42 @@
         },
         "process": [
           {
-            "title": "Šablona ili prazna stranica",
-            "body": "Prvo biramo put. Za dizajn od nule tražimo boje i ton koje ste već odabrali za ostatak dana."
+            "title": "Šablona ili po mjeri",
+            "body": "Birate gotovu šablonu ili pozivnicu koju crtamo od nule prema vašoj temi, bojama i priči."
           },
           {
-            "title": "Vaš sadržaj",
-            "body": "Imena, datum, raspored, lokacije i fotografije. Nemate tekst za priču ili popis želja? Predlažemo ga mi, vi ga mijenjate."
+            "title": "Vaši podaci",
+            "body": "Šaljete imena, datum, raspored dana, lokacije i fotografije."
           },
           {
-            "title": "Prva verzija na linku",
-            "body": "Pozivnicu otvarate na svom mobitelu, točno onako kako će je otvoriti gosti. Mijenjamo dok ne bude vaša."
+            "title": "Izrada i izmjene",
+            "body": "Složimo pozivnicu i pošaljemo vam link. Šablonska uključuje jedan krug izmjena teksta, a pozivnica po mjeri dva kruga izmjena."
           },
           {
-            "title": "Slanje",
-            "body": "Link je spreman za WhatsApp i Viber, s naslovom i slikom koji se ispravno prikažu u pretpregledu."
+            "title": "Slanje gostima",
+            "body": "Dobivate jedan link spreman za WhatsApp i Viber. Gosti ga otvore na mobitelu i sve informacije imaju na jednom mjestu."
           }
         ],
         "faq": [
           {
             "q": "Koliko košta digitalna pozivnica za vjenčanje?",
-            "a": "Šablonska od 40 €, pozivnica po mjeri od 180 €. Obrazac za potvrdu dolaska i vlastita domena dolaze kao dodatak, a dodatnih 12 mjeseci online pokriva 80 €."
+            "a": "Šablonska pozivnica stoji od 40 €, a pozivnica po mjeri od 180 €. Uz obje se mogu dodati obrazac za potvrdu dolaska, galerija fotografija gostiju ili glazba u pozadini."
           },
           {
-            "q": "Kada pozivnica ide online i dokad ostaje?",
-            "a": "Standardno od mjesec dana prije vjenčanja do tjedan nakon. Datum objave birate sami — ako šaljete ranije, recite odmah, jer to mijenja početak tog razdoblja."
+            "q": "Koliko dugo je pozivnica online?",
+            "a": "Od mjesec dana prije vjenčanja do tjedan dana nakon njega. Ako je želite zadržati dulje, dodatnih 12 mjeseci stoji 80 €."
           },
           {
             "q": "Mogu li gosti potvrditi dolazak?",
-            "a": "Da, obrazac za potvrdu dolaska dolazi kao dodatak. Odgovore vidite u jednoj tablici, s brojem osoba i napomenama o hrani — bez prepisivanja iz poruka."
+            "a": "Mogu, uz dodatak obrasca za potvrdu dolaska. Gosti upisuju ime, prezime i broj osoba, a vi cijeli popis vidite na posebnoj stranici. Izbor jela i alergije mogu se dodati u isti obrazac."
           },
           {
             "q": "Što s gostima koji ne koriste pametni telefon?",
-            "a": "Pozivnica se otvara u svakom pregledniku, pa link jednako radi na računalu. Za goste koji trebaju papir pripremamo verziju za ispis, u istom dizajnu."
+            "a": "Pozivnica se otvara u svakom pregledniku, pa link radi i na računalu. Za one koji ipak žele nešto u ruci možemo pripremiti tiskanu karticu u istom stilu, s QR kodom koji vodi na pozivnicu."
           },
           {
             "q": "Koja je razlika između šablonske i pozivnice po mjeri?",
-            "a": "Šablona ima gotov i testiran raspored, pa je online za dan-dva. Po mjeri crtamo od prazne stranice: animirani uvod, redoslijed sekcija i sitnice slažemo prema vašem danu, uz dva jezika i dva kruga izmjena."
+            "a": "Šablonsku ispunimo vašim podacima i prilagodimo joj boje i font, pa je online za dan-dva. Pozivnicu po mjeri crtamo od nule: animirani uvod, raspored sekcija prema vašem danu, dva jezika i dva kruga izmjena."
           }
         ]
       },
@@ -360,42 +360,42 @@
         ],
         "process": [
           {
-            "title": "Što ide na karticu",
-            "body": "Mičemo podatke koje nitko nikad ne nazove ni ne upiše. Manje redaka znači veći i čitljiviji tekst."
+            "title": "Sadržaj vizitke",
+            "body": "Dogovaramo što ide na vizitku: ime, funkcija, kontakti i logotip. Dizajniramo obje strane."
           },
           {
             "title": "Dva smjera",
-            "body": "Dva različita prijedloga, ne dvije varijante istoga. Jedan biramo zajedno i njega dovodimo do kraja."
+            "body": "Dobivate dva različita prijedloga dizajna. Odaberete jedan, a mi ga dovršimo uz dva kruga izmjena."
           },
           {
             "title": "Papir i dorada",
-            "body": "Predlažemo gramaturu i obradu koja pristaje smjeru: reljef, foliju ili obrezani rub. Uz svaku ide procjena koliko diže tisak."
+            "body": "Savjetujemo koji papir i koju doradu odabrati, na primjer reljef ili foliju."
           },
           {
-            "title": "Predaja tiskari",
-            "body": "PDF/X u CMYK-u, s napustima i oznakama reza, plus verzija za potpis u e-pošti. Prima ih svaka tiskara bez pitanja."
+            "title": "Predaja",
+            "body": "Dobivate datoteke spremne za bilo koju tiskaru (PDF/X, CMYK), verziju za potpis u e-pošti i izvorne datoteke."
           }
         ],
         "faq": [
           {
             "q": "Koliko košta dizajn vizitki?",
-            "a": "Od 70 €, gotovo za dva do tri dana. U to ulaze dva smjera dizajna, dva kruga izmjena i priprema za tisak. Tisak plaćate zasebno, izravno tiskari."
+            "a": "Od 70 €, a gotovo je za dva do tri dana. Cijena uključuje dva smjera dizajna, obje strane vizitke, dva kruga izmjena, pripremu za tisak i izvorne datoteke. Tisak se plaća zasebno."
           },
           {
             "q": "Tiskate li vi vizitke?",
-            "a": "Ne. Radimo dizajn i pripremu, a tisak naručujete kod tiskare po izboru. Tako plaćate njihovu cijenu bez naše marže i papir birate uživo, što je za doradu poput reljefa jedina ozbiljna metoda."
+            "a": "Ne, radimo dizajn i pripremu za tisak. Datoteke su spremne za bilo koju tiskaru, a savjetujemo vam i koji papir i doradu odabrati."
           },
           {
             "q": "Trebam li imati logotip?",
-            "a": "Za vizitku je dovoljan, ako ga imamo u vektoru (AI, EPS, SVG ili PDF). Imate li samo sliku niske rezolucije, precrtavamo ga u vektor uz doplatu — na tisku se razlika vidi odmah."
+            "a": "Ne morate. Ako ga nemate, možemo ga izraditi, a postojeći logotip loše kvalitete možemo precrtati da se oštro tiska. Oboje se naplaćuje zasebno."
           },
           {
-            "q": "Što ako mi se nijedan smjer ne svidi?",
-            "a": "Pitamo što nije sjelo i crtamo iznova; to je jedan od dva kruga izmjena. Dva smjera i postoje zato da se rano vidi u kojem smjeru ne treba ići."
+            "q": "Možete li napraviti vizitke za cijeli tim?",
+            "a": "Možemo. Isti dizajn prilagodimo svakoj osobi, s njezinim imenom i funkcijom, već od dvije osobe. Pošaljite nam cijeli popis odjednom."
           },
           {
             "q": "Dobivam li izvorne datoteke?",
-            "a": "Da, bez dodatne naplate. Izvorne datoteke ostaju vama, pa kasniju izmjenu može napraviti bilo tko — i netko drugi, ako nas jednog dana ne bude u blizini."
+            "a": "Da, bez doplate. Izvorne datoteke ostaju vaše."
           }
         ]
       },
@@ -414,42 +414,42 @@
         ],
         "process": [
           {
-            "title": "Jedna poruka",
-            "body": "Što čitatelj mora zapamtiti ako zapamti samo jedno? Sve ostalo se slaže ispod toga."
+            "title": "Glavna poruka",
+            "body": "Prvo odredimo što čitatelj mora zapamtiti. Sve ostalo slažemo ispod toga."
           },
           {
-            "title": "Hijerarhija i format",
-            "body": "Glavna poruka čita se s tri metra, detalji izbliza. Format prati to dijeli li se letak u ruke, ide na zid ili u sandučić."
+            "title": "Hijerarhija",
+            "body": "Glavnu poruku postavljamo tako da se pročita s tri metra, a detalje tako da se čitaju izbliza."
           },
           {
-            "title": "Tekst i prijelom",
-            "body": "Nemate tekst — pišemo ga i skraćujemo dok ne stane bez gužve. Bijeli prostor nije praznina nego ono što poruku čini vidljivom."
+            "title": "Tekst",
+            "body": "Ako tekst nemate, napišemo ga mi."
           },
           {
-            "title": "Tisak i mreže",
-            "body": "Priprema za tisak i zasebna verzija za web, u omjerima koje Instagram i Facebook ne režu."
+            "title": "Formati i predaja",
+            "body": "Dobivate sve formate od A6 do A3 odjednom, pripremu za tisak i za web te jednu verziju za društvene mreže."
           }
         ],
         "faq": [
           {
             "q": "Koliko košta dizajn letaka?",
-            "a": "Od 80 €, gotovo za tri do četiri dana. U cijeni su koncept, prijelom, dva kruga izmjena i verzija za društvene mreže. Tisak naručujete sami."
+            "a": "Od 80 €, a gotovo je za tri do četiri dana. Cijena uključuje sve formate od A6 do A3, pripremu za tisak i za web, jednu verziju za društvene mreže, dva kruga izmjena i izvorne datoteke."
           },
           {
-            "q": "Koje formate radite?",
-            "a": "Sve od A6 do A3, uključujući trodijelne brošure i plakate. Trebate li nešto veće od A3, recite prije početka: to mijenja pripremu, ne cijenu dizajna."
+            "q": "Radite li brošure, plakate i roll-up bannere?",
+            "a": "Radimo. Brošure s više krila, roll-up banneri, veliki plakati, jelovnici i grafike za vozila ili izloge rade se kao zaseban posao, jer imaju drugačiji format i pripremu."
           },
           {
             "q": "Možete li napisati tekst?",
-            "a": "Možemo, i najčešće pišemo. Recite nam što se nudi, kome i dokad, a mi predlažemo naslov i podnaslov. Tekst prolazi kroz iste dvije runde izmjena kao i dizajn."
+            "a": "Možemo. Recite nam što nudite, kome i do kada ponuda vrijedi, a mi predložimo naslov i tekst."
           },
           {
             "q": "Dobivam li verziju za društvene mreže?",
-            "a": "Da, uključena je. Isti sadržaj prelomljen za kvadrat i za priču, jer letak u A5 omjeru na Instagramu ostane s prazninama sa strane i izgubi pola površine."
+            "a": "Da, jedna verzija za društvene mreže uključena je u cijenu. Cijeli set za objavu, priču i naslovnu sliku ili animirana verzija za reelove rade se zasebno."
           },
           {
-            "q": "Koliko vremena treba prije događaja?",
-            "a": "Dizajn je gotov za tri do četiri dana, tisak traži još nekoliko radnih dana. Javite se barem dva tjedna prije ako letak mora biti u rukama na dan događaja."
+            "q": "Koliko brzo letak može biti gotov?",
+            "a": "Uobičajeno za tri do četiri dana. Kad je hitno, pripremu možemo napraviti unutar 24 sata uz doplatu, ako su tekst i materijali spremni."
           }
         ]
       }
