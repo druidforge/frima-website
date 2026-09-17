@@ -123,16 +123,16 @@
             "body": "Wir besprechen, was Sie anbieten und wen Sie ansprechen, und stellen daraus die Seitenliste zusammen. Vier Seiten sind im Grundpreis enthalten, zum Beispiel Startseite, Über uns, Leistungen und Kontakt."
           },
           {
-            "title": "Text und Gestaltung",
-            "body": "Die Texte schreiben wir, oder wir übernehmen Ihre, wenn Sie schon welche haben. Die Gestaltung passen wir an Ihre Branche an."
-          },
-          {
             "title": "Umsetzung",
             "body": "Die Website lädt schnell und funktioniert gut auf dem Smartphone. Außerdem hinterlegen wir strukturierte Daten, die Suchmaschinen auslesen."
           },
           {
             "title": "Veröffentlichung",
             "body": "Wir veröffentlichen die Website und melden sie bei Google an. Besucherstatistik, Cookie-Hinweis und die vorgeschriebenen Rechtsseiten sind enthalten."
+          },
+          {
+            "title": "Wartung",
+            "body": "Nach der Veröffentlichung kümmern wir uns um Server, Domain, SSL-Zertifikat, Datensicherungen und Sicherheitsupdates."
           }
         ],
         "faq": [

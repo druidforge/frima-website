@@ -123,16 +123,16 @@
             "body": "Prolazimo što nudite i kome se obraćate, pa slažemo popis stranica. U osnovnu cijenu ulaze četiri, na primjer naslovna, o nama, usluge i kontakt."
           },
           {
-            "title": "Tekst i dizajn",
-            "body": "Tekst pišemo mi, a ako ga već imate, ugradimo vaš. Dizajn prilagođavamo vašoj djelatnosti."
-          },
-          {
             "title": "Izrada",
             "body": "Stranica se brzo učitava i dobro izgleda na mobitelu. Postavljamo i strukturirane podatke koje pretraživači čitaju."
           },
           {
             "title": "Objava",
             "body": "Objavljujemo stranicu i prijavljujemo je Googleu. Uključeni su mjerenje posjeta, traka o kolačićima i obvezne pravne stranice."
+          },
+          {
+            "title": "Održavanje",
+            "body": "Nakon objave brinemo o serveru, domeni, SSL certifikatu, sigurnosnim kopijama i sigurnosnim ažuriranjima."
           }
         ],
         "faq": [

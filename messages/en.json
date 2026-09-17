@@ -123,16 +123,16 @@
             "body": "We go through what you offer and who it is for, then put together the list of pages. Four are included in the base price, for example home, about, services and contact."
           },
           {
-            "title": "Copy and design",
-            "body": "We write the copy, or build in yours if you already have it. The design is tailored to your line of business."
-          },
-          {
             "title": "Build",
             "body": "The site loads quickly and works well on phones. We also add the structured data that search engines read."
           },
           {
             "title": "Launch",
             "body": "We publish the site and submit it to Google. Visitor analytics, a cookie banner and the required legal pages are included."
+          },
+          {
+            "title": "Maintenance",
+            "body": "After launch we look after the server, domain, SSL certificate, backups and security updates."
           }
         ],
         "faq": [
