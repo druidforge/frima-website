@@ -48,6 +48,13 @@ export const routing = defineRouting({
       en: "/privacy",
       de: "/datenschutz",
     },
+    // One privacy policy per app/game (e.g. /en/privacy/yeet-the-goober); the
+    // slug is the same in every language. Registry: lib/apps.ts.
+    "/privacy/[app]": {
+      hr: "/privatnost/[app]",
+      en: "/privacy/[app]",
+      de: "/datenschutz/[app]",
+    },
     "/cookies": {
       hr: "/kolacici",
       en: "/cookie-policy",

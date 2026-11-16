@@ -51,6 +51,10 @@
     "impressum": {
       "title": "Impresum",
       "description": "Podaci o nositelju obrta, registraciji i kontaktu za Druid Forge, sukladno hrvatskom i njemačkom pravu."
+    },
+    "appPrivacy": {
+      "title": "{app} – politika privatnosti",
+      "description": "Kako mobilna igra {app} postupa s vašim podacima."
     }
   },
   "home": {
@@ -653,6 +657,34 @@
       "s4Title": "Upravljanje putem preglednika",
       "s4Body": "Kolačiće možete brisati i blokirati i u postavkama preglednika. Ako blokirate sve kolačiće, dio stranice neće raditi ispravno — primjerice pamćenje odabranog jezika.",
       "openSettings": "Otvori postavke kolačića"
+    },
+    "apps": {
+      "yeetTheGoober": {
+        "title": "Politika privatnosti – Yeet the Goober",
+        "intro": "Ova politika objašnjava koji se osobni podaci obrađuju kada igrate {app}, mobilnu igru koju izdaje {legalName}, zašto se obrađuju i koja prava imate prema Općoj uredbi o zaštiti podataka (GDPR).",
+        "s1Title": "Voditelj obrade",
+        "s1Body": "Voditelj obrade je {legalName}, vl. {owner}, {street}, {postalCode} {city}, Hrvatska, OIB {oib}, PDV ID {vatId}. Za sva pitanja o vašim podacima u igri {app} pišite na {email}.",
+        "s2Title": "Što igra sprema na vašem mobitelu",
+        "s2Body": "{app} nema korisničke račune ni prijavu. Vaš napredak (visine, zlato, nadogradnje, otključane mape i odjeća, postignuća), postavke i vaš izbor o oglasima spremaju se samo na vašem uređaju. Mi ih nikada ne primamo. Brišu se kada deinstalirate igru ili obrišete njezine podatke.",
+        "s3Title": "Oglasi",
+        "s3Body": "Igra prikazuje neobavezne oglase s nagradom, samo kada sami odaberete pogledati oglas (druga prilika nakon pada ili besplatno zlato). Oglase isporučuju Unity LevelPlay (Unity Technologies) i oglasne mreže s kojima surađuje. Kako bi prikazali i mjerili oglase te spriječili prijevare, obrađuju oglasni ID vašeg uređaja, IP adresu, model uređaja, operacijski sustav, jezik i vašu interakciju s oglasima. Pri prvom pokretanju igre pitamo smiju li oglasi biti prilagođeni vašim interesima; izbor možete promijeniti u bilo kojem trenutku u postavkama igre (SETTINGS → PERSONALISED ADS). Ako odbijete, i dalje vidite oglase, ali ne personalizirane. Pravna osnova je vaša privola za personalizirane oglase te naš legitimni interes za prikaz nepersonaliziranih oglasa i sprječavanje prijevara. Više u Unityjevoj politici privatnosti: unity.com/legal/game-player-and-app-user-privacy-policy.",
+        "s4Title": "Kupnje u aplikaciji",
+        "s4Body": "Kupnje (zlato, odjeća, No Ads) u cijelosti obrađuje Google Play. Mi primamo samo potvrdu da je kupnja uspjela i o kojem je proizvodu riječ; nikada ne vidimo vaše ime, adresu ni podatke o plaćanju. Googleova politika privatnosti nalazi se na policies.google.com/privacy.",
+        "s5Title": "Što ne radimo",
+        "s5Body": "Ne koristimo vlastitu analitiku, ne izrađujemo profile igrača i igra ne šalje osobne podatke na naše poslužitelje. Vaše podatke ne prodajemo.",
+        "s6Title": "Djeca",
+        "s6Body": "{app} nije namijenjen djeci mlađoj od 13 godina i svjesno ne obrađujemo njihove osobne podatke. Ako smatrate da je dijete igralo igru s personaliziranim oglasima, javite nam se na {email} i pomoći ćemo.",
+        "s7Title": "Koliko dugo čuvamo podatke",
+        "s7Body": "Podaci na vašem mobitelu ostaju dok ne deinstalirate igru ili obrišete njezine podatke. Oglasni partneri čuvaju podatke prema svojim politikama, a Google čuva zapise o kupnjama onoliko dugo koliko to zakon zahtijeva.",
+        "s8Title": "Prijenos izvan EU-a",
+        "s8Body": "Unity i neki njegovi oglasni partneri mogu obrađivati podatke izvan Europskog gospodarskog prostora. Takvi se prijenosi temelje na standardnim ugovornim klauzulama Europske komisije ili na odluci o primjerenosti.",
+        "s9Title": "Vaša prava",
+        "s9Body": "Imate pravo na pristup svojim podacima, ispravak i brisanje, ograničenje obrade, prigovor na obradu i prenosivost. Privolu za personalizirane oglase možete povući u bilo kojem trenutku u postavkama igre, bez utjecaja na zakonitost ranije obrade. Oglasni ID možete poništiti ili izbrisati u postavkama mobitela (Google → Oglasi). Zahtjeve šaljite na {email}; odgovaramo u roku od 30 dana.",
+        "s10Title": "Pritužba nadzornom tijelu",
+        "s10Body": "Ako smatrate da obrađujemo vaše podatke protivno propisima, možete podnijeti pritužbu Agenciji za zaštitu osobnih podataka (AZOP), Selska cesta 136, 10000 Zagreb, azop.hr.",
+        "s11Title": "Izmjene politike",
+        "s11Body": "Politiku mijenjamo kad se promijeni igra ili način obrade podataka. Datum zadnje izmjene naveden je na vrhu stranice."
+      }
     }
   },
   "notFound": {

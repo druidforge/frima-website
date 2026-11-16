@@ -22,6 +22,7 @@ export async function LegalPage({
   sections,
   seed,
   hue,
+  updated = "2026-08-16",
   children,
 }: {
   eyebrow: string;
@@ -30,6 +31,8 @@ export async function LegalPage({
   sections: LegalSection[];
   seed?: number;
   hue?: [number, number];
+  /** ISO date shown as "last updated" (the site's own legal pages share one). */
+  updated?: string;
   children?: React.ReactNode;
 }) {
   const t = await getTranslations("legal");
@@ -44,7 +47,7 @@ export async function LegalPage({
         hue={hue}
       >
         <p className="mt-8 font-mono text-xs text-ink-faint">
-          {t("lastUpdated")}: 2026-08-16
+          {t("lastUpdated")}: {updated}
         </p>
       </PageHeader>
 

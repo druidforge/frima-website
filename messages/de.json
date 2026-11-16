@@ -51,6 +51,10 @@
     "impressum": {
       "title": "Impressum",
       "description": "Angaben zum Betreiber, zur Registrierung und Kontaktdaten von Druid Forge gemäß kroatischem und deutschem Recht."
+    },
+    "appPrivacy": {
+      "title": "{app} – Datenschutzerklärung",
+      "description": "Wie das Handyspiel {app} mit Ihren Daten umgeht."
     }
   },
   "home": {
@@ -653,6 +657,34 @@
       "s4Title": "Steuerung über den Browser",
       "s4Body": "Sie können Cookies auch in den Browsereinstellungen löschen und blockieren. Wenn Sie alle Cookies blockieren, funktionieren Teile der Seite nicht mehr richtig — etwa das Merken Ihrer Sprache.",
       "openSettings": "Cookie-Einstellungen öffnen"
+    },
+    "apps": {
+      "yeetTheGoober": {
+        "title": "Datenschutzerklärung – Yeet the Goober",
+        "intro": "Diese Erklärung beschreibt, welche personenbezogenen Daten verarbeitet werden, wenn Sie {app} spielen, ein Handyspiel von {legalName}, warum das geschieht und welche Rechte Ihnen nach der Datenschutz-Grundverordnung (DSGVO) zustehen.",
+        "s1Title": "Verantwortlicher",
+        "s1Body": "Verantwortlich ist {legalName}, Inhaber {owner}, {street}, {postalCode} {city}, Kroatien, OIB {oib}, USt-IdNr. {vatId}. Bei Fragen zu Ihren Daten in {app} schreiben Sie an {email}.",
+        "s2Title": "Was das Spiel auf Ihrem Gerät speichert",
+        "s2Body": "{app} hat keine Benutzerkonten und keine Anmeldung. Ihr Fortschritt (Höhen, Gold, Upgrades, freigeschaltete Karten und Outfits, Erfolge), Ihre Einstellungen und Ihre Werbeauswahl werden nur auf Ihrem Gerät gespeichert. Wir erhalten sie nie. Sie werden gelöscht, wenn Sie das Spiel deinstallieren oder seine Daten löschen.",
+        "s3Title": "Werbung",
+        "s3Body": "Das Spiel zeigt freiwillige Werbung mit Belohnung, nur wenn Sie sich selbst dafür entscheiden (eine zweite Chance nach einem Sturz oder Gratis-Gold). Die Werbung wird von Unity LevelPlay (Unity Technologies) und den damit verbundenen Werbenetzwerken ausgeliefert. Um Werbung anzuzeigen, zu messen und Betrug zu verhindern, verarbeiten diese die Werbe-ID Ihres Geräts, Ihre IP-Adresse, das Gerätemodell, das Betriebssystem, die Sprache und Ihre Interaktion mit der Werbung. Beim ersten Start fragen wir, ob die Werbung auf Ihre Interessen zugeschnitten werden darf; das können Sie jederzeit in den Einstellungen des Spiels ändern (SETTINGS → PERSONALISED ADS). Lehnen Sie ab, sehen Sie weiterhin Werbung, aber keine personalisierte. Rechtsgrundlage ist Ihre Einwilligung für personalisierte Werbung sowie unser berechtigtes Interesse an nicht personalisierter Werbung und an der Betrugsvermeidung. Mehr in der Datenschutzerklärung von Unity: unity.com/legal/game-player-and-app-user-privacy-policy.",
+        "s4Title": "In-App-Käufe",
+        "s4Body": "Käufe (Gold, Outfits, No Ads) werden vollständig über Google Play abgewickelt. Wir erhalten nur die Bestätigung, dass ein Kauf erfolgreich war und welcher Artikel gekauft wurde; Ihren Namen, Ihre Adresse oder Zahlungsdaten sehen wir nie. Die Datenschutzerklärung von Google finden Sie unter policies.google.com/privacy.",
+        "s5Title": "Was wir nicht tun",
+        "s5Body": "Wir betreiben keine eigene Analyse, erstellen keine Spielerprofile, und das Spiel sendet keine personenbezogenen Daten an unsere eigenen Server. Wir verkaufen Ihre Daten nicht.",
+        "s6Title": "Kinder",
+        "s6Body": "{app} richtet sich nicht an Kinder unter 13 Jahren, und wir verarbeiten wissentlich keine personenbezogenen Daten von Kindern. Wenn Sie glauben, dass ein Kind das Spiel mit personalisierter Werbung gespielt hat, schreiben Sie uns an {email}, und wir helfen Ihnen.",
+        "s7Title": "Speicherdauer",
+        "s7Body": "Die Daten auf Ihrem Gerät bleiben gespeichert, bis Sie das Spiel deinstallieren oder seine Daten löschen. Werbepartner speichern Daten nach ihren eigenen Richtlinien; Google bewahrt Kaufbelege so lange auf, wie es gesetzlich vorgeschrieben ist.",
+        "s8Title": "Übermittlung außerhalb der EU",
+        "s8Body": "Unity und einige seiner Werbepartner können Daten außerhalb des Europäischen Wirtschaftsraums verarbeiten. Solche Übermittlungen stützen sich auf die Standardvertragsklauseln der Europäischen Kommission oder auf einen Angemessenheitsbeschluss.",
+        "s9Title": "Ihre Rechte",
+        "s9Body": "Sie haben das Recht auf Auskunft, Berichtigung und Löschung, Einschränkung der Verarbeitung, Widerspruch und Datenübertragbarkeit. Ihre Einwilligung in personalisierte Werbung können Sie jederzeit in den Einstellungen des Spiels widerrufen, ohne dass die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung berührt wird. Ihre Werbe-ID können Sie in den Einstellungen Ihres Geräts zurücksetzen oder löschen (Google → Werbung). Anfragen richten Sie an {email}; wir antworten innerhalb von 30 Tagen.",
+        "s10Title": "Beschwerde bei der Aufsichtsbehörde",
+        "s10Body": "Wenn Sie der Ansicht sind, dass wir Ihre Daten unrechtmäßig verarbeiten, können Sie sich bei der kroatischen Datenschutzbehörde (AZOP), Selska cesta 136, 10000 Zagreb, azop.hr, beschweren.",
+        "s11Title": "Änderungen dieser Erklärung",
+        "s11Body": "Wir aktualisieren diese Erklärung, wenn sich das Spiel oder die Datenverarbeitung ändert. Das Datum der letzten Änderung steht oben auf der Seite."
+      }
     }
   },
   "notFound": {
