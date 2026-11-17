@@ -22,7 +22,7 @@ export const apps: App[] = [
     id: "yeetTheGoober",
     slug: "yeet-the-goober",
     name: "Yeet the Goober",
-    updated: "2026-11-16",
+    updated: "2026-11-17",
   },
 ];
 
