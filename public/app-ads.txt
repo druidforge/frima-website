@@ -1,8 +1,10 @@
 # app-ads.txt - Druid Forge (Yeet the Goober and future apps)
-# Ads are mediated by Unity LevelPlay (ironSource). Reseller list copied from
+# Ads are mediated by Unity LevelPlay (ironSource); networks: Unity Ads, Google AdMob. Reseller list copied from
 # docs.unity.com/en-us/grow/programmatic/ironsource-exchange/app-ads-txt (doc updated 2026-10-21); refresh it now and then.
 OWNERDOMAIN=druid-forge.hr
 ironsrc.com, 701673, DIRECT
+# Google AdMob (mediated through LevelPlay)
+google.com, pub-7652750606375665, DIRECT, f08c47fec0942fa0
 media.net, 8CUH2L333, RESELLER
 sharethrough.com, 3817, RESELLER, d53b998a7bd4ecd2
 playdigo.com, 1956, RESELLER
